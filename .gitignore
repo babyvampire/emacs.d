@@ -1,19 +1,9 @@
-/emacs-reveal-submodules/
-/forge-database.sqlite
-/init.bak.el
-/public/
-/pdf-tools/
-/config.el
-/backup/
-/config.org.bak
-/elpa/
-/elpy/
-/oer-reveal-org/
-/quelpa/
-/test/
-/transient/
-/url/
-/Org-Download/
-/image-dired/
-/auto-save-list/
-/config.html
+# Ignore everything
+/*
+# Except for:
+!.gitignore
+!.init.el
+!.config.org
+!early-init.el
+!README.md
+!themes/
