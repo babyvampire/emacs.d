@@ -1,0 +1,858 @@
+#+OPTIONS: auto-id:t
+
+<2020-08-10 Tue> Installed new stable emacs 27.1 from [[https://emacsformacosx.com/][emacs for mac osx]]
+
+* Configuration 
+:PROPERTIES:
+:CUSTOM_ID: h:12952E6C-F302-4796-8131-E5078D363A81
+:END:
+
+This is me moving my configuration to an org file as many people have suggested, including Sacha Chua and then Brett Witty who I am more directly copying (from [[https://github.com/BrettWitty/dotemacs/blob/master/bew_config.org][here]])
+
+I started this on 2020-05-26, and at first I will just lump my whole current init.el file on here as a code block, then I will start breaking it up and organizing it.
+
+And now of course (<2020-07-20 Mon>) I'm mining heavily from Protesilaos Stavrou ([[https://gitlab.com/protesilaos/dotfiles/-/blob/master/emacs/.emacs.d/emacs-init.org][his init]]), because he has lots of the same aesthetic notions I do and his literate .emacs is pretty great.  I owe the focused editing module to him.
+** Funnel all CUSTOMIZE to a single file
+I am trying to use the CUSTOMIZE option less, as I lose track of things that I have changed there and then they end up in init.el and other places.  But this following will at least (hopefully) put all the CUSTOMIZE changes into a single file rather than potentially being scattered around and more confusing.
+#+begin_src emacs-lisp
+(setq custom-file "~/.emacs.d/.emacs-custom.el")
+(load custom-file)
+
+#+end_src
+
+* Package management
+:PROPERTIES:
+:CUSTOM_ID: h:8F1115ED-3C8D-4DEB-974B-82AE2C0139D4
+:END:
+  Package managers were declared in the init.el file, so no need to duplicate here.
+
+** Setting up helm and putting in some keybindings
+:PROPERTIES:
+:CUSTOM_ID: h:9DF64683-FE48-4243-8285-D3514D73D1EB
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(require 'helm-config)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x r b") 'helm-filtered-bookmarks)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-h b") 'helm-descbinds)
+(global-set-key (kbd "C-a") 'move-beginning-of-line) ; was having trouble with visual-line-mode
+(helm-mode 1)
+#+end_src
+
+** Helm descbinds
+:PROPERTIES:
+:CUSTOM_ID: h:107BC0D7-215A-45CF-B4E3-EB9073A0D070
+:END:
+[[https://github.com/emacs-helm/helm-descbinds]]
+Helm Descbinds provides an interface to emacs’ describe-bindings making the currently active key bindings interactively searchable with helm.
+#+BEGIN_SRC emacs-lisp
+(use-package helm-descbinds)
+(helm-descbinds-mode)
+#+END_SRC
+
+Adding the load path for the packages I install manually - having them in .emacs.d will make them more portable
+#+begin_src emacs-lisp
+(add-to-list 'load-path "~/.emacs.d/packages")
+;; set PATH
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+#+end_src
+
+** Making it possible to use quelpa-use-package
+:PROPERTIES:
+:CUSTOM_ID: h:C588438E-BB0C-408B-BF8A-501862FBAD85
+:END:
+
+#+begin_src emacs-lisp
+(quelpa
+ '(quelpa-use-package
+   :fetcher git
+   :url "https://github.com/quelpa/quelpa-use-package.git"))
+(require 'quelpa-use-package)
+#+end_src
+
+* Personal Details
+:PROPERTIES:
+:CUSTOM_ID: h:4D9016D1-13E8-493A-BCD7-7EC445B84B71
+:END:
+
+#+begin_src emacs-lisp
+(setq user-full-name "Nick Taintor"
+    user-mail-address "nick.taintor@gmail.com"
+    calendar-latitude 38.820600
+    calendar-longitude -77.318260
+    calendar-location-name "Farirfax, VA")
+
+;; global custom key settings
+(global-set-key (kbd "M-o") 'other-window)
+#+end_src
+
+* Exec path from shell
+:PROPERTIES:
+:CUSTOM_ID: h:A1E572BC-7800-44E0-9351-D192E19F8CEC
+:END:
+
+The problem is that in mac OS the Emacs shell instance gets launched with default minimal environment variables.  exec-path-from-shell takes the $PATH from the actual shell environemnt when Emacs starts a shell
+#+BEGIN_SRC emacs-lisp
+;; exec-path-from-shell give the shell opened by emacs the same path as the user's shell
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+#+END_SRC
+* Org customization
+:PROPERTIES:
+:CUSTOM_ID: h:21CF83D2-02A3-48A9-8539-E957F50B6508
+:END:
+
+Some org-mode customization
+
+this should add visual-line-mode and org-indent-mode to org files
+#+begin_src emacs-lisp 
+(with-eval-after-load 'org       
+  (setq org-startup-indented t) ; Enable `org-indent-mode' by default
+  (add-hook 'org-mode-hook #'visual-line-mode))
+
+(setq org-src-fontify-natively t
+      org-confirm-babel-evaluate nil
+      org-src-preserve-indentation t
+      org-link-abbrev-alist '(("att" . org-attach-expand-link))
+      )
+#+end_src
+
+This will add nicer-looking bullets:
+#+begin_src emacs-lisp
+(use-package org-bullets
+:ensure t
+:config
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+#+END_SRC
+
+Hide emphasis markers
+- note this [[https://www.reddit.com/r/orgmode/comments/gss1g4/update_i_made_my_own_sbrorgemphasizemode_that/][Reddit post]] that looks to change the way this works so that you can edit these things better when the point is on them.
+#+begin_src emacs-lisp
+(setq org-hide-emphasis-markers t)
+#+end_src
+
+Setting things up for annotated bibliography
+
+#+BEGIN_SRC emacs-lisp
+(setq org-latex-pdf-process
+      '("pdflatex -interaction nonstopmode -output-directory %o %f"
+	"bibtex %b"
+	"pdflatex -interaction nonstopmode -output-directory %o %f"
+	"pdflatex -interaction nonstopmode -output-directory %o %f"))
+
+(setq bibtex-autokey-year-length 4
+      bibtex-autokey-name-year-separator "-"
+      bibtex-autokey-year-title-separator "-"
+      bibtex-autokey-titleword-separator "-"
+      bibtex-autokey-titlewords 2
+      bibtex-autokey-titlewords-stretch 1
+      bibtex-autokey-titleword-length 5)
+
+(require 'dash)
+(setq org-latex-default-packages-alist
+      (-remove-item
+       '("" "hyperref" nil)
+       org-latex-default-packages-alist))
+
+;; Append new packages
+(add-to-list 'org-latex-default-packages-alist '("" "natbib" "") t)
+(add-to-list 'org-latex-default-packages-alist
+	     '("linktocpage,pdfstartview=FitH,colorlinks,
+linkcolor=blue,anchorcolor=blue,
+citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue"
+	       "hyperref" nil)
+	     t)
+
+(setq reftex-default-bibliography '("~/googleDrive/bibliography/references.bib"))
+
+;; see org-ref for use of these variables
+(setq org-ref-bibliography-notes "~/googleDrive/bibliography/notes.org"
+      org-ref-default-bibliography '("~/googleDrive/bibliography/references.bib")
+      org-ref-pdf-directory "~/googleDrive/Zotero")
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+
+
+(setq ispell-program-name "/usr/local/bin/aspell")
+#+end_src
+
+** Setting default notes file
+:PROPERTIES:
+:CUSTOM_ID: h:824C588E-B074-4613-A4B0-EDCA6CA4F044
+:END:
+#+begin_src emacs-lisp
+(setq org-default-notes-file "~/org/notes.org")
+#+end_src
+
+** org-capture
+:PROPERTIES:
+:CUSTOM_ID: h:F68B25C3-E54A-4A1A-BC2A-B284C2ED9D77
+:END:
+#+begin_src emacs-lisp
+(global-set-key (kbd "C-c c") 'org-capture)
+#+end_src
+
+** todo
+:PROPERTIES:
+:CUSTOM_ID: h:9771176B-92B9-48F4-87B2-C6C0FBFC5B5B
+:END:
+Setting TODO keywords
+- symbol meanings: ! = timestamp, @ = note with timestamp
+#+begin_src emacs-lisp
+
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)")))
+
+#+end_src
+** org hooks
+:PROPERTIES:
+:CUSTOM_ID: h:4DFD2093-C121-406E-A684-CC3AFD8D0C3E
+:END:
+
+#+begin_src emacs-lisp
+(add-hook 'org-mode-hook 'show-paren-mode t)
+
+#+end_src
+* Projectile
+:PROPERTIES:
+:CUSTOM_ID: h:4E31B98B-2A5B-4EB8-810F-AB8192B8A2E9
+:END:
+From [[https://projectile.mx/][Projectile home page]]
+#+begin_src macs-lisp
+(use-package projectile
+  :ensure t
+  :config
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (projectile-mode +1))
+#+end_src
+* Reveal.JS
+:PROPERTIES:
+:CUSTOM_ID: h:3BA717E1-1687-4341-809A-249993795EFE
+:END:
+#+begin_src emacs-lisp
+(use-package ox-reveal 
+:ensure ox-reveal)
+
+(setq org-reveal-root "file:///Users/nick/org/comptia/sessionone/reveal.js")
+(setq org-reveal-mathjax t)
+
+(use-package htmlize
+  :ensure t)
+#+end_src
+
+Org-mode exporting, ~C-c C-e~, now includes an option ~R~ for such reveal slide decks.
+
+Two dimensional slides are not always obvious so with the following there is an option in
+tiny font to view the slide-deck continuously and remind users that ~?~ provides useful
+shortcuts. Courtesy of [[https://github.com/alhassy/emacs.d/blob/master/README.org][Musa Al-hassy]] 
+
+#+begin_src emacs-lisp
+(setq org-reveal-title-slide "<h1>%t</h1> <h3>%a</h3>
+<font size=\"1\">
+<a href=\"?print-pdf&showNotes=true\">
+⟪ Flattened View ; Press <code>?</code> for Help ⟫
+</a>
+</font>")
+#+end_src
+
+One should remove the ~&showNotes=true~ if they do not want to include
+speaker notes in the flattened view.
+
+Within the flatenned view, one may wish to ~CTRL/CMD+P~ then save the
+resulting PDF locally.
+
+* Emacs-reveal
+:PROPERTIES:
+:CUSTOM_ID: h:D5FD65A9-6D79-44E3-914F-A55CBD1F9BB8
+:END:
+
+#+begin_src emacs-lisp
+(use-package emacs-reveal
+  :load-path "~/.emacs.d/elpa/emacs-reveal")
+#+end_src
+
+Here, setting up so that the org file will automatically be exported to an oer-reveal HTML file (same as doing C-c C-e w w)
+#+begin_src emacs-lisp
+(defun toggle-oer-reveal-export-on-save ()
+  (interactive)
+  (if (memq 'oer-reveal-export-to-html after-save-hook)
+      (progn
+        (remove-hook 'after-save-hook 'oer-reveal-export-to-html t)
+        (message "Disabled org html export on save for current buffer..."))
+    (add-hook 'after-save-hook 'oer-reveal-export-to-html nil t)
+    (message "Enabled oer-reveal-export-to-html on save for current buffer...")))
+#+end_src
+So with the above defined function, in an org file can M-x toggle-oer-reveal-export-on-save <return>
+* org-ref
+:PROPERTIES:
+:CUSTOM_ID: h:37FC1751-EFA0-4AE9-8A0B-A53FA50FC8CB
+:END:
+citations, cross-references, indexes, glossaries and bibtex utilities for org-mode
+from [[https://github.com/jkitchin/org-ref][here]]
+#+begin_src emacs-lisp
+(use-package org-ref)
+(use-package org-ref-pdf
+  :load-path "/Users/nick/.emacs.d/packages/org-ref-pdf.el")
+(use-package org-ref-url-utils
+  :load-path "/Users/nick/.emacs.d/packages/org-ref-url-utils.el")
+#+end_src
+* org-re-reveal
+:PROPERTIES:
+:CUSTOM_ID: h:51A6C200-A7CD-481B-9AA8-B46AA1EAD366
+:END:
+<2020-05-30 Sat> turning off for now,focussing on getting regular reveal to work
+
+#+begin_src emacs-lisp
+;;(require 'org-re-reveal)
+#+end_src
+
+* Org-mode <== HTML
+:PROPERTIES:
+:CUSTOM_ID: h:467085FD-4EB0-4524-BF3A-3D847A86689C
+:END:
+
+#+BEGIN_SRC emacs-lisp
+;; See: https://emacs.stackexchange.com/questions/7171/paste-html-into-org-mode
+(use-package org-eww
+ :quelpa (org-eww :fetcher git :url "https://github.com/Fuco1/org-mode.git"))
+#+END_SRC
+
+* org-pdftools - a custom org link type for pdf-tools
+:PROPERTIES:
+:CUSTOM_ID: h:740CC9DD-B35D-40A8-A300-332DFE09902B
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(use-package org-pdftools
+  :hook (org-load . org-pdftools-setup-link))
+
+(use-package org-noter-pdftools
+  :after org-noter
+  :config
+  (with-eval-after-load 'pdf-annot
+    (add-hook 'pdf-annot-activate-handler-functions #'org-noter-pdftools-jump-to-note)))
+#+END_SRC
+
+* Org-Download
+:PROPERTIES:
+:CUSTOM_ID: h:B6CA3E66-1F8B-4534-9674-FD8F421615FA
+:END:
+
+I didn't like the way it stored things, and it kept duplicating the stuff I already had on my drive.  It just like Kitchin's take on it better!
+Drag and drop images to Emacs org-mode - [[https://github.com/abo-abo/org-download]]
+
+# #+BEGIN_SRC emacs-lisp
+# (use-package org-download
+#   :ensure t
+#   :defer t
+#   :init
+#   ;; Add handlers for drag-and-drop when Org is loaded.
+#     (with-eval-after-load 'org
+#       (org-download-enable)))
+
+# (setq-default org-download-image-dir "/Users/nick/org/comptia/sessionOne/images")
+# #+END_SRC
+
+* Drag images and files onto org-mode and insert a link to them
+:PROPERTIES:
+:CUSTOM_ID: h:EF7F7DFE-6063-4ED6-B3ED-C41FFA277E7D
+:END:
+from John Kitchin [[http://kitchingroup.cheme.cmu.edu/blog/2015/07/10/Drag-images-and-files-onto-org-mode-and-insert-a-link-to-them/][link]]
+
+#+BEGIN_SRC emacs-lisp
+(defun my-dnd-func (event)
+  (interactive "e")
+  (goto-char (nth 1 (event-start event)))
+  (x-focus-frame nil)
+  (let* ((payload (car (last event)))
+         (type (car payload))
+         (fname (cadr payload))
+         (img-regexp "\\(png\\|jp[e]?g\\)\\>"))
+    (cond
+     ;; insert image link
+     ((and  (eq 'drag-n-drop (car event))
+            (eq 'file type)
+            (string-match img-regexp fname))
+      (insert (format "[[%s]]" fname)))
+     ;; insert image link with caption
+     ((and  (eq 'C-drag-n-drop (car event))
+            (eq 'file type)
+            (string-match img-regexp fname))
+      (insert "#+ATTR_LATEX: :width 0.75\\textwidth :placement [h] :float nil\n")
+      (insert "#+ATTR_HTML: :width 30%\n")
+      (insert (concat  "#+CAPTION: " (read-string "Caption: ") "\n"))
+      (insert (format "[[%s]]" fname)))
+     ;; C-drag-n-drop to open a file
+     ((and  (eq 'C-drag-n-drop (car event))
+            (eq 'file type))
+      (find-file fname))
+     ((and (eq 'M-drag-n-drop (car event))
+           (eq 'file type))
+      (insert (format "[[attachfile:%s]]" fname)))
+     ;; regular drag and drop on file
+     ((eq 'file type)
+      (insert (format "[[%s]]\n" fname)))
+     (t
+      (error "I am not equipped for dnd on %s" payload)))))
+
+
+(define-key org-mode-map (kbd "<drag-n-drop>") 'my-dnd-func)
+(define-key org-mode-map (kbd "<C-drag-n-drop>") 'my-dnd-func)
+(define-key org-mode-map (kbd "<M-drag-n-drop>") 'my-dnd-func)
+#+END_SRC
+
+#+RESULTS:
+: my-dnd-func
+
+* Centred, focused text mode (olivetti-mode)
+:PROPERTIES:
+:CUSTOM_ID: h:98392A91-7C10-4BC7-B0EA-F9B57760F675
+:END:
+From Protesilaos Stavrou's [[https://protesilaos.com/dotemacs/][setup]]
+I'm just taking his mode completely right now, so I'll call it what he does (=prot/olivetti-mode=) - what it does is bring the current window's buffer to the center of view, removes the fringe, hides the mode line, default typeface set to something proportionately-spaced, other things.
+
+<2020-07-20 Mon> I'm going to dump this and some of his other associated functions and definitions, hopefully at some point I will distribute them out through this file appropriately and link them.
+#+begin_src emacs-lisp
+(use-package olivetti
+  :ensure
+  :defer
+  :diminish
+  :config
+  (setq olivetti-body-width 0.65)
+  (setq olivetti-minimum-body-width 72)
+  (setq olivetti-recall-visual-line-mode-entry-state t)
+
+  (define-minor-mode prot/olivetti-mode
+    "Toggle buffer-local `olivetti-mode' with additional parameters.
+
+Fringes are disabled.  The modeline is hidden, except for
+`prog-mode' buffers (see `prot/hidden-mode-line-mode').  The
+default typeface is set to a proportionately-spaced family,
+except for programming modes (see `prot/variable-pitch-mode').
+The cursor becomes a blinking bar, per `prot/cursor-type-mode'."
+    :init-value nil
+    :global nil
+    (if prot/olivetti-mode
+        (progn
+          (olivetti-mode 1)
+          (set-window-fringes (selected-window) 0 0)
+          (prot/variable-pitch-mode 1)
+          (prot/cursor-type-mode 1)
+          (unless (derived-mode-p 'prog-mode)
+            (prot/hidden-mode-line-mode 1)))
+      (olivetti-mode -1)
+      (set-window-fringes (selected-window) nil) ; Use default width
+      (prot/variable-pitch-mode -1)
+      (prot/cursor-type-mode -1)
+      (unless (derived-mode-p 'prog-mode)
+        (prot/hidden-mode-line-mode -1))))
+  :bind ("C-c o" . prot/olivetti-mode))
+
+
+(use-package emacs
+  :commands prot/hidden-mode-line-mode
+  :config
+  (setq mode-line-percent-position '(-3 "%p"))
+  (setq mode-line-defining-kbd-macro
+        (propertize " Macro" 'face 'mode-line-emphasis))
+  (setq-default mode-line-format
+                '("%e"
+                  mode-line-front-space
+                  mode-line-mule-info
+                  mode-line-client
+                  mode-line-modified
+                  mode-line-remote
+                  mode-line-frame-identification
+                  mode-line-buffer-identification
+                  "  "
+                  mode-line-position
+                  (vc-mode vc-mode)
+                  " "
+                  mode-line-modes
+                  " "
+                  mode-line-misc-info
+                  mode-line-end-spaces))
+
+  (define-minor-mode prot/hidden-mode-line-mode
+    "Toggle modeline visibility in the current buffer."
+    :init-value nil
+    :global nil
+    (if prot/hidden-mode-line-mode
+        (setq-local mode-line-format nil)
+      (kill-local-variable 'mode-line-format)
+      (force-mode-line-update))))
+
+
+(use-package face-remap
+  :diminish buffer-face-mode            ; the actual mode
+  :commands prot/variable-pitch-mode
+  :config
+  (define-minor-mode prot/variable-pitch-mode
+    "Toggle `variable-pitch-mode', except for `prog-mode'."
+    :init-value nil
+    :global nil
+    (if prot/variable-pitch-mode
+        (unless (derived-mode-p 'prog-mode)
+          (variable-pitch-mode 1))
+      (variable-pitch-mode -1))))
+
+;;; Initially had a bunch of errors with the following, but then I wised up and upgraded emacs to 27.0.91 and it worked
+(use-package emacs
+  :config
+  (setq-default scroll-preserve-screen-position t)
+  (setq-default scroll-conservatively 1) ; affects `scroll-step'
+  (setq-default scroll-margin 0)
+
+  (define-minor-mode prot/scroll-centre-cursor-mode
+    "Toggle centred cursor scrolling behaviour."
+    :init-value nil
+    :lighter " S="
+    :global nil
+    (if prot/scroll-centre-cursor-mode
+        (setq-local scroll-margin (* (frame-height) 2)
+                    scroll-conservatively 0
+                    maximum-scroll-margin 0.5)
+      (dolist (local '(scroll-preserve-screen-position
+                       scroll-conservatively
+                       maximum-scroll-margin
+                       scroll-margin))
+        (kill-local-variable `,local))))
+
+  ;; C-c l is used for `org-store-link'.  The mnemonic for this is to
+  ;; focus the Line and also works as a variant of C-l.
+  :bind ("C-c L" . prot/scroll-centre-cursor-mode))
+
+
+(use-package display-line-numbers
+  :defer
+  :config
+  ;; Set absolute line numbers.  A value of "relative" is also useful.
+  (setq display-line-numbers-type t)
+
+  (define-minor-mode prot/display-line-numbers-mode
+    "Toggle `display-line-numbers-mode' and `hl-line-mode'."
+    :init-value nil
+    :global nil
+    (if prot/display-line-numbers-mode
+        (progn
+          (display-line-numbers-mode 1)
+          (hl-line-mode 1))
+      (display-line-numbers-mode -1)
+      (hl-line-mode -1)))
+  :bind ("<f7>" . prot/display-line-numbers-mode))
+
+(use-package frame
+  :commands prot/cursor-type-mode
+  :config
+  (setq-default cursor-type 'box)
+  (setq-default cursor-in-non-selected-windows '(bar . 2))
+  (setq-default blink-cursor-blinks 50)
+  (setq-default blink-cursor-interval nil) ; 0.75 would be my choice
+  (setq-default blink-cursor-delay 0.2)
+
+  (blink-cursor-mode -1)
+
+  (define-minor-mode prot/cursor-type-mode
+    "Toggle between static block and pulsing bar cursor."
+    :init-value nil
+    :global t
+    (if prot/cursor-type-mode
+        (progn
+          (setq-local blink-cursor-interval 0.75
+                      cursor-type '(bar . 2)
+                      cursor-in-non-selected-windows 'hollow)
+          (blink-cursor-mode 1))
+      (dolist (local '(blink-cursor-interval
+                       cursor-type
+                       cursor-in-non-selected-windows))
+        (kill-local-variable `,local))
+      (blink-cursor-mode -1))))
+
+#+end_src
+
+* magit
+:PROPERTIES:
+:CUSTOM_ID: h:03DF5961-7D68-44F5-B8F6-1291856B8AF1
+:END:
+Using magit and forge (which works with GitLab)
+#+begin_src emacs-lisp
+(use-package magit
+  :ensure t
+  :bind (("C-x g" . magit-status)
+         ("C-x C-g" . magit-status)))
+
+(use-package forge
+  :after magit)
+#+end_src
+* Python IDE with elpy
+:PROPERTIES:
+:CUSTOM_ID: h:02E4F19E-952B-4A5C-B14F-D506919C3552
+:END:
+from Jorgen Schaefer's github [[https://github.com/jorgenschaefer/elpy]]
+
+#+BEGIN_SRC emacs-lisp
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
+#+END_SRC
+
+The next instructs emacs to use the standard Python interpreter
+#+BEGIN_SRC emacs-lisp
+(setq python-shell-interpreter "python"
+      python-shell-interpreter-args "-i")
+#+END_SRC
+
+Because on a mac the "python" command means python2, added this:
+#+BEGIN_SRC emacs-lisp
+(if (eq 'system-type "darwin")
+    (defvar elpy-rpc-python-command "python3")
+(defvar elpy-rpc-python-command "python"))  
+#+END_SRC
+
+Include [[https://www.flycheck.org/en/latest/][flycheck]]
+#+BEGIN_SRC emacs-lisp
+;; Enable Flycheck rather than flymake
+
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+#+END_SRC
+
+Using company-jedi: company-mode completion back-end for Python JEDI [[https://github.com/emacsorphanage/company-jedi]]
+#+BEGIN_SRC emacs-lisp
+(defun my/python-mode-hook ()
+  (add-to-list 'company-backends 'company-jedi))
+
+(add-hook 'python-mode-hook 'my/python-mode-hook)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+;; (use-package flycheck
+;;   :ensure t
+;;   :init (global-flycheck-mode))
+#+END_SRC
+
+Using autopep8
+
+#+BEGIN_SRC emacs-lisp
+(use-package py-autopep8
+  :init
+  (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save))
+#+END_SRC
+
+Use pyvenv 
+[[https://github.com/jorgenschaefer/pyvenv][Pyvenv]]
+
+#+BEGIN_SRC emacs-lisp
+(use-package pyvenv
+  :ensure t
+  :init
+  (setenv "WORKON_HOME" "~/.pyenv/versions"))
+#+END_SRC
+
+* LSP Mode
+:PROPERTIES:
+:CUSTOM_ID: h:55A8DBAA-432B-4E6E-A4CA-3197D1DC4097
+:END:
+home page [[https://emacs-lsp.github.io/lsp-mode/][here]]
+#+begin_src emacs-lisp
+;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+(setq lsp-keymap-prefix "s-l")
+
+(use-package lsp-mode
+    :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
+            (XXX-mode . lsp)
+            ;; if you want which-key integration
+            (lsp-mode . lsp-enable-which-key-integration))
+    :commands lsp)
+
+;; optionally
+(use-package lsp-ui :commands lsp-ui-mode)
+;; if you are helm user
+(use-package helm-lsp :commands helm-lsp-workspace-symbol)
+;; if you are ivy user
+;; (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+
+;; optionally if you want to use debugger
+(use-package dap-mode)
+;; (use-package dap-LANGUAGE) to load the dap adapter for your language
+
+;; optional if you want which-key integration
+(use-package which-key
+    :config
+    (which-key-mode))
+
+
+#+end_src
+* expand region
+:PROPERTIES:
+:CUSTOM_ID: h:37AB6CF7-E0DB-4291-9771-241AB775032A
+:END:
+From [[https://github.com/magnars/expand-region.el][this]] GitHub 
+#+begin_src emacs-lisp
+(use-package expand-region
+  :ensure t
+  :bind (("C-=" . er/expand-region)))
+#+end_src
+* Yasnippet
+:PROPERTIES:
+:CUSTOM_ID: h:F0D2F8E6-A784-4E2F-87F0-F1B751A92919
+:END:
+from [[https://github.com/joaotavora/yasnippet][here]]
+#+begin_src emacs-lisp
+(add-to-list 'load-path "~/.emacs.d/packages/yasnippet")
+
+(use-package yasnippet
+  :ensure t
+  :init
+  (yas-global-mode 1)
+  :config
+  (add-to-list 'yas-snippet-dirs "~/emacs.d/snippets"))
+ #+end_src
+
+* Consistent Org heading IDs (and anchor tags)
+:PROPERTIES:
+:CUSTOM_ID: h:9D8BBA15-B9BC-48F2-A25C-5A893F27BE27
+:END:
+From [[https://gitlab.com/protesilaos/dotfiles/-/blob/master/emacs/.emacs.d/emacs-init.org][Stavrou]] and this [[https://writequit.org/articles/emacs-org-mode-generate-ids.html][article]] (I swear I found the article before I saw Stavrou's setup!
+
+The issue is two-fold - wanting to quickly create unique internal links that will also survive export to HTML and the multiple rewrites of files.
+
+#+begin_src emacs-lisp
+(use-package org-id
+  :after org
+  :commands (contrib/org-get-id
+             contrib/org-id-headlines)
+  :config
+  (setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id))
+
+  (defun eos/org-custom-id-get (&optional pom create prefix)
+    "Get the CUSTOM_ID property of the entry at point-or-marker
+POM. If POM is nil, refer to the entry at point. If the entry
+does not have an CUSTOM_ID, the function returns nil. However,
+when CREATE is non nil, create a CUSTOM_ID if none is present
+already. PREFIX will be passed through to `org-id-new'. In any
+case, the CUSTOM_ID of the entry is returned."
+    (interactive)
+    (org-with-point-at pom
+      (let ((id (org-entry-get nil "CUSTOM_ID")))
+        (cond
+         ((and id (stringp id) (string-match "\\S-" id))
+          id)
+         (create
+          (setq id (org-id-new (concat prefix "h")))
+          (org-entry-put pom "CUSTOM_ID" id)
+          (org-id-add-location id (buffer-file-name (buffer-base-buffer)))
+          id)))))
+
+(defun eos/org-add-ids-to-headlines-in-file ()
+  "Add CUSTOM_ID properties to all headlines in the current
+   file which do not already have one. Only adds ids if the
+   `auto-id' option is set to `t' in the file somewhere. ie,
+   #+OPTIONS: auto-id:t"
+  (interactive)
+  (save-excursion
+    (widen)
+    (goto-char (point-min))
+    (when (re-search-forward "^#\\+OPTIONS:.*auto-id:t" (point-max) t)
+      (org-map-entries (lambda () (eos/org-custom-id-get (point) 'create))))))
+
+#+end_src
+
+* preferences / appearance
+:PROPERTIES:
+:CUSTOM_ID: h:9F230725-522C-4B77-891D-DEFB42A0F8A4
+:END:
+
+Don't display the help screen on startup
+
+#+BEGIN_SRC emacs-lisp
+(setq inhibit-startup-screen t)
+#+END_SRC
+
+I like the blinking bar cursor!
+
+#+BEGIN_SRC emacs-lisp
+(setq-default cursor-type 'bar)
+#+END_SRC
+
+Taking away the toolbar and scroll bar
+
+#+begin_src emacs-lisp
+;;(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+#+end_src
+
+I don't want the error bell
+
+#+BEGIN_SRC emacs-lisp
+(setq ring-bell-function 'ignore)
+#+END_SRC
+
+This puts all the #BACKUP FILES# out of the way and limits them slightly
+#+BEGIN_SRC emacs-lisp
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
+  backup-by-copying t    ; Don't delink hardlinks
+  version-control t      ; Use version numbers on backups
+  delete-old-versions t  ; Automatically delete excess backups
+  kept-new-versions 20   ; how many of the newest versions to keep
+  kept-old-versions 5    ; and how many of the old
+  )
+#+END_SRC
+
+Installing Prot's Modus themes
+from: [[https://gitlab.com/protesilaos/modus-themes][here]]
+"This is a set of accessible themes for GNU Emacs.  The contrast ratio
+  between foreground and background values should always be >= 7:1, which
+  conforms with the WCAG AAA accessibility standard.  This is the highest
+  standard of its kind.
+The Modus themes project consists of two standalone items, one where
+  dark text is cast on a light backdrop (Modus Operandi) and another where
+  light text is displayed against a dark background (Modus Vivendi)."
+#+begin_src emacs-lisp
+(use-package modus-operandi-theme :ensure)
+
+(use-package modus-vivendi-theme :ensure)
+
+(load-theme 'modus-operandi t)          ; Light theme
+(load-theme 'modus-vivendi t)           ; Dark theme
+#+end_src
+
+Then, we can load them at a given time - the following will only work if ~calendar-latitude~ and ~calendar-latitude~ are set correctly (which they are here up in Personal Details, because /of course/ emacs has a solar clock running in the background at all times, with the ~solar.el~ library.
+#+begin_src emacs-lisp
+;; Light at sunrise
+(load-theme 'modus-operandi t t)
+(run-at-time (nth 1 (split-string (sunrise-sunset)))
+             (* 60 60 24)
+             (lambda () (enable-theme 'modus-operandi)))
+
+;; Dark at sunset
+(load-theme 'modus-vivendi t t)
+(run-at-time (nth 4 (split-string (sunrise-sunset)))
+             (* 60 60 24)
+             (lambda () (enable-theme 'modus-vivendi)))
+
+#+end_src
+
+#+BEGIN_SRC emacs-lisp
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+)
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+#+END_SRC
