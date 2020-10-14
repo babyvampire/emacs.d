@@ -1,4 +1,4 @@
-#+OPTIONS: auto-id:t
+#+OPTIONS: auto-id: t
 
 <2020-08-10 Tue> Installed new stable emacs 27.1 from [[https://emacsformacosx.com/][emacs for mac osx]]
 
@@ -13,7 +13,7 @@ I started this on 2020-05-26, and at first I will just lump my whole current ini
 
 And now of course (<2020-07-20 Mon>) I'm mining heavily from Protesilaos Stavrou ([[https://gitlab.com/protesilaos/dotfiles/-/blob/master/emacs/.emacs.d/emacs-init.org][his init]]), because he has lots of the same aesthetic notions I do and his literate .emacs is pretty great.  I owe the focused editing module to him.
 ** Funnel all CUSTOMIZE to a single file
-I am trying to use the CUSTOMIZE option less, as I lose track of things that I have changed there and then they end up in init.el and other places.  But this following will at least (hopefully) put all the CUSTOMIZE changes into a single file rather than potentially being scattered around and more confusing.
+I am trying to use the CUSTOMIZE option less, as I lose track of things that I have changed there and then they end up in init.el and other places.  But this following will at least (hopefully) put /all/ the CUSTOMIZE changes into a single file rather than potentially being scattered around and more confusing.
 #+begin_src emacs-lisp
 (setq custom-file "~/.emacs.d/.emacs-custom.el")
 (load custom-file)
@@ -104,13 +104,8 @@ The problem is that in mac OS the Emacs shell instance gets launched with defaul
 :CUSTOM_ID: h:21CF83D2-02A3-48A9-8539-E957F50B6508
 :END:
 
-Some org-mode customization
-
-this should add visual-line-mode and org-indent-mode to org files
 #+begin_src emacs-lisp 
-(with-eval-after-load 'org       
-  (setq org-startup-indented t) ; Enable `org-indent-mode' by default
-  (add-hook 'org-mode-hook #'visual-line-mode))
+
 
 (setq org-src-fontify-natively t
       org-confirm-babel-evaluate nil
@@ -120,63 +115,65 @@ this should add visual-line-mode and org-indent-mode to org files
 #+end_src
 
 This will add nicer-looking bullets:
+note: good old =org-bullets= has been superseded by [[https://github.com/integral-dw/org-superstar-mode][org-superstar!]]
 #+begin_src emacs-lisp
-(use-package org-bullets
-:ensure t
-:config
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+(use-package org-superstar
+  :ensure t
+  :hook org-mode)
+  
 #+END_SRC
 
 Hide emphasis markers
-- note this [[https://www.reddit.com/r/orgmode/comments/gss1g4/update_i_made_my_own_sbrorgemphasizemode_that/][Reddit post]] that looks to change the way this works so that you can edit these things better when the point is on them.
+- note this [[https://www.reddit.com/r/orgmode/comments/gss1g4/update_i_made_my_own_sbrorgemphasizemode_that/][Reddit post]] that looks to change the way this works so that you can /edit/ these things better when the point is on them.
 #+begin_src emacs-lisp
 (setq org-hide-emphasis-markers t)
 #+end_src
 
 Setting things up for annotated bibliography
+<2020-08-12 Wed> Have never used this, so turning off for now
 
-#+BEGIN_SRC emacs-lisp
-(setq org-latex-pdf-process
-      '("pdflatex -interaction nonstopmode -output-directory %o %f"
-	"bibtex %b"
-	"pdflatex -interaction nonstopmode -output-directory %o %f"
-	"pdflatex -interaction nonstopmode -output-directory %o %f"))
+# #+BEGIN_SRC emacs-lisp
+# (setq org-latex-pdf-process
+#       '("pdflatex -interaction nonstopmode -output-directory %o %f"
+# 	"bibtex %b"
+# 	"pdflatex -interaction nonstopmode -output-directory %o %f"
+# 	"pdflatex -interaction nonstopmode -output-directory %o %f"))
 
-(setq bibtex-autokey-year-length 4
-      bibtex-autokey-name-year-separator "-"
-      bibtex-autokey-year-title-separator "-"
-      bibtex-autokey-titleword-separator "-"
-      bibtex-autokey-titlewords 2
-      bibtex-autokey-titlewords-stretch 1
-      bibtex-autokey-titleword-length 5)
+# (setq bibtex-autokey-year-length 4
+#       bibtex-autokey-name-year-separator "-"
+#       bibtex-autokey-year-title-separator "-"
+#       bibtex-autokey-titleword-separator "-"
+#       bibtex-autokey-titlewords 2
+#       bibtex-autokey-titlewords-stretch 1
+#       bibtex-autokey-titleword-length 5)
 
-(require 'dash)
-(setq org-latex-default-packages-alist
-      (-remove-item
-       '("" "hyperref" nil)
-       org-latex-default-packages-alist))
+# (require 'dash)
+# (setq org-latex-default-packages-alist
+#       (-remove-item
+#        '("" "hyperref" nil)
+#        org-latex-default-packages-alist))
 
-;; Append new packages
-(add-to-list 'org-latex-default-packages-alist '("" "natbib" "") t)
-(add-to-list 'org-latex-default-packages-alist
-	     '("linktocpage,pdfstartview=FitH,colorlinks,
-linkcolor=blue,anchorcolor=blue,
-citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue"
-	       "hyperref" nil)
-	     t)
+# ;; Append new packages
+# (add-to-list 'org-latex-default-packages-alist '("" "natbib" "") t)
+# (add-to-list 'org-latex-default-packages-alist
+# 	     '("linktocpage,pdfstartview=FitH,colorlinks,
+# linkcolor=blue,anchorcolor=blue,
+# citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue"
+# 	       "hyperref" nil)
+# 	     t)
 
-(setq reftex-default-bibliography '("~/googleDrive/bibliography/references.bib"))
+# (setq reftex-default-bibliography '("~/googleDrive/bibliography/references.bib"))
 
-;; see org-ref for use of these variables
-(setq org-ref-bibliography-notes "~/googleDrive/bibliography/notes.org"
-      org-ref-default-bibliography '("~/googleDrive/bibliography/references.bib")
-      org-ref-pdf-directory "~/googleDrive/Zotero")
+# ;; see org-ref for use of these variables
+# (setq org-ref-bibliography-notes "~/googleDrive/bibliography/notes.org"
+#       org-ref-default-bibliography '("~/googleDrive/bibliography/references.bib")
+#       org-ref-pdf-directory "~/googleDrive/Zotero")
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+# (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
 
-(setq ispell-program-name "/usr/local/bin/aspell")
-#+end_src
+# (setq ispell-program-name "/usr/local/bin/aspell")
+# #+end_src
 
 ** Setting default notes file
 :PROPERTIES:
@@ -206,15 +203,27 @@ Setting TODO keywords
       '((sequence "TODO(t)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)")))
 
 #+end_src
-** org hooks
+** org hooks and display properties
 :PROPERTIES:
 :CUSTOM_ID: h:4DFD2093-C121-406E-A684-CC3AFD8D0C3E
 :END:
 
-#+begin_src emacs-lisp
-(add-hook 'org-mode-hook 'show-paren-mode t)
 
 #+end_src
+
+#+begin_src emacs-lisp
+
+(with-eval-after-load 'org       
+  (setq org-startup-indented t
+	org-fontify-done-headline t
+	org-pretty-entities t
+	show-paren-mode t
+	org-hide-emphasis-markers t
+	org-superstar-mode t)
+  (add-hook 'org-mode-hook #'visual-line-mode))
+
+#+end_src
+
 * Projectile
 :PROPERTIES:
 :CUSTOM_ID: h:4E31B98B-2A5B-4EB8-810F-AB8192B8A2E9
@@ -341,7 +350,7 @@ from [[https://github.com/jkitchin/org-ref][here]]
 :CUSTOM_ID: h:B6CA3E66-1F8B-4534-9674-FD8F421615FA
 :END:
 
-I didn't like the way it stored things, and it kept duplicating the stuff I already had on my drive.  It just like Kitchin's take on it better!
+I didn't like the way it stored things, and it kept duplicating the stuff I already had on my drive.  I just like Kitchin's take on it better!
 Drag and drop images to Emacs org-mode - [[https://github.com/abo-abo/org-download]]
 
 # #+BEGIN_SRC emacs-lisp
@@ -573,6 +582,31 @@ The cursor becomes a blinking bar, per `prot/cursor-type-mode'."
 
 #+end_src
 
+* org-journal
+from [[https://github.com/bastibe/org-journal][org-journal github]]
+#+begin_src emacs-lisp
+(use-package org-journal
+  :after org
+  :ensure t
+  :hook ((org-journal-mode . prot/olivetti-mode)
+         (org-journal-mode . org-indent-mode))
+    
+  :defer 0.5
+  :init
+  ;; Change default prefix key; needs to be set before loading org-journal
+  (setq org-journal-prefix-key "C-c j ")
+  :config
+  (setq org-journal-dir "~/org/journal/"
+	;; try to bring the config to every journal file
+	org-journal-file-header "#+SETUPFILE: ~/.emacs.d/config.org"
+	org-journal-date-format "%A, %d %B %Y"
+	;; Carry over TODO items and items explicitly marked
+        org-journal-carryover-items "+carryover|+TODO=\"TODO\""
+	org-journal-enable-agenda-integration t
+	;; Remove empty journals after carryover
+        org-journal-carryover-delete-empty-journal 'always
+	org-journal-file-type 'monthly))
+#+end_src
 * magit
 :PROPERTIES:
 :CUSTOM_ID: h:03DF5961-7D68-44F5-B8F6-1291856B8AF1
@@ -774,12 +808,6 @@ Don't display the help screen on startup
 
 #+BEGIN_SRC emacs-lisp
 (setq inhibit-startup-screen t)
-#+END_SRC
-
-I like the blinking bar cursor!
-
-#+BEGIN_SRC emacs-lisp
-(setq-default cursor-type 'bar)
 #+END_SRC
 
 Taking away the toolbar and scroll bar
