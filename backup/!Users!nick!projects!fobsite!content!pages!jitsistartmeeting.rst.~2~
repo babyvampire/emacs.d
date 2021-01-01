@@ -1,0 +1,130 @@
+Starting a Jitsi Meeting
+************************
+
+:date: 2020-12-1
+:summary: Starting a Jitsi Meeting
+
+Excellent, we have a meeting to start!  
+	  
+* Go to the URL of our Jitsi-Meet server: https://meet.fob.monster.  This is the page that you will see:
+
+.. figure:: {static}/images/jitsiLandingPage.jpg
+    :scale: 50%
+    :alt: Pine Grove Jitsi landing page
+
+    Fig 1: The Jitsi landing page
+
+* In the "Start a new meeting" text box, enter the name of the meeting you would like to start.  This name is important, since the way other people will join the meeting will be by going to the URL: ``https://meet.fob.monster/[name of meeting]``
+
+|
+
+* If this is a meeting that we have publicized in advance, then you should start the meeting with that name.  For example, if the name of our weekly meeting is ``pinegrove``, then enter that name into the text box and click :label-info:`GO` (or press [return]).  The link that other people will use to join our meeting will then be ``https://meet.fob.monster/pinegrove``.
+ 
+.. container:: m-row
+
+    .. container:: m-col-m-12 m-left-m
+
+        .. class:: m-text
+
+            * The first time you use Jitsi Meet (and probably most of the time, depending on your browser's security settings), it will ask for your permission to use your camera and microphone.  Grant this permission.
+
+.. container:: m-row m-container-inflate
+
+    .. container:: m-col-m-4
+
+        .. figure:: {static}/images/allowJitsiCameraMicrophoneChrome.jpg
+            :figclass: m-flat
+            :alt: Chrome asking permission
+
+            ..
+
+            .. class:: m-text m-small m-noindent
+
+            Chrome asking permission
+
+    .. container:: m-col-m-4
+
+        .. figure:: {static}/images/allowJitsiCameraMicrophoneFirefox.jpg
+            :figclass: m-flat
+            :alt: Firefox asking permission
+
+            ..
+
+            .. class:: m-text m-small m-noindent
+            
+            Firefox asking permission
+
+    .. container:: m-col-m-4
+
+
+        .. figure:: {static}/images/allowJitsiCameraMicrophoneSafari.jpg
+            :figclass: m-flat
+            :alt: Safari asking permission
+
+            ..
+
+            .. class:: m-text m-small m-noindent
+            
+            Safari asking permission
+
+
+.. container:: m-row
+
+    .. container:: m-col-m-7 m-left-m 
+
+        .. class:: m-text
+
+            * Designated hosts are the only people who can start a meeting on this particular server, and they will have been given usernames and passwords through some sneaky sidechannel.  When you click the :label-info:`GO` button to start a meeting, a window will pop up (Figure 2).  Click on the :label-info:`I am the host` button.
+
+    .. container:: m-col-s-6 m-center-s m-col-m-5 m-right-m 
+            
+        .. figure:: {static}/images/JitsiHostPrompt.png
+            :figclass: m-flat
+            :alt: Jitsi asking if you are the host
+
+            ..
+
+            .. class:: m-text m-small m-noindent
+
+            Fig 2: Jitsi asking if you are the host
+
+.. container:: m-row
+
+    .. container:: m-col-m-7 m-left-m 
+
+        .. class:: m-text
+            
+            * After you click on :label-info:`I am the host`, a window will pop up asking for your username and password (Figure 3).  It will suggest the format "user@domain.net" for the username, but we are using simple one word usernames.  Enter the username and password that you have been given, press [return] or click :label-info:`OK`.
+
+    .. container:: m-col-s-6 m-center-s m-col-m-5 m-right-m
+    
+        .. figure:: {static}/images/passwordRequired.png
+            :figclass: m-flat
+            :alt: the username and password box
+
+            ..
+
+            .. class:: m-text m-small m-noindent
+
+            Fig 3: Username and password request box for host
+
+
+* At the moment, the Google Chrome browser unfortunately works better than Firefox due to some limitations in the way that Firefox implements WebRTC.  This is likely to be fixed in later versions of Firefox - but for now Google Chrome is the suggested browser to use. See `this section`_ for a discussion of how to use Jitsi using a smartphone app (Android or iOS) or a desktop application.
+
+Host authorization
+------------------
+
+Leaving a Jitsi-Meet server completely open would allow anyone who stumbled upon it to start hosting meetings.  The only reason this might be an issue is due to the confusion that might result from this happening, especially for first-time users of the platform.  To avoid this possible issue, a username and password is currently required to host a meeting on the ``fob.monster`` server.  The username and password will be distributed through another means, probably a friendly test message.
+
+Here's how you would use a username and password to start a meeting
+
+
+
+
+
+.. |go| image:: {static}/images/gobutton.png
+   :scale: 20%
+.. _this section: {filename}/pages/jitsilinks.rst
+
+
+

@@ -1,0 +1,90 @@
+% Created 2020-09-19 Sat 16:13
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[hyphens]{url}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Nick Taintor}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={Nick Taintor},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.3.7)}, 
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\section{Setting up advance directives in Virginia}
+\label{sec:org7c0bc85}
+\subsection{Some things to think about at the beginning:}
+\label{sec:orga400aa6}
+\begin{itemize}
+\item So, you want to put something together so that you might have some degree of control over the things that happen to you in a hospital if you are unable to communicate or express your wants or needs.  That is a pretty good idea!  Here are some suggestions for how to go about this.
+
+The document you want to have produced at the end of all this goes by a bunch of different names, depending on where you live and depending on what your exact use of it will be.  It is most commonly called a "living will" or "health care advance directive."  It is sometimes called a "durable power of attorney for health care."  As the American Bar Association (ABA) says in its \href{https://www.americanbar.org/groups/law\_aging/resources/health\_care\_decision\_making/consumer\_s\_toolkit\_for\_health\_care\_advance\_planning/}{discussion of this topic}:
+
+\begin{quote}
+"Studies have shown that standard advance directive forms do little to influence end-of-life decisions without: (1) informed, thoughtful reflection about your wishes and values, and (2) personal communication between you and your likely decision-makers before a crisis occurs."
+\end{quote}
+
+\item In other words, it is important and good to have a piece of paper or electronic document that clearly states your wishes and desires for the kind of medical treatment you would like to receive when you are unable to express that choice.  It is also important to remember that this will only be a piece of paper (or a collection of 1s and 0s) - it can be and sometimes is ignored by medical practitioners.
+
+This means: the most important part of the advance directive that you fill out will be the very first section, the one that designates your health care proxy.  It is important to designate a health care proxy, and to have a thorough discussion with that person about the things that you would like or not like to have done during a health care crisis.  Your health care proxy could be anyone, but they should be a person that you trust to be able to carry out this role.  If you have family members who might get involved in making a health care decision for you, it is important to inform them that you have a health care proxy who will be formally designated to make those decisions for you.  In fact, you should tell the important people in your life about this the moment you do it!
+
+A quick aside - most people associate these documents and discussions and preparations with "end-of-life" things.  You know, deciding who will "pull the plug" on you or other morbid considerations.  Please remember that there can be plenty of situations in which you might be hospitalized, unable to communicate, but with every chance of recovery.  This is stil la situation in which having a health care proxy and a set of written advance directives will be useful.
+
+OK, those are just some preamble-type suggestions.  Keep them in mind.
+\end{itemize}
+\subsection{Starting with the process:}
+\label{sec:orgcc00d22}
+\begin{itemize}
+\item A good place to begin is the American Bar Association's Tool Kit for Health Care Advance Planning (found \href{https://www.americanbar.org/groups/law\_aging/resources/health\_care\_decision\_making/consumer\_s\_toolkit\_for\_health\_care\_advance\_planning/}{here}).  This walks you through some of the steps you need to think through when you are starting down this road.  This is a good place to start reading if you might still have some un certainty about what exactly you are getting yourself into.
+\end{itemize}
+\subsection{Then,}
+\label{sec:org0a9fb03}
+Once you've looked that over (or if you already think you know what you are doing!), the best place to get started with the specifics starts on the Virginia State Bar's page on healthcare decision-making (which is \href{https://www.vsb.org/site/public/healthcare-decisions-day}{right here}).
+\begin{itemize}
+\item That page has links to the most current versions of the forms you need to fill out, in PDF form (and with the fields set up in the PDF, so easier to fill out on your computer).
+\begin{itemize}
+\item There are "short" and "full" versions of these forms - it doesn't look to me like the "full" versions add anything important, so I'd stick with the short versions.
+\item Remember that as long as you have signed the form and had that signature witnessed, you can fill out as much or as little of the form as you want.  If all you want to do is designate a health care proxy, then fill out that part.  That's all you need.
+\end{itemize}
+\item Part C, on the second page of the short form, can be a little confusing for people.  It is the only part of the document in which you would need the signature of a licensed professional, but it only covers a particular situation: one in which you might object to a needed medical treatment, an objection you might not make in a better, healthier frame of mind.  \textbf{Section C} allows your health care proxy to make a health care decision for you over your explicit objection.  If you want to cover this situation in your advance directive, then get a licensed professional to sign this part for you.
+\item The Virginia State Bar page also has a link to the \href{https://connectvirginia.org/adr}{Virginia Advance Health Care Directives Registry} (VAHCDR) which is where you are able to securely store your directive forms.
+\begin{itemize}
+\item Once you have created an account on the VAHDCR and stored your documents there, you can print out a wallet card to carry with you, which will allow people to access the VAHDCR and look up your stuff.
+\end{itemize}
+\end{itemize}
+\subsection{So here's an outline of the process you might follow:}
+\label{sec:org851719a}
+\begin{enumerate}
+\item Read the ABA's tool kit \href{https://www.americanbar.org/groups/law\_aging/resources/health\_care\_decision\_making/consumer\_s\_toolkit\_for\_health\_care\_advance\_planning/}{here}.
+\item Think about who you would like to choose as your health care proxy.
+\item Talk to that person, and plan to have a full and honest discussion about the kinds of medical care you want / don't want.  Be specific!  This is not a conversation in which you want to avoid talking about painful, awful things.  This is a conversation about painful and awful things, so just do that.
+\item Download one of the forms from the \href{https://www.vsb.org/site/public/healthcare-decisions-day}{Virginia State Bar's Healthcare Decisions page}.  I suggest the \href{https://www.vsb.org/sections/hl/Virginia\_AD\_Medical\_Mental\_End-of-Life\_Healthcare\_short.pdf}{short version} (<-- you can \textbf{right click} on that link, and "save as" a document to your computer).
+\item Read the gray column on the left of each page of the form, as it has a pretty good explanation of the stuff you are filling out.
+\item Remember that you can fill out as much or as little as you want - as long as you sign it and have the signature witnessed, the document is good.  Some people might, at the beginning, only want to designate a health care proxy.  That's fine!
+\item Print out multiple copies and sign them.  Multiple copies, because it is good to have a few around, and you should be distributing them to (at least) your primary care physician and your health care proxy, as well as (possibly) some family members.  The important thing is that, if you were to end up in the hospital, it should not be too difficult to convey a copy of that form to the people caring for you in the hospital.  To that end, the next few steps will help:
+\item Make an account at the \href{https://connectvirginia.org/adr}{Virginia Advance Health Care Directives Registry} (VAHCDR).
+\item Scan a signed copy of you advance directive, or electronically sign the digital version, and upload it to the VAHDCR.
+\item Print out a wallet card to carry with you - this will allow people to access the electronic version of your advance directive.  This means that, even if you cannot communicate, there is a good chance the hospital will be able to find out who your health care proxy is and what your health care desires are.
+\end{enumerate}
+
+I think that's pretty much it!
+\end{document}

@@ -1,0 +1,22 @@
+;; Emacs-W3 HTTP cookies file
+;; Automatically generated file!!! DO NOT EDIT!!!
+
+(setq url-cookie-storage
+ '((".theguardian.com"
+  [url-cookie "GU_EDITION" "UK" "Wed May 12 17:02:08 2021 GMT" "/" ".theguardian.com" nil]))
+)
+(setq url-cookie-secure-storage
+ '(("github.com"
+  [url-cookie "logged_in" "no" "Sat, 12 Jun 2021 22:59:22 GMT" "/" "github.com" t]
+  [url-cookie "_octo" "GH1.1.1068622052.1592002762" "Sat, 12 Jun 2021 22:59:22 GMT" "/" "github.com" t])
+ (".omgchocolatedesserts.com"
+  [url-cookie "__cfduid" "d7f0ed5a5eb526faee77464f6b490c4301599707074" "Sat, 10-Oct-20 03:04:34 GMT" "/" ".omgchocolatedesserts.com" t])
+ (".nytimes.com"
+  [url-cookie "nyt-a" "eCnoaUKKq-yEuIvaGcLne1" "Mon, 14 Jun 2021 06:21:49 GMT" "/" ".nytimes.com" t]
+  [url-cookie "nyt-purr" "cfhhcfhhhc" "Mon, 14 Jun 2021 06:21:49 GMT" "/" ".nytimes.com" t]))
+)
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; End:

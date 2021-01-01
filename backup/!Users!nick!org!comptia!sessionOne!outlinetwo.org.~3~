@@ -1,0 +1,1557 @@
+# Local IspellDict: en
+#+STARTUP: showeverything
+#+SPDX-FileCopyrightText: 2020-2022 Nicholas Taintor
+#+SPDX-License-Identifier: CC-BY-SA-4.0
+
+# Config from emacs-reveal; this file simply points at config.org in same directory
+#+INCLUDE: "config-course.org"
+#+OPTIONS: toc:1
+
+#+TITLE: CompTIA A+ 1002
+
+# setting latex formatting
+#+BIND: org-latex-images-centered nil
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [letterpaper]
+#+LATEX_HEADER: \usepackage{pdflscape}
+#+LATEX_HEADER: \usepackage{setspace}
+#+LATEX_HEADER: \usepackage{placeins}
+# #+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}  # make the margins smaller; disabled now
+
+#+LATEX_HEADER: \usepackage{enumitem}
+#+LATEX_HEADER: \setlist[itemize]{noitemsep}
+#+ATTR_LATEX: :options [noitemsep]
+
+* CompTIA A+ 1002
+
+Just as in the 1001, the 1002 has partcular components that are covered.  Here is the breakdown:
+
+| Domain | Substance                | percent |
+|--------+--------------------------+---------|
+|      1 | Operating Systems        |     27% |
+|      2 | Security                 |     24% |
+|      3 | Software Troubleshooting |     26% |
+|      4 | Operational Procedures   |     23% |
+|--------+--------------------------+---------|
+
+* 1.1 – Compare and contrast common operating system types and their purposes.
+** What is an OS and why do you need one?
+- Interaction between components of machine
+  - Many 1s and 0s are passed between the CPU, RAM, keyboard, video and sound cards
+  - Someone needs to manage this at a higher level so that the user can participate
+- Common platform for applications to work on / together
+- Also provides bridge between humans and computer 
+** Standard OS features
+- File management
+- Application support
+- Input / output support
+  - Printers, keyboards, hard drives, USB
+  - It's sort of like a higher-level BIOS, right?
+** 32-bit vs. 64-bit
+- Pretty much all PCs being produced today are 64-bit
+- But you will see 32-bit machines in the field
+  - You may see 16-bit machines, but probably only museum pieces
+  - First 32-bit CPU in 1985: Intel 386DX
+*** RAM limitations
+- 32-bit CPUs are limited to 4 GB of RAM
+- 64-bit CPUs have a default maximum of 256 TB and could be extended to 4 petabytes (PB)
+  - (though no one would do that, yet)
+  - RAM is limited by the operating system:
+    - Windows 7 64-bit can go to 192 GB
+    - Windows 8.1 Pro 64-bit can handle up to 512 GB
+    - Windows 10 Pro 64-bit can handle up to 2 TB
+*** Software Compatibility
+- Most editions of Windows are still available in 32-bit and 64-bit versions
+  - There are 32-bit and 64-bit versions of most major Linux distributions as well
+  - The most recent macOS (Catalina) is 64-bit only, and will not run 32-bit programs
+  - Whereas 64-bit Windows can still run 32-bit programs
+*** Where Windows keeps it
+#+ATTR_REVEAL: :frag (appear)
+- 64-bit system files and apps are in ~C:\Windows\System32~
+- 32-bit system files and apps are in ~C:\Windows\SysWOW64~
+  - Yes, this makes very little sense
+  - Based in the development of Windows from 32-bit to 64-bit
+*** Slightly confusing code:
+- x86 = 32-bit
+- x64 = 64-bit (and often called AMD64)
+  
+** Workstation operating systems
+- By "workstation," CompTIA means a desktop or laptop that someone sits at and does work
+- So we are not including further discussion of servers for the rest of this course
+*** Microsoft Windows
+#+ATTR_LATEX: :width 0.15\textwidth :placement [h] :float nil
+#+ATTR_HTML: :style float:left; margin:75px ; width: 100px;
+[[/Users/nick/org/comptia/sessionOne/images2/1-1-windows10.png]]
+- By far the most common
+- Different versions: 
+  - You will be expected to know 7, 8, 8.1, and 10
+  - There are others that you will not have to know, such as Windows Server
+- Advantages and disadvantages:
+  - Good - big presence means big support
+    - Lots of different kinds of software
+  - Bad - Large target for security exploitation
+    - So much different hardware, so many versions still running
+*** Apple Macintosh OS
+#+ATTR_LATEX: :width 0.2\textwidth :placement [H]
+#+ATTR_HTML: :style float:left; margin:50px ; width: 100px; 
+[[/Users/nick/org/comptia/sessionOne/images2/1-1-apple-emblem.jpg]]
+- Advantages:
+  - easy to use
+  - always compatible
+  - few security concerns
+  - free with Apple hardware
+
+\FloatBarrier
+#+REVEAL: split
+- Disadvantages:
+  - Requires Apple hardware
+  - Less industry support
+  - Hardware more expensive
+
+#+LATEX: \newpage
+*** Linux
+
+#+ATTR_LATEX: :height 0.2\textwidth :center nil
+#+ATTR_HTML: :style float:left; margin:20px ; width: 100px;
+[[./images2/1-1-Linux-Logo-Photos.jpg]]
+#+ATTR_LATEX: :height 0.2\textwidth :center nil
+#+ATTR_HTML: :style float:left; margin:20px ; width: 100px;
+[[./images2/1-1-linux-red-hat-vector-logo.png]]
+#+ATTR_LATEX: :height 0.2\textwidth :center nil
+#+ATTR_HTML: :style float:left; margin:20px ; width: 100px;
+[[./images2/1-1-debian-512.png]]
+#+ATTR_LATEX: :height 0.2\textwidth :center nil
+#+ATTR_HTML: :style float:left; margin:40px ; width: 100px;
+[[./images2/1-1-Ubuntu-logo.jpg]]
+
+- A free Unix-compatible software system
+  - Unix-like, but not Unix
+    - (macOS is Unix-based)
+- Open source
+- Works on variety of hardware
+  - Backbone of the Internet is on Linux machines
+  - Limited driver support, especially on laptops
+** Cell phone/tablet operating systems
+
+*** Microsoft Windows
+- Windows 10 on mobile devices
+  - Surface
+  - Many others, some with touchpads, some with styluses
+- Windows Mobile
+  - not bad, but no longer developed
+*** Android
+- Open source OS, based on Linux
+- Android apps usually easy to develop and distribute, can be written on any operating system
+*** iOS
+- Apple iPhone and iPad OS
+- Based on Unix
+- Closed source
+*** Chrome OS
+- Google's operating system, based on Linux kernel
+- Its relationship with Android can be confusing
+- Google Chrome browser is essentially its own operating system, and Chrome OS is based on this
+
+** Vendor-specific limitations
+
+*** End-of-life
+- EOL - when a company stops supporting a package
+- Companies set their own EOLs, they vary by software package
+*** Update limitations
+- iOS, Android, and Windows 10 check for updates and prompt to update
+- ChromeOS updates automatically
+- Linux you gotta do it yourself
+** Compatibility concerns between operating systems
+- Applications designed for one OS generally cannot run on a different OS
+- They must be specifically built to run on different OSs
+- Many data files can work between operating systems: images, videos, sound files
+
+* 1.2 – Compare and contrast features of Microsoft Windows versions.
+
+** Windows 7
+- Released 2009
+  - Support ended Jan 14 2020
+- Similar to Windows Vista
+*** Windows 7 versions: Starter
+- Windows 7 Starter
+  - Built for netbooks
+  - No "enterprise" technologies
+    - No Domain connection, BitLocker, etc
+    - no DVD playback, no Windows Media Center
+    - Only 32-bit version
+*** Windows 7: Home Premium
+- Consumer edition
+  - DVD playback, Internet Connection Sharing
+  - Still no enterprise stuff:
+    - No domain connection, BitLocker, etc
+  - x64 version supports 16 GB RAM
+*** Windows 7 Ultimate
+- Complete functionality
+- Domain support, Remote Desktop
+- x64 version supports up to 192 GB RAM
+*** Windows 7 Professional 
+- Same features as Home Premium
+- - missing some enterprise stuff - no BitLocker
+*** Windows 7 breakdown
+#+ATTR_LATEX: :width 1.1\textwidth :placement [h] :float nil
+#+ATTR_HTML: :width 100%
+#+CAPTION: A summary of Windows 7 features
+[[/Users/nick/org/comptia/sessionOne/images2/1-2-windows7.png]]
+
+** Windows 8
+- Released October 2012
+- A new interface that everyone hated:
+  - Booted straight into a tablet-like mode
+  - No start button
+  - People immediately started hacking it to make it look like Windows 7
+** Windows 8.1
+- Free upgrade in response to outcry
+- Put start button back
+- Mainstream support ended Jan 2018
+- Extended support ends Jan 2023
+** Windows 8 versions: 
+- Windows 8 and 8.1 core
+- Microsoft account integration for the first time
+- Windows Defender - an actually OK anti-virus and anti-malware
+- Windows Media Player - also not bad!
+** more Windows 8 versions:
+- Windows 8/8.1 Pro
+  - Professional version
+  - BitLocker and EFS
+  - Can join a Windows Domain
+  - Group policy support - centralized management of Windows devices
+** Another Windows version:
+- Windows 8/8.1 Enterprise
+- Large volume licenses
+
+** Windows 8 processor requirements
+- PAE (Physical Address Extension)
+  - 32-bit processors can use more than 4 GB of RAM
+- NX (NX Processor Bit)
+  - can protect against malicious software
+- SSE2 (Streaming SIMD Extensions 2)
+  - a standard processor instructions set
+  - Helped people write third-party extensions and applications
+** Windows 8 breakdown:
+#+ATTR_LATEX: :width 1.1\textwidth :placement [h] :float nil
+#+ATTR_HTML: :width 100%
+[[/Users/nick/org/comptia/sessionOne/images2/1-2-windows8.png]]
+
+** Windows 10
+- Released 2015
+- Designed to be a single, unitary platform for all devices
+- Now called a "service"
+  - Periodic updates to OS instead of new versions
+
+** Windows 10 versions
+- Windows 10 Home
+- Integration with Microsoft account
+  - OneDrive backup
+- Cortana - MS version of Siri or Google Assistant
+- Windows Defender
+** More Windows 10 versions
+- Windows 10 Pro
+- Business version:
+  - Remote Desktop host
+  - BitLocker
+  - Can join Windows Domain
+** Windows 10 processor requirements
+- Same as Windows 8/8.1
+- PAE, NX, SSE2
+** Windows 10 breakdown
+#+ATTR_LATEX: :width 1.2\textwidth :placement [h] :float nil
+#+ATTR_HTML: :width 99%
+[[/Users/nick/org/comptia/sessionOne/images2/1-2-windows10.png]]
+** Corporate vs. personal needs
+- Many aspects of Windows designed for "the enterprise"
+*** Domain access
+- Using Active Directory Domain Services
+  - People in the know talk about AD as being the best piece  of software Microsoft ever produced
+  - Can keep track of accounts and users across the entire enterprise
+  - Distributed architecture
+*** Domain Access cont'd
+- Many different uses:
+  - Authentication
+  - Centralized management
+  - SSO (single sign-on), the holy grail of domain management
+*** BitLocker
+- BitLocker is Full Disk Encryption (FDE)
+- Every single thing is encrypted
+*** EFS
+- Encrypting File System
+- Encrypt files one-by-one
+*** Media center
+- Video, music, and television portal
+- Was discontinued; not available in Windows 10
+- So people figure out how to put it back in
+*** BranchCache
+- Caching for branch offices
+- Reduces bandwidth use over long distances
+
+** Desktop styles/user interface
+- Flexibility and personalization of desktop limited at work
+- Much more flexible in home editions without the central control
+
+* 1.3 – Summarize general OS installation considerations and upgrade methods.
+
+** Boot methods
+- Operating systems can be installed from different media
+*** USB
+- USB needs to be bootable
+- Computer needs to support booting from USB
+*** CD-ROM
+- You don't see it quite as much any more, but used to be the standard way
+*** DVD
+- See this a little more because it can hold more data
+- But, especially in laptops, see fewer DVD drives
+*** PXE
+- "pixie"
+- Preboot eXecution Environment
+- perform a remote network installation
+*** Solid state/flash drives
+- Another possible media
+*** NetBoot
+- Apple technology for booting  Macs from network
+- Similar to PXE
+*** External/hot-swappable drive
+- External CD-ROM / DVD
+*** Internal hard drive (partition)
+- Can install and boot from separate drive
+- Can mount an .iso
+** Type of installations
+
+*** Unattended installation
+- Can set up answers to Windows questions in a file
+- So that there are no interruptions
+*** In-place upgrade
+- Maintain existing applications and data
+*** Clean install
+- Wipe eveything and reinstall 
+*** Repair installation
+- Fixes problems with the Windows OS
+  - Doesnot touch user files
+*** Multiboot
+- Running two ormore operating systems from the same computer
+*** Remote network installation
+*** Image deployment
+- Easier way to do mass installations
+- Deploy a clone on every computer
+*** Recovery partition
+- A hidden partition with recovery files
+*** Refresh/restore
+- Windows 8/10 feature to clean things up
+- Requires a recovery partition
+
+** Partitioning
+- An ancient concept
+  - Separates physical drive into logical pieces
+  - Can keep data, operating systems distinct
+- Formatted partitions are called volumes
+  - (Microsoft terminology)
+#+ATTR_LATEX: :width 0.75\textwidth :placement [h] :float nil
+#+ATTR_HTML: :width 30%
+#+CAPTION: A diagram of partitioning concepts
+[[/Users/nick/org/comptia/sessionOne/images2/1-3-partitioning.png]]
+*** MBR
+- Master Boot Record
+  - one of the earliest ways of doing this
+  - lots of limitations
+*** Primary
+- in MBR partitions;
+  - a bootable partition
+  - Maximum of four primary partitions per disk
+*** Extended
+- Extends the maximum number of partitions
+*** GPT
+- GUID Partition Table
+  - The newest partition standard
+  - Globally unique identifier
+- Requires UEFI BIOS
+  - Can have up to 128 primary partitions
+  - Does not require extended partitions or any sneaky stuff to extend it
+
+
+** File system types/formatting
+- Before data can be written to the partition, it must be formatted
+- Operating systems expect a particular format
+  - FAT32 and NTFS currently most popular
+    - but ext3 and ext4 coming up behind fast
+*** FAT
+- File Allocation Table
+- Earliest; (1980ish)
+*** FAT32
+- Larger (2 TB file sizes)
+- maximum file size of 4 GB
+*** ExFAT
+- Extended File Allocation Table
+- Microsoft flash drive file system
+- Files can be larger than 4 GB
+*** NTFS
+- NTFS - NT File System
+  - Extensive improvements over FAT32
+  - Quotas, file compression, encryption, symbolic links
+*** CDFS
+- Compact Disk File System
+- All operating systems can read the CD
+*** NFS
+- Network File System
+- Access files across the network as if they were local
+*** ext3, ext4
+- Third extended file system
+- Fourth extended file system
+- Generally on Linux systems
+*** HFS
+- HFS+ - Mac OS Extended
+*** Swap partition
+- CPU temporarily uses part of a hard drive when it runs out of RAM
+  - Frees RAM by moving data to disk
+  - Has to be a very fast magnetic drive or an SSD
+*** Quick format vs. full format
+- Quick:
+  - Creates new file table
+  - Data *appears* to be erased but it is not
+    - Quick format in Windows 7, 8, 10
+      - use ~diskpart~ for full format
+*** Full format
+- Writes zeroes to the entire disk
+- You data is unrecoverable
+** Load alternate third-party drivers when necessary
+- Sometimes your devices will not have drivers built into the OS
+- Then will need to get them from the manufacturer
+** Workgroup vs. Domain setup
+- Workgroups vs domains:
+  - *Domain* a group of computers that share a common user account database.  Users can log in to access shared resources
+  - *Workgroup* a simpler concept, a group of computers that share resources such as printers and files.  But each computer keeps track of its own user accounts, no centralized management.
+- At home: workgroup
+- At work: domain
+** Time/date/region/language settings
+- Basic settings that we sometimes forget!
+** Driver installation, software, and Windows updates
+- Before you can say that you are finished installing an operating system:
+  - Load video drivers, install apps, update OS
+** Factory recovery partition
+- A hidden partition that will allow you to reset your operating system to its original state
+- Could be useful later; but this is not as useful a feature as it used to be
+- The problem is that it erases everything and starts over
+** Properly formatted boot drive with the correct partitions/format
+- Make sure you know the partitions that are there
+- Is there old data on there?
+- Backup the data you need
+  - Always backup before you do anything big!
+** Prerequisites/hardware compatibility
+- Before installation make sure you meet minimum OS requirements
+  - Memory, disk space, etc.
+- Run a hardware compatibility checker
+  - i.e. Windows 10 Upgrade Checker
+** Application compatibility
+- Make sure your apps will still work after the upgrade
+  - Need to check with manufacturer
+  - 32-bit vs 64-bit etc (especially with macOS)
+** OS compatibility/upgrade path
+- Different upgrade paths for different versions of Windows
+#+REVEAL: split
+** Windows 8 upgrade path
+- [[color:green][*Upgrade*]] = can perform in-place upgrade
+- [[color:red][*Install*]] = must do clean install
+#+ATTR_LATEX: :width 1.1\textwidth :placement [H] :float nil
+#+ATTR_HTML: :width 99%
+#+CAPTION: Windows 8 upgrade path
+[[/Users/nick/org/comptia/sessionOne/images2/1-3-windows8UpgradePath.png]]
+
+* 1.4 – Given a scenario, use appropriate Microsoft command line tools.
+** Command line
+- Command line is where it is at
+- Talking more directly to the computer
+- When you get good at it, it can be faster and more rewarding than messing around in the GUI
+- It is also more impressive to employers
+- My prejudiced feeling is:
+  - If you are serious about IT, you need to spend most of your time on the command line
+** The Windows command line
+- Microsoft calls this "the Command shell."
+  - Windows really has two command shells: the Command shell and [[https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7][PowerShell]]
+  - PowerShell resembles Command shell but is more for scripting and automation. 
+    - You will not need to know PowerShell for the A+
+** Command shell - the next generation
+- There is a new version of Command shell, called Windows Terminal.  
+  - It is open source and you can look at it [[https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7][here]]
+  - People like me are happy because it has features of better  command lines and terminals in other operating systems
+** Notes for this section
+- Depending on the OS, the command line is called "the terminal" as well.
+  - Things to be typed in the shell will look like this:
+    - ~C:\>run COOLCOMMAND.EXE~
+- Many commands have "switches" that change their actions:
+  - e.g. ~chkdsk /f~ checks the disk and fixes system errors
+
+#+REVEAL: split
+#+REVEAL_HTML: <img class="stretch" src="/Users/nick/org/comptia/sessionOne/images2/1-4-matrixTerminal.jpg">
+
+#+REVEAL: split
+Look cool using [[https://hackertyper.net/][hackertyper]]
+
+** Privileges in the CLI
+- Different users have different privileges, different commands they may run
+  - In Windows, some commands can only be run by the Administrator
+    - "elevated privileges"
+    - Right-click on Command Prompt, choose /Run as Administrator/
+      - or if you want to be really cool, <windows>+R ~cmd~ <ctrl> <shift> <enter>
+    - In Linux / macOS this is called "root privilege"
+** Help in the Command shell
+- can type ~help [command]~
+  - ~> help chkdsk~
+- can also use ~[command] /?~
+- end shell session with ~exit~
+  
+** Navigation
+- In a GUI, the graphical representation of the operating system, we talk about "folders." 
+  - In the command line, they are "directories"
+*** ~dir~
+ - Lists files and directories
+*** ~cd~
+- Changes directory:
+  - ~cd documents~ will enter the "documents" folder
+  - use ~\~ to specify folder names, volumes 
+*** ~..~
+- Two periods / dots
+- Signifies the directory above the current directory
+  - ~.~ signifies the current directory
+
+** Network Command line tools
+- ~ipconfig~
+  - the starting command for figuring out network problems
+  - tells you your [local] IP address, DNS server, DHCP server, gateway, etc
+  - ~ipconfig /all~ gives you the verbose information
+
+*** Network CLI tools:
+- ~ping~
+  - Tests if an IP address is reachable
+  - Tells you how long the signal takes to get there
+  - Uses ICMP (Internet Control Message Protocol
+    - A very old and fun tool
+*** Network CLI tools:
+- ~tracert~
+  - Traces the path taken by a packet to a destination
+  - Uses ICMP Time To Live Exceeded message in an interesting way:
+    - time in TTL is in hops, not time
+    - TTL=1 is the first router
+    - TTL=2 is the 2nd router
+    - Not all routers respond to ICMP
+*** More tracert
+- Linux and macOS allow you to specify the protocol, if ICMP is blocked or disregarded
+- Though in Linux and Unix it is called ~traceroute~
+- iOS sends UDP over port 33434
+#+ATTR_LATEX: :width 0.90\textwidth :placement [H] :float nil
+#+ATTR_HTML: :width 80%
+#+CAPTION: Traceroute diagram
+[[/Users/nick/org/comptia/sessionOne/images2/1-4-tracerouteDiagram.png]]
+*** Network CLI tools:
+- ~netstat~ shows network statistics for your local machine
+- Seen in multiple OSs
+  - ~netstat -a~ show all active connections
+  - ~netstat -b~ displays the file using the port
+  - ~netstat -n~ does not resolve names
+*** Network CLI tools:
+- ~nslookup~ Looks up information from DNS servers
+  - Canonical names, IP addresses
+*** Network CLI tools:
+- ~net~
+  - Windows network commands
+    - See network resources:
+      - ~net view \\<servername>~
+      - ~net view /workgroup:<workgroupname>~
+    - Map a network share to a drive letter:
+      - ~net use h: \\<servername>\<sharename>~
+    - See user account information:
+      - ~net user <username>~
+
+** ~shutdown~
+- Shuts it down; with switches can change timing, restart it
+  - ~shutdown /s /t nn~ wait nn seconds and shut down
+  - ~shutdown /r /t nn~ shut down and restart after nn seconds
+  - ~shutdown /a~ abort the shutdown
+  - ~shutdown /m \\<computer>~ shuts down another computer
+  - ~shutdown /c "<comment>"~ sends a message about why the computer is shutting down
+    - (don't need to know that last one)
+** ~dism~
+- Deployment Image Servicing and Management tool
+  - manage and deploy Windows OS images
+  - can automate this for deployment
+** ~sfc~
+- Scan integrity of all protected system files
+  - ~sfc /scannow~
+** ~chkdsk~
+- Checks the disk
+- ~chkdsk /f~ fixes logical file system errors on disk
+- ~chkdsk /r~ locates bad sectors, recovers readable information
+  - implies ~/f~
+** ~diskpart~
+- Tool to manage disk configurations and partitions
+  - ~diskpart~ starts the program, ~?~ to see commands
+** ~tasklist~ and ~taskkill~
+- Command line version of Task Manager
+- Terminate tasks by PID (Process ID) or image name (IM)
+  - ~taskkill /im skypeapp.exe~
+  - ~taskkill /pid 7934 /t~ terminates app and its children
+** Managing group policy from the command line
+- managing Active Directory from the Command prompt
+*** ~gpupdate~ force a group policy update
+- ~gpupdate /target:nick /force~ reapplies all policy settings
+*** ~gpresult~ 
+- displays the Resultant Set of Policy (RSoP) information for a target user and computer.
+- ~gpresult /r~ does that
+** ~format~
+- formats the selected disk
+- can choose quick or full, file system, etc with switches
+** ~copy~
+- Copies files from one place to another
+  - ~copy (/a, /v, /y)~
+  - ~/v~ verifies that the copy occurred
+  - ~/y~ [[color:red][dangerous!]] gets rid of the verification if you are about to overwrite an existing file
+** ~xcopy~verify policy settings for a user (or computer)
+- Copies files /and/ directories
+** ~robocopy~
+- Designed as a better xcopy
+  - Not a robot, but a "robust copy"
+
+* 1.5 – Given a scenario, use Microsoft operating system features and tools.
+
+** Administrative
+
+*** Computer Management
+- Microsoft Management Console (mmc.exe)
+- You can tailor it with plug-ins to be your own personal dashboard and toolset
+- Install snap-ins from /File/ menu
+*** Device Manager
+- This is where you manage devices and their drivers
+- Can see and resolve many problems with peripherals here
+- *Computer Management* or ~devmgmt.msc~
+*** Local Users and Groups
+- Default users on a machine are Administrator and User
+- You can add users
+- Also "Guest" account
+  - from a security standpoint, best to disable this
+*** Local Security Policy
+- In companies / large organizations usually managed through Active Directory
+- Stand-alone computers need local policies
+*** Performance Monitor
+- Measurements of computer - speed, memory and CPU use
+- Stores metrics
+- Can be set to sound alarms if things go out of whack
+*** Services
+- Everything, mostly, is a service
+- Every background process
+- Sometimes those things running in the background cause problems
+  - turn things on and off with ~net stop~ and ~net start~
+*** System Configuration
+- ~msconfig~ using Run
+- or from Start menu in Windows 10
+- can set system startups, look at statistics, plan a limited startup for troubleshooting
+*** Task Scheduler
+- Have different applications run and do things at different times
+  - i.e. disk defragmentation, backups, I used to have it print out my time sheet every Thursday so I didn't forget
+- Control Panel / Administrative Tools / Task Scheduler
+- Equivalents in Linux or macOS: ~cron~ or ~launchctl~ (in macOS)
+
+*** Component Services
+- Microsoft COM+
+  - Component Object Model
+  - Distributed applications designed for enterprise environments
+*** Data Sources
+- ODBC - Open Database Connectivity
+- An [[https://en.wikipedia.org/wiki/Application_programming_interface][API]] for managing database connectivity
+- Management of database information independent of operating system or application
+*** Print Management
+- Control Panel / Administrative Tools / Print Management
+- Manage printers, share them
+  - assign drivers
+*** Windows Memory Diagnostics
+- Check for memory issues, a classic cause of the BSOD
+- restarts and checks
+#+ATTR_LATEX: :width 0.95\textwidth :placement [h] :float nil
+#+ATTR_HTML: :width 30%
+#+CAPTION: BSOD Windows 98
+[[/Users/nick/org/comptia/sessionOne/images2/1-5-bsod_windows_98.png]]
+*** Windows Firewall
+- Integrated into the operating system
+- Based on applications
+- Allows information to flow into or out of computer, or prevents it
+- But no detailed control
+*** Advanced Security
+- "Granular" 
+  - Allows specific ingress and egress rules
+*** Event Viewer
+- Central place to view logs
+- Reports from applications, system, security
+*** User Account Management
+- Managing users and their privileges
+- Local user vs domain user in an enterprise setting
+** MSConfig
+- System configuration, ~msconfig.exe~
+- Everything under the hood
+*** General tab
+- Startup process:
+  - /Normal/ - regular old startup
+  - /Diagnositc/ - like Safe Mode
+  - /Selective Startup/ - choose applications to start
+  - Useful for troubleshooting
+*** Boot tab
+- Control the boot location
+- Parts of BIOS available in OS
+*** Services tab
+- Enable and disable Windows services
+- Disable or reset services that might be causing problems
+*** Startup tab
+- Decide which programs start with OS boot
+- Some turn out to be memory / CPU hogs
+*** Tools tab
+- UAC settings (distinction between administrator and regular user
+- Other things - system information, computer management, etc
+- Centralized location for these tools
+
+** Task Manager
+- Lets you see what is happening in the moment
+- /Ctrl-Alt-Del/ or /Ctrl-Shift-Esc/
+*** Applications
+- See the applications running
+  - Distinct from /processes/
+  - Applications are the things you the user interact with
+*** Processes
+- So many of them, running in the background
+- Can view and sort
+*** Performance
+- Observe CPU and RAM activity
+*** Networking
+- Network performance, speed, activity
+*** Users
+- see who is and was logged in
+- More complex in Windows 8 and 10
+  - Can look at processes being run by different users
+** Disk Management
+- observe and manage disk operations
+- individual computers and file servers
+- ~diskmgmt.msc~ or 
+  - Control Panel / System and Security / Administrative Tools / Computer Management
+*** Drive status
+- healthy vs unhealthy
+- initializing
+- failed
+- re-syncing (RAID)
+*** Mounting
+- Can extend storage space
+*** Managing partitions
+- Can expand, split, shrink
+*** Assigning/changing drive letters
+- A (not used much now!) B, C, D, etc
+*** Storage spaces
+- Large scale management of storage
+- Can have a storage pool of drives
+  - This starts to resemble software RAID
+** System utilities
+
+*** ~Regedit~
+- The Windows Registry
+  - Database of just about everything
+  - Settings, variables, used at every level of the operating system
+  - Back it up before you make any changes, you can unknowingly damage things
+*** Command
+- The Command line
+*** Services.msc
+- Control panel / Administrative Tools / Services
+- Observe and control background processes
+*** MMC
+- We discussed this, but it is important!
+*** MSTSC
+- Microsoft Terminal Services Client
+  - Old name for Remote Desktop Connection
+  - Another thing Microsoft has done very well
+*** Notepad
+- your most basic text editor, has been around forever
+- ~notepad.exe~
+*** Explorer
+- Graphical file browser
+- Also can access network shares
+- in macOS, called Finder
+*** Msinfo32
+- Windows System information
+- Components, interactions, software environment
+- can see running tasks, print jobs
+*** DxDiag
+- DirectX diagnostic tool
+- Grpahics and multimedia tool
+*** Disk Defragmenter
+- Not necessary for SSDs
+- Can help with slow access to files, general slowdowns of computer
+  - Can access from GUI - /drive properties/
+  - Or from CLI with elevated privileges
+    - ~defrag <volume>~
+*** System Restore
+- Creates "restore points" often and automatically
+  - Whenever new application installed or major change happens
+  - Can go back to restore point if things get messed up
+    - /Control Panel/ --> /Recovery/
+    - Doesn't always work against viruses though, they can be very sneaky with System Restore
+*** Windows Update
+- Microsoft has taken the power of choice in this away from users in Windows 10
+* 1.6 – Given a scenario, use Microsoft Windows Control Panel utilities.
+
+** Internet Options
+- Used to control and fine-tune many aspects of the systems interaction with the Internet
+*** Connections
+- VPN, proxy settings
+*** Security
+- Can set different levels of access based on location of connection
+  - Home vs Public
+*** General
+- Control display
+*** Privacy
+- Things like cookies, popups
+*** Programs
+- Default browser
+*** Advanced
+- Detailed configuration options
+** Display/Display Settings
+
+*** Resolution
+- Important for LCDs and using second monitors
+  - LCD monitors in particular have "native" resolutions
+*** Color depth
+- Governing colors
+*** Refresh rate
+- Speed of refresh, different monitors have different refresh rates
+** User Accounts
+- This is for local user accounts only
+  - Domain accounts are managed on other computers and servers
+- Account name, type, password, icons
+** Folder Options
+
+*** View hidden files
+- "dotfiles" - system files preceded by "."
+- These and other system files often hidden so users don;t mess around with them
+- But sometimes us intrepid IT people need to see them
+*** Hide extensions
+- Again, more likely for less schooled users who might find extensions confusing
+  - ~.doc~ ~.exe~ and such
+*** General options
+- Size of folders, tabs
+*** View options
+- Lists vs icons, size of icons, data shown
+** System
+- basic and fundamental computer information
+- Version and edition of operating system
+*** Performance (virtual memory)
+- keep tabs on speed and slowdowns
+*** Remote settings
+- Allow or disallow remote access
+
+** Windows Firewall
+- Now integrated into operating system
+- Protection from attacks - scans, malicious software
+- /Control Panel/ --> /Windows Firewall/
+** Power Options
+- Can customize power usage
+*** Hibernate
+- deeper sleep
+  - docs saved, applications paused
+  - common on laptops more than desktops
+*** Power plans
+- Settings for when and how power is used
+- Usually battery vs plugged in
+*** Sleep/suspend
+- Open apps saved in memory
+- Can move to hibernation if not used for longer periods
+*** Standby
+
+** Credential Manager
+- Centralized management of web and Windows credentials
+  - Different sites have different access protocols
+  - Can create Windows certificates
+** Programs and features
+- Installed applications
+  - can uninstall, look at the size and version
+- Can activate and deactivate Windows features such as IIS
+** HomeGroup
+- Only Windows 7 and 8
+- Share music, pictures, between members
+- A network for the home
+- Set password on each machine
+** Devices and Printers
+- On place to put information and configuration of many kinds of devices
+- Does the same stuff as Device Manager, but simpler
+** Sound
+- Output options - speakers, headphones
+- Volume, microphone management
+** Troubleshooting
+ - The OS can target and predict some problems
+- Sometimes (/sometimes/) a useful place to start investigating
+** Network and Sharing Center
+- Overview of all network attachment points
+  - Wired (Ethernet), wireless (WiFi)
+  - Network adapter settings - very important!
+    Look at IPv4 and IPv6 settings
+** Device Manager
+- Manage devices and drivers
+- When things aren't working will often find clues here first
+** BitLocker
+- Whole disk encryption
+- TPM - Trusted Platform Module is usually recommended and needed for real encryption
+** Sync Center
+- Store files so that they are available when you are offline
+- Only available in Pro and higher
+* 1.7 – Summarize application installation and configuration concepts.
+
+** System requirements
+
+*** Drive space
+*** RAM
+
+** OS requirements
+
+*** Compatibility
+
+** Methods of installation and deployment
+
+*** Local (CD/USB)
+*** Network-based
+
+** Local user permissions
+
+*** Folder/file access for installation
+
+** Security considerations
+
+*** Impact to device
+*** Impact to network
+
+* 1.8 – Given a scenario, configure Microsoft Windows networking on a client/desktop.
+
+** HomeGroup vs. Workgroup
+** Domain setup
+** Network shares/administrative shares/mapping drives
+** Printer sharing vs. network printer mapping
+** Establish networking connections
+
+*** VPN
+*** Dial-up
+*** Wireless
+*** Wired
+*** WWAN (Cellular)
+
+** Proxy settings
+** Remote Desktop Connection
+** Remote Assistance
+** Home vs. Work vs. Public network settings
+** Firewall settings
+
+*** Exceptions
+*** Configuration
+*** Enabling/disabling Windows Firewall
+
+** Configuring an alternative IP address in Windows
+
+*** IP addressing
+*** Subnet mask
+*** DNS
+*** Gateway
+
+** Network card properties
+
+*** Half duplex/full duplex/auto
+*** Speed
+*** Wake-on-LAN
+*** QoS
+*** BIOS (on-board NIC)
+
+* 1.9 – Given a scenario, use features and tools of the Mac OS and Linux client/desktop operating systems.
+
+** Best practices
+
+*** Scheduled backups
+*** Scheduled disk maintenance
+*** System updates/App Store
+*** Patch management
+*** Driver/firmware updates
+*** Antivirus/Anti-malware updates
+
+** Tools
+
+*** Backup/Time Machine
+*** Restore/Snapshot
+*** Image recovery
+*** Disk maintenance utilities
+*** Shell/Terminal
+*** Screen sharing
+*** Force Quit
+
+** Features
+
+*** Multiple desktops/Mission Control
+*** Key Chain
+*** Spot Light
+*** iCloud
+*** Gestures
+*** Finder
+*** Remote Disc
+*** Dock
+*** Boot Camp
+
+** Basic Linux commands
+
+*** ls
+*** grep
+*** cd
+*** shutdown
+*** pwd vs. passwd
+*** mv
+*** cp
+*** rm
+*** chmod
+*** chown
+*** iwconfig/ifconfig
+*** ps
+*** su/sudo
+*** apt-get
+*** vi
+*** dd
+*** kill
+
+* 2.1 – Summarize the importance of physical security measures.
+
+** Mantrap
+** Badge reader
+** Smart card
+** Security guard
+** Door lock
+** Biometric locks
+** Hardware tokens
+** Cable locks
+** Server locks
+** USB locks
+** Privacy screen
+** Key fobs
+** Entry control roster
+
+* 2.2 – Explain logical security concepts.
+
+** Active Directory
+
+*** Login script
+*** Domain
+*** Group Policy/Updates
+*** Organizational Units
+*** Home Folder
+*** Folder redirection
+
+** Software tokens
+** MDM policies
+** Port security
+** MAC address filtering
+** Certificates
+** Antivirus/Anti-malware
+** Firewalls
+** User authentication/strong passwords
+** Multifactor authentication
+** Directory permissions
+** VPN
+** DLP
+** Access control lists
+** Smart card
+** Email filtering
+** Trusted/untrusted software sources
+** Principle of least privilege
+
+* 2.3 – Compare and contrast wireless security protocols and authentication methods.
+
+** Protocols and Encryption
+
+*** WEP
+*** WPA
+*** WPA2
+*** TKIP
+*** AES
+
+** Authentication
+
+*** Single-factor
+*** Multifactor
+*** RADIUS
+*** TACACS
+
+* 2.4 – Given a scenario, detect, remove, and prevent malware using appropriate tools and methods.
+
+** Malware
+
+*** Ransomware
+*** Trojan
+*** Keylogger
+*** Rootkit
+*** Virus
+*** Botnet
+*** Worm
+*** Spyware
+
+** Tools and methods
+
+*** Antivirus
+*** Anti-malware
+*** Recovery console
+*** Backup/restore
+*** End user education
+*** Software firewalls
+*** Secure DNS
+
+* 2.5 – Compare and contrast social engineering, threats, and vulnerabilities.
+
+** Social Engineering
+
+*** Phishing
+*** Spear phishing
+*** Impersonation
+*** Shoulder surfing
+*** Tailgating
+*** Dumpster diving
+
+** DDoS
+** DoS
+** Zero-day
+** Man-in-the-middle
+** Brute force
+** Dictionary
+** Rainbow table
+** Spoofing
+** Non-compliant systems
+** Zombie
+
+* 2.6 – Compare and contrast the differences of basic Microsoft Windows OS security settings.
+
+** User and groups
+
+*** Administrator
+*** Power user
+*** Guest
+*** Standard user
+
+** NTFS vs. Share permissions
+
+*** Allow vs. deny
+*** Moving vs. copying folders and files
+*** File attributes
+
+** Shared files and folders
+
+*** Administrative shares vs. local shares
+*** Permission propagation
+*** Inheritance
+
+** System files and folders
+** User authentication
+
+*** Single sign-on
+
+** Run as administrator vs. standard user
+** BitLocker
+** BitLocker to Go
+** EFS
+
+* 2.7 – Given a scenario, implement security best practices to secure a workstation.
+
+** Password best practices
+
+*** Setting strong passwords
+*** Password expiration
+*** Screensaver required password
+*** BIOS/UEFI passwords
+*** Requiring passwords
+
+** Account management
+
+*** Restricting user permissions
+*** Logon time restrictions
+*** Disabling guest account
+*** Failed attempts lockout
+*** Timeout/screen lock
+*** Change default admin user account/password
+*** Basic Active Directory functions
+
+**** Account creation
+**** Account deletion
+**** Password reset/unlock account
+**** Disable account
+
+** Disable autorun
+** Data encryption
+** Patch/update management
+
+* 2.8 – Given a scenario, implement methods for securing mobile devices.
+
+** Screen locks
+
+*** Fingerprint lock
+*** Face lock
+*** Swipe lock
+*** Passcode lock
+
+** Remote wipes
+** Locator applications
+** Remote backup applications
+** Failed login attempts restrictions
+** Antivirus/Anti-malware
+** Patching/OS updates
+** Biometric authentication
+** Full device encryption
+** Multifactor authentication
+** Authenticator applications
+** Trusted sources vs. untrusted sources
+** Firewalls
+** Policies and procedures
+
+*** BYOD vs. corporate-owned
+*** Profile security requirements
+
+* 2.9 – Given a scenario, implement appropriate data destruction and disposal methods.
+
+** Physical destruction
+
+*** Shredder
+*** Drill/hammer
+*** Electromagnetic (Degaussing)
+*** Incineration
+*** Certificate of destruction
+
+** Recycling or repurposing best practices
+
+*** Low-level format vs. standard format
+*** Overwrite
+*** Drive wipe
+
+* 2.10 – Given a scenario, configure security on SOHO wireless and wired networks.
+
+** Wireless-specific
+
+*** Changing default SSID
+*** Setting encryption
+*** Disabling SSID broadcast
+*** Antenna and access point placement
+*** Radio power levels
+*** WPS
+
+** Change default usernames and passwords
+** Enable MAC filtering
+** Assign static IP addresses
+** Firewall settings
+** Port forwarding/mapping
+** Disabling ports
+** Content filtering/parental controls
+** Update firmware
+** Physical security
+
+Domain 3.0 – Software Troubleshooting
+
+* 3.1 – Given a scenario, troubleshoot Microsoft Windows OS problems.
+
+** Common symptoms
+
+*** Slow performance
+*** Limited connectivity
+*** Failure to boot
+*** No OS found
+*** Application crashes
+*** Blue screens
+*** Black screens
+*** Printing issues
+*** Services fail to start
+*** Slow bootup
+*** Slow profile load
+
+** Common solutions
+
+*** Defragment the hard drive
+*** Reboot
+*** Kill tasks
+*** Restart services
+*** Update network settings
+*** Reimage/reload OS
+*** Roll back updates
+*** Roll back devices drivers
+*** Apply updates
+*** Repair application
+*** Update boot order
+*** Disable Windows services/applications
+*** Disable application startup
+*** Safe boot
+*** Rebuild Windows profiles
+
+* 3.2 – Given a scenario, troubleshoot and resolve PC security issues.
+
+** Common symptoms
+
+*** Pop-ups
+*** Browser redirection
+*** Security alerts
+*** Slow performance
+*** Internet connectivity issues
+*** PC/OS lockup
+*** Application crash
+*** OS updates failures
+*** Rogue antivirus
+*** Spam
+*** Renamed system files
+*** Disappearing files
+*** File permission changes
+*** Hijacked email
+
+**** Responses from users regarding email
+**** Automated replies from unknown sent email
+
+*** Access denied
+*** Invalid certificate (trusted root CA)
+*** System/application log errors
+
+* 3.3 – Given a scenario, use best practice procedures for malware removal.
+
+** 1. Identify and research malware symptoms.
+** 2. Quarantine the infected systems.
+** 3. Disable System Restore (in Windows).
+** 4. Remediate the infected systems.
+
+*** a. Update the anti-malware software.
+*** b. Scan and use removal techniques (safe mode, pre-installation environment).
+
+** 5. Schedule scans and run updates.
+** 6. Enable System Restore and create a restore point (in Windows).
+** 7. Educate the end user.
+
+* 3.4 – Given a scenario, troubleshoot mobile OS and application issues.
+
+** Common symptoms
+
+*** Dim display
+*** Intermittent wireless
+*** No wireless connectivity
+*** No Bluetooth connectivity
+*** Cannot broadcast to external monitor
+*** Touchscreen non-responsive
+*** Apps not loading
+*** Slow performance
+*** Unable to decrypt email
+*** Extremely short battery life
+*** Overheating
+*** Frozen system
+*** No sound from speakers
+*** Inaccurate touch screen response
+*** System lockout
+*** App log errors
+
+* 3.5 – Given a scenario, troubleshoot mobile OS and application security issues.
+
+** Common symptoms
+
+*** Signal drop/weak signal
+*** Power drain
+*** Slow data speeds
+*** Unintended WiFi connection
+*** Unintended Bluetooth pairing
+*** Leaked personal files/data
+*** Data transmission over limit
+*** Unauthorized account access
+*** Unauthorized location tracking
+*** Unauthorized camera/microphone activation
+*** High resource utilization
+
+Domain 4.0 – Operational Procedures
+
+* 4.1 – Compare and contrast best practices associated with types of documentation.
+
+** Network topology diagrams
+** Knowledge base/articles
+** Incident documentation
+** Regulatory and compliance policy
+** Acceptable use policy
+** Password policy
+** Inventory management
+
+*** Asset tags
+*** Barcodes
+
+* 4.2 – Given a scenario, implement basic change management best practices.
+
+** Documented business processes
+** Purpose of the change
+** Scope the change
+** Risk analysis
+** Plan for change
+** End-user acceptance
+** Change board
+
+*** Approvals
+
+** Backout plan
+** Document changes
+
+* 4.3 – Given a scenario, implement basic disaster prevention and recovery methods.
+
+** Backup and recovery
+
+*** Image level
+*** File level
+*** Critical applications
+
+** Backup testing
+** UPS
+** Surge protector
+** Cloud storage vs. local storage backups
+** Account recovery options
+
+* 4.4 – Explain common safety procedures.
+
+** Equipment grounding
+** Proper component handling and storage
+
+*** Antistatic bags
+*** ESD straps
+*** ESD mats
+*** Self-grounding
+
+** Toxic waste handling
+
+*** Batteries
+*** Toner
+*** CRT
+*** Cell phones
+*** Tablets
+
+** Personal safety
+
+*** Disconnect power before repairing PC
+*** Remove jewelry
+*** Lifting techniques
+*** Weight limitations
+*** Electrical fire safety
+*** Cable management
+*** Safety goggles
+*** Air filter mask
+
+** Compliance with government regulations
+
+* 4.5 – Explain environmental impacts and appropriate controls.
+
+** MSDS documentation for handling and disposal
+** Temperature, humidity level awareness, and proper ventilation
+** Power surges, brownouts, and blackouts
+
+*** Battery backup
+*** Surge suppressor
+
+** Protection from airborne particles
+
+*** Enclosures
+*** Air filters/mask
+
+** Dust and debris
+
+*** Compressed air
+*** Vacuums
+
+** Compliance to government regulations
+
+* 4.6 – Explain the processes for addressing prohibited content/activity, and privacy, licensing, and policy concepts.
+
+** Incident response
+
+*** First response
+
+**** Identify
+**** Report through proper channels
+**** Data/device preservation
+
+*** Use of documentation/documentationchanges
+*** Chain of custody
+
+**** Tracking of evidence/ documenting process
+
+** Licensing/DRM/EULA
+
+*** Open-source vs. commercial license
+*** Personal license vs. enterprise licenses
+
+** Regulated data
+
+*** PII
+*** PCI
+*** GDPR
+*** PHI
+
+** Follow all policies and security best practices
+
+* 4.7 – Given a scenario, use proper communication techniques and professionalism.
+
+** Use proper language and avoid jargon, acronyms, and slang, when applicable
+** Maintain a positive attitude/ project confidence
+** Actively listen (taking notes) and avoid interrupting the customer
+** Be culturally sensitive
+
+*** Use appropriate professional titles, when applicable
+
+** Be on time (if late, contact the customer)
+** Avoid distractions
+
+*** Enclosures
+*** Air filters/mask
+
+** Dust and debris
+
+*** Personal calls
+*** Texting/social media sites
+*** Talking to coworkers while interacting with customers
+*** Personal interruptions
+
+** Dealing with difficult customers or situations
+
+*** Do not argue with customers and/or be defensive
+*** Avoid dismissing customer problems
+*** Avoid being judgmental
+*** Clarify customer statements (ask open-ended questions to narrow the scope of the problem, restate the issue, or question to verify understanding)
+*** Do not disclose experiences via social media outlets
+
+** Set and meet expectations/timeline and communicate status with the customer
+
+*** Offer different repair/ replacement options, if applicable
+*** Provide proper documentation on the services provided
+*** Follow up with customer/user at a later date to verify satisfaction
+
+** Deal appropriately with customers’ confidential and private materials
+
+*** Located on a computer, desktop, printer, etc.
+
+* 4.8 – Identify the basics of scripting.
+
+** Script file types
+
+*** .bat
+*** .ps1
+*** .vbs
+*** .sh
+*** .py
+*** .js
+
+** Environment variables
+** Comment syntax
+** Basic script constructs
+
+*** Basic loops
+*** Variables
+
+** Basic data types
+
+*** Integers
+*** Strings
+
+* 4.9 – Given a scenario, use remote access technologies.
+
+** RDP
+** Telnet
+** SSH
+** Third-party tools
+
+*** Screen share feature
+*** File share
+
+** Security considerations of each access method
+

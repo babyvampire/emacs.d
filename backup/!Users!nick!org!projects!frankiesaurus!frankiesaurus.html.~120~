@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Frankiesaurus</title>
+<meta name="author" content="Nick Taintor"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/accessibility/helper.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/toc-progress/toc-progress.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/toc-style.css"/>
+
+<link rel="stylesheet" href="./reveal.js/lib/font/source-sans-pro/source-sans-pro.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body prefix="dc: http://purl.org/dc/elements/1.1/ dcterms: http://purl.org/dc/terms/ dcmitype: http://purl.org/dc/dcmitype/ cc: http://creativecommons.org/ns#" typeof="dcmitype:InteractiveResource">
+<div class="reveal">
+<div class="slides">
+
+<section>
+<section id="slide-org357adfa" data-background="./img/page001.jpg" data-background-size="contain" data-audio-src="./audio/page001.mp3">
+<h2 id="org357adfa"></h2>
+
+<div class="figure">
+<p><img src="./img/littleGuy.png" alt="littleGuy.png" style="position: fixed; bottom: 0vh; left: 0%; width: 20vh; border-style: none; background-color: transparent;">
+</p>
+</div>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org1c456f4" data-background="./img/page002.jpg" data-background-size="contain" data-audio-src="./audio/page002.mp3">
+<h2 id="org1c456f4"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org510dac8" data-background="./img/page003.jpg" data-background-size="contain" data-audio-src="./audio/page003.mp3">
+<h2 id="org510dac8"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org780ef13" data-background="./img/page004.jpg" data-background-size="contain" data-audio-src="./audio/page004.mp3">
+<h2 id="org780ef13"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-orgd36aae4" data-background="./img/page005.jpg" data-background-size="contain" data-audio-src="./audio/page005.mp3">
+<h2 id="orgd36aae4"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org665e60f" data-background="./img/page006.jpg" data-background-size="contain" data-audio-src="./audio/page006.mp3">
+<h2 id="org665e60f"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org82d4f40" data-background="./img/page007.jpg" data-background-size="contain" data-audio-src="./audio/page007.mp3">
+<h2 id="org82d4f40"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org8e3b9ba" data-background="./img/page008.jpg" data-background-size="contain" data-audio-src="./audio/page008.mp3">
+<h2 id="org8e3b9ba"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-orgd90520d" data-background="./img/page009.jpg" data-background-size="contain" data-audio-src="./audio/page009.mp3">
+<h2 id="orgd90520d"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org6e621a6" data-background="./img/page010.jpg" data-background-size="contain" data-audio-src="./audio/page010.mp3">
+<h2 id="org6e621a6"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-orga0d4d72" data-background="./img/page011.jpg" data-background-size="contain" data-audio-src="./audio/page011.mp3">
+<h2 id="orga0d4d72"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org6d18765" data-background="./img/page012.jpg" data-background-size="contain" data-audio-src="./audio/page012.mp3">
+<h2 id="org6d18765"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org304a1fe" data-background="./img/page013.jpg" data-background-size="contain" data-audio-src="./audio/page013.mp3">
+<h2 id="org304a1fe"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org862d8ea" data-background="./img/page014.jpg" data-background-size="contain" data-audio-src="./audio/page014.mp3">
+<h2 id="org862d8ea"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org503fa0a" data-background="./img/page015.jpg" data-background-size="contain" data-audio-src="./audio/page015.mp3">
+<h2 id="org503fa0a"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org0a427ab" data-background="./img/page016.jpg" data-background-size="contain" data-audio-src="./audio/page016.mp3">
+<h2 id="org0a427ab"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-orgaf13cde" data-background="./img/page017.jpg" data-background-size="contain" data-audio-src="./audio/page017.mp3">
+<h2 id="orgaf13cde"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org66b7602" data-background="./img/page018.jpg" data-background-size="contain" data-audio-src="./audio/page018.mp3">
+<h2 id="org66b7602"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-orge61a95c" data-background="./img/page019.jpg" data-background-size="contain" data-audio-src="./audio/page019.mp3">
+<h2 id="orge61a95c"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org6c6087b" data-background="./img/page020.jpg" data-background-size="contain" data-audio-src="./audio/page020.mp3">
+<h2 id="org6c6087b"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org6d46ca4" data-background="./img/page021.jpg" data-background-size="contain" data-audio-src="./audio/page021.mp3">
+<h2 id="org6d46ca4"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org1429d7f" data-background="./img/page022.jpg" data-background-size="contain" data-audio-src="./audio/page022.mp3">
+<h2 id="org1429d7f"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org98f41c1" data-background="./img/page023.jpg" data-background-size="contain" data-audio-src="./audio/page023.mp3">
+<h2 id="org98f41c1"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org27e8ecf" data-background="./img/page024.jpg" data-background-size="contain" data-audio-src="./audio/page024.mp3">
+<h2 id="org27e8ecf"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-orgd2348fc" data-background="./img/page025.jpg" data-background-size="contain" data-audio-src="./audio/page025.mp3">
+<h2 id="orgd2348fc"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org1d096db" data-background="./img/page026.jpg" data-background-size="contain" data-audio-src="./audio/page026.mp3">
+<h2 id="org1d096db"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org50d04ec" data-background="./img/page027.jpg" data-background-size="contain" data-audio-src="./audio/page027.mp3">
+<h2 id="org50d04ec"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org889250a" data-background="./img/page028.jpg" data-background-size="contain" data-audio-src="./audio/page028.mp3">
+<h2 id="org889250a"></h2>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org1a1c341" data-background="./img/page029.jpg" data-background-size="contain" data-audio-src="./audio/page029.mp3">
+<h2 id="org1a1c341"></h2>
+<div class="slide-footer"><br></div>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/js/reveal.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: false,
+history: true,
+center: true,
+slideNumber: 'c/t',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: true,
+fragmentInURL: true,
+hashOneBasedIndex: false,
+pdfSeparateFragments: false,
+
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'fade', // see README of reveal.js for options
+transitionSpeed: 'default',
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList && !Reveal.isSpeakerNotes(); } },
+{ src: './reveal.js/plugin/anything/anything.js' },
+{ src: './reveal.js/plugin/chalkboard/chalkboard.js' },
+{ src: './reveal.js/plugin/jump/jump.js', async: true },
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } },
+{ src: './reveal.js/plugin/coursemod/coursemod.js', async: true },
+{ src: './reveal.js/plugin/accessibility/helper.js', async: true, condition: function() { return !!document.body.classList; } },
+]
+
+,disableLayout: true,
+audioStartAtFragment: true, audio: { advance: 0, autoplay: true, defaultDuration: 0, defaultAudios: false, playerOpacity: 0.8, playerStyle: 'position: fixed; bottom: 9.5vh; left: 5%; width: 30%; height:30px; z-index: 33;' },
+anything: [
+        // Following initialization code for class animate from anything-demo.html.
+        // Copyright (c) 2016 Asvin Goel, under The MIT License (MIT). (he's a cutie-pie)
+	{className: "animate",  initialize: (function(container, options){
+		Reveal.addEventListener( 'fragmentshown', function( event ) {
+			if (typeof event.fragment.beginElement === "function" ) {
+				event.fragment.beginElement();
+			}
+		});
+		Reveal.addEventListener( 'fragmenthidden', function( event ) {
+			if (event.fragment.hasAttribute('data-reverse') ) {
+				var reverse = event.fragment.parentElement.querySelector('[id=\"' + event.fragment.getAttribute('data-reverse') + '\"]');
+				if ( reverse && typeof reverse.beginElement === "function" ) {
+					reverse.beginElement();
+				}
+			}
+		});
+		if ( container.getAttribute("data-svg-src") ) {
+			var xhr = new XMLHttpRequest();
+			xhr.onload = function() {
+				if (xhr.readyState === 4) {
+					var svg = container.querySelector('svg');
+					container.removeChild( svg );
+					container.innerHTML = xhr.responseText + container.innerHTML;
+					if ( svg ) {
+						container.querySelector('svg').innerHTML = container.querySelector('svg').innerHTML + svg.innerHTML;
+					}
+				}
+				else {
+					console.warn( "Failed to get file. ReadyState: " + xhr.readyState + ", Status: " + xhr.status);
+				}
+			};
+			xhr.open( 'GET', container.getAttribute("data-svg-src"), true );
+			xhr.send();
+		}
+	}) },
+	{className: "randomPic",
+	 defaults: {imgalt: "Dummy alt text",
+		    imgcaption: "Image by {name}",
+		    choices: [ {name: "dummyname", path: "dummypath"} ]},
+	 initialize: (function(container, options){
+	     var choice = Math.trunc( Math.random()*(options.choices.length) );
+	     var img = "<img src='" + options.choices[choice].path + "' alt='" + options.choices[choice].imgalt + "' />";
+	     var caption = options.imgcaption.replace(new RegExp('\{name\}', 'gm'), options.choices[choice].name);
+	     container.innerHTML = img + caption;
+	 }) },
+	{className: "notes",
+	 initialize: (function(container, options){
+	     container.addEventListener('click', function(e) { RevealNotes.open(); });
+	 }) }
+],
+keyboard: {
+    67: function() { RevealChalkboard.toggleNotesCanvas() }, 66: function() { RevealChalkboard.toggleChalkboard() }, 46: function() { RevealChalkboard.clear() }, 8: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }, },
+coursemod: { enabled: true, shown: false },
+});
+</script>
+</body>
+</html>

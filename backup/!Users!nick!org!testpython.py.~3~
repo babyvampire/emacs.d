@@ -1,0 +1,6 @@
+x = 6
+
+If x > 5:
+    print("hello world")
+else:
+    print("too bad!")

@@ -1,0 +1,4746 @@
+% Created 2020-08-16 Sun 17:00
+% Intended LaTeX compiler: pdflatex
+\documentclass[letterpaper]{article}
+\usepackage[hyphens]{url}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[backend=biber,style=alphabetic]{biblatex}
+\addbibresource{references.bib}
+\newenvironment{notes}{\par\footnotesize}{\par}
+\newenvironment{NOTES}{\par\footnotesize}{\par}
+\newenvironment{leftcol}{\begin{minipage}{.49\textwidth}}{\end{minipage}}
+\newenvironment{rightcol}{\begin{minipage}{.49\textwidth}}{\end{minipage}}
+\newenvironment{leftcol30}{\begin{minipage}{.29\textwidth}}{\end{minipage}}
+\newenvironment{leftcol40}{\begin{minipage}{.39\textwidth}}{\end{minipage}}
+\newenvironment{leftcol60}{\begin{minipage}{.59\textwidth}}{\end{minipage}}
+\newenvironment{leftcol70}{\begin{minipage}{.69\textwidth}}{\end{minipage}}
+\newenvironment{rightcol30}{\begin{minipage}{.29\textwidth}}{\end{minipage}}
+\newenvironment{rightcol40}{\begin{minipage}{.39\textwidth}}{\end{minipage}}
+\newenvironment{rightcol60}{\begin{minipage}{.59\textwidth}}{\end{minipage}}
+\newenvironment{rightcol70}{\begin{minipage}{.69\textwidth}}{\end{minipage}}
+\usepackage{newunicodechar}
+\newunicodechar{≈}{$\approx$}
+\newunicodechar{⋮}{\vdots}
+\newunicodechar{ }{~}
+\usepackage{xcolor}
+\definecolor{darkred}{rgb}{0.3, 0.0, 0.0}
+\definecolor{darkgreen}{rgb}{0.0, 0.3, 0.1}
+\definecolor{darkblue}{rgb}{0.0, 0.1, 0.3}
+\definecolor{darkorange}{rgb}{1.0, 0.55, 0.0}
+\definecolor{sienna}{rgb}{0.53, 0.18, 0.09}
+\hypersetup{colorlinks,linkcolor=darkblue,citecolor=darkblue,urlcolor=darkgreen}
+\usepackage{newverbs}
+\newverbcommand{\rverb}{\color{darkred}}{}
+\newverbcommand{\gverb}{\color{darkgreen}}{}
+\newverbcommand{\bverb}{\color{darkblue}}{}
+\usepackage{float}
+\usepackage{pdflscape}
+\usepackage{setspace}
+\usepackage{placeins}
+\usepackage{geometry}
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep}
+\author{Nick Taintor}
+\date{\today}
+\title{CompTIA A+ 1001}
+\hypersetup{
+ pdfauthor={Nick Taintor},
+ pdftitle={CompTIA A+ 1001},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.3.7)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+
+\section*{Introduction to CompTIA A+}
+\label{sec:orgf10d2c2}
+\subsection*{This the A+}
+\label{sec:orgfdd4919}
+
+\begin{itemize}
+\item The Computing Technology Industry Association (CompTIA) is a non-profit trade association which issues professional certifications for the information technology industry.  The A+ is one of the first of these certifications, and is intended to encompass the practical and useful information that anyone working in the IT industry should know.
+\end{itemize}
+
+\subsection*{Parts of the A+}
+\label{sec:org4e5f4c3}
+
+\begin{itemize}
+\item The A+ is in two parts: 1001 and 1002.  Each test is 90 minutes long and they can be taken the same day or on different days - most people take them separately so that they can prepare for each test on its own terms.  Here is the approximate breakdown of material covered on the A+ 1001:
+\end{itemize}
+
+\subsection*{a table of the parts}
+\label{sec:orgaa1fc3d}
+
+\begin{center}
+\begin{tabular}{ll}
+Domain & Percentage of examination\\
+\hline
+1.0 Mobile Devices & 14\%\\
+2.0 Networking & 20\%\\
+3.0 Hardware & 27\%\\
+4.0 Virtualization and Cloud Computing & 12\%\\
+5.0 Hardware and Network Troubleshooting & 27\%\\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{Types of questions}
+\label{sec:org34a3578}
+
+Both exams will consist of a mixture of traditional multiple choice questions and a differently-formatted type of exercises called Performance Based Questions (PBQs).  We will prepare you for both types of questions.  The following notes are organized based on the exact areas in which CompTIA expects you to have knowledge.
+
+\section*{1.1 – Given a scenario, install and configure laptop hardware and components.}
+\label{sec:org7bd3acf}
+
+\subsection*{Hardware/device replacement}
+\label{sec:orgc1b29b4}
+\begin{itemize}
+\item In general, the features that make laptops so useful and desirable - small size, light weight, ability to operate free of wired environments - can combine to make these devices more difficult, overall, to repair.
+
+\item To occupy the least volume in the case of the laptop, components are often specially designed, interlocked tightly with each other, and in some cases, covered with glue or epoxy.
+\end{itemize}
+
+\subsection*{That said,}
+\label{sec:org82d7f06}
+\begin{itemize}
+\item individual components of laptops can be repaired under the right circumstances
+\item Many laptops have a modular design that eases the removal and replacement of different parts.  This is particularly true of random access memory (RAM) and hard drives.
+
+\item But a number of laptops will not be able to have anything upgraded or repaired by the user.
+\end{itemize}
+
+\subsection*{Precautions when repairing a laptop}
+\label{sec:org3ce6214}
+\begin{itemize}
+\item It is important to remember, before repairing \textbf{any} electronic device, that the device is powered off and its power cable removed.
+\item In most situations it will be important to use anti-static precautions such as an anti-static band or mat (pictured).  This will wick away some of your own electric charge and prevent that charge from damaging components of the device.
+\end{itemize}
+\subsection*{Antistatic pad}
+\label{sec:org3e3642c}
+
+\begin{center}
+\includegraphics[width=0.85\textwidth]{./images/1-1AntiStaticPad.jpeg}
+\end{center}
+
+\subsection*{Laptop Keyboards}
+\label{sec:org97796aa}
+\begin{itemize}
+\item Often the number of keys is sacrificed for space and weight
+\item More function keys and combination keys than seen on desktop keyboards
+\item Smaller than most desktop keyboards
+\end{itemize}
+
+\subsubsection*{Function / special keys}
+\label{sec:org01e435d}
+
+\begin{center}
+\includegraphics[width=0.85\textwidth]{./images/1-1keyboardFunctionKeys.jpg}
+\captionof{figure}{Keyboard function keys, activated by pressing the Fn key}
+\end{center}
+
+\begin{itemize}
+\item Important keys are concealed in the function keys on the average laptop computer
+\end{itemize}
+\subsubsection*{Function / special keys, cont}
+\label{sec:org9389c0a}
+\begin{itemize}
+\item these include: 
+\begin{itemize}
+\item volume settings
+\item toggling between the internal monitor or an external one
+\item turning on or off the wireless signal
+\item controlling the brightness of the screen.
+\end{itemize}
+\item These buttons are usually activated by pressing the \textbf{Fn} key in combination with them.
+\end{itemize}
+\begin{itemize}
+\item Some users do not understand the nature of the function keys and may activate them without realizing.
+\begin{itemize}
+\item An important thing to check, for example, if a computer's wireless connection does not seem to be working, is whether it might have been inadvertantly turned off by the user.
+\end{itemize}
+\end{itemize}
+\subsubsection*{Keyboard backlight}
+\label{sec:orgada0a58}
+\begin{itemize}
+\item Many keyboards are backlit with small LEDs to enable their use in the dark or in dim light
+\begin{itemize}
+\item This feature is usually controlled by a function key or in the device preferences through the operating system.
+\end{itemize}
+\end{itemize}
+
+\subsubsection*{Troubleshooting laptop keyboards}
+\label{sec:org8374b41}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth]{./images/1-1KeyboardOutline.jpeg}
+\caption{laptop keyboard}
+\end{figure}
+
+\begin{itemize}
+\item Laptop keyboards can be replaced, but:
+\begin{itemize}
+\item They are often tightly integrated in the frame of a laptop
+\item So this is often difficult or expensive.
+\item A non- or poorly functioning keyboard can be due to:
+\begin{itemize}
+\item dust or dirt accumulating under the keys
+\item a broken or twisted data cable under the keyboard.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\subsection*{Hard drives}
+\label{sec:org1be8eac}
+\subsubsection*{SSD vs. hybrid vs. magnetic disk}
+\label{sec:org9e2f179}
+
+\begin{itemize}
+\item We will discuss this further in Storage Devices, but briefly:
+\begin{itemize}
+\item Magnetic disks (HDD = Hard Disk Drive):
+\begin{itemize}
+\item Spinning platters with stylus - slow, consumes power, generally larger and heavier
+\item Due to their mechanical and more delicate nature can be damaged or disabled by sudden movement
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{./images/1-1-LaptopHDD.jpeg}
+\captionof{figure}{a mechanical, magnetic hard drive in all its glory}
+\end{center}
+
+\begin{itemize}
+\item Solid State Drives (SSDs)
+\begin{itemize}
+\item no moving parts - all flash memory
+\item silent, faster than HDD, lighter, more durable, uses less power - all ideal features for laptops
+\item more expensive than HDDs, but their price is gradually decreasing
+\item 1.8 inch and 2.5 inch form factors
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item Hybrid drive (SSHD)
+\begin{itemize}
+\item Two components: traditional, magnetic hard drive and an SSD.
+\item In hybrid drives, the SSD component serves as a cache for the magnetic component, allowing for faster drives.  These will be cheaper than 100\% SSDs but have some of the disadvantages of mechanical drives: weight, power use, vulnerable to kinetic energy
+\end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/1-1-HDD-SSD.jpeg}
+\captionof{figure}{An HDD (left) and an SSD (right)}
+\end{center}
+
+\subsubsection*{M.2 drives}
+\label{sec:orgfde2035}
+\begin{itemize}
+\item Smaller form factor slot for SSDs
+\item Can have up to 4 GB/s throughput
+\begin{itemize}
+\item Highest speeds only with Non-Volatile Memory Express (NVMe)
+\item Not all computers have NVMe built in, so older machines will not be able to use the full potential of M.2 drives
+\end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-4-M2drive.png}
+\captionof{figure}{M.2 drive}
+\end{center}
+
+\subsubsection*{1.8in vs. 2.5in}
+\label{sec:orgeb9f014}
+\begin{itemize}
+\item \textbf{HDDs} in laptops typically 2.5in
+\item \textbf{SSDs} can be 1.8 or 2.5 in
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/1-1-18+25Drives.png}
+\captionof{figure}{Side-by-side comparison of 1.8in and 2.5in SSDs and HDD}
+\end{center}
+
+\subsubsection*{Hard drive fragmenting / defragmenting}
+\label{sec:org0c2a35d}
+\begin{itemize}
+\item We will discuss this more when we discuss memory devices in excruciating detail later on.  
+\begin{itemize}
+\item Briefly:
+\begin{itemize}
+\item On an HDD, files are stored in \textbf{clusters}
+\begin{itemize}
+\item When saving, data is saved to the next vacant cluster, even if not adjacent
+\item Over time, files become spread out and take longer to retrieve
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item This problem can be solved through a process called ``defragmentation''
+\begin{itemize}
+\item The hard drive reorganizes itself so that related information is geographically related as well.
+\item Defragmentation can take time and can produce further wear on the drive but at the end of the process the drive will be a bit snappier.
+\end{itemize}
+\item This is \textbf{not} needed in SSDs - since every piece of the information on an SSD takes the same amount of time to be retrieved, defragmenting these drives will make no difference.
+\end{itemize}
+
+\subsubsection*{Defragmentation image}
+\label{sec:org2a81b2a}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/1-1-defragmenting.png}
+\end{center}
+
+\subsubsection*{Here's a mechanical hard drive:}
+\label{sec:org1ff0990}
+\subsection*{Memory}
+\label{sec:org8f91b96}
+\begin{itemize}
+\item Laptops use smaller memory modules than desktop machines:
+\end{itemize}
+\begin{itemize}
+\item Small Outline Dual In-line Memory Module (SODIMM):
+\end{itemize}
+\begin{center}
+\begin{tabular}{ll}
+Memory Type & Module Format\\
+\hline
+DDR & 200-pin\\
+DDR2 & 200-pin\\
+DDR3 & 204-pin\\
+DDR4 & 260-pin\\
+\hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item Micro-DIMM: Micro-Dual In-line Memory Module
+\begin{itemize}
+\item We will be discussing the particulars of memory at much greater length later on, don't worry!
+\end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{./images/1-1-SODIMM.jpeg}
+\captionof{figure}{Here's some SODIMMs!}
+\end{center}
+
+\subsection*{Installing SODIMM}
+\label{sec:orgfdbaf77}
+\begin{itemize}
+\item Carefully, following manual!
+\begin{itemize}
+\item Memory module goes in at 45 degree angle
+\item Align notch
+\item press down gently until it snaps in
+\item Two clips lock into notches on side
+\item Put everything back.  Make sure no extra screws.
+\begin{itemize}
+\item Sometimes, no matter how hard you try it does not seat correctly
+\item OS will not see the memory you installed
+\item Try re-seating
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+
+
+
+\subsection*{Portable device storage media}
+\label{sec:org0046007}
+\begin{itemize}
+\item Different sizes and capacities of storage media for portable devices
+\item SD (Secure Digital) card:
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{./images/1-1SDcardspng.png}
+\captionof{figure}{Different sizes of storage cards for portable devices}
+\end{center}
+
+\subsection*{Optical drive}
+\label{sec:orgcaff865}
+
+\begin{itemize}
+\item Although this is listed as a CompTIA objective for the laptop section, CD and DVD drives found only in older laptops
+\begin{itemize}
+\item We will discuss this type of media later in the class.
+\end{itemize}
+\end{itemize}
+
+\subsection*{Wireless cards and Bluetooth modules}
+\label{sec:org5388edd}
+\begin{itemize}
+\item Laptops can have a number of wireless communications interfaces:
+\begin{itemize}
+\item from 2.4 GHz and 5 GHz WiFi
+\item Near field communications (NFC)
+\item Bluetooth
+\item (we will discuss these a great deal more, presently.)
+\item These connections are usually controlled by the operating system
+\begin{itemize}
+\item Can be changed in the system preferences
+\item Some laptops will have function buttons on the keyboard to turn wireless signals on or off.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\subsection*{Cellular card}
+\label{sec:orgcdbdfd6}
+\begin{itemize}
+\item Increasingly, laptops have the option to enable a separate cellular data communication.  
+\begin{itemize}
+\item This is of a type different from more conventional WiFi, but still using radio signals of different frequencies.
+\item This service is handled on the backend by the user's cellular provider.
+\end{itemize}
+\end{itemize}
+\subsection*{Video card}
+\label{sec:org2368348}
+\begin{itemize}
+\item In most cases, the video card (or, the portion of the hardware that handles the translation and display of video signals) is built into the CPU.
+\begin{itemize}
+\item This is, again, due to the space that this saves.
+\item However, this also means that laptops will \textbf{usually} have a less robust ability to display mathematically complex graphics and may struggle with some intensive graphical and video applications.
+\end{itemize}
+\item Video cards on laptops are usually not upgradable.
+\end{itemize}
+
+\subsection*{DC jack}
+\label{sec:org66d894a}
+\begin{itemize}
+\item Laptop computers need to convert alternating current (AC) from household electrical sockets to direct current (DC) for the use of most of its internal components.
+\begin{itemize}
+\item In most latpops, this conversion happens inside the ``power brick'' that we have to lug around.
+\begin{itemize}
+\item The power conversion unit (``brick'') is designed for particular voltages, or may have a switch on it to convert between 110 volts and 220 volts (the most common global voltage values).
+\item Some power adapters can switch between voltage schemes automatically, but others cannot.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\subsection*{DC jack, cont'd}
+\label{sec:org60796f3}
+\begin{itemize}
+\item The plug that connects an external power supply to the computer is known as the ``DC jack.''
+\begin{itemize}
+\item In many cases the plug size and type is unique to a particular computer, and this must be checked carefully if a user is getting a new or repaired power supply.
+\item The attached picture shows a ``universal'' power brick and the wide variety of different attachments it needs to be able to attach to different laptops.
+\item There is a slow movement to standardize DC jacks; for example, all new Apple Macintosh laptops now use USB-C type connections rather than the older, more unique power cords.
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{./images/1-1-DCjacks2.jpeg}
+\captionof{figure}{A universal laptop power supply}
+\end{center}
+
+\subsection*{Troubleshooting power problems}
+\label{sec:org856f05c}
+\begin{itemize}
+\item Check the power LED
+\item Check connections
+\begin{itemize}
+\item loose / damaged DC jack?
+\end{itemize}
+\item Correct power adapter
+\item Check battery
+\item Check if on \textbf{standby}, \textbf{suspend}, \textbf{hibernate}
+\item Check power outlet!
+\end{itemize}
+\subsubsection*{High level power troubleshooting}
+\label{sec:org8b0b24f}
+\begin{itemize}
+\item Discharge the motherboard
+\begin{itemize}
+\item Charge can stay in motherboard, usually in a capacitor somewhere
+\item Disconnect power, remove battery
+\item Hold power button down for 30s
+\item Usually, removes residual voltage from motherboard
+\end{itemize}
+\end{itemize}
+\subsection*{Battery}
+\label{sec:orgc1f1b1a}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{./images/1-1ManyBatteries.jpeg}
+\captionof{figure}{Some batteries}
+\end{center}
+
+\begin{itemize}
+\item Most laptop batteries are lithium ion (Li-ion)
+\item With time and repeated charges, the battery's ability to hold and maintain charge will diminish.
+\end{itemize}
+
+\subsection*{Touchpad}
+\label{sec:orgcc13fc5}
+\begin{itemize}
+\item \textbf{Touchpads}  Most laptops now have touchpads for navigating with a graphical user environment, taking the place of an external mouse
+\item Touchpads can be enabled and disabled through system preferences, at times through a keyboard function key, and are prone to their own set of dysfunctions
+\begin{itemize}
+\item Touchpads can become dirty, unplugged from the central components, or inadvertantly touched and activated by users.
+\end{itemize}
+\end{itemize}
+
+\subsection*{Plastics/frames – Speaker}
+\label{sec:org88d2123}
+\begin{itemize}
+\item Sound from laptops are generated by internal speakers.  
+\begin{itemize}
+\item A number of things can go wrong with these, including:
+\begin{itemize}
+\item being physically disconnected from the control units of the computer
+\item being inadvertantly turned off by the user.
+\item Speakers are also more vulnerable to damage by liquid and dust.
+\end{itemize}
+\end{itemize}
+\item Laptop frames are generally made out of plastic to reduce weight and decrease cost.
+\begin{itemize}
+\item Some laptops include both plastic and metal components in their frame to increase durability.
+\end{itemize}
+\end{itemize}
+
+\subsection*{System board}
+\label{sec:orge16be0b}
+\begin{itemize}
+\item ``System board'' is a term that designates the matrix that connects all the most important components of a computer.  
+\begin{itemize}
+\item Modules such as the CPU, RAM, and power management are usually found on the system board.
+\begin{itemize}
+\item Unlike desktop computers, in which there are a number of standard system board types and sizes, most system boards are custom designed for each model of laptop to meet contraints of power and weight.
+\begin{itemize}
+\item As such, they are much more difficult to repair than their desktop cousins.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsection*{CPU}
+\label{sec:org384f557}
+\begin{itemize}
+\item CPUs for laptops are designed with power consumption in mind.
+\begin{itemize}
+\item CPUs for mobile devices are usually smaller, lighter, use less power, and generate less heat than their desktop counterparts.
+\item This also means that different features are integrated into the CPU that might be separated in a desktop computer.  
+\begin{itemize}
+\item For example, memory and video controllers might be integrated into a CPU designed for a laptop, whereas in a desktop they might be different system cards.
+\end{itemize}
+
+\item Mobile CPUs are not generally replaceable or upgradeable.
+\begin{itemize}
+\item When a component of a system board fails, the quickest and cheapest response is usually to switch out the entire board.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\section*{1.2 – Given a scenario, install components within the display of a laptop.}
+\label{sec:orgf876b69}
+
+\subsection*{Types}
+\label{sec:org786b41e}
+\subsubsection*{Types of displays: \textbf{LCD}}
+\label{sec:org052eb1a}
+\begin{itemize}
+\item Liquid Crystal Display
+\begin{itemize}
+\item In these displays, light shines through a sheet of liquid crystal which changes shape with varying electrical current.
+\begin{itemize}
+\item The liquid crystal itself provides no illumination and must be backlit.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{./images/1-2-LCDpanel.jpg}
+\captionof{figure}{inside an LCD}
+\end{center}
+
+\begin{itemize}
+\item In backlit LCDs, the lighting is generally provided by a cold cathode fluorescent lamp (CCFL) which is powered by an inverter whose task is to convert DC power from the laptop back into AC power (\textbf{picture}).  Both the inverter and / or the CCFL can fail and require replacement.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{./images/1-2-InverterCCFL.jpeg}
+\captionof{figure}{an inverter and a CCFL}
+\end{center}
+
+\begin{itemize}
+\item An important step to test \textbf{any} potentially failing screen is to see if the computer can be connected to an external monitor.
+\begin{itemize}
+\item In addition, if only the backlight or inverter has failed on an LCD screen, you should still be able to see images on the screen with the aid of a flashlight.
+\end{itemize}
+\end{itemize}
+
+\subsubsection*{OLED}
+\label{sec:org7dace79}
+\begin{itemize}
+\item Organic Light Emitting Diode
+\begin{itemize}
+\item No backlight required, organic diodes emit light in response to electrical current.
+\begin{itemize}
+\item The organic compounds can be ``printed'' on almost any subtrate.
+\item These screens are usually thinnner and lighter than LCDs, but use more power.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=1\textwidth]{./images/1-2-LCD-OLED.jpeg}
+\captionof{figure}{LCD and OLED panels}
+\end{center}
+\subsection*{WiFi antenna connector/placement}
+\label{sec:org04e4558}
+\begin{itemize}
+\item Laptops can have a number of different antennae, including WiFi, Bluetooth, and cellular.
+\begin{itemize}
+\item WiFi cards have some different form and size factors, and most usually their antennae wrap around the display of the device.
+\end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{./images/1-1-M2WiFiCard.jpg}
+\captionof{figure}{An M.2 WiFi card}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{./images/1-1-PCIeWiFi.jpeg}
+\captionof{figure}{A PCIe WiFi card}
+\end{center}
+
+\subsection*{Webcam}
+\label{sec:org272a4db}
+\begin{itemize}
+\item Webcams are usually located in the frame of the display.
+\item Care must be taken to not damage them when the display is being repaired.
+\begin{itemize}
+\item Cameras are generally controlled by the operating system.
+\end{itemize}
+\end{itemize}
+\subsection*{Microphone}
+\label{sec:orge47b220}
+\begin{itemize}
+\item Microphones can be located anywhere on the frame of the laptop 
+\begin{itemize}
+\item Will not always be prominant or obvious
+\end{itemize}
+\end{itemize}
+\subsection*{Digitizer/touchscreen}
+\label{sec:orgbb9b54e}
+
+\begin{itemize}
+\item Some laptops or tablets will have \textbf{digitizers} as part of their displays, allowing them to be used as touchscreens.
+\item Anything which can damage the display can damage the touchscreen.
+\end{itemize}
+
+\subsection*{Quiz!}
+\label{sec:org74d2d34}
+\section*{1.3 – Given a scenario, use appropriate laptop features.}
+\label{sec:orgce0fee9}
+
+\subsection*{Docking station}
+\label{sec:org26159c5}
+\begin{itemize}
+\item A docking station allows the user to connect their laptop to an external keyboard, display, mouse, and external video cards
+\end{itemize}
+\subsection*{Port replicator}
+\label{sec:org3f9ebe8}
+\begin{itemize}
+\item A port replicator is similar to a docking station, but does not have external expansion cards.
+\begin{itemize}
+\item A port replicator will allow the laptop to connect to a number of other peripheral devices.
+\end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{./images/1-3-PortReplicator.jpg}
+\captionof{figure}{Look at all those ports!}
+\end{center}
+
+\subsection*{Physical laptop lock and cable lock}
+\label{sec:org314e6b5}
+\begin{itemize}
+\item One of the advantages of a laptop is also one of its weaknesses.
+\begin{itemize}
+\item They are light and mobile, which means that they are easier to steal
+\begin{itemize}
+\item Cable locks are a way of making your laptop more secure.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{./images/1-3-cableLock2.jpeg}
+\captionof{figure}{A cable lock}
+\end{center}
+\subsection*{Rotating/removable screens}
+\label{sec:orga4a0c33}
+\begin{itemize}
+\item Some laptops have displays that can be rotated or detatched, making them more like tablets.
+\begin{itemize}
+\item These devices are more likely to have a digital stylus for input.
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{./images/1-3-Asus-flip.png}
+\captionof{figure}{ASUS C302 Flip}
+\end{center}
+
+\section*{1.4 – Compare and contrast characteristics of various types of other mobile devices.}
+\label{sec:org5aebfa7}
+
+\subsection*{Tablets}
+\label{sec:org3dedb5a}
+\begin{itemize}
+\item Tablets, in many ways, are sort of like giant smartphones
+\begin{itemize}
+\item accomplish the same ends and share similar technologies
+\item Their operating systems can be:
+\begin{itemize}
+\item Android (an open operating system developed by Google)
+\item or iOS (a proprietary operating system developed by Apple).
+\item Generally measure between 6 and 11 inches diagonally.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\subsection*{Smartphones}
+\label{sec:org08b0c20}
+\begin{itemize}
+\item Devices focussed on mobile communication
+\begin{itemize}
+\item in addition to voice commuication usually have access to email, productivity software, music or video.
+\end{itemize}
+\end{itemize}
+
+\subsection*{Wearable technology devices}
+\label{sec:orga261d12}
+\subsubsection*{Smart watches}
+\label{sec:org9ffd578}
+\begin{itemize}
+\item Like smart phones, only smaller and on your wrist!
+\begin{itemize}
+\item Wireless ability can include WiFi, cellular, or Bluetooth / local connections to your phone.
+\end{itemize}
+\end{itemize}
+\subsubsection*{Fitness monitors}
+\label{sec:org7c0f154}
+\begin{itemize}
+\item Bands that can fit around your wrist or elsewhere
+\begin{itemize}
+\item Monitor things such as heartrate and respiration
+\item Then send that data wirelessly to your phone or another computer
+\end{itemize}
+\end{itemize}
+\subsubsection*{VR/AR headsets}
+\label{sec:orgf11e23c}
+\begin{itemize}
+\item Still more promise than reality
+\begin{itemize}
+\item Designed to replace reality with a computer-generated version
+\begin{itemize}
+\item Could be used for games or industrial design.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsection*{E-readers}
+\label{sec:orga3b4f24}
+\begin{itemize}
+\item Digital devices allowing the reading of books
+\item Share many characteristics with tablets and smartphones.
+\end{itemize}
+\subsection*{GPS}
+\label{sec:orgdc8bfc2}
+\begin{itemize}
+\item Now more often incorporated in phones
+\begin{itemize}
+\item GPS stands for ``Global Positioning System) and uses satellites to fix your location
+\item Requires power and a view of the sky.
+\end{itemize}
+\end{itemize}
+
+\section*{1.5 – Given a scenario, connect and configure accessories and ports of other mobile devices.}
+\label{sec:org2c89890}
+
+\subsection*{Connection Types}
+\label{sec:orge5b34c9}
+\subsubsection*{Wired connections}
+\label{sec:org58aff9e}
+\paragraph*{Micro-USB / Mini-USB / USB-C}
+\label{sec:org47430ab}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{./images/1-5-MobileDeviceConnectors.jpg}
+\captionof{figure}{Different mobile ports and connectors}
+\end{center}
+\begin{itemize}
+\item The timescale of adoption has gone like this: 
+\begin{itemize}
+\item \emph{even older connectors} --> Mini USB-B --> Micro USB-B --> USB-C
+\end{itemize}
+\end{itemize}
+
+\paragraph*{USB connectors}
+\label{sec:org0149fde}
+\begin{itemize}
+\item \textbf{USB-B}: Mini USB-B found only in older devices today.
+\begin{itemize}
+\item The EU standardized Micro USB-B for most mobile devices
+\end{itemize}
+\item \textbf{USB-C}: Newer USB format
+\begin{itemize}
+\item 24-pin double-sided USB connector
+\item Symmetrical
+\item Can be used for both hosts and devices
+\item Both USB 3.1 and USB 2.0
+\item Can carry power, data, analog (audio)
+\end{itemize}
+\end{itemize}
+
+\paragraph*{Lightning}
+\label{sec:orgd9da216}
+\begin{itemize}
+\item Proprietary Apple format
+\begin{itemize}
+\item 8-pin digital signals
+\item Used on iPad, iPhone, iPod
+\item Generally more durable than micro USB-B
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.4\textwidth]{./images/1-5-LightningConnector.png}
+\captionof{figure}{Lightning connector}
+\end{center}
+
+\paragraph*{Tethering}
+\label{sec:org5352b6d}
+\begin{itemize}
+\item Allows another device (laptop, desktop, other smartphones) to use your mobile device's internet connection
+\item Tethering can be wired (using USB / Lightning connectors
+\item or wireless, using Bluetooth
+\item Sometimes needs to be specifically enabled by a wireless carrier (Verizon!)
+\end{itemize}
+
+\paragraph*{Proprietary vendor-specific ports (communication/power)}
+\label{sec:org5c9592d}
+\begin{itemize}
+\item Older connectors had diverse shapes and capabilities
+\begin{itemize}
+\item Different connectors for power, data.
+\end{itemize}
+\item A maddening situation that was partly sorted out by the EU
+\end{itemize}
+
+\subsubsection*{Wireless}
+\label{sec:orgff59f73}
+\paragraph*{NFC}
+\label{sec:org145ee4e}
+\begin{itemize}
+\item \textbf{Near Field Communication}
+\item Short range wireless communication using 13.56 MHz frequency
+\item Transmits 100-400 kb/s - not much! Slower than Bluetooth
+\item Used for transmitting data between devices (contact info, MP3s, photos)
+\begin{itemize}
+\item Can communicate with POS terminals for contactless payment - acts like a smart card
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.4\textwidth]{./images/1-5-NFCpayment.png}
+\end{center}
+\begin{itemize}
+\item Also used with NFC tags
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{./images/1-5-NFCtag.png}
+\captionof{figure}{NFC tags and phone}
+\end{center}
+\subsection*{Bluetooth}
+\label{sec:org271f3b5}
+\subsubsection*{Enable Bluetooth}
+\label{sec:org726386f}
+\begin{itemize}
+\item Short-range, usually 10 meters or so.  Part of a PAN (personal area network)
+\end{itemize}
+\subsubsection*{Enable pairing}
+\label{sec:orgb98fcea}
+Discussed above
+\subsubsection*{Find a device for pairing}
+\label{sec:orgb3512b8}
+Discussed above
+\subsubsection*{Enter the appropriate PIN code}
+\label{sec:org17b3014}
+Also above!
+\subsubsection*{Test connectivity}
+\label{sec:org40774ee}
+\begin{itemize}
+\item Worth testing after pairing is enabled
+\end{itemize}
+\subsection*{Corporate and ISP email configuration}
+\label{sec:org0ebc898}
+\subsubsection*{Mail protocols}
+\label{sec:orgd00fcef}
+
+\begin{center}
+\begin{tabular}{lrll}
+E-Mail Protocl & Original port number & Secure port number & Stands for\\
+\hline
+ &  &  & \\
+SMTP & 25 & 465 or 587 & Secure Mail Transfer Protocol\\
+ &  &  & [``Send Mail To Person'')\\
+POP3 & 110 & 995 & Post Office Protocol\\
+IMAP & 143 & 993 & Internet Mail Access Protocol\\
+\hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item Sending mail - SMTP
+\item Retrieving mail - POP3, IMAP
+\end{itemize}
+\subsubsection*{Post Office Protocol 3 (POP3)}
+\label{sec:orgf689e52}
+\begin{itemize}
+\item downloads email to local client
+\begin{itemize}
+\item optionally deletes from server
+\end{itemize}
+\item configuration: 
+\begin{itemize}
+\item name of POP3 server
+\item Username and password
+\end{itemize}
+\item network ports: 
+\begin{itemize}
+\item POP3: tcp/110
+\item SSL (Secure Socket Layer): POP3S: tcp/995
+\end{itemize}
+\end{itemize}
+\subsubsection*{Internet Message Access Protocol (IMAP4)}
+\label{sec:orgfe83ac7}
+\begin{itemize}
+\item Accesses mail on a central server
+\begin{itemize}
+\item mail stays on server, can be accessed by different email clients simultaneously
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item IMAP4 can have folders
+\begin{itemize}
+\item configuration: 
+\begin{itemize}
+\item name of IMAP server
+\item username and password
+\end{itemize}
+\end{itemize}
+\item network ports:
+\begin{itemize}
+\item IMAP: tcp/143
+\item SSL: IMAPS: tcp/993
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.2\textwidth]{./images/1-6-imap4.png}
+\captionof{figure}{a meaningless image\ldots{} or is it?}
+\end{center}
+
+\subsubsection*{Sending email - SMTP}
+\label{sec:org5b12688}
+\begin{itemize}
+\item Sending mail from device to mail server
+\item some kind of authentication required
+\item network ports:
+\begin{itemize}
+\item SMTP without autherntication (now rarely used): tcp/25
+\item with authentication: tcp/587
+\end{itemize}
+\end{itemize}
+\subsection*{Integrated commercial provider email configuration}
+\label{sec:org148343d}
+\subsubsection*{iCloud}
+\label{sec:org0c8ffc1}
+Apple email, IMAP4 only
+\subsubsection*{Google/Inbox}
+\label{sec:orgc62523d}
+\begin{itemize}
+\item Google email, can use IMAP4 or POP3
+\item Can split emails into folders or tabs
+\item Inbox was cool but has been retired
+\end{itemize}
+\subsubsection*{Exchange Online}
+\label{sec:orgf2109e4}
+\begin{itemize}
+\item Commercially available service version of corporate Exchange
+\end{itemize}
+\subsubsection*{Yahoo}
+\label{sec:org2cd2c8c}
+\begin{itemize}
+\item IMAP4 and POP3 support
+\item This still exists, as does AOL, oddly
+\end{itemize}
+\subsection*{PRL updates / PRI updates / baseband updates}
+\label{sec:org99501c0}
+\begin{itemize}
+\item A smartphone is a radio.  Cellular networks are very different from WiFi or Bluetooth
+\item Communications happen through a \textbf{baseband radio processor}
+\item \textbf{PRL} - Preferred Roaming List
+\begin{itemize}
+\item in CDMA (Code Division Multiple Access).  Allows phone to connect to the right tower.
+\item Updated OTA (Over The Air)
+\end{itemize}
+\item \textbf{PRI} - Product Release Instructions
+\begin{itemize}
+\item Radio settings such as ID numbers, network codes, country codes
+\item Updated OTA
+\end{itemize}
+\end{itemize}
+\subsection*{Radio firmware}
+\label{sec:orgd2eb74b}
+\begin{itemize}
+\item the radio processor has proprietary firmware, which must be updated occasionally
+\begin{itemize}
+\item Most updates done OTA (Over The Air) mostly invisible to user
+\end{itemize}
+\end{itemize}
+\subsection*{IMEI vs. IMSI}
+\label{sec:org193d3b4}
+\begin{itemize}
+\item \textbf{IMEI} - International Mobile Station Equipment Identity
+\begin{itemize}
+\item Identifies an individual mobile device
+\item Every phone has a different IMEI
+\end{itemize}
+\item \textbf{IMSI} - International Mobile Subscriber Identity
+\begin{itemize}
+\item Identifies the subscriber (you!)
+\item Provisioned by the SIM card
+\end{itemize}
+\end{itemize}
+\subsection*{VPN}
+\label{sec:org243dcfc}
+\begin{itemize}
+\item \textbf{VPN} Virtual Private Network
+\begin{itemize}
+\item We will discuss this concept further, later
+\item But for now, this can turn your device into a VPN endpoint
+\item VPNs allow for secure, encrypted communication between your device and a VPN server
+\item When using VPN, your device appears to be on the network of the VPN server
+\item This is often used when out of the office or home to access things that only authorized users of that network can access.
+\item Can be part of the phone / device OS
+\end{itemize}
+\end{itemize}
+
+\section*{1.7 – Given a scenario, use methods to perform mobile device synchronization.}
+\label{sec:orgcf67953}
+
+\subsection*{Synchronization methods}
+\label{sec:org6f6b6cb}
+\begin{itemize}
+\item What is synchronization and why do it?
+\begin{itemize}
+\item Being able to keep information current over all devices you use
+\item Now is often performed wirelessly (over mobile network or 802.11 wireless)
+\item There are dangers too!
+\end{itemize}
+\end{itemize}
+\subsubsection*{Synchronize to the cloud}
+\label{sec:org70e5132}
+\begin{itemize}
+\item Many things in your data world are probably already synchronized without you noticing
+\item That is how prevalent this system and concept is
+\item With Android - many services synchronized through Google
+\item Apple iOS - through iCloud
+\end{itemize}
+\subsubsection*{Synchronize to the desktop}
+\label{sec:orged4263c}
+\begin{itemize}
+\item Depends on OS and sufficient disk space
+\end{itemize}
+\subsubsection*{Synchronize to the automobile}
+\label{sec:org7b23c0e}
+\begin{itemize}
+\item via Bluetooth to media player / car computer
+\item Android Auto, iOS CarPlay
+\end{itemize}
+\subsection*{Types of data to synchronize}
+\label{sec:org9f9147d}
+
+\begin{itemize}
+\item Contacts
+\item Applications
+\item Email
+\item Pictures
+\item Music
+\item Videos
+\item Calendar
+\end{itemize}
+\begin{itemize}
+\item Bookmarks
+\item Documents
+\item Location data
+\item Social media data
+\item E-books
+\item Passwords
+\end{itemize}
+
+\subsection*{Mutual authentication for multiple services (SSO)}
+\label{sec:org5b9286e}
+\begin{itemize}
+\item Single Sign-On (SSO):
+\begin{itemize}
+\item an important (and cool) concept that will discuss again
+\end{itemize}
+\item Simply, using a single identification to access multiple different services
+\item Without having to sign in each time
+\item Google and Apple use these widely for their services
+\end{itemize}
+\subsection*{Connection types to enable synchronization}
+\label{sec:orgef89edb}
+\begin{itemize}
+\item Although synchronization is now usually handled wirelessly, there was a time when it wasn't, and for some things you still need wires.  Here are some.
+\end{itemize}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/1-7-synchronizationPlugs.jpg}
+\captionof{figure}{Connection types for wired synchronization}
+\end{center}
+\section*{2.1 – Compare and contrast TCP and UDP ports, protocols, and their purposes.}
+\label{sec:org9e122c5}
+
+\subsection*{Brief Introduction to IP}
+\label{sec:orgeca358e}
+\begin{itemize}
+\item How do 1s and 0s move from one place to another over a network?
+\item Brief reflection on the absurdity of sending all those poor 1s and 0s by themselves
+\item We decided to put them in little boxes or \textbf{packets} that help them along their way
+\end{itemize}
+\subsection*{Sketch of some packets}
+\label{sec:orge9579df}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/2-1-IPpacketSketch.png}
+\captionof{figure}{Here are some packets}
+\end{center}
+
+\subsection*{TCP vs. UDP}
+\label{sec:org15e7e42}
+\subsubsection*{\textbf{TCP} - Transmission Control Protocol}
+\label{sec:orge3258cd}
+\begin{itemize}
+\item ``Connection-oriented'' - every packet is checked for delivery
+\item \emph{3-way handshake}:
+\begin{enumerate}
+\item SYN: client computer initiates connection with a synchronization request (SYN packet)
+\item SYN + ACK: Server responds with a synchronization / acknowledgment packet
+\item ACK: Client sends acknowledgment packet
+\end{enumerate}
+\item Then the connection is established - a \emph{TCP socket connection}
+\item Every single packet is accounted for in TCP - flow control, etc
+\end{itemize}
+\subsubsection*{\textbf{UDP} - User Datagram Protocol}
+\label{sec:org7d25afd}
+\begin{itemize}
+\item ``Connectionless sessions'' - if a packet is missed or dropped, no big deal
+\item This can be faster - none of that back and forth
+\item But no error-connection
+\item Good for things that are streaming, like voice or media where a few dropped packets won't change much
+\end{itemize}
+\subsubsection*{A diagram of TCP \& UDP}
+\label{sec:org9b46820}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.9\linewidth]{./images/2-1-udp-tcpDiagram.jpg}
+\caption{A diagram of IP protocols}
+\end{figure}
+
+
+\newpage
+\begin{landscape}
+\subsection*{Ports and Protocols}
+\label{sec:org120510c}
+
+\begin{table}[htbp]
+\caption{Protocols and Ports you are expected to know for the A+}
+\centering
+\begin{tabular}{|l|l|l|l|}
+Protocol & Port & Name & Description\\
+\hline
+FTP & tcp/20, tcp21 & File Transfer Protocol & Sends and receives files between systems\\
+SSH & tcp/22 & Secure Shell & Encrypted console access\\
+Telnet & tcp/23 & Telecommunication Network & Insecure console access\\
+SMTP & tcp/25 & Simple Mail Transfer Protocol & Transfer email between mail servers\\
+DNS & udp/53, tcp/53 & Domain Name System & Convert domain names to IP addresses\\
+HTTP & tcp/80 & Hypertext Transfer Protocol & Web server communication\\
+HTTPS & tcp/443 & Hypertext Transfer Protocol Secure & Web server communication with encryption\\
+POP3 & tcp/110 & Post Office Protocol version 3 & Receive email into a email client\\
+IMAP4 & tcp/143 & Internet Message Access Protocol v4 & A newer email client protocol\\
+\end{tabular}
+\end{table}
+
+\subsubsection*{Ports and protocols p2}
+\label{sec:orgff2d99e}
+
+\begin{center}
+\begin{tabular}{llll}
+Protocol & Port & Name & Description\\
+\hline
+RDP & tcp/3389 & Remote Desktop Protocol & Graphical display of remote devices\\
+NetBIOS & udp/137 & NetBIOS name service & Register, remove, and find Windows services by name\\
+NetBIOS & udp/138 & NetBIOS datagram service & Windows connecConless data transfer\\
+NetBIOS & tcp/139 & NetBIOS session service & Windows connecCon-oriented data transfer\\
+SMB & tcp/445 & Server Message Block & Windows file transfers and printer sharing\\
+AFP & tcp/548 & Apple Filing Protocol & Mac OS file transfers\\
+SLP & tcp/427, udp/427 & Service Location Protocol & Find Mac OS services by name\\
+DHCP & udp/67, udp/68 & Dynamic Host Configuration Protocol & Automate the IP address configuration process\\
+LDAP & tcp/389 & Lightweight Directory Access Protocol & Directory services\\
+SNMP & udp/161 & Simple Network Management Protocol & Gather metrics and manage network devices\\
+\end{tabular}
+\end{center}
+\end{landscape}
+
+\section*{2.2 – Compare and contrast common networking hardware devices.}
+\label{sec:orgfc9d56c}
+\subsection*{Network Interface Card}
+\label{sec:orgcec9f68}
+\begin{itemize}
+\item Found in \emph{every} device that attaches to the network
+\item Every NIC has a MAC address (Media Access Control)
+\item Specific to which type of connection - ethernet, wireless, etc
+\end{itemize}
+\subsection*{Repeater}
+\label{sec:org7600fa6}
+\begin{itemize}
+\item Receives a signal and re-sends it
+\item No decisions or rules to follow
+\item Used to:
+\begin{itemize}
+\item Boost connections
+\item Convert from one network media to another (i.e. fiber --> copper)
+\item Extend wireless LAN
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{/Users/nick/org/comptia/sessionOne/images/2-2-Repeater.png}
+\captionof{figure}{Repeater}
+\end{center}
+
+\subsection*{Hub}
+\label{sec:org7d4775f}
+\begin{itemize}
+\item ``Multi-port repeater''
+\begin{itemize}
+\item Sends message to all devices
+\item Before routers, this is how data was distributed in network
+\item Everything half-duplex
+\item Less efficient as network speeds increase
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{/Users/nick/org/comptia/sessionOne/images/2-2-NetworkHubDiagram.png}
+\captionof{figure}{Network Hub}
+\end{center}
+
+\subsection*{Bridge}
+\label{sec:org0237aa2}
+\begin{itemize}
+\item Makes packet forwarding decisions in software
+\begin{itemize}
+\item Connects different physical networks
+\item Distributes traffic based on MAC address
+\item Wireless Access Points act as bridges
+\end{itemize}
+\end{itemize}
+\subsection*{Switches}
+\label{sec:orgcf5296e}
+\begin{itemize}
+\item Bridging done in hardware - faster
+\begin{itemize}
+\item Forwards traffic based on data link address
+\item Lots of ports, features, especially when managed
+\item Vital for large internal networks
+\item This is where VLANs are configured
+\end{itemize}
+\end{itemize}
+\subsubsection*{Managed Switches}
+\label{sec:orgc9fc270}
+\begin{itemize}
+\item VLAN support
+\item Can organize traffic priorities (i.e. voice over data)
+\end{itemize}
+\subsubsection*{Unmanaged Switches}
+\label{sec:orgf03b179}
+\begin{itemize}
+\item No configuration, no VPNs
+\item Cheap!
+\end{itemize}
+\subsection*{Routers}
+\label{sec:org5207943}
+\begin{itemize}
+\item Routes traffic between subnets
+\item Makes forwarding decision based on IP address
+\item Can connect diverse network types
+\begin{itemize}
+\item Can incorporate LAN, WAN, copper, fiber
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{/Users/nick/org/comptia/sessionOne/images/2-2-Router.png}
+\captionof{figure}{IP address assignments through and to a router}
+\end{center}
+
+\subsection*{Access points}
+\label{sec:orgac5e211}
+\begin{itemize}
+\item A Wireless Access Point (WAP) functions as a network bridge
+\item Makes forwarding decisions based on MAC address
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/Users/nick/org/comptia/sessionOne/images/2-2-WirelessAccessPoint.png}
+\captionof{figure}{Network with WAP}
+\end{center}
+
+\subsection*{Firewall}
+\label{sec:org85c8788}
+\begin{itemize}
+\item Filters traffic by port number
+\begin{itemize}
+\item OSI Layer 4 (TCP / UDP)
+\end{itemize}
+\item Vitally important for any network
+\item Provides protection against intrusion, by bots or individuals
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{/Users/nick/org/comptia/sessionOne/images/2-2-HomeNetworkFirewall.png}
+\captionof{figure}{Home network with firewall}
+\end{center}
+\subsection*{Cable modem}
+\label{sec:org46a8402}
+\begin{itemize}
+\item Broadband modem
+\item Different types of traffic can be accommodated by modem
+\begin{itemize}
+\item i.e. data, voice
+\end{itemize}
+\item Data on a cable network:
+\begin{itemize}
+\item DOCSIS (Data Over Cable Service Interface Specification
+\end{itemize}
+\item High speed - 4 Mbits/sec to 250 Mbits/sec
+\end{itemize}
+\subsection*{DSL modem}
+\label{sec:orgd4b808c}
+\begin{itemize}
+\item \textbf{DSL}- Digital Subscriber Line
+\begin{itemize}
+\item ADSL - asymmetric, meaning that download is faster than upload
+\end{itemize}
+\item Data over regular copper telephone line
+\item Needs to be \textasciitilde{}10,000 feet from CO
+\item Speeds, errors decrease with distance from CO
+\item Highest speeds around 52 Mbits/sec, usually much much lower
+\end{itemize}
+\subsubsection*{DSL diagram}
+\label{sec:orgcf6c79e}
+.\begin{center}
+\includegraphics[width=0.75\textwidth]{./images/2-2-DSLdiagram.png}
+\captionof{figure}{Home network with firewall}
+\end{center}
+\subsection*{Patch panel}
+\label{sec:org9cbcf13}
+\begin{itemize}
+\item Network of internal connections made from WAN
+\begin{itemize}
+\item RJ45 connections, individual runs made to wall or floor sockets
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.95\textwidth]{/Users/nick/org/comptia/sessionOne/images/2-2-PatchPanel.png}
+\captionof{figure}{Network patch panel diagram}
+\end{center}
+
+\subsection*{Power over Ethernet (PoE)}
+\label{sec:org5eaf3bc}
+\begin{itemize}
+\item Power can be routed along Ethernet cables, very useful especially for distant or hard-to-reach areas
+\begin{itemize}
+\item Power ``injected'' into Ethernet cables
+\end{itemize}
+\end{itemize}
+
+\subsubsection*{Injectors}
+\label{sec:org1534ea4}
+\begin{itemize}
+\item Injectors placed alongside cable initiation
+\end{itemize}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/2-2-POEinjector.jpg}
+\captionof{figure}{POE injector}
+\end{center}
+
+\subsubsection*{POE Switch}
+\label{sec:org43541d8}
+\begin{itemize}
+\item POE can be injected into network cables by special switches
+\end{itemize}
+\subsection*{Ethernet over Power}
+\label{sec:orgd7660fe}
+\begin{itemize}
+\item Power-line communication (PLC)
+\item Data flows along household electrical wires
+\item All kinds of problems with electrical junctions, often slow and subject to interference
+\end{itemize}
+\subsection*{Addendum: OSI Model}
+\label{sec:org86cdfe9}
+\begin{itemize}
+\item The OSI model is not specifically part of the A+ 1001 objectives, but!
+\begin{itemize}
+\item It is a model that you will see throughout your time in IT.
+\item My experience is that having even a vague understanding of this model will help you sort out the nature and purpose of some of the network devices we have just talked about.
+\end{itemize}
+
+\item So mostly this is just here for you to look at so that you will recognize the terms later.
+\end{itemize}
+
+[[./images/2-2-OSIlayers.jpeg]\}
+\begin{itemize}
+\item Two favorite mnemonic devices for the OSI model:
+\begin{itemize}
+\item (bottom-up) Please Do Not Throw Sausage Pizza Away
+\item (top-down) All People Seem To Need Data Processing
+\end{itemize}
+\end{itemize}
+
+\section*{2.3 – Given a scenario, install and configure a basic wired/wireless SOHO network.}
+\label{sec:org6f7cb2c}
+\begin{itemize}
+\item SOHO - Small Office / Home Office
+\item A cool online resource: practice on a virtual Linksys router:
+\begin{itemize}
+\item \url{http://ui.linksys.com/WRT54G/v8/8.00.0/StaRouter.htm}
+\end{itemize}
+\end{itemize}
+
+\subsection*{Router/switch functionality}
+\label{sec:org9848a2b}
+\begin{itemize}
+\item Standard SOHO router is an all-in-one device:
+\begin{itemize}
+\item Modem, router, switch, Wireless Access Point, firewall, etc
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{./images/2-3-LinksysRouter.jpg}
+\captionof{figure}{A Linksys WRT 1900 AC - router, wireless and wired connections}
+\end{center}
+\begin{itemize}
+\item Connecting the WAN
+\item Wired connection to local devices
+\item Unless you want specialized stuff (VLANs, etc) switching and routing happens under the hood
+\end{itemize}
+\subsection*{Wireless Access Point (WAP) settings}
+\label{sec:org5a69fa9}
+\begin{itemize}
+\item Enable and set different frequencies - 2.4GHz / 5 GHz
+\item These days most routers will have both
+\item Configure SSID - this is the \emph{name} of the WAP that is broadcast
+\begin{itemize}
+\item Eternal question of different SSIDs for frequencies
+\item Most routers and devices can auto-switch frequencies to some degree
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item Security mode
+\begin{itemize}
+\item WPA2 preferable - WEP vulnerable, WPA (WiFi Protected Access) vlunerable as well
+\end{itemize}
+\item In order of decreasing security:
+\begin{enumerate}
+\item WPA2 + AES (Advanced Encryption Security)
+\item WPA + AES
+\item WPA + TKIP/AES
+\item WPA + TKIP
+\item WEP
+\item Open network (no security)
+\end{enumerate}
+\end{itemize}
+
+\subsection*{Channel selection on a WAP}
+\label{sec:orgf8ca884}
+\begin{itemize}
+\item Selecting channels: other nearby WAPs can crowd channels
+\item Some WAPs / routers can scan local wireless channels; apps for phones and computers can do this as well
+\end{itemize}
+
+\subsection*{IP addressing}
+\label{sec:orgeae9d8e}
+\begin{itemize}
+\item On WAN side: IP address usually assigned by ISP via DHCP
+\item LAN side:
+\begin{itemize}
+\item Internal IP address, subnet mask of router
+\item DHCP address range for other devices on network
+\item DNS server address can be set manually, but are often the ISP's by default
+\end{itemize}
+\end{itemize}
+
+\subsection*{Network Interface Card (NIC) configuration}
+\label{sec:orgdbd25f5}
+\subsubsection*{Wired}
+\label{sec:org1183536}
+\begin{itemize}
+\item Wired ports on router usually pre-configured
+\item auto speed and duplex by default
+\end{itemize}
+\subsubsection*{Wireless}
+\label{sec:orge72220b}
+\begin{itemize}
+\item Mostly just enable / disable
+\end{itemize}
+
+\subsection*{End-user device configuration}
+\label{sec:org8a33b34}
+\begin{itemize}
+\item Usually done automatically, will set up speed, duplex, and DHCP without intervention from user
+\item But there are many things you can change:
+\begin{itemize}
+\item subnet mask
+\item Default gateway
+\item DNS servers
+\end{itemize}
+\end{itemize}
+\subsection*{IoT device configuration}
+\label{sec:orge705ea7}
+\begin{itemize}
+\item Oh, the Internet of Things
+\begin{itemize}
+\item Very hip and buzzy term, but encompasses a wide range of interesting devices
+\item Usually involving home automation and the communication between various appliances / devices and things on the LAN or WAN
+\item Many security issues, but can be fun and handy
+\end{itemize}
+\end{itemize}
+\subsubsection*{IOT: Thermostat}
+\label{sec:orgf6c3867}
+\begin{itemize}
+\item Thermostat can be set remotely, can be set to change depending on temperature, can be set to start heating / air conditioning when you leave work
+\end{itemize}
+\subsubsection*{IOT: Light switches}
+\label{sec:org05a7268}
+\begin{itemize}
+\item Same - remote turning on / off, can be set to change colors / brighness on time of day and your activities
+\end{itemize}
+\subsubsection*{IOT: Security cameras}
+\label{sec:orgeb98833}
+\begin{itemize}
+\item i.e. Nest, Ring (controversial issue with police seeking data)
+\begin{itemize}
+\item other security cameras can be set up and monitored remotely
+\end{itemize}
+\end{itemize}
+\subsubsection*{IOT: Door locks}
+\label{sec:org3a60a84}
+\begin{itemize}
+\item Can be set to open to particular people, only at particular times, etc.
+\begin{itemize}
+\item Can also be managed remotely, in conjunction with a security camera perhaps
+\end{itemize}
+\end{itemize}
+
+\subsection*{Cable/DSL modem configuration}
+\label{sec:orgd1002c5}
+\begin{itemize}
+\item ``Modem'' - /Mo/dulator /dem/odulator
+\begin{itemize}
+\item Converts analog signals to digital signals
+\item Both will have particular settings, usually managed by your ISP
+\item Fiber does not use a ``modem'' but uses a similar device called an ONT (Optical Network Terminal) which divides up and apportions the signal (voice, data, telephone, televison)
+\end{itemize}
+\end{itemize}
+
+\subsection*{Firewall settings}
+\label{sec:org3d663b3}
+\subsubsection*{DMZ - Demilitarized Zone}
+\label{sec:org969e59e}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{./images/2-3-DMZ.jpg}
+\captionof{figure}{DMZ, WAN, and LAN}
+\end{center}
+\begin{itemize}
+\item If you are running a service that requires access to and from the WAN (mail server, media server, Minecraft server, etc) place in the DMZ to protect your LAN
+\item But generally don't do this from home, and often more secure to use port forwarding
+\end{itemize}
+
+\subsubsection*{NAT}
+\label{sec:org74e9d02}
+\begin{itemize}
+\item \textbf{NAT} - Network Address translation
+\item Router translates all internal LAN IP addresses (i.e. 192.168.x.x or 10.x.x.x) to the external IP address of the router
+\item This is required due to limitations of IPv4
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{./images/2-3-IPv4vsIPv6.png}
+\captionof{figure}{IPv4 vs IPv6}
+\end{center}
+
+\subsubsection*{Port forwarding}
+\label{sec:orgda74975}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{./images/2-3-PortForwardingDiagram.jpeg}
+\captionof{figure}{Port forwarding}
+\end{center}
+\textbf{PORT FORWARDING}
+
+\begin{itemize}
+\item Access to a machine in the LAN from \emph{outside} the LAN
+\begin{itemize}
+\item External IP and port number mapped by router to an internal machine
+\item Can be called Static NAT or Destination NAT
+\end{itemize}
+\end{itemize}
+
+\subsubsection*{UPnP}
+\label{sec:orgc15d915}
+\begin{itemize}
+\item \textbf{UPnP} Universal Plug and Play
+\begin{itemize}
+\item Allowed network devices to automatically find and join LAN
+\item As you can imagine, this seemed like a good idea but turned out to be a huge security risk
+\item You should almost always disable UPnP
+\end{itemize}
+\end{itemize}
+\subsubsection*{Whitelist/blacklist}
+\label{sec:orgb1e41ae}
+\begin{itemize}
+\item You can set up your firewall to only allow in approved connections (whitelisting). This is hard to maintain, especially if others are using your internet
+\begin{itemize}
+\item Or deny access from things you don't like (blacklisting)
+\begin{itemize}
+\item Can block specific domains, IP addresses, sites, even geographic regions
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{MAC filtering}
+\label{sec:org2ad3a3a}
+\begin{itemize}
+\item Remember how the MAC (Media Access Control) address is like the individual name of the device (Layer 2 of OSI model)?
+\begin{itemize}
+\item So you can restrict access to your internet to only specific MAC addresses, allowing only known, pre-approved devices to have access to your network
+\item This seems like it would be a good security idea, right?
+\item Except it isn't.  MAC addresses can be spoofed and rewritten on the device's NIC, and all an intruder would need to do would be to discover one of the approved MAC addresses and spoof it.
+\item ``Security through obscurity'' - not the last time you will hear this
+\end{itemize}
+\end{itemize}
+\subsection*{QoS}
+\label{sec:org51b7775}
+\begin{itemize}
+\item \textbf{QOS} - Quality of Service.
+\begin{itemize}
+\item Can rank priority of different services or protocols on your network regarding access to bandwidth.
+\item VOIP usually high
+\item Can even set this by time of day - only give priority to large downloads late at night for example
+\item Can even rank particular ports, applications, or machines by MAC address as higher priority
+\end{itemize}
+\end{itemize}
+\subsection*{Configuring a SOHO router: Wireless settings}
+\label{sec:org1d60162}
+\subsubsection*{Encryption}
+\label{sec:orgb5fb5c3}
+\begin{itemize}
+\item Should configure for the best encryption available
+\begin{itemize}
+\item i.e. WPA3-AES
+\end{itemize}
+\end{itemize}
+\subsubsection*{Channels}
+\label{sec:org1c86424}
+\begin{itemize}
+\item Can check to see if channels are available
+\begin{itemize}
+\item Using a WiFi scanner
+\end{itemize}
+\end{itemize}
+\subsubsection*{QoS}
+\label{sec:org5393cd6}
+\begin{itemize}
+\item \texttt{Quality of Service}
+\begin{itemize}
+\item Configures the priorities of different signals through the network
+\begin{itemize}
+\item For example, you would usually rank voice over IP (VOIP) higher than file server traffic
+\item But not always!
+\begin{itemize}
+\item Will depend on the nature of your network and your priorities
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\section*{2.4 – Compare and contrast wireless networking protocols.}
+\label{sec:org2915640}
+\subsection*{802.11 Wireless Standards}
+\label{sec:org12fb1d9}
+\newpage
+\begin{landscape}
+\begin{center}
+\begin{tabular}{llllll}
+IEEE & Frequency & Max speed ps & tot  Max speed & MIMO \# & Transmission Range\\
+\hline
+802.11 & 2.4GHz RF & 1 to 2 Mbps & 1 to 2 Mbps & None & 20 feet indoors.\\
+802.11a & 5GHz & 54 Mbps & 54 Mbps & None & 25 to 75 feet indoors\\
+802.11b & 2.4GHz & 11 Mbps & 11 Mbps & None & Up to 150 feet indoors\\
+802.11g & 2.4GHz & 54 Mbps & 54 Mbps & None & Up to 150 feet indoors\\
+802.11n & 2.4GHz/5GHz & 150 Mbps & 600 Mbps & 4 MIMO & 175+ feet indoors\\
+802.11ac & 5GHz & 866.7 Mbps & 6.8 Gbps & 8 MU-MIMO & 175+ feet indoors\\
+\hline
+\end{tabular}
+\end{center}
+\end{landscape}
+\begin{itemize}
+\item MIMO - Multiple Input and Multiple Output.  Increases speed by using multiple antennas exploiting multipath propagation
+
+\item Transmission Range - strongly affected by indoor building materials
+\end{itemize}
+
+\subsection*{802.11a}
+\label{sec:orgcd8746d}
+\begin{itemize}
+\item a and b were the first wireless standards, in 1999
+\item a operates in 5 Ghz range
+\item 5 GHz is a higher frequency - more likely to be affected by objects and materials
+\item But generally a less crowded frequency
+\end{itemize}
+\subsection*{802.11b}
+\label{sec:orga370e37}
+\begin{itemize}
+\item in 2.4 GHz
+\item 2.4 GHz has better range, but more prone to interference
+\item many electronic devices broadcast on 2.4 GHz range - microwave ovens, cordless phones, baby monitors
+\end{itemize}
+\subsection*{802.11g}
+\label{sec:orgd9d187f}
+\begin{itemize}
+\item Also 2.4 GHz, in 2003
+\item backwards compatible with 802.11b
+\end{itemize}
+\subsection*{802.11n}
+\label{sec:org5726100}
+\begin{itemize}
+\item Update in 2009, transmits at 2.4 GHz or 5 GHz
+\item First protocol to use MIMO, enable faster theoretical speeds, as long as the receiving device supports MIMO
+\end{itemize}
+\subsection*{802.11ac}
+\label{sec:orgc2e86af}
+\begin{itemize}
+\item Update to protocol in 2014
+\item 5 GHz only
+\item if devices can support MIMO, theoretically very fast
+\end{itemize}
+\subsection*{Frequencies}
+\label{sec:org1396a35}
+\subsubsection*{2.4 GHz}
+\label{sec:org97d2345}
+\begin{itemize}
+\item as above, less prone to interference from intervening materials, but more crowded spectrum
+\end{itemize}
+\subsubsection*{5 GHz}
+\label{sec:orgb95e6fa}
+\begin{itemize}
+\item Theoretically faster, less prone to interference on spectrum
+\end{itemize}
+\subsection*{Channels}
+\label{sec:orgaa31923}
+\begin{itemize}
+\item Channels have different bandwidths
+\item 802.11a, b, and g had 20 MHz channel widths
+\item 802.11n was able to first bond channels together, using 40 MHZ channels
+\begin{itemize}
+\item However, 40 MHz channel in 2.4 GHz soaks up a lot of the bandwidth - if you have neighbors, this is not very kind
+\end{itemize}
+\item 802.11ac uses 80 MHz and up to 160 MHz channels
+\end{itemize}
+\subsection*{Wireless spectra and channels}
+\label{sec:org5854463}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=1.2\textwidth]{./images/2-4-WirelessSpectrumsNA.png}
+\caption{2.4 GHz and 5 GHz spectra and available channels in North America}
+\end{figure}
+
+Non-available frequencies are usually those preserved for the use of aviation and military
+
+\subsection*{RFID}
+\label{sec:org3b4397f}
+\begin{itemize}
+\item \textbf{RFID} - Radio Frequency Identification
+\begin{itemize}
+\item Access badges, inventory management, even a way of tracking my cat!
+\end{itemize}
+\end{itemize}
+\subsection*{Zigbee}
+\label{sec:org1f68844}
+\begin{itemize}
+\item An IOT communication protocol
+\item travels further than Bluetooth, uses less energy than WiFi
+\item used or ``smart'' lightbulbs, doors, robo-vacuums
+\end{itemize}
+\subsection*{Z-Wave}
+\label{sec:orga364e40}
+\begin{itemize}
+\item Another IOT communication protocol
+\item doors, locks, lights, others
+\item 900 MHz frequency, little competition in this wavelength
+\end{itemize}
+\subsection*{2G}
+\label{sec:orga0d48f5}
+\begin{itemize}
+\item back into cellular networking
+\item 2G one of the first cellular network protocols
+\item Where GSM (Global System for Mobile Communications) and CDMA (Code Division Multiple Access) split
+\item OK for voice, terrible for data
+\end{itemize}
+\subsection*{3G}
+\label{sec:org1e88505}
+\begin{itemize}
+\item 1998
+\item Slightly better for data, allowed use of GPS, first attempts at mobile video
+\end{itemize}
+\subsection*{4G}
+\label{sec:org4c58a49}
+\begin{itemize}
+\item 2009, first deployed in Sweden
+\item Also known as LTE, EDGE (some confusing and conflicting terminology)
+\item GSM and CDMA converge
+\item Download rates of 150 Mbps
+\item LTE-A (LTE Advanced)
+\begin{itemize}
+\item Download rates up to 300 Mbps
+\end{itemize}
+\end{itemize}
+\subsection*{5G}
+\label{sec:org542e59e}
+\begin{itemize}
+\item Being implemented as we speak
+\item Performance improvements but only at higher frequencies - in dense urban environments
+\end{itemize}
+
+\section*{2.5 – Summarize the properties and purposes of services provided by networked hosts.}
+\label{sec:org327bf1b}
+
+\subsection*{Server roles}
+\label{sec:org8eaeb94}
+\begin{itemize}
+\item People make a big deal about the names and roles of different kinds of servers, but when you come right down to it, a server is a computer
+\begin{itemize}
+\item In corporate or research environments, individual computers might perform a single function.  But in most environments, individual computers can serve multiple server roles
+\item This is especially true with the use of virtual machines - many different machines can live in one machine
+\end{itemize}
+\end{itemize}
+\subsubsection*{Web server}
+\label{sec:org2e730a3}
+\begin{itemize}
+\item Serves web pages and other resources accessed using HTTP and HTTPS protocols
+\begin{itemize}
+\item Web pages can have their own dynamic processes, being rebuilt on each visit or being static
+\item People have particular feelings about each type of page
+\item Some web pages can essentially run their own tiny operating systems and programs
+\end{itemize}
+\end{itemize}
+\subsubsection*{File server}
+\label{sec:org72f674c}
+\begin{itemize}
+\item Storage of documents, photos, media
+\begin{itemize}
+\item These are where Server Message Block (SMB) and Apple Filing Protocol (AFP) live
+\item These are the machines most likely to have enormous storage drives, RAID systems (which we will discuss in a bit)
+\end{itemize}
+\end{itemize}
+\subsubsection*{Print server}
+\label{sec:org3be58cc}
+\begin{itemize}
+\item manages printers and printing tasks
+\begin{itemize}
+\item usually only found in larger network environments
+\item Printer protocols:
+\begin{itemize}
+\item LPD (Line Printer Daemon)
+\item IPP (Internet Printing Protocol)
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{DHCP server}
+\label{sec:orgd146da3}
+\begin{itemize}
+\item \textbf{DHCP} - Dynamic Host Configuration Protocol
+\begin{itemize}
+\item Assigns IP addresses to individual devices on the network
+\item In home environment, included in the router
+\item In large, enterprise environments this is a crucial service
+\begin{itemize}
+\item if DHCP goes down, the network starts losing its ability to talk to itself
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{DNS server}
+\label{sec:org67cb79c}
+\begin{itemize}
+\item Domain Name System
+\begin{itemize}
+\item Translates text names to IP addresses
+\item Extremely important in enterprise scenarios
+\end{itemize}
+\end{itemize}
+\subsubsection*{Proxy server}
+\label{sec:org70df10b}
+\begin{itemize}
+\item Server which stands between user and the WAN
+\item Serves to protect user, also can restrict where the user can go and what they can do
+\item Common in academic environments
+\end{itemize}
+\subsubsection*{Mail server}
+\label{sec:org4048a5a}
+\begin{itemize}
+\item Manages email services
+\item Crucial in any environment, and extremely complicated to set up and maintain
+\end{itemize}
+\subsubsection*{Authentication server}
+\label{sec:org6869d93}
+\begin{itemize}
+\item Using applications such as LDAP and Active Directory, manages sign-on and authentication services
+\item Extremely important for security
+\item Not the kind of thing you use at home
+\end{itemize}
+\subsubsection*{SIEM}
+\label{sec:org94c0534}
+\begin{itemize}
+\item Security Information and Event Management
+\begin{itemize}
+\item logs security issues, intrusion detection
+\end{itemize}
+\item maintains logs of user access to different parts of network
+\end{itemize}
+\subsubsection*{syslog}
+\label{sec:org47d614b}
+\begin{itemize}
+\item Another crucial system for maintaining a network
+\item A syslog server will maintain log files from other machines on the network
+\item massive amounts of space needed, often redundant servers to protect information
+\item logs are very important for reconstructing bad events and fixing them, making sure they don't happen again
+\end{itemize}
+\subsection*{Internet appliance}
+\label{sec:org91ca644}
+
+\subsubsection*{IDS}
+\label{sec:org1bec1a8}
+\begin{itemize}
+\item \textbf{IDS} - Intrusion Detection System.  Sounds alert if sneaky and bad things are happening - bot attacks, scripting, buffer and kernal overflows
+\end{itemize}
+\subsubsection*{IPS}
+\label{sec:orgb772178}
+\begin{itemize}
+\item \textbf{IPS} - Intrusion Prevention System
+\item Not just reporting like IDS, but actively thwarting attacks
+\item FailToBan being a minor example of the kinds of things IPS does
+\end{itemize}
+\subsubsection*{UTM}
+\label{sec:org65e439f}
+\begin{itemize}
+\item \textbf{UTM} - Unified Threat Management
+\item Very sophisticated firewall with IDS and IPS built in
+\item Designed to handle everything - malware, worms, viruses, bad actors, monitors bandwidth use
+\end{itemize}
+\subsubsection*{End-point management server}
+\label{sec:org5b652e2}
+\begin{itemize}
+\item The server to manage servers
+\end{itemize}
+\subsection*{Legacy/embedded systems}
+\label{sec:org60f451c}
+\begin{itemize}
+\item \textbf{Legacy} - IT term for devices / software that are old but still useful.  Many examples of this.
+\begin{itemize}
+\item Often simply too expensive or time-consuming to replace
+\item This is why old COBOL engineers get called up out of retirement
+\end{itemize}
+\item \textbf{Embedded Systems} - An electronic device that is simple and only does one thing.  Can manage alarms, door access, sensors, etc.  Will be linked to network, wired or wireless.
+\end{itemize}
+\newpage
+\section*{2.6 – Explain common network configuration concepts.}
+\label{sec:orgf0e5792}
+\subsection*{DHCP}
+\label{sec:orge3a5599}
+\begin{itemize}
+\item Before DHCP, all IP addresses on the network were set manually
+\item This was a huge pain and could lead to all kinds of problems with different IP address conflicts
+\item DHCP automates the process and makes it much smoother
+\item DHCP Process:
+\begin{enumerate}
+\item Discover
+\item Offer
+\item Request
+\item Acknowledge
+\end{enumerate}
+\end{itemize}
+\subsection*{DHCP Mechanism}
+\label{sec:org81e05da}
+
+\begin{center}
+\includegraphics[width=0.75\textwidth]{/Users/nick/org/comptia/sessionOne/images/2-6-DHCPprocess.png}
+\captionof{figure}{DHCP configuration process}
+\end{center}
+
+\textbf{DHCP}
+
+\begin{itemize}
+\item IP addresses can still be configured manually on each device, but if you are administering a network this should be discouraged
+\end{itemize}
+\subsubsection*{Reservations}
+\label{sec:orgc245e7f}
+\begin{itemize}
+\item Instead, better to set a static address on the router by setting an IP \textbf{reservation} and associating an IP address with the device's MAC address
+\end{itemize}
+
+\subsection*{IP addressing}
+\label{sec:org061ba54}
+\subsubsection*{Static}
+\label{sec:orgc560bb7}
+\begin{itemize}
+\item IP addresses stay the same; the external address of your home internet will stay the same for long periods of time, or forever
+\item Particular devices on a network may benefit from having static IP addresses rather than being frequently changed by DHCP
+\begin{itemize}
+\item These would include printers, file, DNS, or authentication servers
+\item Static IP addresses can bet up on each individual device, with different procedures in each operating system
+\end{itemize}
+\end{itemize}
+\subsubsection*{Dynamic}
+\label{sec:orgbf1a0d8}
+\begin{itemize}
+\item Changing, usually assigned by DHCP
+\item DHCP usually keeps addresses for a week
+\end{itemize}
+\subsubsection*{APIPA}
+\label{sec:org5a353d1}
+\begin{itemize}
+\item Automatic Private IP Addressing
+\item When a device cannot contact the DHCP server, it makes up its own IP address in the range 169.254.1.0 - 169.254.255.254
+\item Then it keeps trying to find the DHCP server
+\end{itemize}
+\subsection*{DNS}
+\label{sec:orga6cbb20}
+\begin{itemize}
+\item As discussed previously, the \textbf{Domain Name System} (or \textbf{Domain Name Server}) 
+\begin{itemize}
+\item In setting up a network, the DNS server can be set up in the router, and can also be set up on each machine individually to override the server setting
+\item Many different top-level DNS services
+\end{itemize}
+\end{itemize}
+
+\subsection*{IPv4 vs. IPv6}
+\label{sec:org120d9ae}
+\begin{itemize}
+\item Internet Protocol version 4: OSI level 3 address
+\begin{itemize}
+\item IPv4 is the IP address format you recognize, and will probably continue to use for some time.
+\item But many drawbacks, the main one being that we are out of addresses! This is why we need to use NAT.
+\item IPv6 will not need to use NAT.
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/2-6-IPv4.png}
+\captionof{figure}{IPv4 address format}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{./images/2-6-IPv6.png}
+\captionof{figure}{IPv6 address format}
+\end{center}
+
+\begin{itemize}
+\item IPv6 is a 128-bit address - there are 340,282,366,920,938,463,463,374,607,431,768,211,456 addresses (340 undecillion)
+\end{itemize}
+
+
+\subsection*{Subnet mask}
+\label{sec:org65f887e}
+\begin{itemize}
+\item In IPv4, the subnet mask helps the local device to determine its subnet
+\begin{itemize}
+\item in a standard LAN subnet mask can look like this: 255.255.255.0
+\item You will not need to know exactly how this works, (yet!)
+\end{itemize}
+\end{itemize}
+\subsection*{Gateway}
+\label{sec:org8f66449}
+\begin{itemize}
+\item IP address of the router that governs your access to the WAN
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{/Users/nick/org/comptia/sessionOne/images/2-6-NetworkGateway.png}
+\captionof{figure}{Network Gateway}
+\end{center}
+\subsection*{\texttt{VPN}  Virtual Private Network}
+\label{sec:org0fc7ed6}
+\begin{itemize}
+\item Uses Secure Sockets Layer (SSL) to create encrypted connection from outside the LAN
+\begin{itemize}
+\item User can then operate as if they are on the local protected network
+\item In other words, a secure connection through insecure network territory
+\item Has been particularly important recently, as this allows people to work securely from home
+\end{itemize}
+\end{itemize}
+\subsection*{VLAN}
+\label{sec:org0a0cd01}
+\begin{itemize}
+\item \textbf{Virtual Local Area Network} - group of devices in the same broadcast domain
+\item A logical division rather than a physical one
+\end{itemize}
+\subsection*{NAT}
+\label{sec:org411382b}
+\begin{itemize}
+\item Network Address Translation
+\begin{itemize}
+\item As mentioned, only necessary because of the exhaustion of IPv4 addresses
+\end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.75\textwidth]{/Users/nick/org/comptia/sessionOne/images/2-6-NATdiagram.png}
+\captionof{figure}{NAT}
+\end{center}
+
+\section*{2.7 – Compare and contrast Internet connection types, network types, and their features.}
+\label{sec:orgcc49c27}
+
+\subsection*{Internet connection types}
+\label{sec:org7889b28}
+
+\subsubsection*{Cable \& DSL}
+\label{sec:org7142e6e}
+\begin{itemize}
+\item Discussed above
+\end{itemize}
+\subsubsection*{Dial-up}
+\label{sec:org5685af4}
+\begin{itemize}
+\item Old school - establishing network connection over phone lines
+\item top speeds 320 kbps
+\end{itemize}
+\subsubsection*{Fiber}
+\label{sec:org5130b5a}
+\begin{itemize}
+\item Highest speed connection currently available to homes
+\item High bandwidth, can bundle phone, TV, data
+\item Speeds up to 1 Gbit/sec
+\end{itemize}
+\subsubsection*{Satellite}
+\label{sec:org6f3f764}
+\begin{itemize}
+\item Sometimes the only available option in extremely rural areas
+\item expensive, high latency
+\item line of sight, vulnerable to weather
+\end{itemize}
+
+\subsubsection*{ISDN}
+\label{sec:org9787b1a}
+\begin{itemize}
+\item Ancient but still on the A+ exam, still in use as legacy systems for business (more likely to be a backup connection now).  Two subtypes:
+\item BRI - Basic Rate Interface
+\begin{itemize}
+\item Two 64 kbit/s bearer channels
+\item One 16 kbit/s signalling channel
+\end{itemize}
+\item PRI - Primary Rate Interface
+\begin{itemize}
+\item over T1 or E1 line
+\end{itemize}
+\end{itemize}
+
+\subsubsection*{Line-of-sight wireless Internet service}
+\label{sec:orgb39bb01}
+\begin{itemize}
+\item Seen in rural areas and some urban areas
+\item WAN sent out by broadcast through network of interlinked antennae, often microwave
+\end{itemize}
+\subsection*{Network types}
+\label{sec:org9613df2}
+
+\begin{itemize}
+\item WAN, LAN, PAN, MAN
+\item New one we haven't discussed:
+\begin{itemize}
+\item \textbf{WMN} - Wireless Mesh Network
+= All devices connect together in a cloud network
+= IOT devices can use this
+\end{itemize}
+\end{itemize}
+
+\section*{2.8 – Given a scenario, use appropriate networking tools.}
+\label{sec:org56a34e0}
+
+\subsection*{Crimper}
+\label{sec:orgeef39b0}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/2-8-CableCrimper.jpg}
+\captionof{figure}{A cable crimper}
+\end{center}
+\begin{itemize}
+\item Used to attach connector to end of data wire, whether coaxial, twisted pair, fiber
+\end{itemize}
+
+\subsection*{Cable stripper}
+\label{sec:orgf8f9cd7}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/2-8-CableStripper.jpg}
+\captionof{figure}{A cable stripper}
+\end{center}
+\begin{itemize}
+\item Used to remove insulation from wire / cable
+\end{itemize}
+\subsection*{Multimeter}
+\label{sec:org6b7556b}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/2-8-multimeter.jpg}
+\captionof{figure}{A multimeter}
+\end{center}
+\begin{itemize}
+\item Used to measure different aspects of electrical current - voltage, amps, resistance
+\item Can even use it to trace wires, like a poor man's cable tester
+\end{itemize}
+
+\subsection*{Tone generator and probe}
+\label{sec:org2076162}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/2-8-toneGenerator.jpg}
+\captionof{figure}{Tone generator and probe}
+\end{center}
+\begin{itemize}
+\item Used to trace cables, find out where they end up
+\end{itemize}
+\subsection*{Cable tester}
+\label{sec:orga621882}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/2-8-cableTester.jpg}
+\captionof{figure}{A cable tester}
+\end{center}
+\begin{itemize}
+\item Used to test the integrity of cables
+\end{itemize}
+\subsection*{Loopback plug}
+\label{sec:org5fe064e}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/2-8-loopbackPlug.jpg}
+\captionof{figure}{A loopback plug}
+\end{center}
+\begin{itemize}
+\item Quick way to test a physical port (versions for ethernet, fiber)
+\item Fools your machine into thinking that it is talking to someone else
+\end{itemize}
+\subsection*{Punchdown tool}
+\label{sec:orgb0d2e7e}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/2-8-punchdownTool.jpg}
+\captionof{figure}{A punchdown tool}
+\end{center}
+\begin{itemize}
+\item Used to ``punch'' a wire into a wiring block
+\end{itemize}
+\subsection*{WiFi analyzer}
+\label{sec:org6ecdf54}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/2-8-wifiAnalyzer.jpg}
+\captionof{figure}{A WiFi analyzer's output}
+\end{center}
+
+\begin{itemize}
+\item As app on smartphone or other device
+\item Very useful for seeing if there are other wireless networks which might interfere with each other
+\item Can guide decisions concerning channels to assign and strength of signal
+\end{itemize}
+
+\section*{3.1 – Explain basic cable types, features, and their purposes.}
+\label{sec:org5eab473}
+
+\subsection*{Network cables}
+\label{sec:orgd4d1047}
+
+\subsubsection*{Ethernet}
+\label{sec:org99a63b6}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-1-copperCableCategories.png}
+\end{center}
+\begin{itemize}
+\item Twisted pair copper cabling
+\begin{itemize}
+\item Two wires with equal and opposite signals
+\item Minimizes interference between the electrical signals of the wires
+\end{itemize}
+\item Unshielded twisted pair (UTP)
+\begin{itemize}
+\item Most common type
+\item No additional shielding
+\end{itemize}
+\item Shielded twisted pair (STP)
+\begin{itemize}
+\item Additional shielding with:
+\begin{itemize}
+\item thick copper braided shield, makes them less flexible \& more expensive
+\item foil shield - flexible but prone to tearing
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\paragraph*{Comparison of STP and UTP}
+\label{sec:org6ff9950}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-1-UTP-STP.png}
+\captionof{figure}{UTP and STP}
+\end{center}
+\paragraph*{Plenum}
+\label{sec:org42970d7}
+\begin{itemize}
+\item Fire-rated cable jacket, as opposed to traditional PVC
+\item ``Plenum space'' - structural space in structure for air flow
+\item Low-smoke materials
+\end{itemize}
+\paragraph*{T568A and T568B terminations}
+\label{sec:orgb5570a0}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{./images/3-1-copperCableTermination.png}
+\captionof{figure}{Cable terminations}
+\end{center}
+\begin{itemize}
+\item Different pin assignments - both ends need same termination
+\item Often based on tradition more than anything else
+\end{itemize}
+
+\subsubsection*{Fiber}
+\label{sec:org208b034}
+\begin{itemize}
+\item Transmission by light
+\begin{itemize}
+\item Cannot monitor or tap
+\item Immune to radio interference
+\item Transmission over long distances
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-1-fiberOptic.png}
+\captionof{figure}{Fiber optic cable dissection}
+\end{center}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-1-multiModeVsSingleMode.png}
+\captionof{figure}{Multi-mode and Single-mode Fiber}
+\end{center}
+
+\subsubsection*{Coaxial}
+\label{sec:orga0045b0}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-1-coaxialCable.png}
+\captionof{figure}{Coaxial cable}
+\end{center}
+\subsubsection*{Speed and transmission limitations}
+\label{sec:org8c8ce2c}
+\begin{itemize}
+\item RG-6 - Television and digital cable
+\begin{itemize}
+\item high-speed internet over cable
+\end{itemize}
+\item RG-59 - Patch cables
+\begin{itemize}
+\item Shorter distances
+\end{itemize}
+\end{itemize}
+
+\subsection*{Video cables}
+\label{sec:orgc3fea1b}
+
+\subsubsection*{VGA}
+\label{sec:orgf287b69}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-1-videoCables.png}
+\end{center}
+\begin{itemize}
+\item \texttt{VGA}: Video Graphics Array
+\item Blue
+\item Analog
+\item Image degrades after 5 to 10 meters
+\end{itemize}
+
+\subsubsection*{HDMI}
+\label{sec:org0912658}
+\begin{itemize}
+\item High-Definition Multimedia Interface
+\begin{itemize}
+\item Video and audio stream
+\item All digital
+\item Proprietary
+\end{itemize}
+\end{itemize}
+\subsubsection*{Mini-HDMI}
+\label{sec:orga097c1c}
+\begin{itemize}
+\item Designed for smaller devices
+\end{itemize}
+\subsubsection*{DisplayPort}
+\label{sec:org314710a}
+\begin{itemize}
+\item Data sent in packetized form
+\item non-proprietary
+\end{itemize}
+\subsubsection*{DVI}
+\label{sec:org4c1dfe9}
+\begin{itemize}
+\item Digital Visual Interface
+\item Single or Dual link
+\end{itemize}
+\subsubsection*{DVI-A}
+\label{sec:orgfa93fb5}
+\begin{itemize}
+\item Analog signals only
+\end{itemize}
+\subsubsection*{DVI-D / DVI-I}
+\label{sec:orge46a332}
+\begin{itemize}
+\item \textbf{DVI-D}: Digital signals only
+\item \textbf{DVI-I}: Integrated, both digital and analog
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-1-DVI.png}
+\captionof{figure}{DVI terminations}
+\end{center}
+\subsection*{Multipurpose cables}
+\label{sec:org11fa51e}
+
+\subsubsection*{Lightning}
+\label{sec:org39c31f6}
+\begin{itemize}
+\item Proprietary Apple cable
+\item 8 pin, symmetrical, durable
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{/Users/nick/org/comptia/sessionOne/images/3-1-lightning-connector.jpg}
+\captionof{figure}{Lightning connector}
+\end{center}
+\subsubsection*{Thunderbolt}
+\label{sec:orgddf6df9}
+\begin{itemize}
+\item High speed serial connector
+\item Data and power on the same cable
+\item Thunderbolt v3 - 40 Gb/s, USB-C connector
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-1-thunderbolt02.jpg}
+\captionof{figure}{Thunderbolt connector}
+\end{center}
+\subsubsection*{USB}
+\label{sec:org284b794}
+\begin{table}[htbp]
+\caption{USB Speeds}
+\centering
+\begin{tabular}{lll}
+USB Version & Name & Data Transfer Rate\\
+\hline
+USB 2.0 & High-Speed & 480 Mbps\\
+USB 3.0 & SuperSpeed & 5 Gbps\\
+USB 3.1 & SuperSpeed+ & 10Gbps\\
+USB 3.2 (USB-C) & SuperSpeed+ & 10/20 Gbps\\
+\hline
+\end{tabular}
+\end{table}
+\begin{itemize}
+\item Designed to simplify connections between devices
+\end{itemize}
+\subsubsection*{USB 2.0}
+\label{sec:orgda34b9d}
+\begin{itemize}
+\item Still using USB-A connection
+\item 480 Mbps
+\end{itemize}
+\subsubsection*{USB 3.0, 3.1, 3.2}
+\label{sec:orga61ea5a}
+\begin{itemize}
+\item 3.1 released 2013, 10Gbps
+\item 3.2 released 2017, 10 or 20 Gbps
+\end{itemize}
+\subsubsection*{USB-C}
+\label{sec:orga511634}
+\begin{itemize}
+\item Most recent connection type, designed to replace all prior USB connections
+\item USB-C connection does not always mean USB 3.2 speed
+\end{itemize}
+\subsubsection*{USB terminations}
+\label{sec:orgf4616b4}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-1-USBterminations.png}
+\captionof{figure}{USB 1.0 / 2.0 terminations}
+\end{center}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-1-USBterminations2.png}
+\captionof{figure}{USB 3.0 terminations}
+\end{center}
+
+\subsection*{Peripheral cables}
+\label{sec:org19c0e22}
+
+\subsubsection*{Multipurpose cable image}
+\label{sec:orge7c3aa5}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-1-multipurposeCables.png}
+\captionof{figure}{Some multipurpose cables}
+\end{center}
+
+\subsection*{Hard drive cables}
+\label{sec:org47f800e}
+
+\subsubsection*{Hard drive cables: \texttt{SATA}}
+\label{sec:org80dde6d}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-1-sataCables.jpg}
+\captionof{figure}{SATA cables}
+\end{center}
+
+\subsubsection*{Hard drive cables: \texttt{IDE}}
+\label{sec:org1e844c5}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-1-IDEcables.jpg}
+\captionof{figure}{IDE cable}
+\end{center}
+
+\subsubsection*{Hard drive cables \texttt{SCSI}}
+\label{sec:org69b1f9f}
+\begin{itemize}
+\item Small Computer Systems Interface
+\end{itemize}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-1-Scsi-connectors.jpg}
+\captionof{figure}{Assorted SCSI connectors}
+\end{center}
+
+
+\subsection*{Adapters}
+\label{sec:orgb17198f}
+
+\subsubsection*{DVI to HDMI}
+\label{sec:org7f08e82}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-1-DVItoHDMIadapter.jpg}
+\captionof{figure}{DVI to HDMI adapter}
+\end{center}
+
+\subsubsection*{USB to Ethernet}
+\label{sec:orgcadc5aa}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-1-USBtoEthernetAdapter.jpg}
+\captionof{figure}{USB to Ethernet adapter}
+\end{center}
+\subsubsection*{DVI to VGA}
+\label{sec:org029844f}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-1-DVItoVGAadapter.jpg}
+\captionof{figure}{DVI to VGA adapter}
+\end{center}
+
+\section*{3.2 – Identify common connector types.}
+\label{sec:org3436a3e}
+
+\subsection*{RJ-11}
+\label{sec:org12810f3}
+\begin{itemize}
+\item Plain old landline telephone
+\end{itemize}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-2-rj11.jpg}
+\captionof{figure}{RJ-11}
+\end{center}
+
+\subsection*{RJ-45}
+\label{sec:org630db5b}
+\begin{itemize}
+\item Ethernet
+\end{itemize}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-2-rj45.jpg}
+\captionof{figure}{RJ-45}
+\end{center}
+
+\subsection*{RS-232}
+\label{sec:org1a26e86}
+\begin{itemize}
+\item Serial cable connector
+\end{itemize}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-2-DB9-RS232.jpg}
+\captionof{figure}{DB-9 / RS-232}
+\end{center}
+
+\subsection*{BNC}
+\label{sec:orgfb377b0}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-2-BNC_50_75_Ohm.jpg}
+\captionof{figure}{BNC Connectors}
+\end{center}
+
+\begin{itemize}
+\item miniature quick connect / disconnect connector for coaxial cable
+\end{itemize}
+\subsection*{RG-59 \& RG-6}
+\label{sec:org9a5315a}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-2-RG-59-RG-6.png}
+\captionof{figure}{RG-59 and RG-6}
+\end{center}
+\begin{itemize}
+\item RG-6 has superior shielding, can handle higher bandwidths
+\end{itemize}
+
+\subsection*{eSATA}
+\label{sec:org22cf2b1}
+\begin{itemize}
+\item SATA connection for external devices
+\end{itemize}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-2-SATA_eSATA.jpg}
+\captionof{figure}{SATA and eSATA cable connectors}
+\end{center}
+
+\subsection*{Molex}
+\label{sec:org1f67d82}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-2-molex.jpg}
+\captionof{figure}{Molex connector}
+\end{center}
+\begin{itemize}
+\item A very ancient power connector which will today be found only in very ancient machines
+\end{itemize}
+
+\section*{3.3 – Given a scenario, install RAM types.}
+\label{sec:org4f510d8}
+
+\subsection*{RAM types}
+\label{sec:org56bbae6}
+
+\subsubsection*{Overview of memory terms}
+\label{sec:org7106131}
+\begin{itemize}
+\item RAM is for temporary, fast storage of data
+\begin{itemize}
+\item It can be thought of as the working memory of the computer.
+\item Not to be confused with long-term storage such as HDDs or SDDs
+\item Insufficient or underperforming RAM can be a bottleneck in the performance of the computer
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item Desktop RAM: Dual-inline memory modules (DIMMs)
+\item Laptop RAM: Small outline DIMMs (SO-DIMMs)
+\item Both use Double Data Rate (DDR) technology
+\item DDR doubles the data per cycle compared to older types
+\end{itemize}
+\subsubsection*{RAM numerology}
+\label{sec:org61bcb96}
+\begin{itemize}
+\item The numbers in the name of the RAM tell you about the speed:
+\begin{itemize}
+\item e.g. a stick of DDR2 RAM called DDR2-800 or PC2-6400:
+\item 800 million transfers per second (MT/s)
+\item 6400 MB/s
+\end{itemize}
+\end{itemize}
+\subsubsection*{SDR vs DDR}
+\label{sec:org793f633}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-3-SDRvsDDR.png}
+\captionof{figure}{SDR vs DDR}
+\end{center}
+\subsubsection*{DDR2}
+\label{sec:orga8e497c}
+\begin{itemize}
+\item decreased voltage compared to DDR1
+\item increased speed through faster signalling, thus more pins
+\item 240 pins
+\end{itemize}
+\subsubsection*{DDR3}
+\label{sec:org53ebd42}
+\begin{itemize}
+\item lower power consumption, higher speed
+\item also 240 pins but \emph{not} backwards compatible with DDR2
+\item maximum 16GB per DIMM
+\end{itemize}
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-3-DDR3.png}
+\captionof{figure}{240-pin PC3-10600 4GB DIMM (DDR3-1333)}
+\end{center}
+\subsubsection*{DDR4}
+\label{sec:org2df388d}
+\begin{itemize}
+\item faster again
+\item max 64GB per DIMM
+\item no backwards compatibility
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-3-DDR4.png}
+\captionof{figure}{288-pin PC4-17000 4 GB DIMM (DDR4-2133)}
+\end{center}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-3-installedDDR4.png}
+\captionof{figure}{Installed bank of DDR4 memory modules}
+\end{center}
+
+\subsubsection*{DDR pin chart}
+\label{sec:org859f735}
+
+\begin{center}
+\begin{tabular}{ll}
+DDR Standard & Number of Pins\\
+\hline
+DDR1 & 184 pins\\
+DDR2 & 240 pins\\
+DDR3 & 240 pins\\
+DDR4 & 288 pins\\
+\end{tabular}
+\end{center}
+
+\subsubsection*{How to install RAM:}
+\label{sec:orgb8af9ce}
+\begin{enumerate}
+\item Full static precautions!
+\item Orient the RAM properly, paying attention to notches
+\item Insert RAM into slot
+\item Press down with both thumbs until the ears lock
+\item Test
+\end{enumerate}
+
+\begin{itemize}
+\item Here's a video:
+\end{itemize}
+
+\url{https://www.youtube.com/watch?v=HPcOZ\_v3eBI}
+
+\begin{itemize}
+\item This is worth watching, because it takes you through the entire process of installing RAM
+\begin{itemize}
+\item This is exactly the kind of thing you might need to regurgitate in a Practice-Based Question
+\end{itemize}
+\end{itemize}
+
+\subsection*{Single channel}
+\label{sec:org4e87ee7}
+\begin{itemize}
+\item Original RAM architecture.
+\begin{itemize}
+\item One 64-bit address bus
+\item Each stick of RAM must share this channel
+\end{itemize}
+\end{itemize}
+\subsection*{Dual channel}
+\label{sec:orgfa2a601}
+\begin{itemize}
+\item Doubles data throughput
+\begin{itemize}
+\item Two separate 64-bit channels, a 128-bit bus
+\item Color-coded matching banks on motherboard
+\end{itemize}
+\end{itemize}
+\subsection*{Triple channel}
+\label{sec:org5a8f211}
+\begin{itemize}
+\item Accesses three memory modules at the same time
+\begin{itemize}
+\item A 192-bit bus
+\end{itemize}
+\end{itemize}
+\subsection*{Quad channel}
+\label{sec:org7c64a22}
+\begin{itemize}
+\item Quad-channel architecture requires 4 identical memory modules placed in the correct slots
+\begin{itemize}
+\item Most common with DDR4
+\item Four 64-bit wide buses
+\end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-3-quad-channel-slots.png}
+\captionof{figure}{Quad-channel slots on a motherboard}
+\end{center}
+\subsection*{Parity vs. Non-parity}
+\label{sec:org8884e7f}
+\begin{itemize}
+\item A ``parity check'' is a data validation technique
+\item Extra bit is stored to check previous bits (thus 9 bits for every byte)
+\begin{itemize}
+\item Important for applications that require data integrity such as servers or workstations
+\item more expensive, slightly slower
+\end{itemize}
+\end{itemize}
+\subsection*{Error correcting}
+\label{sec:org9db1d15}
+\begin{itemize}
+\item ECC (Error Correction Code) detects \emph{and} corrects errors
+\begin{itemize}
+\item Slowest and most expensive
+\end{itemize}
+\end{itemize}
+\subsection*{A last word about RAM}
+\label{sec:org1caf9e2}
+\begin{itemize}
+\item The main thing to remember is that RAM must be \emph{compatible} with the motherboard
+\begin{itemize}
+\item And the best way to determine this is to go through your motherboard manual to see the compatible types of RAM
+\end{itemize}
+\end{itemize}
+\section*{3.4 – Select, install and configure storage devices.}
+\label{sec:orgb670195}
+Here, we will focus on the following:
+
+\begin{itemize}
+\item Optical drives
+\item Solid state devices (SSDs)
+\item Magnetic hard drives (HDDs)
+\end{itemize}
+\begin{itemize}
+\item Hybrid drives
+\item Flash drives
+\item RAID
+\end{itemize}
+
+\subsection*{Optical drives}
+\label{sec:org2b267f9}
+\begin{itemize}
+\item Data storage format: tiny bumps read by a laser beam
+\begin{itemize}
+\item Microscopic binary storage
+\end{itemize}
+\item Three main types:
+\begin{itemize}
+\item Compact discs (CDs)
+\item Digital versatile discs (DVDs)
+\item Blu-ray discs
+\end{itemize}
+\end{itemize}
+\subsubsection*{CD-ROM/CD-RW}
+\label{sec:org3415967}
+\begin{itemize}
+\item CD-ROM: Read-only-memory
+\item CD-RW: Re-Writable
+\item Speeds: multiples of 150 KB/s
+\begin{itemize}
+\item for example, 48x
+\item 48x = 48 * 150 KB = 7.2 MB/s
+\end{itemize}
+\item Typical capacity: 700 MB
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{lll}
+Technology & Full name & Max recording speed\\
+\hline
+CD-R & CD-Recordable & 48x (7.2 MB/s) or 52x (7.8 MB/s\\
+CD-RW & CD-ReWritable & 24x (3.6 MB/s or 32x (4.8 MB/s)\\
+\hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item A humble paperclip will dislodge a jammed optical tray!
+\end{itemize}
+
+\subsubsection*{DVD-ROM/DVD-RW/DVD-RW DL}
+\label{sec:org226238b}
+\begin{itemize}
+\item Greater data capacity than CD-ROMs
+\item Many more variations
+\end{itemize}
+
+\begin{table}[htbp]
+\caption{Comparison of DVD Technologies}
+\centering
+\begin{tabular}{lrrl}
+DVD-ROM Technology & Sides & Total Layers & Capacity\\
+\hline
+DVD-5 & 1 & 1 & 4.7 GB\\
+DVD-9 & 1 & 2 & 8.5 GB\\
+DVD-10 & 2 & 2 & 9.4 GB\\
+DVD-14 & 2 & 3 & 13.2 GB\\
+DVD-18 & 2 & 4 & 17 GB\\
+\hline
+\end{tabular}
+\end{table}
+\begin{itemize}
+\item For exam - know capacities of the most common DVD types: DVD-5 and DVD-18
+\end{itemize}
+
+\subsubsection*{Blu-ray}
+\label{sec:orge2092fe}
+\begin{itemize}
+\item 25 GB for single-layer
+\item 50 GB for dual-layer
+\end{itemize}
+
+\subsection*{Solid-state drives}
+\label{sec:org0231a3d}
+\begin{itemize}
+\item Non-volatile memory
+\item No moving parts, extremely fast
+\item normally 2.5 inches
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{/Users/nick/org/comptia/sessionOne/images/3-4-SSD.jpg}
+\captionof{figure}{Hewlett-Packard SSD}
+\end{center}
+\subsubsection*{AHCI vs NVMe}
+\label{sec:orgd0c32bc}
+\begin{itemize}
+\item SATA was designed for hard drives, and uses AHCI (Advanced Host Controller Interface) to move data to RAM
+\item SATA revision 3 up to 600 MB/s
+\end{itemize}
+\subsubsection*{NVME}
+\label{sec:org3482f67}
+\begin{itemize}
+\item Non-Volatile Memory Express
+\item Lower latency
+\item Can use M.2 interface
+\end{itemize}
+\subsubsection*{M.2 drives}
+\label{sec:org1c5f561}
+\begin{itemize}
+\item Smaller form factor slot for SSDs
+\item Can have up to 4 GB/s throughput
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-4-M2drive.png}
+\captionof{figure}{M.2 drive}
+\end{center}
+
+\subsection*{Magnetic hard drives}
+\label{sec:org78e7bfd}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-4-magneticDrive.png}
+\captionof{figure}{Magnetic drive components, speeds}
+\end{center}
+\paragraph*{Magnetic hard drive sizes}
+\label{sec:org8212093}
+\begin{itemize}
+\item 2.5 inches
+\item 3.5 inches
+\end{itemize}
+
+\subsection*{Hybrid drives}
+\label{sec:org002d76a}
+\begin{itemize}
+\item Combination of HDD and SSD
+\begin{itemize}
+\item Spinning drive and SSD in same device
+\end{itemize}
+\item SSD caches the slower spinning hard drive data
+\begin{itemize}
+\item Increases speed - not as fast as a pure SSD, but cheaper than SSD
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{./images/3-4-HybridDrive.png}
+\captionof{figure}{Hybrid drive}
+\end{center}
+
+\subsection*{Flash}
+\label{sec:org476102b}
+\begin{itemize}
+\item NAND-based flash memory
+\item EEPROM (Electrically erasable programmable read-only memory)
+\item Blocks can only be written to a finite number of times before failures start to occur
+\begin{itemize}
+\item \textasciitilde{} 1 million write / erase cycles, or 10 years of use (estimated by manufacturers!)
+\end{itemize}
+\end{itemize}
+\subsubsection*{USB flash drives}
+\label{sec:org53fb221}
+\begin{itemize}
+\item Standard external drive, very handy and convenient
+\item but not small enough for many applications!
+\end{itemize}
+\subsubsection*{Smaller flash drives}
+\label{sec:orga5411e3}
+\begin{itemize}
+\item Micro-SD
+\item Mini-SD
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-4-variousSDcards.png}
+\captionof{figure}{Various SD cards}
+\end{center}
+\subsection*{Configurations}
+\label{sec:org8c37fe6}
+
+\subsubsection*{RAID 0,1,5,10}
+\label{sec:org9752538}
+\begin{itemize}
+\item Redundant Array of Independent Disks (RAID)
+\begin{itemize}
+\item Designed to increase the speed of reading and writing data, or
+\item Create fault-tolerant volumes, or
+\item Both
+\end{itemize}
+\item For exam, know RAID 0, 1, 5, and 10
+\end{itemize}
+\subsubsection*{Setting up RAID}
+\label{sec:org25a29ac}
+\begin{itemize}
+\item Two or more hard drives
+\item Software or hardware-based
+\begin{itemize}
+\item Hardware is faster:
+\begin{itemize}
+\item Need built-in RAID support on motherboard, or
+\item RAID adapter card, or
+\item External device such as Network-Attached Storage (NAS)
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{RAID 0}
+\label{sec:org6092ec6}
+\begin{itemize}
+\item Striping
+\item High performance, data read and written quickly
+\item No redundancy!
+\item One failure away from breaking everything
+\end{itemize}
+\subsubsection*{RAID 1}
+\label{sec:org1d71e30}
+\begin{itemize}
+\item Mirroring
+\item File blocks are duplicated between two or more drives
+\end{itemize}
+\subsubsection*{RAID 5}
+\label{sec:org3154b21}
+\begin{itemize}
+\item Striping with parity
+\item Requires at least 3 disks
+\item File blocks are striped
+\item High redundancy, but possibly slower performance
+\end{itemize}
+\subsubsection*{RAID 10}
+\label{sec:org0033756}
+\begin{itemize}
+\item A stripe of mirrors
+\item Speed of striping, redundancy of mirroring
+\item Need at least 4 drives
+\end{itemize}
+\subsubsection*{A Diagram of RAID}
+\label{sec:orgd25e995}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-4-RAIDdiagram.png}
+\captionof{figure}{RAID diagram}
+\end{center}
+\subsubsection*{``Hot swappable''}
+\label{sec:org881b34c}
+\begin{itemize}
+\item can add and remove while the system is running
+\item (except for RAID 0)
+\end{itemize}
+\subsubsection*{Fault tolerance is not backup!}
+\label{sec:orge999e5d}
+\begin{itemize}
+\item It really isn't, don't get fooled
+\item Two RAID drives can fail at the same time, destroying the whole thing.
+\end{itemize}
+
+\section*{3.5 – Given a scenario, install and configure motherboards, CPUs, and add-on cards.}
+\label{sec:orgaf7fd31}
+
+\subsection*{Motherboard form factor}
+\label{sec:orgd1ca995}
+
+\subsubsection*{ATX}
+\label{sec:orgac0273b}
+\begin{itemize}
+\item Advanced Technology Extended
+\item Since 1995
+\item Power:
+\begin{itemize}
+\item 20 pin connector
+\item 24 pin connector + additional 4/8 pin connector
+\end{itemize}
+\end{itemize}
+\subsubsection*{mATX}
+\label{sec:org0b93216}
+\begin{itemize}
+\item microATX
+\item Smaller than ATX
+\item Limited expansion slots
+\end{itemize}
+\subsubsection*{ITX}
+\label{sec:org6f16794}
+\begin{itemize}
+\item Low power motherboards
+\item Since 2001
+\item Mini-ITX - small form factor
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.95\textwidth]{./images/3-5-smallITX.jpg}
+\captionof{figure}{Mini-ITX and smaller}
+\end{center}
+
+\subsection*{Motherboard connector types}
+\label{sec:org9f7b8f2}
+\subsubsection*{PCI}
+\label{sec:orgddbebf3}
+\begin{itemize}
+\item Peripheral Component Interconnect - 1994
+\item Expansion interface
+\item 32 bit or 64 bit bus widths
+\item For attaching additional hardware devices to the motherboard
+\begin{itemize}
+\item Network cards, audio cards, USB
+\item Superseded by PCIe
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.85\textwidth]{./images/3-5-PCIslots.png}
+\captionof{figure}{PCI slots in motherboard}
+\end{center}
+\subsubsection*{PCIe}
+\label{sec:org8ffcc17}
+\begin{itemize}
+\item PCI Express
+\item Replaced PCI and others
+\begin{itemize}
+\item (PCI, PCI-X, AGP)
+\end{itemize}
+\item Communicates serially
+\begin{itemize}
+\item Unidirectional serial ``lanes''
+\item Slower devices don't slow down other devices
+\end{itemize}
+\item One, two, four, eight, sixteen, or thirty-two full duplex lanes
+\begin{itemize}
+\item x1, x2, x4, x8, x16, x32
+\item ``x'' pronounced ``by''
+\end{itemize}
+\end{itemize}
+\subsubsection*{PCIe throughput}
+\label{sec:orgd2f69ea}
+\begin{itemize}
+\item per-lane throughput:
+\begin{itemize}
+\item v1.x: 250 MB/s
+\item v2.x: 500 MB/s
+\item v3.0: \textasciitilde{}1 GB/s
+\item v4.0: \textasciitilde{}2 GB/s
+\item v5.0: \textasciitilde{}4 GB/s
+\end{itemize}
+\end{itemize}
+\subsubsection*{Riser card}
+\label{sec:orgc9d948e}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-5-riserCard.jpg}
+\captionof{figure}{Riser card in IBM PS/2}
+\end{center}
+\begin{itemize}
+\item Allows installation of additional expansion cards
+\end{itemize}
+\subsubsection*{Socket types}
+\label{sec:orgbf88555}
+\begin{itemize}
+\item Different CPUs have different socket requirements
+\item And these are very specific - CPUs often not upgrade-able because of this
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-5-CPUsockets.png}
+\captionof{figure}{CPU socket types}
+\end{center}
+\begin{itemize}
+\item Zero Insertion Force (ZIF) - Pins on CPU, delicately dropped into sockets
+\item Pin Grid Array (PGA) - pins are on CPU
+\item Land Grid Array (LGA) - pins are on motherboard
+\begin{itemize}
+\item easier to damage the motherboard
+\end{itemize}
+\item In all sockets, CPU needs to be aligned correctly - often there are visual cues on the CPU itself
+\end{itemize}
+\subsubsection*{Front panel connector}
+\label{sec:orgaead277}
+\begin{itemize}
+\item Connections from motherboard to various ports on the front or sides of case
+\end{itemize}
+\subsubsection*{Internal USB connector}
+\label{sec:orgaa73054}
+\begin{itemize}
+\item From USB on motherboard
+\item to external USB ports for mouse, keyboard, external storage, etc
+\end{itemize}
+\subsection*{BIOS/UEFI settings}
+\label{sec:org86da0d9}
+\begin{itemize}
+\item Basic Input / Output System
+\begin{itemize}
+\item The software that starts the computer
+\begin{itemize}
+\item firmware
+\item System BIOS
+\item ROM / flash memory
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{Launching BIOS}
+\label{sec:orgcf2b34f}
+\begin{itemize}
+\item Pressing specific keys / combinations during startup
+\begin{itemize}
+\item Del, F1, F2, Ctrl-S, or Ctrl-Alt-S, for example
+\end{itemize}
+\end{itemize}
+\subsubsection*{Windows 8 and Windows 10}
+\label{sec:orgb78e121}
+\begin{itemize}
+\item Fast Startup is too quick to open BIOS
+\item Must disable Fast Startup first (Control Panel --> Power Options)
+\end{itemize}
+\subsubsection*{Legacy BIOS}
+\label{sec:orga618cb4}
+\begin{itemize}
+\item Original BIOS, 25-30 years old
+\item Limited hardware support
+\end{itemize}
+\subsubsection*{UEFI BIOS}
+\label{sec:orgb4b409e}
+\begin{itemize}
+\item Unified Extensible Firmware Interface
+\item Replaced traditional BIOS
+\item Graphical \textbf{or} text-based
+\item Advantages:
+\begin{itemize}
+\item Can boot from larger (>2.2 TB) partition
+\end{itemize}
+\end{itemize}
+\subsubsection*{BIOS simulators:}
+\label{sec:org6f471b2}
+\begin{itemize}
+\item Legacy Phoenix BIOS:
+\begin{itemize}
+\item \url{https://geekprank.com/bios/}
+\end{itemize}
+\item Lenovo BIOS simulator:
+\begin{itemize}
+\item \url{https://download.lenovo.com/bsco/index.html}
+\begin{itemize}
+\item Choose one of the ThinkPad X1 models - can choose between graphical or text
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{Boot options}
+\label{sec:orgab5f55c}
+\begin{itemize}
+\item Can choose which drive to boot from
+\begin{itemize}
+\item Which hard drive, or CD-ROM / DVD, USB, others
+\end{itemize}
+\end{itemize}
+\subsubsection*{Firmware updates}
+\label{sec:org280d4c8}
+\begin{itemize}
+\item BIOS needs to be updated
+\item Should be first thing you check when you start up a new computer
+\item Sometimes will need to be updated to support a new device
+\item Always make a backup of your BIOS before flashing!
+\end{itemize}
+\subsubsection*{Security settings}
+\label{sec:orgc7e31d6}
+\paragraph*{BIOS Passwords}
+\label{sec:orgd4daed0}
+\begin{itemize}
+\item User password
+\begin{itemize}
+\item Need password to start the system
+\end{itemize}
+\item Supervisor password
+\begin{itemize}
+\item Restricts BIOS changes
+\item Need supervisor password to make changes
+\end{itemize}
+\end{itemize}
+\paragraph*{Full disk Encryption}
+\label{sec:org90863ec}
+\begin{itemize}
+\item Encrypt \textbf{everything}
+\item Windows BitLocker disk encryption
+\begin{itemize}
+\item BIOS integrates with TPM
+\item TPM - Trusted Platform Module
+\begin{itemize}
+\item not on all motherboards
+\item Adds advanced encryption functions
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\paragraph*{Secure Boot}
+\label{sec:org2447e9e}
+\begin{itemize}
+\item Part of the UEFI specification
+\item Only allows digitally signed software to run
+\end{itemize}
+\subsubsection*{CMOS battery}
+\label{sec:org33a4e16}
+\begin{itemize}
+\item In the olden days, user BIOS settings were stored in:
+\begin{itemize}
+\item A Complementary Metal-Oxide Semiconductor
+\begin{itemize}
+\item which is a type of memory that needed power to retain data
+\end{itemize}
+\item Would have a battery, could be removed to reset BIOS settings
+\end{itemize}
+\item These days, stored in flash memory - move a jumper to reset
+\end{itemize}
+
+\subsection*{CPU features}
+\label{sec:org905db56}
+
+\subsubsection*{Single core CPU}
+\label{sec:org3d60680}
+\begin{itemize}
+\item Back when a CPU was just its own thing, one unit
+\end{itemize}
+\subsubsection*{Hyperthreading}
+\label{sec:orge08c745}
+\begin{itemize}
+\item Next step: 
+\begin{itemize}
+\item A single CPU can accept and process two or more sets of instructions simultaneously
+\item OS sees more than one CPU
+\end{itemize}
+\end{itemize}
+\subsubsection*{Multicore}
+\label{sec:orgc90f7df}
+\begin{itemize}
+\item Dual-core, quad-core, etc
+\item Each core can have its own cache or can share cache with other cores
+\item Multicore CPUs usually have hyperthreading as well
+\end{itemize}
+\subsubsection*{CPU cache}
+\label{sec:orge8489a8}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-5-CPUcache.png}
+\captionof{figure}{Cache memory}
+\end{center}
+\begin{itemize}
+\item The CPU caches memory in storage local to chip
+\item Static RAM (SRAM) - much faster and more expensive than dynamic RAM
+\end{itemize}
+\begin{itemize}
+\item L1 cache - inside the CPU
+\item L2 - built onto or next to CPU
+\item L3 - shared by different cores
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{./images/3-5-CPUcacheDiagram.png}
+\captionof{figure}{CPU diagram}
+\end{center}
+
+\subsubsection*{Virtual technology}
+\label{sec:orga752e3b}
+\begin{itemize}
+\item Support for virtualization is in the CPU
+\item If virtualization is not supported by CPU, then you will not be able to run virtual machines on this computer, sorry!
+\item Can be enabled in BIOS
+\begin{itemize}
+\item Intel Virtualization Technology (VT)
+\item AMD Virtualization (AMD-V)
+\end{itemize}
+\end{itemize}
+\subsubsection*{Speeds}
+\label{sec:org2be70a2}
+\begin{itemize}
+\item ``Clock speed'' of CPU
+\begin{itemize}
+\item Megahertz (MHz) or gigahertz (GHz)
+\end{itemize}
+\item Actual speed is a combination of many factors
+\begin{itemize}
+\item Bus architecture, CPU memory cache sizes, operating system
+\item Don't see CPUs being marketed with GHz any more
+\end{itemize}
+\end{itemize}
+\subsubsection*{Overclocking}
+\label{sec:org00ee099}
+\begin{itemize}
+\item Can increase the clock speed of a CPU past its recommended value
+\begin{itemize}
+\item Produces more heat, CPU can become unstable
+\item Or even break, bringing more of your system down with it
+\item Will generally void your warranty!
+\end{itemize}
+\end{itemize}
+\subsubsection*{Integrated GPU}
+\label{sec:orgdd8ef1a}
+\begin{itemize}
+\item Graphics require additional calculation and processing
+\item In the olden days this was always done by a separate component
+\item Now the Graphics Processing Unit (GPU) is usually integrated into the CPU
+\item In desktops and some laptops, can add additional graphics card to do this.
+\end{itemize}
+
+\subsection*{Compatibility of different CPUs}
+\label{sec:org4e2a5f8}
+
+\subsubsection*{Intel vs AMD}
+\label{sec:org2602eaa}
+\begin{itemize}
+\item American Micro Devices, usually a little cheaper
+\item Intel usually seen as having better performance
+\item But both broadly equivalent
+\end{itemize}
+
+\subsection*{Cooling mechanism}
+\label{sec:orgd48a4b4}
+
+\subsubsection*{Fans}
+\label{sec:orgb75418d}
+\begin{itemize}
+\item Cases have fans to pull and push air
+\item Airflow can be impeded by components
+\item Location of cables
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{./images/3-5-cabinet-airflow-diagram.png}
+\captionof{figure}{Cabinet airflow diagram}
+\end{center}
+\subsubsection*{Heat sink}
+\label{sec:org8e984da}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-5-cpuHeatsinkThermalPasteDiagram.png}
+\captionof{figure}{CPU, heatsink, and thermal paste}
+\end{center}
+
+\begin{itemize}
+\item Sits on chip, dissipates heat through conduction
+\item Thermal compound (paste) between
+\item Problems with heat sink or thermal paste can cause heating problems
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-5-CPUheatsinkFan.jpg}
+\captionof{figure}{CPU, heatsink, and fan (thermal paste between CPU and heatsink)}
+\end{center}
+
+\subsubsection*{Liquid}
+\label{sec:orgcf7cce7}
+\begin{itemize}
+\item Coolant circulated through computer
+\begin{itemize}
+\item Potential points of failure:
+\begin{itemize}
+\item Pump can fail
+\item Air can get in fluid lines
+\end{itemize}
+\end{itemize}
+\item Water and other liquids conduct heat better than air
+\item For high end systems or hobbyists and serious nerds
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-5-liquidCooling.jpg}
+\captionof{figure}{Liquid cooling}
+\end{center}
+
+\subsection*{Expansion cards}
+\label{sec:org7de5019}
+\begin{itemize}
+\item An ``expansion card'' is a printed circuit board that plugs into a computer's motherboard
+\begin{itemize}
+\item Enhances its function in some way
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{./images/3-5-VideoCard.png}
+\captionof{figure}{An extremely fancy ATI video card}
+\end{center}
+\subsubsection*{Video cards, aka Graphical Processing Units (GPU)}
+\label{sec:org48a79da}
+\begin{itemize}
+\item Works independently do the math for generating images
+\begin{itemize}
+\item Takes burden off the CPU
+\end{itemize}
+\item In lower-end machines, can be in CPU - ``on-die''
+\begin{itemize}
+\item So-called ``integrated GPUs'' not as powerful
+\item or Video expansion card:
+\begin{itemize}
+\item Uses more power, takes up room, can add heat
+\item But allows the off-loading of graphics calculations from the CPU and thus production of superior graphics
+\item Important if doing computer-aided design (CAD) or playing super-fancy video games
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\subsubsection*{Sound cards}
+\label{sec:orgcc316ba}
+\begin{itemize}
+\item Rarely seen Not seen as much these days, unless doing high-end audio work
+\item Usually integrated into motherboard, and generally adequate
+\end{itemize}
+\subsubsection*{eSATA card}
+\label{sec:orge227f45}
+\begin{itemize}
+\item Needed if eSATA will be used
+\begin{itemize}
+\item \textbf{Reminder} External Serial Advanced Technology Attachment or eSATA is an external interface for SATA technologies
+\item Often faster than USB for connecting to external storage devices
+\end{itemize}
+\end{itemize}
+
+\section*{3.7 – Summarize power supply types and features.}
+\label{sec:org1e00ac9}
+\subsection*{Power Supply Unit (PSU)}
+\label{sec:org97d4dc5}
+\begin{itemize}
+\item For both desktops and laptops, main job is to convert alternating current (AC) from the power socket in the wall to direct current (DC) for use by the computer
+\begin{itemize}
+\item In a desktop, the PSU is inside the case
+\item In a laptop, it is usually external and we sometimes call it a ``power brick''
+\end{itemize}
+\end{itemize}
+\subsubsection*{Destop power supply unit}
+\label{sec:org9dcb0d8}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-7-DesktopPSU.jpg}
+\captionof{figure}{Desktop PSU}
+\end{center}
+(notice the red switch which converts the voltage input)
+
+\subsubsection*{Laptop power supply}
+\label{sec:org77f47a4}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-7-LaptopPowerBrick.jpg}
+\captionof{figure}{Laptop power brick}
+\end{center}
+\begin{itemize}
+\item The ``brick'' is what converts AC to DC, with the leads going to the wall power socket and the laptop power socket visible
+\end{itemize}
+
+\subsection*{Input 115V vs. 220V}
+\label{sec:org92e5202}
+\begin{itemize}
+\item US is 110-120V, most of the rest of the world is 220-240V
+\item Most of the time this can be handled automatically by the power supply
+\item But not always - sometimes a switch on the back (see picture of desktop PSU)
+\item Look at inscription on power brick to make sure
+\begin{itemize}
+\item if it says ``INPUT: 100-240V, 50/60 Hz'' then it can be used in either 115V or 220V power settings without additional work
+\end{itemize}
+\end{itemize}
+
+\subsubsection*{Laptop power brick label}
+\label{sec:org53a2260}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{./images/3-7-PowerBrickLabel.jpg}
+\captionof{figure}{Laptop power supply label}
+\end{center}
+
+\subsection*{Output 5.5V vs. 12V}
+\label{sec:orgdbbf5e8}
+\begin{itemize}
+\item Power supply converts AC to DC
+\item Converts to 3.3V DC, 5.5V DC, and 12V DC
+\item All voltages used by different parts of the computer
+\end{itemize}
+\subsection*{Ampere, Voltage, Power}
+\label{sec:orgf420586}
+\begin{itemize}
+\item Ampere: amp, A - rate of electron flow
+\begin{itemize}
+\item Can be thought of as the ``diameter of the hose''
+\end{itemize}
+\item Voltage: volt, V - Electrical ``pressure'' pushing electrons
+\item Power: usually measured in watts (W)
+\begin{itemize}
+\item volts * amps = watts
+\end{itemize}
+\end{itemize}
+\subsection*{Current}
+\label{sec:org0a2487a}
+\begin{enumerate}
+\item Alternating Current (AC)
+\begin{itemize}
+\item Direction of current constantly reverses
+\item Better at transmitting over long distances
+\end{itemize}
+\item Direct Current (DC)
+\begin{itemize}
+\item One direction, constant voltage
+\end{itemize}
+\end{enumerate}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{./images/3-7-ACvsDC.png}
+\captionof{figure}{AC vs DC}
+\end{center}
+
+\subsection*{24-pin motherboard adapter}
+\label{sec:orga8e03d0}
+\begin{itemize}
+\item Main motherboard power for ATX motherboards
+\end{itemize}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.15\textwidth]{./images/3-7-24-pin-motherboard-power-connector.png}
+\caption{24-pin motherboard power connector}
+\end{figure}
+
+\subsection*{Power supply output}
+\label{sec:org5ab4967}
+\begin{itemize}
+\item +12 V
+\begin{itemize}
+\item PCIe adapters, hard drives, fans, others
+\end{itemize}
+\item +5 V 
+\begin{itemize}
+\item Some motherboard components, not as many these days
+\end{itemize}
+\item +3.3 V
+\begin{itemize}
+\item M.2 slots, RAM, logic circuits
+\end{itemize}
+\item -12 V Integrated LAN
+\begin{itemize}
+\item some PCI cards
+\end{itemize}
+\item -5 V now rarely used
+\end{itemize}
+\subsection*{Here's what a set of power supply output wires looks like:}
+\label{sec:org2b02169}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{./images/3-7-PowerSupplyOutput.png}
+\captionof{figure}{Power supply output, labelled}
+\end{center}
+\subsection*{Number of devices/types of devices to be powered}
+\label{sec:org3c94c3f}
+\begin{itemize}
+\item When thinking about the Power Supply Unit (PSU) required for a device,
+\begin{itemize}
+\item Judge power supply needed by number of components to be powered
+\item Video cards will be biggest draw
+\item Generally, add 50\% capacity so that things can be added in future
+\end{itemize}
+\end{itemize}
+
+\section*{3.8 – Given a scenario, select and configure appropriate components for a custom PC}
+\label{sec:org5504328}
+
+\subsection*{Graphic/CAD/CAM design workstation}
+\label{sec:org7be9bd7}
+\begin{itemize}
+\item CAD = Computer Aided Design
+\item CAM = Computer Aided Manufacturing
+\end{itemize}
+\emph{These computers will need:}
+\begin{itemize}
+\item \textbf{Multicore processor}
+\begin{itemize}
+\item multiple tasks and calculations being performed
+\end{itemize}
+\item \textbf{High-end video}
+\begin{itemize}
+\item complex graphics
+\item dedicated video card
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item \textbf{Maximum RAM}
+\begin{itemize}
+\item again, due to the many calculations being performed
+\item significant memory use as a result
+\end{itemize}
+\item \textbf{SSD}
+\begin{itemize}
+\item \textbf{high speed storage}
+\end{itemize}
+\end{itemize}
+
+\subsection*{Audio-video editing workstation}
+\label{sec:orga186018}
+\begin{itemize}
+\item These computers will likely need:
+\item Specialized audio and video card
+\begin{itemize}
+\item High quality audio
+\item High quality sound
+\end{itemize}
+\item Large, fast hard drive
+\begin{itemize}
+\item Constant disk writes
+\item SSD for speed
+\end{itemize}
+\item Dual monitors
+\begin{itemize}
+\item Edit in one monitor, view output in the other
+\end{itemize}
+\end{itemize}
+
+\subsection*{Virtualization workstation}
+\label{sec:org483b075}
+\begin{itemize}
+\item Will be running numerous virtual machines
+\begin{itemize}
+\item This will require significant RAM
+\begin{itemize}
+\item and as many CPU cores as you can cram in there
+\end{itemize}
+\end{itemize}
+
+\item \textbf{Maximum RAM and CPU cores}
+\begin{itemize}
+\item Each virtual device will need its own memory
+\item Maximum CPU cores due to constant processing
+\item Virtualization apps use multiple cores
+\end{itemize}
+\end{itemize}
+\subsection*{Gaming PC}
+\label{sec:orgb6e11cf}
+Needs:
+\begin{itemize}
+\item Multicore processor
+\begin{itemize}
+\item Again, due to the multiple tasks being performed
+\end{itemize}
+\item High-end video/specialized GPU
+\begin{itemize}
+\item Graphically complex tasks
+\end{itemize}
+\item High-definition sound card
+\begin{itemize}
+\item For the full experience
+\end{itemize}
+\item High-end cooling
+\begin{itemize}
+\item All components will be running very hot
+\end{itemize}
+\end{itemize}
+\subsection*{Standard ``thick client''}
+\label{sec:orgb85e332}
+\begin{itemize}
+\item Your standard computer
+\item ``Thick'' only relative to ``thin'' client
+\begin{itemize}
+\item Desktop applications
+\item Programs stored on hard drive
+\item Applications run locally with CPU and RAM
+\end{itemize}
+\item Make sure it meets recommended requirements for selected OS
+\begin{itemize}
+\item This will include CPU, RAM, disk space
+\end{itemize}
+\end{itemize}
+\subsection*{Thin client}
+\label{sec:org6444f65}
+\begin{itemize}
+\item Most things run on a remote server
+\begin{itemize}
+\item Basic applications
+\item Only a virtual desktop infrastructure (VDI)
+\end{itemize}
+\item Make sure it meets minimum requirements for selected OS
+\begin{itemize}
+\item and only a minimal OS required
+\end{itemize}
+\item Network connectivity
+\begin{itemize}
+\item Without network connectivity, will not work
+\item Everything important happens remotely
+\end{itemize}
+\end{itemize}
+\subsection*{Network Attached Storage device (NAS)}
+\label{sec:org0ce2193}
+\begin{itemize}
+\item Dedicated storage attached to network
+\item Can be used for: 
+\begin{itemize}
+\item Media streaming
+\begin{itemize}
+\item to sites local and remote
+\end{itemize}
+\item File sharing
+\begin{itemize}
+\item Easy access to shred resources
+\end{itemize}
+\end{itemize}
+\item Best with a Gigabit NIC
+\begin{itemize}
+\item Fastest most reliable network access necessary
+\end{itemize}
+\item You would want it to have a RAID array
+\begin{itemize}
+\item This device is all about holding data and keeping it safe
+\end{itemize}
+\item ``Multiply redundant'' - Different servers duplicating its work
+\end{itemize}
+\section*{3.9 – Given a scenario, install and configure common devices.}
+\label{sec:org69c6bea}
+
+\subsection*{Desktop}
+\label{sec:org206ac9f}
+
+\subsubsection*{Desktop thin client}
+\label{sec:org562490f}
+\begin{itemize}
+\item The kind of computer that might be used as a POS (Point of Sale) device, or at a reception desk
+\begin{itemize}
+\item Not intended for serious computational work, but for simply running applications that can be remote from the actual terminal
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-9-ThinClent.jpg}
+\captionof{figure}{HP t630 Thin Client}
+\end{center}
+\begin{itemize}
+\item Very little configuration
+\item Mouse, monitor, keyboard
+\item Inexpensive to buy, easy to replace
+\end{itemize}
+\subsubsection*{Desktop thick client}
+\label{sec:org0c98b67}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-9-ThickClientDesktop.jpg}
+\captionof{figure}{Thick client (desktop)}
+\end{center}
+\begin{itemize}
+\item Traditional computer setup
+\item With traditional requirements:
+\begin{itemize}
+\item Operating system
+\item Device drivers
+\item Applications
+\end{itemize}
+\end{itemize}
+\subsubsection*{Account setup/settings for thin and thick clients}
+\label{sec:org2bdc65f}
+\begin{itemize}
+\item Centralized account management
+\begin{itemize}
+\item Microsoft Active Directory
+\end{itemize}
+\item Thin client: No local permissions needed - all on network
+\item Thick client: Added to Microsoft domain
+\end{itemize}
+
+\section*{3.10 – Given a scenario, configure SOHO multifunction devices/printers and settings.}
+\label{sec:org5eb10a4}
+
+\subsection*{Use appropriate drivers for a given operating system}
+\label{sec:org1a32c81}
+\begin{itemize}
+\item Specific drivers for specific model
+\end{itemize}
+\subsubsection*{Configuration settings}
+\label{sec:orgea10561}
+\begin{itemize}
+\item \textbf{Duplex}
+\begin{itemize}
+\item Prints on both sides of paper
+\end{itemize}
+\item \textbf{Collate}
+\begin{itemize}
+\item Multiple copies in their proper order
+\end{itemize}
+\item Orientation
+\item Portrait vs landscape
+\item Quality
+\begin{itemize}
+\item Resolution, color, greyscale
+\end{itemize}
+\end{itemize}
+
+\subsection*{Device sharing}
+\label{sec:orgcf9a1a4}
+
+\subsubsection*{Wired}
+\label{sec:orgd0d6bf0}
+\begin{itemize}
+\item USB
+\item Serial
+\item Ethernet
+\end{itemize}
+\subsubsection*{Wireless}
+\label{sec:org5294aeb}
+\begin{itemize}
+\item Bluetooth
+\item 802.11 (a,b,g,n,ac)
+\item Infrastructure vs. ad hoc
+\begin{itemize}
+\item No access point, direct link between devices
+\end{itemize}
+\end{itemize}
+\subsubsection*{Integrated print service (hardware)}
+\label{sec:org4df857c}
+\begin{itemize}
+\item Print server often inside the printer - a component of the printer
+\begin{itemize}
+\item Sets up printing queue itself, as different devices sent print jobs to it
+\end{itemize}
+\end{itemize}
+\subsubsection*{Cloud printing/remote printing}
+\label{sec:org0501b1b}
+\begin{itemize}
+\item Google and HP, among others, offer cloud printing services
+\begin{itemize}
+\item Print from anywhere in the world to a specific printer
+\end{itemize}
+\end{itemize}
+
+\subsection*{Public/shared devices}
+\label{sec:orga3fce1a}
+
+\subsubsection*{Sharing local/networked device via operating system settings}
+\label{sec:org4f59954}
+\begin{itemize}
+\item A printer attached to one computer can be shared with other computers on the network
+\begin{itemize}
+\item Windows: Settings --> Devices --> Printers and scanners. Then ``Printer Properties'' ``Sharing'' tab
+\item Apple / Mac OS: System Preferences --> Printers \& Scanners.  Click ``share this printer on the network''
+\end{itemize}
+\end{itemize}
+
+\paragraph*{TCP/Bonjour/Airprint}
+\label{sec:org56520a7}
+\begin{itemize}
+\item Allows standalone printer to be shared with devices on the same LAN
+\begin{itemize}
+\item Bonjour and Airprint both proprietary Apple protocols
+\item TCP is the same protocol we have been learning about, a backbone protocol
+\end{itemize}
+\end{itemize}
+
+\section*{3.11 – Given a scenario, install and maintain various print technologies.}
+\label{sec:orgac4c7e1}
+
+\subsection*{Laser}
+\label{sec:orgb903909}
+
+\subsubsection*{Laser printer parts}
+\label{sec:orgc977680}
+
+\begin{itemize}
+\item Imaging drum
+\item fuser assembly
+\item transfer belt
+\item transfer roller
+\item pickup rollers
+\item separation pads
+\item duplexing assembly (allows double-sided printing)
+\end{itemize}
+\subsubsection*{Imaging process: processing, charging, exposing, developing, transferring, fusing, and cleaning}
+\label{sec:org4aafc48}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-11-LaserPrinterDiagram.png}
+\captionof{figure}{Laser printer components}
+\end{center}
+\subsubsection*{Laser printer maintenance}
+\label{sec:org74a03af}
+\begin{itemize}
+\item Replace toner
+\item Apply maintenance kit
+\item Calibrate
+\item Clean
+\end{itemize}
+
+\subsection*{Inkjet}
+\label{sec:org5d90847}
+\begin{itemize}
+\item Inexpensive in itself, but ink is costly
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-11-InkjetPrinterInsideDiagram.jpg}
+\captionof{figure}{Inkjet printer components - the only terms you need to know are listed below}
+\end{center}
+
+\subsubsection*{Inkjet components: Ink cartridge}
+\label{sec:org9c22bb6}
+\begin{itemize}
+\item Places drops of ink on the page
+\begin{itemize}
+\item Pulled from cartridge
+\end{itemize}
+\end{itemize}
+\subsubsection*{Inkjet components: Print head}
+\label{sec:org1ef8fe7}
+\begin{itemize}
+\item Often the print head is integrated into the cartridge
+\end{itemize}
+\subsubsection*{Inkjet components: Feed rollers}
+\label{sec:org35e3905}
+\begin{itemize}
+\item Pick up and feed paper
+\begin{itemize}
+\item Can wear down, get dirty
+\end{itemize}
+\end{itemize}
+\subsubsection*{Inkjet components: Duplexing assembly}
+\label{sec:org1662f4e}
+\begin{itemize}
+\item Not a part of every printer
+\end{itemize}
+\subsubsection*{Inkjet components: Carriage and belt}
+\label{sec:org746dd4e}
+\begin{itemize}
+\item Ink cartridges move over the paper
+\item Belt moves the carriage back and forth
+\end{itemize}
+\subsubsection*{Inkjet maintenance: Calibrate}
+\label{sec:orgd201a14}
+\begin{itemize}
+\item Nozzles need to be aligned to the paper
+\item Usually on-board calibration program
+\end{itemize}
+\subsubsection*{Inkjet Maintenance:}
+\label{sec:org7293ea2}
+\begin{itemize}
+\item Clean heads
+\item Replace cartridges
+\item Calibrate
+\item Clear jams
+\end{itemize}
+
+\subsection*{Thermal Printers}
+\label{sec:orgf95a638}
+
+\begin{itemize}
+\item Most often found in commerical settings, printing receipts and other smaller documents
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-11-ThermalPrinterPrintingProcess.jpg}
+\captionof{figure}{Thermal printer printing process}
+\end{center}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-11-ThermalPrinter.jpg}
+\captionof{figure}{A thermal label printer (opened)}
+\end{center}
+
+\begin{itemize}
+\item Parts: 
+\begin{itemize}
+\item Feed assembly, heating element
+\item Special thermal paper
+\end{itemize}
+\item Maintenance: 
+\begin{itemize}
+\item Replace paper
+\item Clean heating element
+\item Remove debris
+\end{itemize}
+\end{itemize}
+
+\subsection*{Impact printers}
+\label{sec:org4b2d3df}
+\begin{itemize}
+\item The oldest, most classic printers around
+\begin{itemize}
+\item Dot matrix, daisy wheel
+\item Usually loud and slow
+\item Still used because for some print jobs they can be quite fast
+\item Due to impact printing process, the only kind of printer that can use carbon paper to make multiple copies
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item Parts:
+\begin{itemize}
+\item Print head, ribbon, tractor feed
+\end{itemize}
+\end{itemize}
+
+\subsubsection*{Dot matrix printer}
+\label{sec:orgae59da7}
+\begin{itemize}
+\item Can produce both text and graphics, though neither will look particularly good compared to laser, or even inkjet
+\item Complex sets of tiny pins strike an ink-coated ribbon
+\end{itemize}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-11-DotMatrixPrinter.jpg}
+\captionof{figure}{Dot matrix printer}
+\end{center}
+\begin{itemize}
+\item These have a distinctive sound, here's a YouTube clip if you've never heard the relaxing sounds of a dot matrix printer:
+\begin{itemize}
+\item \url{https://www.youtube.com/watch?v=cDX3rVuW-7U}
+\end{itemize}
+\end{itemize}
+
+\subsubsection*{Daisy wheel printer}
+\label{sec:org935f995}
+\begin{itemize}
+\item Almost like an automated old-fashioned typewriter
+\begin{itemize}
+\item Pre-formed type elements strike paper through an ink-coated ribbon, producing text
+\item In fact, some manual typewriters used daisy wheel print heads
+\item These days, more like a historical curiosity, though they are capable of producing good looking text
+\item Text \textbf{only} - no graphics
+\item So loud!  Here is a YouTube video if you want to hear how they sound:
+\item \url{https://www.youtube.com/watch?v=CTBM9JELUYQ}
+\end{itemize}
+\end{itemize}
+\subsubsection*{Impact printer paper}
+\label{sec:orgf7a13ee}
+\begin{itemize}
+\item Can use regular old printer paper
+\item For fast, extensive dot matrix printing can use continuous sheets
+\item Can use carbon copies between pages
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/3-11-DotMatrixContinuousSheetPaper.jpg}
+\captionof{figure}{Dot matrix continuous feed paper (this one has carbon copying built in!)}
+\end{center}
+
+\subsubsection*{Impact printer maintenance:}
+\label{sec:org054328b}
+\begin{itemize}
+\item Replace ribbon
+\item replace print head
+\item replace paper
+\end{itemize}
+
+\section*{4.1 – Compare and contrast cloud computing concepts.}
+\label{sec:orgcc0ff2c}
+\subsection*{Cloud computing}
+\label{sec:org8443201}
+\begin{itemize}
+\item Services that are housed ``in the Cloud''
+\begin{itemize}
+\item i.e. on someone else's computer, server, or network
+\item Largest providers of such services today:
+\begin{itemize}
+\item Google Cloud
+\item Amazon (AWS)
+\item Microsoft (Azure)
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\subsection*{``The Cloud''}
+\label{sec:orgdf00a4b}
+\begin{itemize}
+\item What is ``The Cloud''? \emph{precisely?}
+\begin{itemize}
+\item As mentioned above, ``The Cloud'' is essentially a computer (or network of computers!) that belongs to someone else
+\item And that someone is renting it out to you
+\item The computer that you are renting can act as:
+\begin{itemize}
+\item a mail server
+\item a file server
+\item a print server
+\item any other kind of server, really
+\end{itemize}
+\item Sometimes the ``rent'' is your personal information
+\begin{itemize}
+\item i.e., Gmail
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsection*{A momentary definition of The Cloud}
+\label{sec:orgf65af8f}
+\begin{quote}
+The cloud is a suite of hardware and software - managed by a service provider or organization - that provides data, applications, and other resources to users. often via the Internet
+\end{quote}
+\begin{itemize}
+\item The kinds of services provided on the cloud, and the ways we think about them, are constantly changing and quite complicated.
+\item Fortunately, the A+ only requires you to know the basic stuff
+\end{itemize}
+\subsection*{Cloud Computing}
+\label{sec:org0b4b527}
+\begin{itemize}
+\item In fact, The A+ only really deals with \texttt{Cloud Computing} which has a more limited definition:
+\begin{itemize}
+\item ``Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction.''
+\begin{itemize}
+\item For the source of the above quote and the standards from which CompTIA gets all of its thinking about cloud computing, go here:
+\begin{itemize}
+\item \href{https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf}{NIST definition of cloud computing}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsection*{So, the key is,}
+\label{sec:orgb6482ab}
+\begin{itemize}
+\item from above quote - ``minimal management effort or service provider interaction.''
+\item That's the nice thing about a service like Gmail - it usually works right, you don't have to worry about how to set it up
+\begin{itemize}
+\item And chances are you've never had to deal with Google about any aspect of it.
+\end{itemize}
+\end{itemize}
+\subsection*{This means that,}
+\label{sec:org774264f}
+\begin{itemize}
+\item Cloud computing saves money and time
+\begin{itemize}
+\item You might not need to have an in-house network guy any more
+\item You won't need to have a server room, sucking up electricity and generating heat and further problems
+\item Someone else is responsible for maintaining your stuff
+\begin{itemize}
+\item Of course, the last can create its own problems\ldots{}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsection*{\textbf{IaaS} Infrastructure as a Service}
+\label{sec:orgaeb20a1}
+\begin{itemize}
+\item A service that offers computer networking, storage, load balancing, routing, and VM (virtual machine) hosting
+\begin{itemize}
+\item The \emph{provider} hosts all the devious and complicated equipment and software required to manage such things
+\item With a subscription service, you can access hardware only when you need it
+\begin{itemize}
+\item This model has \emph{scalability} - you can quickly ramp up the scale of the service without having to buy a bunch of new equipment
+\item Common providers:
+\begin{itemize}
+\item \href{https://cloud.google.com/}{Google Cloud Computing}
+\item \href{https://aws.amazon.com/}{Amazon Web Services}
+\item \href{https://azure.microsoft.com/en-us/}{Microsoft Azure} \footnote{This is the service I used to have a virtual Windows 10 machine in class so I could show you some things about that operating system.}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\subsection*{\textbf{SaaS} Software as a Service}
+\label{sec:orgc5414ba}
+\begin{itemize}
+\item This is the most commonly used and recognized kind of cloud computing
+\begin{itemize}
+\item This allows users to access an individual application provided by a third party over the internet
+\item Google is really the master of this service, with \href{http://mail.google.com}{Gmail}, \href{http://docs.google.com}{Google Docs}, etc
+\item But Microsoft is catching up, with \href{https://www.microsoft.com/en-us/microsoft-365}{Office 365}
+\item This means that the applications themselves do not have to be installed on your device, nor do you need to worry about updating them.
+\begin{itemize}
+\item As someone who has dallied with the idea of setting of their own email server, it is \emph{not easy} and I am happy to outsource that!
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsection*{\textbf{PaaS} Platform as a Service}
+\label{sec:orgeafb77e}
+\begin{itemize}
+\item This one is slightly trickier for newcomers to understand
+\begin{itemize}
+\item Renting a fully configured environment can allow developers to work on software without having to manage that environment themselves.
+\item Management, updating, keeping the data secure is all the responsibility of the provider
+\item This is also where the definitions start to break down - is a virtual desktop infrastructure, software, or a platform?
+\end{itemize}
+\end{itemize}
+
+\subsection*{Public vs. private vs. hybrid vs. community}
+\label{sec:orgd476448}
+\begin{itemize}
+\item These definitions are, again, those defined by \href{https://www.nist.gov/}{NIST}
+\begin{itemize}
+\item They measure how cloud resources are shared and apportioned out by providers
+\item Can also determine how much they cost
+\end{itemize}
+\end{itemize}
+\subsubsection*{Public cloud}
+\label{sec:org7e99812}
+\begin{itemize}
+\item The service provider offers applications and storage space to the general public over the Internet
+\begin{itemize}
+\item Examples include \href{https://www.nist.gov/}{Dropbox}, \href{http://mail.google.com}{Gmail}, \href{https://www.rackspace.com/}{Rackspace}, and other usual suspects
+\item These services end up being much cheaper - you can rent a tiny little stripped down virtual Linux machine for as little as five dollars per \emph{year}
+\end{itemize}
+\end{itemize}
+\subsubsection*{Private Cloud}
+\label{sec:org8c23650}
+\begin{itemize}
+\item Usually designed specifically for a particular organization or individual
+\begin{itemize}
+\item Individuals / businesses purchase their own software / hardware to run their own virtualization / cloud service
+\end{itemize}
+\item Often loses some of the desirable features of cloud computing
+\begin{itemize}
+\item Not as scaleable, you are now responsible for managing and updating software
+\item BUT! Now you can control your own security, the data all stays on-site
+\end{itemize}
+\end{itemize}
+\subsection*{Shared resources}
+\label{sec:org868d4db}
+\begin{itemize}
+\item Much of the point of cloud computing is \emph{sharing} - of resources, cost, responsibilities
+\item And, depending on the model you adapt for your cloud, sharing your data
+\begin{itemize}
+\item The two basic choices are \textbf{internal} or \textbf{external} cloud architecture
+\end{itemize}
+\end{itemize}
+
+\subsection*{Internal vs. external clouds}
+\label{sec:orgb0b8c24}
+\begin{itemize}
+\item Internal
+\begin{itemize}
+\item No resources (i.e. servers, bandwidth) are shared
+\item You pay for all that stuff yourself
+\item Also have to maintain it yourself
+\item But you also control it yourself, and most of the costs are up-front
+\end{itemize}
+\end{itemize}
+\subsection*{Internal vs. external clouds, cont'd}
+\label{sec:orgea9c4c1}
+\begin{itemize}
+\item External
+\begin{itemize}
+\item Resources shared with others on an external cloud
+\item Infrastructure owned by someone else
+\begin{itemize}
+\item (Who is responsible for keeping it running)
+\end{itemize}
+\item Generally less expensive;
+\begin{itemize}
+\item Cost can be monitored over time
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsection*{Important features of cloud computing}
+\label{sec:orgafe4b2d}
+\begin{itemize}
+\item The next few slides / sections are about various features of cloud computing
+\begin{itemize}
+\item Important to know, but more importantly
+\begin{itemize}
+\item This is what CompTIA \emph{expects} you to know:
+\begin{itemize}
+\item \textbf{rapid elasticity}
+\item \textbf{on-demand} service
+\item \textbf{resource pooling}
+\item \textbf{measured service}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsection*{Rapid elasticity}
+\label{sec:org75428bd}
+\begin{itemize}
+\item The ability to:
+\begin{itemize}
+\item Build a network or resource quickly and efficiently
+\begin{itemize}
+\item ``Bob we just launched Widget 2.0 and we will have 2,000 more orders a month!
+\begin{itemize}
+\item ``No prob, I'll just spin up 500 new identical webservers by clicking this button!
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\item Not all providers can provide the kind of elasticity you might want
+\end{itemize}
+\subsection*{On-demand}
+\label{sec:orgc382ea8}
+\begin{itemize}
+\item On your own, adding new software or hardware can be difficult, expensive, and time-consuming
+\begin{itemize}
+\item With a cloud service, it can be instant
+\end{itemize}
+\end{itemize}
+\subsection*{Resource pooling}
+\label{sec:org2686ca0}
+\begin{itemize}
+\item The provider's resources can be considered one big pool of stuff - hardware, bandwidth, software
+\begin{itemize}
+\item The client does not know (or care) where the stuff is
+\begin{itemize}
+\item They just know what they want from it
+\item The provider can then divvy up its resources: memory, storage, computing power
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsection*{Measured service}
+\label{sec:org4eff742}
+\begin{itemize}
+\item Costs and use are monitored by the provider
+\begin{itemize}
+\item Data provided to client
+\item Allowing careful assessment and planning of costs and use of the services
+\end{itemize}
+\end{itemize}
+\subsection*{Metered vs non-metered}
+\label{sec:org1fa12ec}
+\begin{itemize}
+\item Metered cost: 
+\begin{itemize}
+\item Everything tracked and with incremental charge
+\begin{itemize}
+\item Usually including things like bandwidth, storage, number of VMs
+\item Part of \emph{rapid elasticity} - if you need more bandwidth, you get it quickly but pay for every byte of it
+\end{itemize}
+\end{itemize}
+\item Non-metered cost:
+\begin{itemize}
+\item One charge for all services; things like bandwidth and storage are either
+\begin{itemize}
+\item \emph{fixed} or \emph{unlimited}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsection*{Real world examples of measured service}
+\label{sec:orge714263}
+\begin{center}
+\includegraphics[width=85\textwidth]{./images/4-1-azureVMcosts.png}
+\captionof{figure}{Azure Windows 10 VM metered cost}
+\end{center}
+
+\begin{itemize}
+\item Here's my use of an Azure Windows 10 VM, the one we used in class
+\begin{itemize}
+\item I got charged for bandwidth, storage, having a virtual network (which I didn't; only one VM), and the number of virtual machines I used
+\begin{itemize}
+\item (You can see how on July 10th I realized I didn't need any storage and turned it off)
+\end{itemize}
+\item When my virtual machine was on, I was charged; when it was off, no charge
+\begin{itemize}
+\item You can see the two times I had it on for our class!
+\end{itemize}
+\item But don't worry about the cost, you get \$200 in credit from Microsoft when you start
+\begin{itemize}
+\item I did this just to learn about Azure because I had never used it before
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+\item Compare that with the cloud server I use in real life:
+\begin{itemize}
+\item (which has \emph{non-metered cost})
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{./images/4-1-myCloudServer.png}
+\captionof{figure}{my cute dedicated server}
+\end{center}
+\begin{itemize}
+\item I pay a fixed amount per month and I get: 
+\begin{itemize}
+\item unlimited bandwidth
+\item as many VMs as I can cram on there
+\begin{itemize}
+\item (5 right now)
+\end{itemize}
+\item 1 TB storage
+\end{itemize}
+\item Nice deal, eh?
+\begin{itemize}
+\item But I get charged whether I use it or not,
+\begin{itemize}
+\item Whereas right now I am paying nothing for my Azure VM
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsection*{Off-site email applications}
+\label{sec:org2e675a7}
+\begin{itemize}
+\item This is probably one of the most widely used cloud applications
+\begin{itemize}
+\item So normalized that you probably don't even realize you're using a cloud service
+\item It is perfect for the cloud service model:
+\begin{itemize}
+\item Email servers are big, complicated, have huge security issues
+\item Just think about all the spam and phishing that you are generally sheltered from if you use a big provider
+\end{itemize}
+\end{itemize}
+\item Services offered by Yahoo, Google, Microsoft, \href{https://www.aol.com/}{AOL} even!
+\end{itemize}
+\subsection*{Cloud file storage services}
+\label{sec:org5bc98d9}
+\begin{itemize}
+\item Also good for a cloud model, and one of the first cloud services ever offered
+\begin{itemize}
+\item Other people mange your storage and keep it safe
+\item You can access it from anywhere, from any device
+\item Works well for collaboration / sharing
+\item Can synchronize between devices
+\begin{itemize}
+\item Then you will always have the most current version
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{Cloud storage providers}
+\label{sec:org19368bc}
+\begin{itemize}
+\item There is no lack of these, but here are the biggest players:
+\begin{itemize}
+\item \href{http://www.dropbox.com}{Dropbox}
+\item \href{https://www.google.com/drive/}{Google Drive}
+\item \href{http://www.icloud.com}{Apple iCloud}
+\item \href{https://onedrive.live.com/}{Microsoft OneDrive}
+\end{itemize}
+\item Generally all these folks have a free / extremely low cost tier
+\begin{itemize}
+\item And then they suck you in for more
+\end{itemize}
+\end{itemize}
+\subsection*{Synchronization apps}
+\label{sec:orge0e3b02}
+\begin{itemize}
+\item Google Drive, OneCloud, and iCloud all have versions of this:
+\begin{itemize}
+\item An app will run on your device (workstation, smartphone, tablet)
+\item The app will monitor your files and update them to the cloud when they change
+\end{itemize}
+\item I would feel remiss if I did not mention a great open source alternative to these:
+\begin{itemize}
+\item \href{https://syncthing.net}{Syncthing}, which can also run on your phone, computer, tablet, whatever
+\item Runs on GUI or CLI
+\item But it can be complicated and not for beginners!
+\begin{itemize}
+\item (you should take that as a challenge!)
+\item (Syncthing will not be on the A+!)
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\subsection*{Cloud-based applications}
+\label{sec:org4b2e0df}
+\begin{itemize}
+\item The app lives in the cloud, not on your computer
+\begin{itemize}
+\item Data stored in cloud
+\item As is the application itself
+\item You don't have to update it or manage it
+\item But your data might not be so secure\ldots{}
+\end{itemize}
+\item Google Docs, Microsoft Office 365 are examples
+\end{itemize}
+
+\subsection*{Cloud virtual desktops}
+\label{sec:org6428d82}
+\begin{itemize}
+\item Virtual Desktop Infrastructure (VDI)
+\begin{itemize}
+\item Can connect to as pre-built desktop
+\item Can access from any OS
+\item All information / data local to virtual desktop
+\item Which keeps your personal device isolated and secure
+\end{itemize}
+\end{itemize}
+
+
+\section*{4.2 – Given a scenario, set up and configure client-side virtualization.}
+\label{sec:orgf59dcea}
+\subsection*{What is a Virtual Machine (VM)?}
+\label{sec:org7125ae6}
+\begin{itemize}
+\item First of all, cool as heck
+\begin{itemize}
+\item It is a software-derived computer, but all virtual
+\item This includes the CPU, RAM, accessories
+\item And it lives inside whatever actual, real-world computer is hosting it
+\end{itemize}
+\item In the past, only one operating system could tun on one computer
+\begin{itemize}
+\item Now, the number of individual machines and OSs that can run on one computer are limited only by:
+\begin{itemize}
+\item The power of the CPU
+\item The amount of RAM
+\end{itemize}
+\item CPU cycles and RAM must be shared between host and VM
+\end{itemize}
+\end{itemize}
+\subsection*{Purpose of virtual machines}
+\label{sec:org2f0eeeb}
+\begin{itemize}
+\item An example to visualize:
+\begin{itemize}
+\item One powerful server which can run many virtual machines
+\item Each virtual machine runs an operating system and some applications
+\item Different users can log into the virtual machines and access their own stuff
+\item Virtual machines are what make cloud computing work!
+\end{itemize}
+\end{itemize}
+\subsection*{Resource requirements}
+\label{sec:org14fe7b7}
+\begin{itemize}
+\item CPU processor support:
+\begin{itemize}
+\item Intel and AMD have their own virtualization technologies:
+\begin{itemize}
+\item Intel: Virtualization Technology (VT)
+\item AMD: AMD-V
+\item Your CPU must support virtualization
+\end{itemize}
+\item Memory: must have enough to run your own CPU and your guest CPU
+\item Disk space - the guest machine will need its own space
+\begin{itemize}
+\item It's a little like having a messy, demanding, entitled roommate
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsection*{Hypervisor}
+\label{sec:org496eede}
+\begin{itemize}
+\item The main part of virtual machine structure
+\begin{itemize}
+\item A piece of software which allows multiple operating systems to share the same host
+\item Also known as a Virtual Machine Manager (VMM)
+\end{itemize}
+\item Hypervisors make the whole thing possible
+\end{itemize}
+\subsection*{Types of hypervisors}
+\label{sec:orge8bae35}
+\begin{itemize}
+\item Type 1 Hypervisor
+\begin{itemize}
+\item Sits directly on the hardware of the host machine
+\item For this reason also known as a \emph{bare metal hypervisor}
+\item Generally faster, more efficient
+\item Most commonly used for server-side virtualization
+\begin{itemize}
+\item (rather than what you might do on your personal machine)
+\item Because it has few hardware requirements \emph{for itself}
+\item Examples include:
+\begin{itemize}
+\item \href{https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/hyper-v-technology-overview}{Microsoft Hyper-V}
+\item \href{https://www.vmware.com/products/esxi-and-esx.html}{VMware ESXi}
+\item an open source hypervisor: \href{https://www.linux-kvm.org/page/Main\_Page}{Linux KVM}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\item Type 2 hypervisor
+\begin{itemize}
+\item Sits on top of an existing operating system
+\item Software to run virtual machines
+\item More likely to be the kind of thing you use
+\begin{itemize}
+\item (which you should!)
+\end{itemize}
+\item Examples include:
+\begin{itemize}
+\item \href{https://support.microsoft.com/en-us/help/958559/description-of-windows-virtual-pc}{Windows Virtual PC} - older, ran on Windows 7!
+\item \href{https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html}{VMware Workstation}
+\item And of course a free open source Type 2 hypervisor: \href{https://www.virtualbox.org/}{Oracle VirtualBox}
+\begin{itemize}
+\item This is what I used in class on my own machine to show you some things
+\item Try it out!
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsection*{An example of a Type 2 hypervisor running}
+\label{sec:org9f3b4eb}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{./images/4-2-VBoxUbuntuMateMyMachine.png}
+\captionof{figure}{Ubuntu Mate 18.04 running on a MacBook (Catalina)}
+\end{center}
+
+\subsection*{Emulator requirements}
+\label{sec:orgeaf530e}
+\begin{itemize}
+\item Emulators are different from VMs
+\item Running original code to run on a different machine
+\begin{itemize}
+\item i.e. running a Windows 7 program on a Mac
+\item Difficult, often much slower and almost unmanageable
+\item The shortcomings of emulation is why VMs exist
+\end{itemize}
+\end{itemize}
+\subsection*{Security requirements}
+\label{sec:org2d8b37e}
+\begin{itemize}
+\item No VM vulnerabilities yet, but boy this has potential
+\begin{itemize}
+\item Imagine the VM escaping into its host
+\item Could conceivable infect other VMs
+\item Each VM needs to run its own firewall and antiviral anti-malware solution
+\end{itemize}
+\end{itemize}
+\subsection*{Network requirements}
+\label{sec:org52a5bd6}
+\begin{itemize}
+\item Client-side VMs have their own virtual (internal) networks
+\item \textbf{Shared network address}
+\begin{itemize}
+\item Each guest VM uses a private internal IP
+\item And uses the guest IP through NAT \hyperref[sec:org74e9d02]{see earlier slide}
+\end{itemize}
+\item \textbf{Bridged network address}
+\begin{itemize}
+\item The VM exists as a device on the physical network (LAN)
+\end{itemize}
+\item \textbf{Private network address}
+\begin{itemize}
+\item The VM cannot communicate outside its host
+\item (this is the most secure route, but not as useful)
+\end{itemize}
+\end{itemize}
+
+\section*{5.1 – Given a scenario, use the best practice methodology to resolve problems.}
+\label{sec:org56a00de}
+
+\subsection*{Step 0: Think about the context}
+\label{sec:orga7857af}
+
+Always consider corporate policies, procedures, and impacts before implementing changes
+
+\subsection*{1. Identify the problem}
+\label{sec:org6b9226b}
+\begin{itemize}
+\item Question the user and identify user changes to computer and perform backups before making
+changes
+\item Inquire regarding environmental or infrastructure changes
+\item Review system and application logs
+\end{itemize}
+
+\subsection*{2. Establish a theory of probable cause (question the obvious)}
+\label{sec:orgad4c4fe}
+
+\begin{itemize}
+\item If necessary, conduct external or internal research based on symptoms
+\end{itemize}
+
+\subsection*{3. Test the theory to determine cause}
+\label{sec:org2d7456a}
+
+\begin{itemize}
+\item Once the theory is confirmed, determine the next steps to resolve problem
+\item If theory is not confirmed, establish new theory or escalate
+\end{itemize}
+
+\subsection*{4. Establish a plan of action to resolve the problem and implement the solution}
+\label{sec:org5241f08}
+\begin{itemize}
+\item Build the plan
+\begin{itemize}
+\item Calculate and document impact of solution
+\item Backup / backout if things go bad
+\end{itemize}
+\item Fix it!
+\end{itemize}
+\subsection*{5. Verify full system functionality and, if applicable, implement preventive measures}
+\label{sec:orgd59638a}
+\begin{itemize}
+\item Restart the machine
+\item Confirm the fix
+\item Discuss with user
+\end{itemize}
+\subsection*{6. Document findings, actions, and outcomes}
+\label{sec:org1a8a042}
+\begin{itemize}
+\item Contribute to knowledge base
+\item Useful if problem occurs again
+\item In a legal sense, didn't happen until you document it
+\end{itemize}
+\subsection*{A flowchart}
+\label{sec:orgc6749f1}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/5-1-HowToTroubleshootDiagram.png}
+\captionof{figure}{Troubleshooting flowchart}
+\end{center}
+\end{document}

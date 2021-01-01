@@ -1,0 +1,1341 @@
+% Created 2020-06-20 Sat 21:03
+% Intended LaTeX compiler: pdflatex
+\documentclass[letterpaper]{article}
+\usepackage[hyphens]{url}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{natbib}
+\usepackage[linktocpage,pdfstartview=FitH,colorlinks,
+linkcolor=blue,anchorcolor=blue,
+citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
+\usepackage[backend=biber,style=alphabetic]{biblatex}
+\addbibresource{references.bib}
+\newenvironment{notes}{\par\footnotesize}{\par}
+\newenvironment{NOTES}{\par\footnotesize}{\par}
+\newenvironment{leftcol}{\begin{minipage}{.49\textwidth}}{\end{minipage}}
+\newenvironment{rightcol}{\begin{minipage}{.49\textwidth}}{\end{minipage}}
+\newenvironment{leftcol30}{\begin{minipage}{.29\textwidth}}{\end{minipage}}
+\newenvironment{leftcol40}{\begin{minipage}{.39\textwidth}}{\end{minipage}}
+\newenvironment{leftcol60}{\begin{minipage}{.59\textwidth}}{\end{minipage}}
+\newenvironment{leftcol70}{\begin{minipage}{.69\textwidth}}{\end{minipage}}
+\newenvironment{rightcol30}{\begin{minipage}{.29\textwidth}}{\end{minipage}}
+\newenvironment{rightcol40}{\begin{minipage}{.39\textwidth}}{\end{minipage}}
+\newenvironment{rightcol60}{\begin{minipage}{.59\textwidth}}{\end{minipage}}
+\newenvironment{rightcol70}{\begin{minipage}{.69\textwidth}}{\end{minipage}}
+\usepackage{newunicodechar}
+\newunicodechar{≈}{$\approx$}
+\newunicodechar{⋮}{\vdots}
+\newunicodechar{ }{~}
+\usepackage{xcolor}
+\definecolor{darkred}{rgb}{0.3, 0.0, 0.0}
+\definecolor{darkgreen}{rgb}{0.0, 0.3, 0.1}
+\definecolor{darkblue}{rgb}{0.0, 0.1, 0.3}
+\definecolor{darkorange}{rgb}{1.0, 0.55, 0.0}
+\definecolor{sienna}{rgb}{0.53, 0.18, 0.09}
+\hypersetup{colorlinks,linkcolor=darkblue,citecolor=darkblue,urlcolor=darkgreen}
+\usepackage{newverbs}
+\newverbcommand{\rverb}{\color{darkred}}{}
+\newverbcommand{\gverb}{\color{darkgreen}}{}
+\newverbcommand{\bverb}{\color{darkblue}}{}
+\usepackage{pdflscape}
+\usepackage{setspace}
+\usepackage{placeins}
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep}
+\author{Nicholas Taintor}
+\date{CompTIA A+}
+\title{CompTIA A+ 1002}
+\hypersetup{
+ pdfauthor={Nicholas Taintor},
+ pdftitle={CompTIA A+ 1002},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.3.7)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+
+\section*{CompTIA A+ 2002}
+\label{sec:org75b4225}
+
+Just as in the 1001, the 1002 has partcular components that are covered.  Here is the breakdown:
+
+\begin{center}
+\begin{tabular}{rll}
+Domain & Substance & percent\\
+\hline
+1 & Operating Systems & 27\%\\
+2 & Security & 24\%\\
+3 & Software Troubleshooting & 26\%\\
+4 & Operational Procedures & 23\%\\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{1.1 – Compare and contrast common operating system types and their purposes.}
+\label{sec:orgc1cc5af}
+\subsection*{What is an OS and why do you need one?}
+\label{sec:orgc36613c}
+\begin{itemize}
+\item Interaction between components of machine
+\begin{itemize}
+\item Many 1s and 0s are passed between the CPU, RAM, keyboard, video and sound cards
+\item Someone needs to manage this at a higher level so that the user can participate
+\end{itemize}
+\item Common platform for applications to work on / together
+\item Also provides bridge between humans and computer
+\end{itemize}
+\subsection*{Standard OS features}
+\label{sec:org083ee4e}
+\begin{itemize}
+\item File management
+\item Application support
+\item Input / output support
+\begin{itemize}
+\item Printers, keyboards, hard drives, USB
+\item It's sort of like a higher-level BIOS, right?
+\end{itemize}
+\end{itemize}
+\subsection*{32-bit vs. 64-bit}
+\label{sec:org8794cc0}
+\begin{itemize}
+\item Pretty much all PCs being produced today are 64-bit
+\item But you will see 32-bit machines in the field
+\begin{itemize}
+\item You may see 16-bit machines, but probably only museum pieces
+\item First 32-bit CPU in 1985: Intel 386DX
+\end{itemize}
+\end{itemize}
+\subsubsection*{RAM limitations}
+\label{sec:org196a010}
+\begin{itemize}
+\item 32-bit CPUs are limited to 4 GB of RAM
+\item 64-bit CPUs have a default maximum of 256 TB and could be extended to 4 petabytes (PB)
+\begin{itemize}
+\item (though no one would do that, yet)
+\item RAM is limited by the operating system:
+\begin{itemize}
+\item Windows 7 64-bit can go to 192 GB
+\item Windows 8.1 Pro 64-bit can handle up to 512 GB
+\item Windows 10 Pro 64-bit can handle up to 2 TB
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{Software Compatibility}
+\label{sec:orga32cafb}
+\begin{itemize}
+\item Most editions of Windows are still available in 32-bit and 64-bit versions
+\begin{itemize}
+\item There are 32-bit and 64-bit versions of most major Linux distributions as well
+\item The most recent macOS (Catalina) is 64-bit only, and will not run 32-bit programs
+\item Whereas 64-bit Windows can still run 32-bit programs
+\end{itemize}
+\end{itemize}
+\subsubsection*{Where Windows keeps it}
+\label{sec:org0c51219}
+\begin{itemize}
+\item 64-bit system files and apps are in C:\Windows\System32
+\item 32-bit system files and apps are in C:\Windows\SysWOW64
+\begin{itemize}
+\item Yes, this makes very little sense
+\item Based in the development of Windows from 32-bit to 64-bit
+\end{itemize}
+\end{itemize}
+\subsubsection*{Slightly confusing code:}
+\label{sec:org2266c2c}
+\begin{itemize}
+\item x86 = 32-bit
+\item x64 = 64-bit (and often called AMD64)
+\end{itemize}
+
+\subsection*{Workstation operating systems}
+\label{sec:org54b66fc}
+\begin{itemize}
+\item By ``workstation,'' CompTIA means a desktop or laptop that someone sits at and does work
+\item So we are not including further discussion of servers for the rest of this course
+\end{itemize}
+\subsubsection*{Microsoft Windows}
+\label{sec:org55dde9b}
+\begin{center}
+\includegraphics[width=0.15\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-1-windows10.png}
+\end{center}
+\begin{itemize}
+\item By far the most common
+\item Different versions: 
+\begin{itemize}
+\item You will be expected to know 7, 8, 8.1, and 10
+\item There are others that you will not have to know, such as Windows Server
+\end{itemize}
+\item Advantages and disadvantages:
+\begin{itemize}
+\item Good - big presence means big support
+\begin{itemize}
+\item Lots of different kinds of software
+\end{itemize}
+\item Bad - Large target for security exploitation
+\begin{itemize}
+\item So much different hardware, so many versions still running
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{Apple Macintosh OS}
+\label{sec:orgdda8e78}
+\begin{wrapfigure}{r}{0.4\textwidth}
+\centering
+\includegraphics[width=0.2\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-1-apple-emblem.jpg}
+\end{wrapfigure}
+\begin{itemize}
+\item Advantages:
+\begin{itemize}
+\item easy to use
+\item always compatible
+\item few security concerns
+\item free with Apple hardware
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item Disadvantages:
+\begin{itemize}
+\item Requires Apple hardware
+\item Less industry support
+\item Hardware more expensive
+\end{itemize}
+\end{itemize}
+\subsubsection*{Linux}
+\label{sec:orgce7ec72}
+\begin{center}
+\includegraphics[width=0.15\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-1-Linux-Logo-Photos.jpg}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.15\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-1-linux-red-hat-vector-logo.png}
+\end{center}
+
+
+\begin{center}
+\includegraphics[width=0.15\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-1-debian-512.png}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.15\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-1-Ubuntu-logo.jpg}
+\end{center}
+
+\begin{itemize}
+\item A free Unix-compatible software system
+\begin{itemize}
+\item Unix-like, but not Unix
+\begin{itemize}
+\item (macOS is Unix-based)
+\end{itemize}
+\end{itemize}
+\item Open source
+\item Works on variety of hardware
+\begin{itemize}
+\item Backbone of the Internet is on Linux machines
+\item Limited driver support, especially on laptops
+\end{itemize}
+\end{itemize}
+\subsection*{Cell phone/tablet operating systems}
+\label{sec:org550592c}
+
+\subsubsection*{Microsoft Windows}
+\label{sec:org3cae917}
+\begin{itemize}
+\item Windows 10 on mobile devices
+\begin{itemize}
+\item Surface
+\item Many others, some with touchpads, some with styluses
+\end{itemize}
+\item Windows Mobile
+\begin{itemize}
+\item not bad, but no longer developed
+\end{itemize}
+\end{itemize}
+\subsubsection*{Android}
+\label{sec:org1b4af71}
+\begin{itemize}
+\item Open source OS, based on Linux
+\item Android apps usually easy to develop and distribute, can be written on any operating system
+\end{itemize}
+\subsubsection*{iOS}
+\label{sec:org8b6dd52}
+\begin{itemize}
+\item Apple iPhone and iPad OS
+\item Based on Unix
+\item Closed source
+\end{itemize}
+\subsubsection*{Chrome OS}
+\label{sec:orgd07242f}
+\begin{itemize}
+\item Google's operating system, based on Linux kernel
+\item Its relationship with Android can be confusing
+\item Google Chrome browser is essentially its own operating system, and Chrome OS is based on this
+\end{itemize}
+
+\subsection*{Vendor-specific limitations}
+\label{sec:orgb9e2a6f}
+
+\subsubsection*{End-of-life}
+\label{sec:org932bdb0}
+\begin{itemize}
+\item EOL - when a company stops supporting a package
+\item Companies set their own EOLs, they vary by software package
+\end{itemize}
+\subsubsection*{Update limitations}
+\label{sec:org714d1e7}
+\begin{itemize}
+\item iOS, Android, and Windows 10 check for updates and prompt to update
+\item ChromeOS updates automatically
+\item Linux you gotta do it yourself
+\end{itemize}
+\subsection*{Compatibility concerns between operating systems}
+\label{sec:orgc46cdd5}
+\begin{itemize}
+\item Applications designed for one OS generally cannot run on a different OS
+\item They must be specifically built to run on different OSs
+\item Many data files can work between operating systems: images, videos, sound files
+\end{itemize}
+
+\section*{1.2 – Compare and contrast features of Microsoft Windows versions.}
+\label{sec:org6770bc7}
+
+\subsection*{Windows 7}
+\label{sec:orgd3740b9}
+\begin{itemize}
+\item Released 2009
+\begin{itemize}
+\item Support ended Jan 14 2020
+\end{itemize}
+\item Similar to Windows Vista
+\end{itemize}
+\subsubsection*{Windows 7 versions: Starter}
+\label{sec:orgf3f322e}
+\begin{itemize}
+\item Windows 7 Starter
+\begin{itemize}
+\item Built for netbooks
+\item No ``enterprise'' technologies
+\begin{itemize}
+\item No Domain connection, BitLocker, etc
+\item no DVD playback, no Windows Media Center
+\item Only 32-bit version
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{Windows 7: Home Premium}
+\label{sec:org2a066f6}
+\begin{itemize}
+\item Consumer edition
+\begin{itemize}
+\item DVD playback, Internet Connection Sharing
+\item Still no enterprise stuff:
+\begin{itemize}
+\item No domain connection, BitLocker, etc
+\end{itemize}
+\item x64 version supports 16 GB RAM
+\end{itemize}
+\end{itemize}
+\subsubsection*{Windows 7 Ultimate}
+\label{sec:orgf4598da}
+\begin{itemize}
+\item Complete functionality
+\item Domain support, Remote Desktop
+\item x64 version supports up to 192 GB RAM
+\end{itemize}
+\subsubsection*{Windows 7 Professional}
+\label{sec:org3abc648}
+\begin{itemize}
+\item Same features as Home Premium
+\item - missing some enterprise stuff - no BitLocker
+\end{itemize}
+\subsubsection*{Windows 7 breakdown}
+\label{sec:org0f636ff}
+\begin{center}
+\includegraphics[width=1.1\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-2-windows7.png}
+\captionof{figure}{A summary of Windows 7 features}
+\end{center}
+
+\subsection*{Windows 8}
+\label{sec:orgd1e1c4c}
+\begin{itemize}
+\item Released October 2012
+\item A new interface that everyone hated:
+\begin{itemize}
+\item Booted straight into a tablet-like mode
+\item No start button
+\item People immediately started hacking it to make it look like Windows 7
+\end{itemize}
+\end{itemize}
+\subsection*{Windows 8.1}
+\label{sec:org3dbd4d7}
+\begin{itemize}
+\item Free upgrade in response to outcry
+\item Put start button back
+\item Mainstream support ended Jan 2018
+\item Extended support ends Jan 2023
+\end{itemize}
+\subsection*{Windows 8 versions:}
+\label{sec:orgb127420}
+\begin{itemize}
+\item Windows 8 and 8.1 core
+\item Microsoft account integration for the first time
+\item Windows Defender - an actually OK anti-virus and anti-malware
+\item Windows Media Player - also not bad!
+\end{itemize}
+\subsection*{more Windows 8 versions:}
+\label{sec:orgcb625bd}
+\begin{itemize}
+\item Windows 8/8.1 Pro
+\begin{itemize}
+\item Professional version
+\item BitLocker and EFS
+\item Can join a Windows Domain
+\item Group policy support - centralized management of Windows devices
+\end{itemize}
+\end{itemize}
+\subsection*{Another Windows version:}
+\label{sec:org9fdd5fd}
+\begin{itemize}
+\item Windows 8/8.1 Enterprise
+\item Large volume licenses
+\end{itemize}
+
+\subsection*{Windows 8 processor requirements}
+\label{sec:org074002d}
+\begin{itemize}
+\item PAE (Physical Address Extension)
+\begin{itemize}
+\item 32-bit processors can use more than 4 GB of RAM
+\end{itemize}
+\item NX (NX Processor Bit)
+\begin{itemize}
+\item can protect against malicious software
+\end{itemize}
+\item SSE2 (Streaming SIMD Extensions 2)
+\begin{itemize}
+\item a standard processor instructions set
+\item Helped people write third-party extensions and applications
+\end{itemize}
+\end{itemize}
+\subsection*{Windows 8 breakdown:}
+\label{sec:orgd289fa5}
+\begin{center}
+\includegraphics[width=1.1\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-2-windows8.png}
+\end{center}
+
+\subsection*{Windows 10}
+\label{sec:org59ee6f3}
+\begin{itemize}
+\item Released 2015
+\item Designed to be a single, unitary platform for all devices
+\item Now called a ``service''
+\begin{itemize}
+\item Periodic updates to OS instead of new versions
+\end{itemize}
+\end{itemize}
+
+\subsection*{Windows 10 versions}
+\label{sec:orgd5de6f2}
+\begin{itemize}
+\item Windows 10 Home
+\item Integration with Microsoft account
+\begin{itemize}
+\item OneDrive backup
+\end{itemize}
+\item Cortana - MS version of Siri or Google Assistant
+\item Windows Defender
+\end{itemize}
+\subsection*{More Windows 10 versions}
+\label{sec:orgc77cf68}
+\begin{itemize}
+\item Windows 10 Pro
+\item Business version:
+\begin{itemize}
+\item Remote Desktop host
+\item BitLocker
+\item Can join Windows Domain
+\end{itemize}
+\end{itemize}
+\subsection*{Windows 10 processor requirements}
+\label{sec:org51bf78c}
+\begin{itemize}
+\item Same as Windows 8/8.1
+\item PAE, NX, SSE2
+\end{itemize}
+\subsection*{Corporate vs. personal needs}
+\label{sec:org6fc7f90}
+\begin{itemize}
+\item Many aspects of Windows designed for ``the enterprise''
+\end{itemize}
+\subsubsection*{Domain access}
+\label{sec:org23b7161}
+\begin{itemize}
+\item Using Active Directory Domain Services
+\begin{itemize}
+\item People in the know talk about AD as being the best piece  of software Microsoft ever produced
+\item Can keep track of accounts and users across the entire enterprise
+\item Distributed architecture
+\end{itemize}
+\end{itemize}
+\subsubsection*{Domain Access cont'd}
+\label{sec:orgba9221d}
+\begin{itemize}
+\item Many different uses:
+\begin{itemize}
+\item Authentication
+\item Centralized management
+\item SSO (single sign-on), the holy grail of domain management
+\end{itemize}
+\end{itemize}
+\subsubsection*{BitLocker}
+\label{sec:orgb5f23e6}
+\begin{itemize}
+\item BitLocker is Full Disk Encryption (FDE)
+\item Every single thing is encrypted
+\end{itemize}
+\subsubsection*{EFS}
+\label{sec:org07755d6}
+\begin{itemize}
+\item Encrypting File System
+\item Encrypt files one-by-one
+\end{itemize}
+\subsubsection*{Media center}
+\label{sec:org9846236}
+\begin{itemize}
+\item Video, music, and television portal
+\item Was discontinued; not available in Windows 10
+\item So people figure out how to put it back in
+\end{itemize}
+\subsubsection*{BranchCache}
+\label{sec:org71d1ae4}
+\begin{itemize}
+\item Caching for branch offices
+\item Reduces bandwidth use over long distances
+\end{itemize}
+
+\subsection*{Desktop styles/user interface}
+\label{sec:org0f66326}
+\begin{itemize}
+\item Flexibility and personalization of desktop limited at work
+\item Much more flexible in home editions without the central control
+\end{itemize}
+
+\section*{1.3 – Summarize general OS installation considerations and upgrade methods.}
+\label{sec:org59162a1}
+
+\subsection*{Boot methods}
+\label{sec:org8259492}
+\begin{itemize}
+\item Operating systems can be installed from different media
+\end{itemize}
+\subsubsection*{USB}
+\label{sec:orgc226d38}
+\begin{itemize}
+\item USB needs to be bootable
+\item Computer needs to support booting from USB
+\end{itemize}
+\subsubsection*{CD-ROM}
+\label{sec:org01c39d1}
+\begin{itemize}
+\item You don't see it quite as much any more, but used to be the standard way
+\end{itemize}
+\subsubsection*{DVD}
+\label{sec:org0771ef2}
+\begin{itemize}
+\item See this a little more because it can hold more data
+\item But, especially in laptops, see fewer DVD drives
+\end{itemize}
+\subsubsection*{PXE}
+\label{sec:org3bf3efd}
+\begin{itemize}
+\item ``pixie''
+\item Preboot eXecution Environment
+\item perform a remote network installation
+\end{itemize}
+\subsubsection*{Solid state/flash drives}
+\label{sec:orgf3c7295}
+\begin{itemize}
+\item Another possible media
+\end{itemize}
+\subsubsection*{NetBoot}
+\label{sec:org9f2acbd}
+\begin{itemize}
+\item Apple technology for booting  Macs from network
+\item Similar to PXE
+\end{itemize}
+\subsubsection*{External/hot-swappable drive}
+\label{sec:org48f36cd}
+\begin{itemize}
+\item External CD-ROM / DVD
+\end{itemize}
+\subsubsection*{Internal hard drive (partition)}
+\label{sec:org01fd363}
+\begin{itemize}
+\item Can install and boot from separate drive
+\item Can mount an .iso
+\end{itemize}
+\subsection*{Type of installations}
+\label{sec:org56c0aad}
+
+\subsubsection*{Unattended installation}
+\label{sec:org1d3444c}
+\begin{itemize}
+\item Can set up answers to Windows questions in a file
+\item So that there are no interruptions
+\end{itemize}
+\subsubsection*{In-place upgrade}
+\label{sec:orge99b3e3}
+\begin{itemize}
+\item Maintain existing applications and data
+\end{itemize}
+\subsubsection*{Clean install}
+\label{sec:orgfd52667}
+\begin{itemize}
+\item Wipe eveything and reinstall
+\end{itemize}
+\subsubsection*{Repair installation}
+\label{sec:org23054e0}
+\begin{itemize}
+\item Fixes problems with the Windows OS
+\begin{itemize}
+\item Doesnot touch user files
+\end{itemize}
+\end{itemize}
+\subsubsection*{Multiboot}
+\label{sec:org681ec9f}
+\begin{itemize}
+\item Running two ormore operating systems from the same computer
+\end{itemize}
+\subsubsection*{Remote network installation}
+\label{sec:orge8f5996}
+\subsubsection*{Image deployment}
+\label{sec:orgf32c2b0}
+\begin{itemize}
+\item Easier way to do mass installations
+\item Deploy a clone on every computer
+\end{itemize}
+\subsubsection*{Recovery partition}
+\label{sec:orge115e7f}
+\begin{itemize}
+\item A hidden partition with recovery files
+\end{itemize}
+\subsubsection*{Refresh/restore}
+\label{sec:org327d13b}
+\begin{itemize}
+\item Windows 8/10 feature to clean things up
+\item Requires a recovery partition
+\end{itemize}
+
+\subsection*{Partitioning}
+\label{sec:orgdd01756}
+\begin{itemize}
+\item An ancient concept
+\begin{itemize}
+\item Separates physical drive into logical pieces
+\item Can keep data, operating systems distinct
+\end{itemize}
+\item Formatted partitions are called volumes
+\begin{itemize}
+\item (Microsoft terminology)
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-3-partitioning.png}
+\captionof{figure}{A diagram of partitioning concepts}
+\end{center}
+\subsubsection*{MBR}
+\label{sec:org568316d}
+\begin{itemize}
+\item Master Boot Record
+\begin{itemize}
+\item one of the earliest ways of doing this
+\item lots of limitations
+\end{itemize}
+\end{itemize}
+\subsubsection*{Primary}
+\label{sec:orgcbf86db}
+\begin{itemize}
+\item in MBR partitions;
+\begin{itemize}
+\item a bootable partition
+\item Maximum of four primary partitions per disk
+\end{itemize}
+\end{itemize}
+\subsubsection*{Extended}
+\label{sec:orga0fb837}
+\begin{itemize}
+\item Extends the maximum number of partitions
+\end{itemize}
+\subsubsection*{GPT}
+\label{sec:orgf4c3b67}
+\begin{itemize}
+\item GUID Partition Table
+\begin{itemize}
+\item The newest partition standard
+\item Globally unique identifier
+\end{itemize}
+\item Requires UEFI BIOS
+\begin{itemize}
+\item Can have up to 128 primary partitions
+\item Does not require extended partitions or any sneaky stuff to extend it
+\end{itemize}
+\end{itemize}
+
+
+\subsection*{File system types/formatting}
+\label{sec:orgdd4becb}
+\begin{itemize}
+\item Before data can be written to the partition, it must be formatted
+\item Operating systems expect a particular format
+\begin{itemize}
+\item FAT32 and NTFS currently most popular
+\begin{itemize}
+\item but ext3 and ext4 coming up behind fast
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{FAT}
+\label{sec:orgd4e3d48}
+\begin{itemize}
+\item File Allocation Table
+\item Earliest; (1980ish)
+\end{itemize}
+\subsubsection*{FAT32}
+\label{sec:org386dcd7}
+\begin{itemize}
+\item Larger (2 TB file sizes)
+\item maximum file size of 4 GB
+\end{itemize}
+\subsubsection*{ExFAT}
+\label{sec:org2ffbdf3}
+\begin{itemize}
+\item Extended File Allocation Table
+\item Microsoft flash drive file system
+\item Files can be larger than 4 GB
+\end{itemize}
+\subsubsection*{NTFS}
+\label{sec:org762bf65}
+\begin{itemize}
+\item NTFS - NT File System
+\begin{itemize}
+\item Extensive improvements over FAT32
+\item Quotas, file compression, encryption, symbolic links
+\end{itemize}
+\end{itemize}
+\subsubsection*{CDFS}
+\label{sec:org2282ba1}
+\begin{itemize}
+\item Compact Disk File System
+\item All operating systems can read the CD
+\end{itemize}
+\subsubsection*{NFS}
+\label{sec:org778041e}
+\begin{itemize}
+\item Network File System
+\item Access files across the network as if they were local
+\end{itemize}
+\subsubsection*{ext3, ext4}
+\label{sec:org40d0d38}
+\begin{itemize}
+\item Third extended file system
+\item Fourth extended file system
+\item Generally on Linux systems
+\end{itemize}
+\subsubsection*{HFS}
+\label{sec:org5dbe19c}
+\begin{itemize}
+\item HFS+ - Mac OS Extended
+\end{itemize}
+\subsubsection*{Swap partition}
+\label{sec:org8b8b886}
+\begin{itemize}
+\item CPU temporarily uses part of a hard drive when it runs out of RAM
+\begin{itemize}
+\item Frees RAM by moving data to disk
+\item Has to be a very fast magnetic drive or an SSD
+\end{itemize}
+\end{itemize}
+\subsubsection*{Quick format vs. full format}
+\label{sec:org846aa34}
+\begin{itemize}
+\item Quick:
+\begin{itemize}
+\item Creates new file table
+\item Data \textbf{appears} to be erased but it is not
+\begin{itemize}
+\item Quick format in Windows 7, 8, 10
+\begin{itemize}
+\item use \texttt{diskpart} for full format
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{Full format}
+\label{sec:orgbf3f080}
+\begin{itemize}
+\item Writes zeroes to the entire disk
+\item You data is unrecoverable
+\end{itemize}
+\subsection*{Load alternate third-party drivers when necessary}
+\label{sec:org64ceb55}
+\begin{itemize}
+\item Sometimes your devices will not have drivers built into the OS
+\item Then will need to get them from the manufacturer
+\end{itemize}
+\subsection*{Workgroup vs. Domain setup}
+\label{sec:org9fb9bef}
+\begin{itemize}
+\item Workgroups vs domains:
+\begin{itemize}
+\item \textbf{Domain} a group of computers that share a common user account database.  Users can log in to access shared resources
+\item \textbf{Workgroup} a simpler concept, a group of computers that share resources such as printers and files.  But each computer keeps track of its own user accounts, no centralized management.
+\end{itemize}
+\item At home: workgroup
+\item At work: domain
+\end{itemize}
+\subsection*{Time/date/region/language settings}
+\label{sec:org06b71c7}
+\begin{itemize}
+\item Basic settings that we sometimes forget!
+\end{itemize}
+\subsection*{Driver installation, software, and Windows updates}
+\label{sec:org55ba0e1}
+\begin{itemize}
+\item Before you can say that you are finished installing an operating system:
+\begin{itemize}
+\item Load video drivers, install apps, update OS
+\end{itemize}
+\end{itemize}
+\subsection*{Factory recovery partition}
+\label{sec:orgc6ed4b1}
+\begin{itemize}
+\item A hidden partition that will allow you to reset your operating system to its original state
+\item Could be useful later; but this is not as useful a feature as it used to be
+\item The problem is that it erases everything and starts over
+\end{itemize}
+\subsection*{Properly formatted boot drive with the correct partitions/format}
+\label{sec:org464b8b2}
+\begin{itemize}
+\item Make sure you know the partitions that are there
+\item Is there old data on there?
+\item Backup the data you need
+\begin{itemize}
+\item Always backup before you do anything big!
+\end{itemize}
+\end{itemize}
+\subsection*{Prerequisites/hardware compatibility}
+\label{sec:orgd7e08e7}
+\begin{itemize}
+\item Before installation make sure you meet minimum OS requirements
+\begin{itemize}
+\item Memory, disk space, etc.
+\end{itemize}
+\item Run a hardware compatibility checker
+\begin{itemize}
+\item i.e. Windows 10 Upgrade Checker
+\end{itemize}
+\end{itemize}
+\subsection*{Application compatibility}
+\label{sec:org935a819}
+\begin{itemize}
+\item Make sure your apps will still work after the upgrade
+\begin{itemize}
+\item Need to check with manufacturer
+\item 32-bit vs 64-bit etc (especially with macOS)
+\end{itemize}
+\end{itemize}
+\subsection*{OS compatibility/upgrade path}
+\label{sec:org2a930b1}
+\begin{itemize}
+\item Different upgrade paths for different versions of Windows
+\end{itemize}
+\subsection*{Windows 8 upgrade path}
+\label{sec:org9a3ae6d}
+\begin{center}
+\includegraphics[width=1.1\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-3-windows8UpgradePath.png}
+\captionof{figure}{Windows 8 upgrade path}
+\end{center}
+
+\section*{1.4 – Given a scenario, use appropriate Microsoft command line tools.}
+\label{sec:org04f3b46}
+
+\subsection*{Navigation}
+\label{sec:orgdb35185}
+
+\subsubsection*{dir}
+\label{sec:org8a2740a}
+\subsubsection*{cd}
+\label{sec:org43392eb}
+\subsubsection*{..}
+\label{sec:org9ee3441}
+
+\subsection*{ipconfig}
+\label{sec:orgf6b57a4}
+\subsection*{ping}
+\label{sec:orgb00f319}
+\subsection*{tracert}
+\label{sec:orgfcdb708}
+\subsection*{netstat}
+\label{sec:org91c283b}
+\subsection*{nslookup}
+\label{sec:orgf78d8c7}
+\subsection*{shutdown}
+\label{sec:orgee23098}
+\subsection*{dism}
+\label{sec:orgf3e240c}
+\subsection*{sfc}
+\label{sec:orgf0e16c1}
+\subsection*{chkdsk}
+\label{sec:org69ee6a6}
+\subsection*{diskpart}
+\label{sec:orgbcd703e}
+\subsection*{taskkill}
+\label{sec:orgcf8d49a}
+\subsection*{gpupdate}
+\label{sec:org7138e65}
+\subsection*{gpresult}
+\label{sec:org6cddca6}
+\subsection*{format}
+\label{sec:org5d142af}
+\subsection*{copy}
+\label{sec:org5c756b6}
+\subsection*{xcopy}
+\label{sec:org0c5a7a0}
+\subsection*{robocopy}
+\label{sec:org0d0ca50}
+\subsection*{net use}
+\label{sec:org1251b49}
+\subsection*{net user}
+\label{sec:org22f3237}
+\subsection*{[command name] /?}
+\label{sec:orgf1771c1}
+\subsection*{Commands available with standard privileges vs. administrative privileges}
+\label{sec:org95b9dc9}
+
+\section*{1.5 – Given a scenario, use Microsoft operating system features and tools.}
+\label{sec:org22ff6c0}
+
+\subsection*{Administrative}
+\label{sec:org84309db}
+
+\subsubsection*{Computer Management}
+\label{sec:org37d2e71}
+\subsubsection*{Device Manager}
+\label{sec:orgfe94d3d}
+\subsubsection*{Local Users and Groups}
+\label{sec:orgc5a21f4}
+\subsubsection*{Local Security Policy}
+\label{sec:orgfca0310}
+\subsubsection*{Performance Monitor}
+\label{sec:org9605a61}
+\subsubsection*{Services}
+\label{sec:orgc2eec20}
+\subsubsection*{System Configuration}
+\label{sec:org710ad0d}
+\subsubsection*{Task Scheduler}
+\label{sec:orgde86af4}
+\subsubsection*{Component Services}
+\label{sec:org1d6d350}
+\subsubsection*{Data Sources}
+\label{sec:org4c957fe}
+\subsubsection*{Print Management}
+\label{sec:orgc651d93}
+\subsubsection*{Windows Memory Diagnostics}
+\label{sec:orgb1b5588}
+\subsubsection*{Windows Firewall}
+\label{sec:orge01a1aa}
+\subsubsection*{Advanced Security}
+\label{sec:orgb490393}
+\subsubsection*{Event Viewer}
+\label{sec:orgabe65f1}
+\subsubsection*{User Account Management}
+\label{sec:org0e7be53}
+
+\subsection*{MSConfig}
+\label{sec:org8afabb0}
+
+\subsubsection*{General}
+\label{sec:orgadad237}
+\subsubsection*{Boot}
+\label{sec:orga6228c6}
+\subsubsection*{Services}
+\label{sec:org4639e9e}
+\subsubsection*{Startup}
+\label{sec:orgd65f7fa}
+\subsubsection*{Tools}
+\label{sec:org0f5307a}
+
+\subsection*{Task Manager}
+\label{sec:org7dc4fb0}
+
+\subsubsection*{Applications}
+\label{sec:org683920a}
+\subsubsection*{Processes}
+\label{sec:orga23ab22}
+\subsubsection*{Performance}
+\label{sec:orgdb08741}
+\subsubsection*{Networking}
+\label{sec:orgd11016a}
+\subsubsection*{Users}
+\label{sec:org1469bce}
+
+\subsection*{Disk Management}
+\label{sec:orgfdb64f2}
+
+\subsubsection*{Drive status}
+\label{sec:org8794d20}
+\subsubsection*{Mounting}
+\label{sec:orgd15a7ff}
+\subsubsection*{Initializing}
+\label{sec:orge96a8a7}
+\subsubsection*{Extending partitions}
+\label{sec:org3549b9f}
+\subsubsection*{Splitting partitions}
+\label{sec:org2c33129}
+\subsubsection*{Shrink partitions}
+\label{sec:org425146a}
+\subsubsection*{Assigning/changing drive letters}
+\label{sec:org1b0a7a2}
+\subsubsection*{Adding drives}
+\label{sec:orgbaafe0f}
+\subsubsection*{Adding arrays}
+\label{sec:org3a92687}
+\subsubsection*{Storage spaces}
+\label{sec:orga22adaf}
+
+\subsection*{System utilities}
+\label{sec:orgff738d8}
+
+\subsubsection*{Regedit}
+\label{sec:org37f5a6b}
+\subsubsection*{Command}
+\label{sec:org68ecd5f}
+\subsubsection*{Services.msc}
+\label{sec:orgf14d2ab}
+\subsubsection*{MMC}
+\label{sec:orgb4b9895}
+\subsubsection*{MSTSC}
+\label{sec:org7792157}
+\subsubsection*{Notepad}
+\label{sec:org5efa3cf}
+\subsubsection*{Explorer}
+\label{sec:orgabeb106}
+\subsubsection*{Msinfo32}
+\label{sec:org3eb5cbb}
+\subsubsection*{DxDiag}
+\label{sec:org89984e0}
+\subsubsection*{Disk Defragmenter}
+\label{sec:org96342fe}
+\subsubsection*{System Restore}
+\label{sec:org081a13d}
+\subsubsection*{Windows Update}
+\label{sec:org751f3d9}
+
+\section*{1.6 – Given a scenario, use Microsoft Windows Control Panel utilities.}
+\label{sec:org412f2e6}
+
+\subsection*{Internet Options}
+\label{sec:org47d5571}
+
+\subsubsection*{Connections}
+\label{sec:org47d2ced}
+\subsubsection*{Security}
+\label{sec:org1d6a895}
+\subsubsection*{General}
+\label{sec:org2461824}
+\subsubsection*{Privacy}
+\label{sec:orgf65e979}
+\subsubsection*{Programs}
+\label{sec:orga0da9f2}
+\subsubsection*{Advanced}
+\label{sec:org6014224}
+
+\subsection*{Display/Display Settings}
+\label{sec:org0cd3cfa}
+
+\subsubsection*{Resolution}
+\label{sec:org5da4e0d}
+\subsubsection*{Color depth}
+\label{sec:orgf263678}
+\subsubsection*{Refresh rate}
+\label{sec:orga54c0cb}
+
+\subsection*{User Accounts}
+\label{sec:org43001f3}
+\subsection*{Folder Options}
+\label{sec:orgb40c80c}
+
+\subsubsection*{View hidden files}
+\label{sec:org6592158}
+\subsubsection*{Hide extensions}
+\label{sec:orgcd07023}
+\subsubsection*{General options}
+\label{sec:org75a0905}
+\subsubsection*{View options}
+\label{sec:org333861d}
+
+\subsection*{System}
+\label{sec:orgabaa170}
+
+\subsubsection*{Performance (virtual memory)}
+\label{sec:org69d2e15}
+\subsubsection*{Remote settings}
+\label{sec:orgc390e53}
+\subsubsection*{System protection}
+\label{sec:org5c37a35}
+
+\subsection*{Windows Firewall}
+\label{sec:org9a8dcf8}
+\subsection*{Power Options}
+\label{sec:orgc0c7a0c}
+
+\subsubsection*{Hibernate}
+\label{sec:org7fa502b}
+\subsubsection*{Power plans}
+\label{sec:org88668d1}
+\subsubsection*{Sleep/suspend}
+\label{sec:org0659f98}
+\subsubsection*{Standby}
+\label{sec:orgd75f1bd}
+
+\subsection*{Credential Manager}
+\label{sec:org2537b56}
+\subsection*{Programs and features}
+\label{sec:org183e183}
+\subsection*{HomeGroup}
+\label{sec:org1ebd13c}
+\subsection*{Devices and Printers}
+\label{sec:org9b9834b}
+\subsection*{Sound}
+\label{sec:org539a6ed}
+\subsection*{Troubleshooting}
+\label{sec:org3196d91}
+\subsection*{Network and Sharing Center}
+\label{sec:org6c40b5f}
+\subsection*{Device Manager}
+\label{sec:orgcf02f5a}
+\subsection*{BitLocker}
+\label{sec:org3e41509}
+\subsection*{Sync Center}
+\label{sec:org15d90b1}
+
+\section*{1.7 – Summarize application installation and configuration concepts.}
+\label{sec:org036c6ab}
+
+\subsection*{System requirements}
+\label{sec:orgd188e44}
+
+\subsubsection*{Drive space}
+\label{sec:orgeaff1ad}
+\subsubsection*{RAM}
+\label{sec:org5342255}
+
+\subsection*{OS requirements}
+\label{sec:org02f87d5}
+
+\subsubsection*{Compatibility}
+\label{sec:orga2905e4}
+
+\subsection*{Methods of installation and deployment}
+\label{sec:org66dcc73}
+
+\subsubsection*{Local (CD/USB)}
+\label{sec:orgb2b512c}
+\subsubsection*{Network-based}
+\label{sec:orge0779d1}
+
+\subsection*{Local user permissions}
+\label{sec:orgcb48426}
+
+\subsubsection*{Folder/file access for installation}
+\label{sec:orgbc72b29}
+
+\subsection*{Security considerations}
+\label{sec:orgaaea58a}
+
+\subsubsection*{Impact to device}
+\label{sec:org5c42efb}
+\subsubsection*{Impact to network}
+\label{sec:org4335e0e}
+
+\section*{1.8 – Given a scenario, configure Microsoft Windows networking on a client/desktop.}
+\label{sec:orgfad44a3}
+
+\subsection*{HomeGroup vs. Workgroup}
+\label{sec:orgd860068}
+\subsection*{Domain setup}
+\label{sec:orgfc76c01}
+\subsection*{Network shares/administrative shares/mapping drives}
+\label{sec:org04b5fe5}
+\subsection*{Printer sharing vs. network printer mapping}
+\label{sec:org9a2549b}
+\subsection*{Establish networking connections}
+\label{sec:org9e6afd2}
+
+\subsubsection*{VPN}
+\label{sec:org6c9c06c}
+\subsubsection*{Dial-up}
+\label{sec:org688b4e1}
+\subsubsection*{Wireless}
+\label{sec:orgcff9ff2}
+\subsubsection*{Wired}
+\label{sec:org091bc0d}
+\subsubsection*{WWAN (Cellular)}
+\label{sec:orgbb5c77c}
+
+\subsection*{Proxy settings}
+\label{sec:orga23a9c5}
+\subsection*{Remote Desktop Connection}
+\label{sec:org910de39}
+\subsection*{Remote Assistance}
+\label{sec:org91ef569}
+\subsection*{Home vs. Work vs. Public network settings}
+\label{sec:orgb5bdb77}
+\subsection*{Firewall settings}
+\label{sec:org68badc7}
+
+\subsubsection*{Exceptions}
+\label{sec:org26acd04}
+\subsubsection*{Configuration}
+\label{sec:orgd1fcc36}
+\subsubsection*{Enabling/disabling Windows Firewall}
+\label{sec:org902dae5}
+
+\subsection*{Configuring an alternative IP address in Windows}
+\label{sec:orge8b4538}
+
+\subsubsection*{IP addressing}
+\label{sec:org2bcba6f}
+\subsubsection*{Subnet mask}
+\label{sec:org7a4ccaa}
+\subsubsection*{DNS}
+\label{sec:org6f202d4}
+\subsubsection*{Gateway}
+\label{sec:orga00b839}
+
+\subsection*{Network card properties}
+\label{sec:orgbe9e6c7}
+
+\subsubsection*{Half duplex/full duplex/auto}
+\label{sec:orgf06b8e1}
+\subsubsection*{Speed}
+\label{sec:orgb4e0ca0}
+\subsubsection*{Wake-on-LAN}
+\label{sec:org9fef4e9}
+\subsubsection*{QoS}
+\label{sec:orgc6201f8}
+\subsubsection*{BIOS (on-board NIC)}
+\label{sec:org4c16496}
+
+\section*{1.9 – Given a scenario, use features and tools of the Mac OS and Linux client/desktop operating systems.}
+\label{sec:org90f4468}
+
+\subsection*{Best practices}
+\label{sec:orgfa45d9f}
+
+\subsubsection*{Scheduled backups}
+\label{sec:org2e514fa}
+\subsubsection*{Scheduled disk maintenance}
+\label{sec:org297711b}
+\subsubsection*{System updates/App Store}
+\label{sec:orga7a28c3}
+\subsubsection*{Patch management}
+\label{sec:org12d3e2a}
+\subsubsection*{Driver/firmware updates}
+\label{sec:org5e2120c}
+\subsubsection*{Antivirus/Anti-malware updates}
+\label{sec:org4fc34a0}
+
+\subsection*{Tools}
+\label{sec:org108ca7e}
+
+\subsubsection*{Backup/Time Machine}
+\label{sec:orged8a86a}
+\subsubsection*{Restore/Snapshot}
+\label{sec:org9ede8ec}
+\subsubsection*{Image recovery}
+\label{sec:org90a9568}
+\subsubsection*{Disk maintenance utilities}
+\label{sec:org382e276}
+\subsubsection*{Shell/Terminal}
+\label{sec:org541d826}
+\subsubsection*{Screen sharing}
+\label{sec:org3eda00e}
+\subsubsection*{Force Quit}
+\label{sec:org368be1e}
+
+\subsection*{Features}
+\label{sec:org0c309c7}
+
+\subsubsection*{Multiple desktops/Mission Control}
+\label{sec:orgfa2f0b8}
+\subsubsection*{Key Chain}
+\label{sec:org0cdfb60}
+\subsubsection*{Spot Light}
+\label{sec:org954996f}
+\subsubsection*{iCloud}
+\label{sec:org309af17}
+\subsubsection*{Gestures}
+\label{sec:org71e9dc1}
+\subsubsection*{Finder}
+\label{sec:org3e0888d}
+\subsubsection*{Remote Disc}
+\label{sec:orgf0c83d1}
+\subsubsection*{Dock}
+\label{sec:org49e7e68}
+\subsubsection*{Boot Camp}
+\label{sec:org9af4a4a}
+
+\subsection*{Basic Linux commands}
+\label{sec:org3076557}
+
+\subsubsection*{ls}
+\label{sec:org381bc50}
+\subsubsection*{grep}
+\label{sec:org116145c}
+\subsubsection*{cd}
+\label{sec:org3a35c86}
+\subsubsection*{shutdown}
+\label{sec:org9c0818b}
+\subsubsection*{pwd vs. passwd}
+\label{sec:org51e6932}
+\subsubsection*{mv}
+\label{sec:org288b44d}
+\subsubsection*{cp}
+\label{sec:org9527b31}
+\subsubsection*{rm}
+\label{sec:org6ccf956}
+\subsubsection*{chmod}
+\label{sec:orge5fc75e}
+\subsubsection*{chown}
+\label{sec:org82a7deb}
+\subsubsection*{iwconfig/ifconfig}
+\label{sec:org4a0cd24}
+\subsubsection*{ps}
+\label{sec:org05cc82b}
+\subsubsection*{su/sudo}
+\label{sec:org007f6d1}
+\subsubsection*{apt-get}
+\label{sec:org45734a0}
+\subsubsection*{vi}
+\label{sec:org1cdef13}
+\subsubsection*{dd}
+\label{sec:orge4d8464}
+\subsubsection*{kill}
+\label{sec:orga4dcf5d}
+\end{document}

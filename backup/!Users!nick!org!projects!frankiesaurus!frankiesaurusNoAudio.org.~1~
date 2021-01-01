@@ -1,0 +1,167 @@
+# Local IspellDict: en
+#+STARTUP: showeverything
+
+#+TITLE: Frankiesaurus
+
+#+SPDX-FileCopyrightText: 2020-2022 Nicholas Taintor
+#+SPDX-License-Identifier: CC-BY-SA-4.0
+
+# Config from emacs-reveal; this is a minimal config file that lives in the same directory as the presentation
+#+INCLUDE: config.org
+#+LANGUAGE: en
+
+# TOC was getting too long!
+#+OPTIONS: toc:nil
+
+#+OPTIONS: REVEAL_TITLE_SLIDE:nil
+
+#+OPTIONS: reveal_progress:nil
+
+#+OPTIONS: reveal_toc_footer:nil
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page001.jpg" data-background-size="contain"
+:END:
+
+#+ATTR_HTML: :style position: fixed; bottom: 5vh; left: 0%; width: 20vh; border-style: none; background-color: transparent;
+[[./img/littleguy.png]]
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page002.jpg" data-background-size="contain" 
+:END:
+
+*   
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page003.jpg" data-background-size="contain" 
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page004.jpg" data-background-size="contain" 
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page005.jpg" data-background-size="contain"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page006.jpg" data-background-size="contain"
+:END:
+
+*   
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page007.jpg" data-background-size="contain"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page008.jpg" data-background-size="contain"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page009.jpg" data-background-size="contain"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page010.jpg" data-background-size="contain"
+:END:
+
+*   
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page011.jpg" data-background-size="contain"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page012.jpg" data-background-size="contain"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page013.jpg" data-background-size="contain"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page014.jpg" data-background-size="contain"
+:END:
+
+*   
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page015.jpg" data-background-size="contain"
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page016.jpg" data-background-size="contain"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page017.jpg" data-background-size="contain"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page018.jpg" data-background-size="contain"
+:END:
+
+*   
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page019.jpg" data-background-size="contain"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page020.jpg" data-background-size="contain"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page021.jpg" data-background-size="contain"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page022.jpg" data-background-size="contain"
+:END:
+
+*   
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page023.jpg" data-background-size="contain"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page024.jpg" data-background-size="contain"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page025.jpg" data-background-size="contain"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page026.jpg" data-background-size="contain"
+:END:
+
+*   
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page027.jpg" data-background-size="contain"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page028.jpg" data-background-size="contain"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page029.jpg" data-background-size="contain"
+:END:

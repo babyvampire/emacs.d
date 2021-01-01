@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="author" content="Nick Taintor"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/black.css" id="theme"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body prefix="dc: http://purl.org/dc/elements/1.1/ dcterms: http://purl.org/dc/terms/ dcmitype: http://purl.org/dc/dcmitype/ cc: http://creativecommons.org/ns#" typeof="dcmitype:InteractiveResource">
+<div class="reveal">
+<div class="slides">
+<section id="table-of-contents-section">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#slide-h:12952E6C-F302-4796-8131-E5078D363A81">1. Configuration</a></li>
+<li><a href="#slide-h:8F1115ED-3C8D-4DEB-974B-82AE2C0139D4">2. Package management</a>
+<ul>
+<li><a href="#slide-h:9DF64683-FE48-4243-8285-D3514D73D1EB">2.1. Setting up helm and putting in some keybindings</a></li>
+<li><a href="#slide-h:107BC0D7-215A-45CF-B4E3-EB9073A0D070">2.2. Helm descbinds</a></li>
+<li><a href="#slide-h:C588438E-BB0C-408B-BF8A-501862FBAD85">2.3. Making it possible to use quelpa-use-package</a></li>
+</ul>
+</li>
+<li><a href="#slide-h:4D9016D1-13E8-493A-BCD7-7EC445B84B71">3. Personal Details</a></li>
+<li><a href="#slide-h:A1E572BC-7800-44E0-9351-D192E19F8CEC">4. Exec path from shell</a></li>
+<li><a href="#slide-h:A687B495-D01B-455C-8BAE-3D0BC85581F1">5. setting up beamer</a></li>
+<li><a href="#slide-h:21CF83D2-02A3-48A9-8539-E957F50B6508">6. Org customization</a>
+<ul>
+<li><a href="#slide-h:824C588E-B074-4613-A4B0-EDCA6CA4F044">6.1. Setting default notes file</a></li>
+<li><a href="#slide-h:F68B25C3-E54A-4A1A-BC2A-B284C2ED9D77">6.2. org-capture</a></li>
+<li><a href="#slide-h:9771176B-92B9-48F4-87B2-C6C0FBFC5B5B">6.3. todo</a></li>
+<li><a href="#slide-h:4DFD2093-C121-406E-A684-CC3AFD8D0C3E">6.4. org hooks</a></li>
+</ul>
+</li>
+<li><a href="#slide-h:4E31B98B-2A5B-4EB8-810F-AB8192B8A2E9">7. Projectile</a></li>
+<li><a href="#slide-h:3BA717E1-1687-4341-809A-249993795EFE">8. Reveal.JS</a></li>
+<li><a href="#slide-h:D5FD65A9-6D79-44E3-914F-A55CBD1F9BB8">9. Emacs-reveal</a></li>
+<li><a href="#slide-h:37FC1751-EFA0-4AE9-8A0B-A53FA50FC8CB">10. org-ref</a></li>
+<li><a href="#slide-h:51A6C200-A7CD-481B-9AA8-B46AA1EAD366">11. org-re-reveal</a></li>
+<li><a href="#slide-h:467085FD-4EB0-4524-BF3A-3D847A86689C">12. Org-mode &lt;== HTML</a></li>
+<li><a href="#slide-h:740CC9DD-B35D-40A8-A300-332DFE09902B">13. org-pdftools - a custom org link type for pdf-tools</a></li>
+<li><a href="#slide-h:B6CA3E66-1F8B-4534-9674-FD8F421615FA">14. Org-Download</a></li>
+<li><a href="#slide-h:EF7F7DFE-6063-4ED6-B3ED-C41FFA277E7D">15. Drag images and files onto org-mode and insert a link to them</a></li>
+<li><a href="#slide-h:98392A91-7C10-4BC7-B0EA-F9B57760F675">16. Centred, focused text mode (olivetti-mode)</a></li>
+<li><a href="#slide-h:03DF5961-7D68-44F5-B8F6-1291856B8AF1">17. magit</a></li>
+<li><a href="#slide-h:02E4F19E-952B-4A5C-B14F-D506919C3552">18. Python IDE with elpy</a></li>
+<li><a href="#slide-h:55A8DBAA-432B-4E6E-A4CA-3197D1DC4097">19. LSP Mode</a></li>
+<li><a href="#slide-h:37AB6CF7-E0DB-4291-9771-241AB775032A">20. expand region</a></li>
+<li><a href="#slide-h:F0D2F8E6-A784-4E2F-87F0-F1B751A92919">21. Yasnippet</a></li>
+<li><a href="#slide-h:9D8BBA15-B9BC-48F2-A25C-5A893F27BE27">22. Consistent Org heading IDs (and anchor tags)</a></li>
+<li><a href="#slide-h:19BC1170-65F9-4A52-9E88-B2293185599E">23. more stuff</a></li>
+<li><a href="#slide-h:9F230725-522C-4B77-891D-DEFB42A0F8A4">24. preferences / appearance</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-h:12952E6C-F302-4796-8131-E5078D363A81">
+<h2 id="h:12952E6C-F302-4796-8131-E5078D363A81"><span class="section-number-2">1</span> Configuration</h2>
+<p>
+This is me moving my configuration to an org file as many people have suggested, including Sacha Chua and then Brett Witty who I am more directly copying (from <a href="https://github.com/BrettWitty/dotemacs/blob/master/bew_config.org">here</a>)
+</p>
+
+<p>
+I started this on 2020-05-26, and at first I will just lump my whole current init.el file on here as a code block, then I will start breaking it up and organizing it.
+</p>
+
+<p>
+And now of course (<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-07-20 Mon&gt;</span></span>) I'm mining heavily from Protesilaos Stavrou (<a href="https://gitlab.com/protesilaos/dotfiles/-/blob/master/emacs/.emacs.d/emacs-init.org">his init</a>), because he has lots of the same aesthetic notions I do and his literate .emacs is pretty great.  I owe the focused editing module to him.
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-h:8F1115ED-3C8D-4DEB-974B-82AE2C0139D4">
+<h2 id="h:8F1115ED-3C8D-4DEB-974B-82AE2C0139D4"><span class="section-number-2">2</span> Package management</h2>
+<p>
+Package managers were declared in the init.el file, so no need to duplicate here.
+</p>
+
+</section>
+<section id="slide-h:9DF64683-FE48-4243-8285-D3514D73D1EB">
+<h3 id="h:9DF64683-FE48-4243-8285-D3514D73D1EB"><span class="section-number-3">2.1</span> Setting up helm and putting in some keybindings</h3>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">require</span> '<span style="color: #8be9fd;">helm-config</span>)
+(global-set-key (kbd <span style="color: #f1fa8c;">"M-x"</span>) 'helm-M-x)
+(global-set-key (kbd <span style="color: #f1fa8c;">"C-x r b"</span>) 'helm-filtered-bookmarks)
+(global-set-key (kbd <span style="color: #f1fa8c;">"C-x C-f"</span>) 'helm-find-files)
+(global-set-key (kbd <span style="color: #f1fa8c;">"C-h b"</span>) 'helm-descbinds)
+(global-set-key (kbd <span style="color: #f1fa8c;">"C-a"</span>) 'move-beginning-of-line) <span style="color: #6272a4;">; </span><span style="color: #6272a4;">was having trouble with visual-line-mode</span>
+(helm-mode 1)
+</pre>
+</div>
+
+</section>
+<section id="slide-h:107BC0D7-215A-45CF-B4E3-EB9073A0D070">
+<h3 id="h:107BC0D7-215A-45CF-B4E3-EB9073A0D070"><span class="section-number-3">2.2</span> Helm descbinds</h3>
+<p>
+<a href="https://github.com/emacs-helm/helm-descbinds">https://github.com/emacs-helm/helm-descbinds</a>
+Helm Descbinds provides an interface to emacs’ describe-bindings making the currently active key bindings interactively searchable with helm.
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">helm-descbinds</span>)
+(helm-descbinds-mode)
+</pre>
+</div>
+
+<p>
+Adding the load path for the packages I install manually - having them in .emacs.d will make them more portable
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(add-to-list 'load-path <span style="color: #f1fa8c;">"~/.emacs.d/packages"</span>)
+<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">set PATH</span>
+(setenv <span style="color: #f1fa8c;">"PATH"</span> (concat (getenv <span style="color: #f1fa8c;">"PATH"</span>) <span style="color: #f1fa8c;">":/usr/local/bin"</span>))
+</pre>
+</div>
+
+</section>
+<section id="slide-h:C588438E-BB0C-408B-BF8A-501862FBAD85">
+<h3 id="h:C588438E-BB0C-408B-BF8A-501862FBAD85"><span class="section-number-3">2.3</span> Making it possible to use quelpa-use-package</h3>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(quelpa
+ '(quelpa-use-package
+   <span style="color: #ffb86c;">:fetcher</span> git
+   <span style="color: #ffb86c;">:url</span> <span style="color: #f1fa8c;">"https://github.com/quelpa/quelpa-use-package.git"</span>))
+(<span style="color: #ff79c6; font-weight: bold;">require</span> '<span style="color: #8be9fd;">quelpa-use-package</span>)
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-h:4D9016D1-13E8-493A-BCD7-7EC445B84B71">
+<h2 id="h:4D9016D1-13E8-493A-BCD7-7EC445B84B71"><span class="section-number-2">3</span> Personal Details</h2>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">setq</span> user-full-name <span style="color: #f1fa8c;">"Nick Taintor"</span>
+    user-mail-address <span style="color: #f1fa8c;">"nick.taintor@gmail.com"</span>
+    calendar-latitude 38.820600
+    calendar-longitude -77.318260
+    calendar-location-name <span style="color: #f1fa8c;">"Farirfax, VA"</span>)
+
+<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">global custom key settings</span>
+(global-set-key (kbd <span style="color: #f1fa8c;">"M-o"</span>) 'other-window)
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-h:A1E572BC-7800-44E0-9351-D192E19F8CEC">
+<h2 id="h:A1E572BC-7800-44E0-9351-D192E19F8CEC"><span class="section-number-2">4</span> Exec path from shell</h2>
+<p>
+The problem is that in mac OS the Emacs shell instance gets launched with default minimal environment variables.  exec-path-from-shell takes the $PATH from the actual shell environemnt when Emacs starts a shell
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span style="color: #6272a4;">;; </span><span style="color: #6272a4;">exec-path-from-shell give the shell opened by emacs the same path as the user's shell</span>
+(<span style="color: #ff79c6; font-weight: bold;">when</span> (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-h:A687B495-D01B-455C-8BAE-3D0BC85581F1">
+<h2 id="h:A687B495-D01B-455C-8BAE-3D0BC85581F1"><span class="section-number-2">5</span> setting up beamer</h2>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-06-12 Fri&gt; </span></span> Not using Beamer, so I commented all this out
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-h:21CF83D2-02A3-48A9-8539-E957F50B6508">
+<h2 id="h:21CF83D2-02A3-48A9-8539-E957F50B6508"><span class="section-number-2">6</span> Org customization</h2>
+<p>
+Some org-mode customization
+</p>
+
+<p>
+this should add visual-line-mode and org-indent-mode to org files
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">with-eval-after-load</span> 'org       
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> org-startup-indented t) <span style="color: #6272a4;">; </span><span style="color: #6272a4;">Enable `</span><span style="color: #8be9fd;">org-indent-mode</span><span style="color: #6272a4;">' by default</span>
+  (add-hook 'org-mode-hook #'visual-line-mode))
+
+(<span style="color: #ff79c6; font-weight: bold;">setq</span> org-src-fontify-natively t
+      org-confirm-babel-evaluate nil
+      org-src-preserve-indentation t
+      org-link-abbrev-alist '((<span style="color: #f1fa8c;">"att"</span> . org-attach-expand-link))
+      )
+</pre>
+</div>
+
+<p>
+This will add nicer-looking bullets:
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">org-bullets</span>
+<span style="color: #ffb86c;">:ensure</span> t
+<span style="color: #ffb86c;">:config</span>
+(add-hook 'org-mode-hook (<span style="color: #ff79c6; font-weight: bold;">lambda</span> () (org-bullets-mode 1))))
+</pre>
+</div>
+
+
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">setq</span> org-latex-pdf-process
+      '(<span style="color: #f1fa8c;">"pdflatex -interaction nonstopmode -output-directory %o %f"</span>
+        <span style="color: #f1fa8c;">"bibtex %b"</span>
+        <span style="color: #f1fa8c;">"pdflatex -interaction nonstopmode -output-directory %o %f"</span>
+        <span style="color: #f1fa8c;">"pdflatex -interaction nonstopmode -output-directory %o %f"</span>))
+
+(<span style="color: #ff79c6; font-weight: bold;">setq</span> bibtex-autokey-year-length 4
+      bibtex-autokey-name-year-separator <span style="color: #f1fa8c;">"-"</span>
+      bibtex-autokey-year-title-separator <span style="color: #f1fa8c;">"-"</span>
+      bibtex-autokey-titleword-separator <span style="color: #f1fa8c;">"-"</span>
+      bibtex-autokey-titlewords 2
+      bibtex-autokey-titlewords-stretch 1
+      bibtex-autokey-titleword-length 5)
+
+(<span style="color: #ff79c6; font-weight: bold;">require</span> '<span style="color: #8be9fd;">dash</span>)
+(<span style="color: #ff79c6; font-weight: bold;">setq</span> org-latex-default-packages-alist
+      (-remove-item
+       '(<span style="color: #f1fa8c;">""</span> <span style="color: #f1fa8c;">"hyperref"</span> nil)
+       org-latex-default-packages-alist))
+
+<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">Append new packages</span>
+(add-to-list 'org-latex-default-packages-alist '(<span style="color: #f1fa8c;">""</span> <span style="color: #f1fa8c;">"natbib"</span> <span style="color: #f1fa8c;">""</span>) t)
+(add-to-list 'org-latex-default-packages-alist
+             '(<span style="color: #f1fa8c;">"linktocpage,pdfstartview=FitH,colorlinks,</span>
+<span style="color: #f1fa8c;">linkcolor=blue,anchorcolor=blue,</span>
+<span style="color: #f1fa8c;">citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue"</span>
+               <span style="color: #f1fa8c;">"hyperref"</span> nil)
+             t)
+
+(<span style="color: #ff79c6; font-weight: bold;">setq</span> reftex-default-bibliography '(<span style="color: #f1fa8c;">"~/googleDrive/bibliography/references.bib"</span>))
+
+<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">see org-ref for use of these variables</span>
+(<span style="color: #ff79c6; font-weight: bold;">setq</span> org-ref-bibliography-notes <span style="color: #f1fa8c;">"~/googleDrive/bibliography/notes.org"</span>
+      org-ref-default-bibliography '(<span style="color: #f1fa8c;">"~/googleDrive/bibliography/references.bib"</span>)
+      org-ref-pdf-directory <span style="color: #f1fa8c;">"~/googleDrive/Zotero"</span>)
+
+(add-to-list 'custom-theme-load-path <span style="color: #f1fa8c;">"~/.emacs.d/themes/"</span>)
+
+
+(<span style="color: #ff79c6; font-weight: bold;">setq</span> ispell-program-name <span style="color: #f1fa8c;">"/usr/local/bin/aspell"</span>)
+</pre>
+</div>
+
+</section>
+<section id="slide-h:824C588E-B074-4613-A4B0-EDCA6CA4F044">
+<h3 id="h:824C588E-B074-4613-A4B0-EDCA6CA4F044"><span class="section-number-3">6.1</span> Setting default notes file</h3>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">setq</span> org-default-notes-file <span style="color: #f1fa8c;">"~/org/notes.org"</span>)
+</pre>
+</div>
+
+</section>
+<section id="slide-h:F68B25C3-E54A-4A1A-BC2A-B284C2ED9D77">
+<h3 id="h:F68B25C3-E54A-4A1A-BC2A-B284C2ED9D77"><span class="section-number-3">6.2</span> org-capture</h3>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(global-set-key (kbd <span style="color: #f1fa8c;">"C-c c"</span>) 'org-capture)
+</pre>
+</div>
+
+</section>
+<section id="slide-h:9771176B-92B9-48F4-87B2-C6C0FBFC5B5B">
+<h3 id="h:9771176B-92B9-48F4-87B2-C6C0FBFC5B5B"><span class="section-number-3">6.3</span> todo</h3>
+<p>
+Setting TODO keywords
+</p>
+<ul>
+<li>symbol meanings: ! = timestamp, @ = note with timestamp</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">
+(<span style="color: #ff79c6; font-weight: bold;">setq</span> org-todo-keywords
+      '((sequence <span style="color: #f1fa8c;">"TODO(t)"</span> <span style="color: #f1fa8c;">"WAIT(w@/!)"</span> <span style="color: #f1fa8c;">"|"</span> <span style="color: #f1fa8c;">"DONE(d!)"</span> <span style="color: #f1fa8c;">"CANCELED(c@)"</span>)))
+
+</pre>
+</div>
+</section>
+<section id="slide-h:4DFD2093-C121-406E-A684-CC3AFD8D0C3E">
+<h3 id="h:4DFD2093-C121-406E-A684-CC3AFD8D0C3E"><span class="section-number-3">6.4</span> org hooks</h3>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(add-hook 'org-mode-hook 'show-paren-mode t)
+
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-h:4E31B98B-2A5B-4EB8-810F-AB8192B8A2E9">
+<h2 id="h:4E31B98B-2A5B-4EB8-810F-AB8192B8A2E9"><span class="section-number-2">7</span> Projectile</h2>
+<p>
+From <a href="https://projectile.mx/">Projectile home page</a>
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-macs-lisp">(use-package projectile
+  :ensure t
+  :config
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (projectile-mode +1))
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-h:3BA717E1-1687-4341-809A-249993795EFE">
+<h2 id="h:3BA717E1-1687-4341-809A-249993795EFE"><span class="section-number-2">8</span> Reveal.JS</h2>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">ox-reveal</span> 
+<span style="color: #ffb86c;">:ensure</span> ox-reveal)
+
+(<span style="color: #ff79c6; font-weight: bold;">setq</span> org-reveal-root <span style="color: #f1fa8c;">"file:///Users/nick/org/comptia/sessionone/reveal.js"</span>)
+(<span style="color: #ff79c6; font-weight: bold;">setq</span> org-reveal-mathjax t)
+
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">htmlize</span>
+  <span style="color: #ffb86c;">:ensure</span> t)
+</pre>
+</div>
+
+<p>
+Org-mode exporting, <code>C-c C-e</code>, now includes an option <code>R</code> for such reveal slide decks.
+</p>
+
+<p>
+Two dimensional slides are not always obvious so with the following there is an option in
+tiny font to view the slide-deck continuously and remind users that <code>?</code> provides useful
+shortcuts. Courtesy of <a href="https://github.com/alhassy/emacs.d/blob/master/README.org">Musa Al-hassy</a> 
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">setq</span> org-reveal-title-slide <span style="color: #f1fa8c;">"&lt;h1&gt;%t&lt;/h1&gt; &lt;h3&gt;%a&lt;/h3&gt;</span>
+<span style="color: #f1fa8c;">&lt;font size=\"1\"&gt;</span>
+<span style="color: #f1fa8c;">&lt;a href=\"?print-pdf&amp;showNotes=true\"&gt;</span>
+<span style="color: #f1fa8c;">&#10218; Flattened View ; Press &lt;code&gt;?&lt;/code&gt; for Help &#10219;</span>
+<span style="color: #f1fa8c;">&lt;/a&gt;</span>
+<span style="color: #f1fa8c;">&lt;/font&gt;"</span>)
+</pre>
+</div>
+
+<p>
+One should remove the <code>&amp;showNotes=true</code> if they do not want to include
+speaker notes in the flattened view.
+</p>
+
+<p>
+Within the flatenned view, one may wish to <code>CTRL/CMD+P</code> then save the
+resulting PDF locally.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-h:D5FD65A9-6D79-44E3-914F-A55CBD1F9BB8">
+<h2 id="h:D5FD65A9-6D79-44E3-914F-A55CBD1F9BB8"><span class="section-number-2">9</span> Emacs-reveal</h2>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">emacs-reveal</span>
+  <span style="color: #ffb86c;">:load-path</span> <span style="color: #f1fa8c;">"~/.emacs.d/elpa/emacs-reveal"</span>)
+</pre>
+</div>
+
+<p>
+Here, setting up so that the org file will automatically be exported to an oer-reveal HTML file (same as doing C-c C-e w w)
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">defun</span> <span style="color: #50fa7b; font-weight: bold;">toggle-oer-reveal-export-on-save</span> ()
+  (<span style="color: #ff79c6; font-weight: bold;">interactive</span>)
+  (<span style="color: #ff79c6; font-weight: bold;">if</span> (memq 'oer-reveal-export-to-html after-save-hook)
+      (<span style="color: #ff79c6; font-weight: bold;">progn</span>
+        (remove-hook 'after-save-hook 'oer-reveal-export-to-html t)
+        (message <span style="color: #f1fa8c;">"Disabled org html export on save for current buffer..."</span>))
+    (add-hook 'after-save-hook 'oer-reveal-export-to-html nil t)
+    (message <span style="color: #f1fa8c;">"Enabled oer-reveal-export-to-html on save for current buffer..."</span>)))
+</pre>
+</div>
+<p>
+So with the above defined function, in an org file can M-x toggle-oer-reveal-export-on-save &lt;return&gt;
+</p>
+</section>
+</section>
+<section>
+<section id="slide-h:37FC1751-EFA0-4AE9-8A0B-A53FA50FC8CB">
+<h2 id="h:37FC1751-EFA0-4AE9-8A0B-A53FA50FC8CB"><span class="section-number-2">10</span> org-ref</h2>
+<p>
+citations, cross-references, indexes, glossaries and bibtex utilities for org-mode
+from <a href="https://github.com/jkitchin/org-ref">here</a>
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">org-ref</span>)
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">org-ref-pdf</span>
+  <span style="color: #ffb86c;">:load-path</span> <span style="color: #f1fa8c;">"/Users/nick/.emacs.d/packages/org-ref-pdf.el"</span>)
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">org-ref-url-utils</span>
+  <span style="color: #ffb86c;">:load-path</span> <span style="color: #f1fa8c;">"/Users/nick/.emacs.d/packages/org-ref-url-utils.el"</span>)
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-h:51A6C200-A7CD-481B-9AA8-B46AA1EAD366">
+<h2 id="h:51A6C200-A7CD-481B-9AA8-B46AA1EAD366"><span class="section-number-2">11</span> org-re-reveal</h2>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-05-30 Sat&gt; </span></span> turning off for now,focussing on getting regular reveal to work
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span style="color: #6272a4;">;;</span><span style="color: #6272a4;">(require 'org-re-reveal)</span>
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-h:467085FD-4EB0-4524-BF3A-3D847A86689C">
+<h2 id="h:467085FD-4EB0-4524-BF3A-3D847A86689C"><span class="section-number-2">12</span> Org-mode &lt;== HTML</h2>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span style="color: #6272a4;">;; </span><span style="color: #6272a4;">See: https://emacs.stackexchange.com/questions/7171/paste-html-into-org-mode</span>
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">org-eww</span>
+ <span style="color: #ffb86c;">:quelpa</span> (org-eww <span style="color: #ffb86c;">:fetcher</span> git <span style="color: #ffb86c;">:url</span> <span style="color: #f1fa8c;">"https://github.com/Fuco1/org-mode.git"</span>))
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-h:740CC9DD-B35D-40A8-A300-332DFE09902B">
+<h2 id="h:740CC9DD-B35D-40A8-A300-332DFE09902B"><span class="section-number-2">13</span> org-pdftools - a custom org link type for pdf-tools</h2>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">org-pdftools</span>
+  <span style="color: #ffb86c;">:hook</span> (org-load . org-pdftools-setup-link))
+
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">org-noter-pdftools</span>
+  <span style="color: #ffb86c;">:after</span> org-noter
+  <span style="color: #ffb86c;">:config</span>
+  (<span style="color: #ff79c6; font-weight: bold;">with-eval-after-load</span> 'pdf-annot
+    (add-hook 'pdf-annot-activate-handler-functions #'org-noter-pdftools-jump-to-note)))
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-h:B6CA3E66-1F8B-4534-9674-FD8F421615FA">
+<h2 id="h:B6CA3E66-1F8B-4534-9674-FD8F421615FA"><span class="section-number-2">14</span> Org-Download</h2>
+<p>
+I didn't like the way it stored things, and it kept duplicating the stuff I already had on my drive.  It just like Kitchin's take on it better!
+Drag and drop images to Emacs org-mode - <a href="https://github.com/abo-abo/org-download">https://github.com/abo-abo/org-download</a>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-h:EF7F7DFE-6063-4ED6-B3ED-C41FFA277E7D">
+<h2 id="h:EF7F7DFE-6063-4ED6-B3ED-C41FFA277E7D"><span class="section-number-2">15</span> Drag images and files onto org-mode and insert a link to them</h2>
+<p>
+from John Kitchin <a href="http://kitchingroup.cheme.cmu.edu/blog/2015/07/10/Drag-images-and-files-onto-org-mode-and-insert-a-link-to-them/">link</a>
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">defun</span> <span style="color: #50fa7b; font-weight: bold;">my-dnd-func</span> (event)
+  (<span style="color: #ff79c6; font-weight: bold;">interactive</span> <span style="color: #f1fa8c;">"e"</span>)
+  (goto-char (nth 1 (event-start event)))
+  (x-focus-frame nil)
+  (<span style="color: #ff79c6; font-weight: bold;">let*</span> ((payload (car (last event)))
+         (type (car payload))
+         (fname (cadr payload))
+         (img-regexp <span style="color: #f1fa8c;">"</span><span style="color: #8be9fd; font-weight: bold;">\\</span><span style="color: #bd93f9; font-weight: bold;">(</span><span style="color: #f1fa8c;">png</span><span style="color: #8be9fd; font-weight: bold;">\\</span><span style="color: #bd93f9; font-weight: bold;">|</span><span style="color: #f1fa8c;">jp[e]?g</span><span style="color: #8be9fd; font-weight: bold;">\\</span><span style="color: #bd93f9; font-weight: bold;">)</span><span style="color: #f1fa8c;">\\&gt;"</span>))
+    (<span style="color: #ff79c6; font-weight: bold;">cond</span>
+     <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">insert image link</span>
+     ((<span style="color: #ff79c6; font-weight: bold;">and</span>  (eq 'drag-n-drop (car event))
+            (eq 'file type)
+            (string-match img-regexp fname))
+      (insert (format <span style="color: #f1fa8c;">"[[%s]]"</span> fname)))
+     <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">insert image link with caption</span>
+     ((<span style="color: #ff79c6; font-weight: bold;">and</span>  (eq 'C-drag-n-drop (car event))
+            (eq 'file type)
+            (string-match img-regexp fname))
+      (insert <span style="color: #f1fa8c;">"#+ATTR_LATEX: :width 0.75\\textwidth :placement [h] :float nil\n"</span>)
+      (insert <span style="color: #f1fa8c;">"#+ATTR_HTML: :width 30%\n"</span>)
+      (insert (concat  <span style="color: #f1fa8c;">"#+CAPTION: "</span> (read-string <span style="color: #f1fa8c;">"Caption: "</span>) <span style="color: #f1fa8c;">"\n"</span>))
+      (insert (format <span style="color: #f1fa8c;">"[[%s]]"</span> fname)))
+     <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">C-drag-n-drop to open a file</span>
+     ((<span style="color: #ff79c6; font-weight: bold;">and</span>  (eq 'C-drag-n-drop (car event))
+            (eq 'file type))
+      (find-file fname))
+     ((<span style="color: #ff79c6; font-weight: bold;">and</span> (eq 'M-drag-n-drop (car event))
+           (eq 'file type))
+      (insert (format <span style="color: #f1fa8c;">"[[attachfile:%s]]"</span> fname)))
+     <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">regular drag and drop on file</span>
+     ((eq 'file type)
+      (insert (format <span style="color: #f1fa8c;">"[[%s]]\n"</span> fname)))
+     (t
+      (<span style="color: #ffb86c; background-color: #373844;">error</span> <span style="color: #f1fa8c;">"I am not equipped for dnd on %s"</span> payload)))))
+
+
+(define-key org-mode-map (kbd <span style="color: #f1fa8c;">"&lt;drag-n-drop&gt;"</span>) 'my-dnd-func)
+(define-key org-mode-map (kbd <span style="color: #f1fa8c;">"&lt;C-drag-n-drop&gt;"</span>) 'my-dnd-func)
+(define-key org-mode-map (kbd <span style="color: #f1fa8c;">"&lt;M-drag-n-drop&gt;"</span>) 'my-dnd-func)
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-h:98392A91-7C10-4BC7-B0EA-F9B57760F675">
+<h2 id="h:98392A91-7C10-4BC7-B0EA-F9B57760F675"><span class="section-number-2">16</span> Centred, focused text mode (olivetti-mode)</h2>
+<p>
+From Protesilaos Stavrou's <a href="https://protesilaos.com/dotemacs/">setup</a>
+I'm just taking his mode completely right now, so I'll call it what he does (<code>prot/olivetti-mode</code>) - what it does is bring the current window's buffer to the center of view, removes the fringe, hides the mode line, default typeface set to something proportionately-spaced, other things.
+</p>
+
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-07-20 Mon&gt; </span></span> I'm going to dump this and some of his other associated functions and definitions, hopefully at some point I will distribute them out through this file appropriately and link them.
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">olivetti</span>
+  <span style="color: #ffb86c;">:ensure</span>
+  <span style="color: #ffb86c;">:defer</span>
+  <span style="color: #ffb86c;">:diminish</span>
+  <span style="color: #ffb86c;">:config</span>
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> olivetti-body-width 0.65)
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> olivetti-minimum-body-width 72)
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> olivetti-recall-visual-line-mode-entry-state t)
+
+  (<span style="color: #ff79c6; font-weight: bold;">define-minor-mode</span> <span style="color: #50fa7b; font-weight: bold;">prot/olivetti-mode</span>
+    <span style="color: #6272a4;">"Toggle buffer-local `</span><span style="color: #8be9fd;">olivetti-mode</span><span style="color: #6272a4;">' with additional parameters.</span>
+
+<span style="color: #6272a4;">Fringes are disabled.  The modeline is hidden, except for</span>
+<span style="color: #6272a4;">`</span><span style="color: #8be9fd;">prog-mode</span><span style="color: #6272a4;">' buffers (see `</span><span style="color: #8be9fd;">prot/hidden-mode-line-mode</span><span style="color: #6272a4;">').  The</span>
+<span style="color: #6272a4;">default typeface is set to a proportionately-spaced family,</span>
+<span style="color: #6272a4;">except for programming modes (see `</span><span style="color: #8be9fd;">prot/variable-pitch-mode</span><span style="color: #6272a4;">').</span>
+<span style="color: #6272a4;">The cursor becomes a blinking bar, per `</span><span style="color: #8be9fd;">prot/cursor-type-mode</span><span style="color: #6272a4;">'."</span>
+    <span style="color: #ffb86c;">:init-value</span> nil
+    <span style="color: #ffb86c;">:global</span> nil
+    (<span style="color: #ff79c6; font-weight: bold;">if</span> prot/olivetti-mode
+        (<span style="color: #ff79c6; font-weight: bold;">progn</span>
+          (olivetti-mode 1)
+          (set-window-fringes (selected-window) 0 0)
+          (prot/variable-pitch-mode 1)
+          (prot/cursor-type-mode 1)
+          (<span style="color: #ff79c6; font-weight: bold;">unless</span> (derived-mode-p 'prog-mode)
+            (prot/hidden-mode-line-mode 1)))
+      (olivetti-mode -1)
+      (set-window-fringes (selected-window) nil) <span style="color: #6272a4;">; </span><span style="color: #6272a4;">Use default width</span>
+      (prot/variable-pitch-mode -1)
+      (prot/cursor-type-mode -1)
+      (<span style="color: #ff79c6; font-weight: bold;">unless</span> (derived-mode-p 'prog-mode)
+        (prot/hidden-mode-line-mode -1))))
+  <span style="color: #ffb86c;">:bind</span> (<span style="color: #f1fa8c;">"C-c o"</span> . prot/olivetti-mode))
+
+
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">emacs</span>
+  <span style="color: #ffb86c;">:commands</span> prot/hidden-mode-line-mode
+  <span style="color: #ffb86c;">:config</span>
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> mode-line-percent-position '(-3 <span style="color: #f1fa8c;">"%p"</span>))
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> mode-line-defining-kbd-macro
+        (propertize <span style="color: #f1fa8c;">" Macro"</span> 'face 'mode-line-emphasis))
+  (<span style="color: #ff79c6; font-weight: bold;">setq-default</span> mode-line-format
+                '(<span style="color: #f1fa8c;">"%e"</span>
+                  mode-line-front-space
+                  mode-line-mule-info
+                  mode-line-client
+                  mode-line-modified
+                  mode-line-remote
+                  mode-line-frame-identification
+                  mode-line-buffer-identification
+                  <span style="color: #f1fa8c;">"  "</span>
+                  mode-line-position
+                  (vc-mode vc-mode)
+                  <span style="color: #f1fa8c;">" "</span>
+                  mode-line-modes
+                  <span style="color: #f1fa8c;">" "</span>
+                  mode-line-misc-info
+                  mode-line-end-spaces))
+
+  (<span style="color: #ff79c6; font-weight: bold;">define-minor-mode</span> <span style="color: #50fa7b; font-weight: bold;">prot/hidden-mode-line-mode</span>
+    <span style="color: #6272a4;">"Toggle modeline visibility in the current buffer."</span>
+    <span style="color: #ffb86c;">:init-value</span> nil
+    <span style="color: #ffb86c;">:global</span> nil
+    (<span style="color: #ff79c6; font-weight: bold;">if</span> prot/hidden-mode-line-mode
+        (<span style="color: #ff79c6; font-weight: bold;">setq-local</span> mode-line-format nil)
+      (kill-local-variable 'mode-line-format)
+      (force-mode-line-update))))
+
+
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">face-remap</span>
+  <span style="color: #ffb86c;">:diminish</span> buffer-face-mode            <span style="color: #6272a4;">; </span><span style="color: #6272a4;">the actual mode</span>
+  <span style="color: #ffb86c;">:commands</span> prot/variable-pitch-mode
+  <span style="color: #ffb86c;">:config</span>
+  (<span style="color: #ff79c6; font-weight: bold;">define-minor-mode</span> <span style="color: #50fa7b; font-weight: bold;">prot/variable-pitch-mode</span>
+    <span style="color: #6272a4;">"Toggle `</span><span style="color: #8be9fd;">variable-pitch-mode</span><span style="color: #6272a4;">', except for `</span><span style="color: #8be9fd;">prog-mode</span><span style="color: #6272a4;">'."</span>
+    <span style="color: #ffb86c;">:init-value</span> nil
+    <span style="color: #ffb86c;">:global</span> nil
+    (<span style="color: #ff79c6; font-weight: bold;">if</span> prot/variable-pitch-mode
+        (<span style="color: #ff79c6; font-weight: bold;">unless</span> (derived-mode-p 'prog-mode)
+          (variable-pitch-mode 1))
+      (variable-pitch-mode -1))))
+
+<span style="color: #6272a4;">;;; </span><span style="color: #6272a4;">Initially had a bunch of errors with the following, but then I wised up and upgraded emacs to 27.0.91 and it worked</span>
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">emacs</span>
+  <span style="color: #ffb86c;">:config</span>
+  (<span style="color: #ff79c6; font-weight: bold;">setq-default</span> scroll-preserve-screen-position t)
+  (<span style="color: #ff79c6; font-weight: bold;">setq-default</span> scroll-conservatively 1) <span style="color: #6272a4;">; </span><span style="color: #6272a4;">affects `</span><span style="color: #8be9fd;">scroll-step</span><span style="color: #6272a4;">'</span>
+  (<span style="color: #ff79c6; font-weight: bold;">setq-default</span> scroll-margin 0)
+
+  (<span style="color: #ff79c6; font-weight: bold;">define-minor-mode</span> <span style="color: #50fa7b; font-weight: bold;">prot/scroll-centre-cursor-mode</span>
+    <span style="color: #6272a4;">"Toggle centred cursor scrolling behaviour."</span>
+    <span style="color: #ffb86c;">:init-value</span> nil
+    <span style="color: #ffb86c;">:lighter</span> <span style="color: #f1fa8c;">" S="</span>
+    <span style="color: #ffb86c;">:global</span> nil
+    (<span style="color: #ff79c6; font-weight: bold;">if</span> prot/scroll-centre-cursor-mode
+        (<span style="color: #ff79c6; font-weight: bold;">setq-local</span> scroll-margin (* (frame-height) 2)
+                    scroll-conservatively 0
+                    maximum-scroll-margin 0.5)
+      (<span style="color: #ff79c6; font-weight: bold;">dolist</span> (local '(scroll-preserve-screen-position
+                       scroll-conservatively
+                       maximum-scroll-margin
+                       scroll-margin))
+        (kill-local-variable `,local))))
+
+  <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">C-c l is used for `</span><span style="color: #8be9fd;">org-store-link</span><span style="color: #6272a4;">'.  The mnemonic for this is to</span>
+  <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">focus the Line and also works as a variant of C-l.</span>
+  <span style="color: #ffb86c;">:bind</span> (<span style="color: #f1fa8c;">"C-c L"</span> . prot/scroll-centre-cursor-mode))
+
+
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">display-line-numbers</span>
+  <span style="color: #ffb86c;">:defer</span>
+  <span style="color: #ffb86c;">:config</span>
+  <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">Set absolute line numbers.  A value of "relative" is also useful.</span>
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> display-line-numbers-type t)
+
+  (<span style="color: #ff79c6; font-weight: bold;">define-minor-mode</span> <span style="color: #50fa7b; font-weight: bold;">prot/display-line-numbers-mode</span>
+    <span style="color: #6272a4;">"Toggle `</span><span style="color: #8be9fd;">display-line-numbers-mode</span><span style="color: #6272a4;">' and `</span><span style="color: #8be9fd;">hl-line-mode</span><span style="color: #6272a4;">'."</span>
+    <span style="color: #ffb86c;">:init-value</span> nil
+    <span style="color: #ffb86c;">:global</span> nil
+    (<span style="color: #ff79c6; font-weight: bold;">if</span> prot/display-line-numbers-mode
+        (<span style="color: #ff79c6; font-weight: bold;">progn</span>
+          (display-line-numbers-mode 1)
+          (hl-line-mode 1))
+      (display-line-numbers-mode -1)
+      (hl-line-mode -1)))
+  <span style="color: #ffb86c;">:bind</span> (<span style="color: #f1fa8c;">"&lt;f7&gt;"</span> . prot/display-line-numbers-mode))
+
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">frame</span>
+  <span style="color: #ffb86c;">:commands</span> prot/cursor-type-mode
+  <span style="color: #ffb86c;">:config</span>
+  (<span style="color: #ff79c6; font-weight: bold;">setq-default</span> cursor-type 'box)
+  (<span style="color: #ff79c6; font-weight: bold;">setq-default</span> cursor-in-non-selected-windows '(bar . 2))
+  (<span style="color: #ff79c6; font-weight: bold;">setq-default</span> blink-cursor-blinks 50)
+  (<span style="color: #ff79c6; font-weight: bold;">setq-default</span> blink-cursor-interval nil) <span style="color: #6272a4;">; </span><span style="color: #6272a4;">0.75 would be my choice</span>
+  (<span style="color: #ff79c6; font-weight: bold;">setq-default</span> blink-cursor-delay 0.2)
+
+  (blink-cursor-mode -1)
+
+  (<span style="color: #ff79c6; font-weight: bold;">define-minor-mode</span> <span style="color: #50fa7b; font-weight: bold;">prot/cursor-type-mode</span>
+    <span style="color: #6272a4;">"Toggle between static block and pulsing bar cursor."</span>
+    <span style="color: #ffb86c;">:init-value</span> nil
+    <span style="color: #ffb86c;">:global</span> t
+    (<span style="color: #ff79c6; font-weight: bold;">if</span> prot/cursor-type-mode
+        (<span style="color: #ff79c6; font-weight: bold;">progn</span>
+          (<span style="color: #ff79c6; font-weight: bold;">setq-local</span> blink-cursor-interval 0.75
+                      cursor-type '(bar . 2)
+                      cursor-in-non-selected-windows 'hollow)
+          (blink-cursor-mode 1))
+      (<span style="color: #ff79c6; font-weight: bold;">dolist</span> (local '(blink-cursor-interval
+                       cursor-type
+                       cursor-in-non-selected-windows))
+        (kill-local-variable `,local))
+      (blink-cursor-mode -1))))
+
+</pre>
+</div>
+
+
+
+</section>
+</section>
+<section>
+<section id="slide-h:03DF5961-7D68-44F5-B8F6-1291856B8AF1">
+<h2 id="h:03DF5961-7D68-44F5-B8F6-1291856B8AF1"><span class="section-number-2">17</span> magit</h2>
+<p>
+Using magit and forge (which works with GitLab)
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">magit</span>
+  <span style="color: #ffb86c;">:ensure</span> t
+  <span style="color: #ffb86c;">:bind</span> ((<span style="color: #f1fa8c;">"C-x g"</span> . magit-status)
+         (<span style="color: #f1fa8c;">"C-x C-g"</span> . magit-status)))
+
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">forge</span>
+  <span style="color: #ffb86c;">:after</span> magit)
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-h:02E4F19E-952B-4A5C-B14F-D506919C3552">
+<h2 id="h:02E4F19E-952B-4A5C-B14F-D506919C3552"><span class="section-number-2">18</span> Python IDE with elpy</h2>
+<p>
+from Jorgen Schaefer's github <a href="https://github.com/jorgenschaefer/elpy">https://github.com/jorgenschaefer/elpy</a>
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">elpy</span>
+  <span style="color: #ffb86c;">:ensure</span> t
+  <span style="color: #ffb86c;">:init</span>
+  (elpy-enable))
+</pre>
+</div>
+
+<p>
+The next instructs emacs to use the standard Python interpreter
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">setq</span> python-shell-interpreter <span style="color: #f1fa8c;">"python"</span>
+      python-shell-interpreter-args <span style="color: #f1fa8c;">"-i"</span>)
+</pre>
+</div>
+
+<p>
+Because on a mac the "python" command means python2, added this:
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">if</span> (eq 'system-type <span style="color: #f1fa8c;">"darwin"</span>)
+    (<span style="color: #ff79c6; font-weight: bold;">defvar</span> <span style="color: #f8f8f2; font-weight: bold;">elpy-rpc-python-command</span> <span style="color: #f1fa8c;">"python3"</span>)
+(<span style="color: #ff79c6; font-weight: bold;">defvar</span> <span style="color: #f8f8f2; font-weight: bold;">elpy-rpc-python-command</span> <span style="color: #f1fa8c;">"python"</span>))  
+</pre>
+</div>
+
+<p>
+Include <a href="https://www.flycheck.org/en/latest/">flycheck</a>
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span style="color: #6272a4;">;; </span><span style="color: #6272a4;">Enable Flycheck rather than flymake</span>
+
+(<span style="color: #ff79c6; font-weight: bold;">when</span> (<span style="color: #ff79c6; font-weight: bold;">require</span> '<span style="color: #8be9fd;">flycheck</span> nil t)
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+</pre>
+</div>
+
+<p>
+Using company-jedi: company-mode completion back-end for Python JEDI <a href="https://github.com/emacsorphanage/company-jedi">https://github.com/emacsorphanage/company-jedi</a>
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">defun</span> <span style="color: #50fa7b; font-weight: bold;">my/python-mode-hook</span> ()
+  (add-to-list 'company-backends 'company-jedi))
+
+(add-hook 'python-mode-hook 'my/python-mode-hook)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span style="color: #6272a4;">;; </span><span style="color: #6272a4;">(use-package flycheck</span>
+<span style="color: #6272a4;">;;   </span><span style="color: #6272a4;">:ensure t</span>
+<span style="color: #6272a4;">;;   </span><span style="color: #6272a4;">:init (global-flycheck-mode))</span>
+</pre>
+</div>
+
+<p>
+Using autopep8
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">py-autopep8</span>
+  <span style="color: #ffb86c;">:init</span>
+  (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save))
+</pre>
+</div>
+
+<p>
+Use pyvenv 
+<a href="https://github.com/jorgenschaefer/pyvenv">Pyvenv</a>
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">pyvenv</span>
+  <span style="color: #ffb86c;">:ensure</span> t
+  <span style="color: #ffb86c;">:init</span>
+  (setenv <span style="color: #f1fa8c;">"WORKON_HOME"</span> <span style="color: #f1fa8c;">"~/.pyenv/versions"</span>))
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-h:55A8DBAA-432B-4E6E-A4CA-3197D1DC4097">
+<h2 id="h:55A8DBAA-432B-4E6E-A4CA-3197D1DC4097"><span class="section-number-2">19</span> LSP Mode</h2>
+<p>
+home page <a href="https://emacs-lsp.github.io/lsp-mode/">here</a>
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span style="color: #6272a4;">;; </span><span style="color: #6272a4;">set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")</span>
+(<span style="color: #ff79c6; font-weight: bold;">setq</span> lsp-keymap-prefix <span style="color: #f1fa8c;">"s-l"</span>)
+
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">lsp-mode</span>
+    <span style="color: #ffb86c;">:hook</span> (<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">replace XXX-mode with concrete major-mode(e. g. python-mode)</span>
+            (XXX-mode . lsp)
+            <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">if you want which-key integration</span>
+            (lsp-mode . lsp-enable-which-key-integration))
+    <span style="color: #ffb86c;">:commands</span> lsp)
+
+<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">optionally</span>
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">lsp-ui</span> <span style="color: #ffb86c;">:commands</span> lsp-ui-mode)
+<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">if you are helm user</span>
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">helm-lsp</span> <span style="color: #ffb86c;">:commands</span> helm-lsp-workspace-symbol)
+<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">if you are ivy user</span>
+<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)</span>
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">lsp-treemacs</span> <span style="color: #ffb86c;">:commands</span> lsp-treemacs-errors-list)
+
+<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">optionally if you want to use debugger</span>
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">dap-mode</span>)
+<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">(use-package dap-LANGUAGE) to load the dap adapter for your language</span>
+
+<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">optional if you want which-key integration</span>
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">which-key</span>
+    <span style="color: #ffb86c;">:config</span>
+    (which-key-mode))
+
+
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-h:37AB6CF7-E0DB-4291-9771-241AB775032A">
+<h2 id="h:37AB6CF7-E0DB-4291-9771-241AB775032A"><span class="section-number-2">20</span> expand region</h2>
+<p>
+From <a href="https://github.com/magnars/expand-region.el">this</a> GitHub 
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">expand-region</span>
+  <span style="color: #ffb86c;">:ensure</span> t
+  <span style="color: #ffb86c;">:bind</span> ((<span style="color: #f1fa8c;">"C-="</span> . er/expand-region)))
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-h:F0D2F8E6-A784-4E2F-87F0-F1B751A92919">
+<h2 id="h:F0D2F8E6-A784-4E2F-87F0-F1B751A92919"><span class="section-number-2">21</span> Yasnippet</h2>
+<p>
+from <a href="https://github.com/joaotavora/yasnippet">here</a>
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(add-to-list 'load-path <span style="color: #f1fa8c;">"~/.emacs.d/packages/yasnippet"</span>)
+
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">yasnippet</span>
+  <span style="color: #ffb86c;">:ensure</span> t
+  <span style="color: #ffb86c;">:init</span>
+  (yas-global-mode 1)
+  <span style="color: #ffb86c;">:config</span>
+  (add-to-list 'yas-snippet-dirs <span style="color: #f1fa8c;">"~/emacs.d/snippets"</span>))
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-h:9D8BBA15-B9BC-48F2-A25C-5A893F27BE27">
+<h2 id="h:9D8BBA15-B9BC-48F2-A25C-5A893F27BE27"><span class="section-number-2">22</span> Consistent Org heading IDs (and anchor tags)</h2>
+<p>
+From <a href="https://gitlab.com/protesilaos/dotfiles/-/blob/master/emacs/.emacs.d/emacs-init.org">Stavrou</a> and this <a href="https://writequit.org/articles/emacs-org-mode-generate-ids.html">article</a> (I swear I found the article before I saw Stavrou's setup!
+</p>
+
+<p>
+The issue is two-fold - wanting to quickly create unique internal links that will also survive export to HTML and the multiple rewrites of files.
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">org-id</span>
+  <span style="color: #ffb86c;">:after</span> org
+  <span style="color: #ffb86c;">:commands</span> (contrib/org-get-id
+             contrib/org-id-headlines)
+  <span style="color: #ffb86c;">:config</span>
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id))
+
+  (<span style="color: #ff79c6; font-weight: bold;">defun</span> <span style="color: #50fa7b; font-weight: bold;">eos/org-custom-id-get</span> (<span style="color: #bd93f9;">&amp;optional</span> pom create prefix)
+    <span style="color: #6272a4;">"Get the CUSTOM_ID property of the entry at point-or-marker</span>
+<span style="color: #6272a4;">POM. If POM is nil, refer to the entry at point. If the entry</span>
+<span style="color: #6272a4;">does not have an CUSTOM_ID, the function returns nil. However,</span>
+<span style="color: #6272a4;">when CREATE is non nil, create a CUSTOM_ID if none is present</span>
+<span style="color: #6272a4;">already. PREFIX will be passed through to `</span><span style="color: #8be9fd;">org-id-new</span><span style="color: #6272a4;">'. In any</span>
+<span style="color: #6272a4;">case, the CUSTOM_ID of the entry is returned."</span>
+    (<span style="color: #ff79c6; font-weight: bold;">interactive</span>)
+    (<span style="color: #ff79c6; font-weight: bold;">org-with-point-at</span> pom
+      (<span style="color: #ff79c6; font-weight: bold;">let</span> ((id (org-entry-get nil <span style="color: #f1fa8c;">"CUSTOM_ID"</span>)))
+        (<span style="color: #ff79c6; font-weight: bold;">cond</span>
+         ((<span style="color: #ff79c6; font-weight: bold;">and</span> id (stringp id) (string-match <span style="color: #f1fa8c;">"\\S-"</span> id))
+          id)
+         (create
+          (<span style="color: #ff79c6; font-weight: bold;">setq</span> id (org-id-new (concat prefix <span style="color: #f1fa8c;">"h"</span>)))
+          (org-entry-put pom <span style="color: #f1fa8c;">"CUSTOM_ID"</span> id)
+          (org-id-add-location id (buffer-file-name (buffer-base-buffer)))
+          id)))))
+
+(<span style="color: #ff79c6; font-weight: bold;">defun</span> <span style="color: #50fa7b; font-weight: bold;">eos/org-add-ids-to-headlines-in-file</span> ()
+  <span style="color: #6272a4;">"Add CUSTOM_ID properties to all headlines in the current</span>
+<span style="color: #6272a4;">   file which do not already have one. Only adds ids if the</span>
+<span style="color: #6272a4;">   `</span><span style="color: #8be9fd;">auto-id</span><span style="color: #6272a4;">' option is set to `t' in the file somewhere. ie,</span>
+<span style="color: #6272a4;">   #+OPTIONS: auto-id:t"</span>
+  (<span style="color: #ff79c6; font-weight: bold;">interactive</span>)
+  (<span style="color: #ff79c6; font-weight: bold;">save-excursion</span>
+    (widen)
+    (goto-char (point-min))
+    (<span style="color: #ff79c6; font-weight: bold;">when</span> (re-search-forward <span style="color: #f1fa8c;">"^#\\+OPTIONS:.*auto-id:t"</span> (point-max) t)
+      (org-map-entries (<span style="color: #ff79c6; font-weight: bold;">lambda</span> () (eos/org-custom-id-get (point) 'create))))))
+
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-h:19BC1170-65F9-4A52-9E88-B2293185599E">
+<h2 id="h:19BC1170-65F9-4A52-9E88-B2293185599E"><span class="section-number-2">23</span> more stuff</h2>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">
+<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">(require 'org)</span>
+<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">(define-key global-map "\C-cl" 'org-store-link)</span>
+<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">(define-key global-map "\C-ca" 'org-agenda)</span>
+<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">(setq org-log-done t)</span>
+
+<span style="color: #6272a4;">;;</span><span style="color: #6272a4;">(require 'helm-config)</span>
+<span style="color: #6272a4;">;;</span><span style="color: #6272a4;">(global-set-key (kbd "M-x") #'helm-M-x)</span>
+<span style="color: #6272a4;">;;</span><span style="color: #6272a4;">(global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)</span>
+<span style="color: #6272a4;">;;</span><span style="color: #6272a4;">(global-set-key (kbd "C-x C-f") #'helm-find-files)</span>
+<span style="color: #6272a4;">;;</span><span style="color: #6272a4;">(helm-mode 1)</span>
+
+
+
+
+
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-h:9F230725-522C-4B77-891D-DEFB42A0F8A4">
+<h2 id="h:9F230725-522C-4B77-891D-DEFB42A0F8A4"><span class="section-number-2">24</span> preferences / appearance</h2>
+<p>
+Don't display the help screen on startup
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">setq</span> inhibit-startup-screen t)
+</pre>
+</div>
+
+<p>
+Hide emphasis markers
+</p>
+<ul>
+<li>note this <a href="https://www.reddit.com/r/orgmode/comments/gss1g4/update_i_made_my_own_sbrorgemphasizemode_that/">Reddit post</a> that looks to change the way this works so that you can edit these things better when the point is on them.</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">setq</span> org-hide-emphasis-markers t)
+</pre>
+</div>
+
+<p>
+I like the blinking bar cursor!
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">setq-default</span> cursor-type 'bar)
+</pre>
+</div>
+
+<p>
+Taking away the menu bar, toolbar, and scroll bar like a true emacs hacker
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span style="color: #6272a4;">;;</span><span style="color: #6272a4;">(menu-bar-mode -1)</span>
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+</pre>
+</div>
+
+<p>
+I don't want the error bell
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">setq</span> ring-bell-function 'ignore)
+</pre>
+</div>
+
+<p>
+This puts all the #BACKUP FILES# out of the way and limits them slightly
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">setq</span> backup-directory-alist '((<span style="color: #f1fa8c;">"."</span> . <span style="color: #f1fa8c;">"~/.emacs.d/backup"</span>))
+  backup-by-copying t    <span style="color: #6272a4;">; </span><span style="color: #6272a4;">Don't delink hardlinks</span>
+  version-control t      <span style="color: #6272a4;">; </span><span style="color: #6272a4;">Use version numbers on backups</span>
+  delete-old-versions t  <span style="color: #6272a4;">; </span><span style="color: #6272a4;">Automatically delete excess backups</span>
+  kept-new-versions 20   <span style="color: #6272a4;">; </span><span style="color: #6272a4;">how many of the newest versions to keep</span>
+  kept-old-versions 5    <span style="color: #6272a4;">; </span><span style="color: #6272a4;">and how many of the old</span>
+  )
+</pre>
+</div>
+
+<p>
+Installing Prot's Modus themes
+from: <a href="https://gitlab.com/protesilaos/modus-themes">here</a>
+"This is a set of accessible themes for GNU Emacs.  The contrast ratio
+  between foreground and background values should always be &gt;= 7:1, which
+  conforms with the WCAG AAA accessibility standard.  This is the highest
+  standard of its kind.
+The Modus themes project consists of two standalone items, one where
+  dark text is cast on a light backdrop (Modus Operandi) and another where
+  light text is displayed against a dark background (Modus Vivendi)."
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">modus-operandi-theme</span> <span style="color: #ffb86c;">:ensure</span>)
+
+(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">modus-vivendi-theme</span> <span style="color: #ffb86c;">:ensure</span>)
+
+(load-theme 'modus-operandi t)          <span style="color: #6272a4;">; </span><span style="color: #6272a4;">Light theme</span>
+(load-theme 'modus-vivendi t)           <span style="color: #6272a4;">; </span><span style="color: #6272a4;">Dark theme</span>
+</pre>
+</div>
+
+<p>
+Then, we can load them at a given time - the following will only work if <code>calendar-latitude</code> and <code>calendar-latitude</code> are set correctly (which they are here up in Personal Details, because <i>of course</i> emacs has a solar clock running in the background at all times, with the <code>solar.el</code> library.
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span style="color: #6272a4;">;; </span><span style="color: #6272a4;">Light at sunrise</span>
+(load-theme 'modus-operandi t t)
+(run-at-time (nth 1 (split-string (sunrise-sunset)))
+             (* 60 60 24)
+             (<span style="color: #ff79c6; font-weight: bold;">lambda</span> () (enable-theme 'modus-operandi)))
+
+<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">Dark at sunset</span>
+(load-theme 'modus-vivendi t t)
+(run-at-time (nth 4 (split-string (sunrise-sunset)))
+             (* 60 60 24)
+             (<span style="color: #ff79c6; font-weight: bold;">lambda</span> () (enable-theme 'modus-vivendi)))
+
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">(custom-set-variables
+ <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">custom-set-variables was added by Custom.</span>
+ <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">If you edit it by hand, you could mess it up, so be careful.</span>
+ <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">Your init file should contain only one such instance.</span>
+ <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">If there is more than one, they won't work right.</span>
+ '(custom-enabled-themes (<span style="color: #ff79c6; font-weight: bold;">quote</span> (dracula)))
+ '(custom-safe-themes
+   (<span style="color: #ff79c6; font-weight: bold;">quote</span>
+    (<span style="color: #f1fa8c;">"5f1bd7f67dc1598977e69c6a0aed3c926f49581fdf395a6246f9bc1df86cb030"</span> default)))
+ '(org-startup-truncated nil)
+ '(package-selected-packages
+   (<span style="color: #ff79c6; font-weight: bold;">quote</span>
+    (org-ref flyspell-correct org adaptive-wrap dracula-theme)))
+ '(winner-mode t))
+(custom-set-faces
+ <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">custom-set-faces was added by Custom.</span>
+ <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">If you edit it by hand, you could mess it up, so be careful.</span>
+ <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">Your init file should contain only one such instance.</span>
+ <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">If there is more than one, they won't work right.</span>
+ )
+</pre>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'convex', // see README of reveal.js for options
+transitionSpeed: 'default',
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList && !Reveal.isSpeakerNotes(); } },
+{ src: './reveal.js/plugin/anything/anything.js' },
+{ src: './reveal.js/plugin/chalkboard/chalkboard.js' },
+{ src: './reveal.js/plugin/jump/jump.js', async: true },
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } },
+{ src: './reveal.js/plugin/coursemod/coursemod.js', async: true },
+{ src: './reveal.js/plugin/accessibility/helper.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }]
+
+,autoPlayMedia: true,
+audioStartAtFragment: true,
+  audio: {
+    advance: -1, autoplay: false, defaultDuration: 0, defaultAudios: false, playerOpacity: 0.8, playerStyle: 'position: fixed; bottom: 9.5vh; left: 0%; width: 30%; height:30px; z-index: 33;' },
+anything: [
+        // Following initialization code for class animate from anything-demo.html.
+        // Copyright (c) 2016 Asvin Goel, under The MIT License (MIT). (he's a cutie-pie)
+	{className: "animate",  initialize: (function(container, options){
+		Reveal.addEventListener( 'fragmentshown', function( event ) {
+			if (typeof event.fragment.beginElement === "function" ) {
+				event.fragment.beginElement();
+			}
+		});
+		Reveal.addEventListener( 'fragmenthidden', function( event ) {
+			if (event.fragment.hasAttribute('data-reverse') ) {
+				var reverse = event.fragment.parentElement.querySelector('[id=\"' + event.fragment.getAttribute('data-reverse') + '\"]');
+				if ( reverse && typeof reverse.beginElement === "function" ) {
+					reverse.beginElement();
+				}
+			}
+		});
+		if ( container.getAttribute("data-svg-src") ) {
+			var xhr = new XMLHttpRequest();
+			xhr.onload = function() {
+				if (xhr.readyState === 4) {
+					var svg = container.querySelector('svg');
+					container.removeChild( svg );
+					container.innerHTML = xhr.responseText + container.innerHTML;
+					if ( svg ) {
+						container.querySelector('svg').innerHTML = container.querySelector('svg').innerHTML + svg.innerHTML;
+					}
+				}
+				else {
+					console.warn( "Failed to get file. ReadyState: " + xhr.readyState + ", Status: " + xhr.status);
+				}
+			};
+			xhr.open( 'GET', container.getAttribute("data-svg-src"), true );
+			xhr.send();
+		}
+	}) },
+	{className: "randomPic",
+	 defaults: {imgalt: "Dummy alt text",
+		    imgcaption: "Image by {name}",
+		    choices: [ {name: "dummyname", path: "dummypath"} ]},
+	 initialize: (function(container, options){
+	     var choice = Math.trunc( Math.random()*(options.choices.length) );
+	     var img = "<img src='" + options.choices[choice].path + "' alt='" + options.choices[choice].imgalt + "' />";
+	     var caption = options.imgcaption.replace(new RegExp('\{name\}', 'gm'), options.choices[choice].name);
+	     container.innerHTML = img + caption;
+	 }) },
+	{className: "notes",
+	 initialize: (function(container, options){
+	     container.addEventListener('click', function(e) { RevealNotes.open(); });
+	 }) }
+],
+keyboard: {
+    67: function() { RevealChalkboard.toggleNotesCanvas() }, 66: function() { RevealChalkboard.toggleChalkboard() }, 46: function() { RevealChalkboard.clear() }, 8: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }, },
+coursemod: { enabled: true, shown: false },
+});
+</script>
+</body>
+</html>

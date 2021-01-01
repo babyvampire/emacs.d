@@ -1,0 +1,269 @@
+% Created 2020-07-11 Sat 14:45
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[hyphens]{url}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{natbib}
+\usepackage[linktocpage,pdfstartview=FitH,colorlinks,
+linkcolor=blue,anchorcolor=blue,
+citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
+\author{Nick Taintor}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={Nick Taintor},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.3.7)}, 
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\section{Applying as contact tracer}
+\label{sec:org848cc00}
+\subsection{Different staffing agencies used by VA DOH:}
+\label{sec:orgb057c9b}
+\subsubsection{22nd Century - ended up not applying}
+\label{sec:org4b4f232}
+\subsubsection{@WORK Medical \& Personnel Services}
+\label{sec:org82e09b7}
+\begin{enumerate}
+\item @WORK Medical \& Personnel Services - couldn't find way to apply on their website!
+\label{sec:org0944afd}
+\end{enumerate}
+\subsubsection{Abacus Corporation \url{https://www.abacuscorporation.com/}  but goes to \href{https://secure.jobappnetwork.com/apply/c\_abacus/l\_en/\#s}{this} for application}
+\label{sec:orgae9a08f}
+\begin{enumerate}
+\item {\bfseries\sffamily DONE} \textit{<2020-06-09 Tue> } Apply
+\label{sec:org946c012}
+\item Applied for Case Investigator - Arlington
+\label{sec:orgd608553}
+\item Applied for Contact Tracing Supervisor - Arlington
+\label{sec:org209000f}
+\end{enumerate}
+\subsubsection{Ajilon - couldn't find any Virginia opportunities}
+\label{sec:orgac76877}
+\subsubsection{Astyra - \url{https://astyra.com}}
+\label{sec:orga7072a4}
+\begin{enumerate}
+\item {\bfseries\sffamily DONE} \textit{<2020-06-09 Tue> } Apply
+\label{sec:org99b7a36}
+\item Applied for Contact tracer
+\label{sec:org443a253}
+\item Received confirmation email
+\label{sec:orge3fb78d}
+\end{enumerate}
+\subsubsection{Athena Consulting \url{https://athenaconsultingllc.com/}}
+\label{sec:orgabffa90}
+\begin{enumerate}
+\item {\bfseries\sffamily DONE} Apply for Case Investigator \textit{<2020-06-10 Wed>}
+\label{sec:org73cdcb4}
+\end{enumerate}
+\subsubsection{BizTek \url{http://biztekpeople.com/}}
+\label{sec:org36a35bd}
+\begin{enumerate}
+\item Was partway through submission for Case Investigator, submitted resume but then they asked for the Right to Represent thing, which I already signed for Athena.  They very clearly stated that I could only work with \textbf{one} recruiting agency ,and I already told Athena they were the ones.  Well, I passed the test for BizTek, but to go any further I had to do the right to represent form so I stopped.
+\label{sec:orge426aa8}
+\end{enumerate}
+\subsubsection{Cor-Tech / Caliper \url{https://jobs.cor-tech.net} or \url{http://www.cor-tech.net/}}
+\label{sec:orge3ec053}
+\begin{enumerate}
+\item {\bfseries\sffamily DONE} Apply for Case Investigator Manassass \textit{<2020-06-17 Wed>}
+\label{sec:org55aeee5}
+\end{enumerate}
+\subsubsection{Delta Group \url{https://www.delta-tgroup.com/}}
+\label{sec:org1fd4c9f}
+\begin{enumerate}
+\item {\bfseries\sffamily DONE} Apply for Case investigator, Loudoun County \textit{<2020-06-17 Wed>}
+\label{sec:org677331c}
+\item They did not ask me (yet) for one of those Right to Represent things
+\label{sec:orgab7196e}
+\item Reveived email confirmation of submission
+\label{sec:orgd897478}
+\end{enumerate}
+\subsubsection{IPHI (Institute of Public Health Innovation (through TalentBoost at \url{https://www.talentboost.cloud/iphi}}
+\label{sec:org1d5b02e}
+\begin{enumerate}
+\item {\bfseries\sffamily DONE} Apply for Community Health Worker Supervisor, Interviewer Supervisor, and Case Interviewer \textit{<2020-06-25 Thu>}
+\label{sec:org859bb9e}
+\begin{itemize}
+\item \textit{<2020-06-26 Fri> } Still have heard nothing
+\end{itemize}
+\end{enumerate}
+\subsubsection{Premier Staffing Source \href{https://www.premierstaffingsource.com}{Premier Staffing Source}}
+\label{sec:org87a32bf}
+\begin{enumerate}
+\item {\bfseries\sffamily DONE} Apply to Premier Staffing \textit{<2020-06-26 Fri>}
+\label{sec:orga5b5db9}
+\begin{itemize}
+\item Received message on screen "A recruiter will be in touch with you shortly."
+\end{itemize}
+\end{enumerate}
+
+\subsection{Following up:}
+\label{sec:orgad68ba8}
+\subsubsection{{\bfseries\sffamily TODO} contact IPHI / TalentBoost}
+\label{sec:org70eb57c}
+\begin{itemize}
+\item To follow up on "Community Health Worker Supervisor with Institute for Public Health Innovation (IPHI)" application (Job \# 618)
+\item IPHI contacts: 
+\begin{itemize}
+\item phone: 202.747.3512 \href{https://www.institutephi.org/contact-us/}{contact page}
+\item email: info@institutephi.org - sent email \textit{<2020-06-26 Fri>}
+\item Haha who knows, here's their Twitter: @InstitutePHI
+\end{itemize}
+\item Talentboost contact:
+\begin{itemize}
+\item phone on main page: 617-542-1400
+\item email: info@talentboost.us  - sent email \textit{<2020-06-26 Fri>}
+\end{itemize}
+\end{itemize}
+\subsubsection{{\bfseries\sffamily DONE} Contact Athena Consulting 484-477-7747}
+\label{sec:org8815d84}
+\begin{itemize}
+\item State "DONE"       from "TODO"       \textit{[2020-06-29 Mon 15:06]}
+\item email of contact on VDH staffing agency list (\href{https://www.vdh.virginia.gov/content/uploads/sites/182/2020/05/Staffing-Agency-List.pdf}{here}): melvin@athenaconsultingllc.com -- sent email \textit{<2020-06-26 Fri>}
+\item phone on same list: 484-477-7747
+\item Recieved response \textit{<2020-06-28 Sun> } that my stuff had been forwarded to VDH.  Thanked them!
+\end{itemize}
+
+\subsection{Cover sentence}
+\label{sec:org7f361a3}
+I am trained as a physician, and I have worked extensively in public mental health.  I have experience working with patients in the community, traveling to their homes for in-person interviews and care. I have led clinical teams in both inpatient and outpatient settings. I believe that patients should feel that they are partners in their own care.
+
+\subsection{Cover letter}
+\label{sec:org098b3bc}
+
+Dear Recruiting team at Athena Consulting,
+
+My name is Nicholas Taintor, and I am a physician living in Fairfax, Virginia.  I am writing to express my interest in the position of Case Investigator, with the Commonwealth of Virginia COVID-19 contact tracing effort.  I found notification of this position through the VDH website.
+
+I believe that my medical and personal background makes me a strong candidate for this position.  I have spent my career learning how to conduct diagnostic and therapeutic interviews in a way that is empathic, sensitive, and mindful of confidentiality.  I understood early in my training that without a person's trust, there was little chance that they would follow my suggestions, no matter how correct or well-meant they might be.
+
+I have a strong interest in medical informatics and have worked with a number of different electronic health record systems. I have contributed code and knowledge to a program helping to promote the use of the Veterans Administration electronic health record (VistA / CPRS) around the world.  These skills will help me document and present all of my interactions with, and findings from, persons believed to be infected with COVID-19.
+
+In my view, the best kind of medicine and care happen when colleagues work with and learn from each other.  Helping to put a team together and learning how to work as a cohesive unit has always been my favorite part of any new job, and I look forward to being able to practice those skills. 
+
+Although my residency training was in psychiatry, at New York University we were granted some leeway in our training.  Unlike most of my psychiatric colleagues, I asked for clinical rotations in medicine, infectious diseases, and oncology.  I spent three months working in the ICU at Bellevue Hospital helping to treat patients in advanced phases of illness.  I was the primary physician for a patient with one of the first locally-acquired cases of fulminant malaria seen in New York for years, and worked with epidemiologists to clarify the origins of that case. 
+
+I have spent much of my medical career working in public health, and usually with people who are underserved by existing medical systems.  Learning how to earn the trust and partnership of people who might have a natural and understandable mistrust of medicine and authority is not easy or simple.  But it is the most important part of the process.
+
+I trained at Bellevue Hospital in New York City, which is (in my view) the most vital public health institution in that city.  This is a place where people come when they do not have health insurance and often lack many other types of social support.  I learned from the best, there, about how to bring people in from the community and help them realize the ways in which they could get better.  I worked in the Free Clinic at Bellevue during medical school and residency and began to understand how to work with a diverse community of people who were very different from me.
+
+Helping people to change their behavior is the basis of any worthwhile medical intervention.  Sometimes this is something simple, such as getting people to stop doing something that is hurting them such as smoking or excessive alcohol consumption.  At other times this is more complex - getting people to do something difficult and unpleasant with an unclear and distant payoff.  
+
+During this COVID-19 pandemic, and as part of the contact tracing program, we will be asking people to isolate or quarantine themselves for the good of others.  This will require ongoing care and relationship-building with people who will be in a difficult and frightening situation - in a crisis, to put it simply.  I believe that my previous experience, along with my desire and willingness to learn more, will make me a valuable part of this program.
+
+I will be ready to put my skills to work for the Commonwealth of Virginia, and more importantly to learn how I can contribute best to the effort.  I look forward to being a part of this important project.
+
+I would like to thank you for taking the time to look through my application materials.
+
+
+Nicholas Taintor
+
+\subsection{From job overview for case investigator:}
+\label{sec:org4ba676d}
+\subsubsection{Core duties:}
+\label{sec:org09279a7}
+\begin{enumerate}
+\item Interviewing and data collection
+\label{sec:orgc4e7338}
+\begin{enumerate}
+\item Communicates with contacts in professional and empathic manner
+\label{sec:org0967824}
+\item Collects and records information into statewide database
+\label{sec:orgfe905de}
+\end{enumerate}
+\item Heath Education
+\label{sec:org0271f33}
+\begin{enumerate}
+\item Provides cases with approved information about state isolation procedures and monitors compliance
+\label{sec:orga145d8d}
+\item Alerts epidemiologists if the case is associated with a congregate or other high-risk setting
+\label{sec:org8b81e6e}
+\item Providing ill person with resources
+\label{sec:org2e74b42}
+\end{enumerate}
+\item Data entry and maintenance
+\label{sec:orge15ef4d}
+\begin{enumerate}
+\item Uses established database(s) to identify newly diagnosed patients
+\label{sec:org1901363}
+\item Inputs data collected into database and keeps database up to date
+\label{sec:org3815ccb}
+\item Provides data from case investigation efforts to epidemiologists and / or Health Educators as necessary
+\label{sec:orgfa91b67}
+\end{enumerate}
+\end{enumerate}
+\subsubsection{KSAs}
+\label{sec:org93f9412}
+\begin{enumerate}
+\item Knowledge of public health practices, communicable diseases, disease control, epidemiologic methods
+\label{sec:org92c326e}
+\item Ability to manage, compile, analyze, and present data
+\label{sec:org7f93e35}
+\item Ability to communicate clearly both orally and in writing with diverse audiences
+\label{sec:orga8083de}
+\item Ability to work with a variety of computer packages
+\label{sec:orgf11fdce}
+\item Understanding of patient confidentiality
+\label{sec:org06bf17e}
+\item Excellent and sensitive interpersonal, cultural sensitivity, and interviewing skills to maintain trust with interviewees; judgement to refer cases if needed
+\label{sec:org7d684f0}
+\end{enumerate}
+\section{Messing with emacs-reveal}
+\label{sec:org2588dcc}
+\subsection{Looks like I need to find a way to add that configuring javascript at the end}
+\label{sec:org2cce51b}
+\subsection{Audio:}
+\label{sec:org842f9c2}
+\begin{itemize}
+\item Here's a way to change the audio config at the beginning:
+\end{itemize}
+\begin{verbatim}
+# Set autoplay to true for audio plugin.
+#+OER_REVEAL_AUDIO_SLIDESHOW_CONFIG: audioStartAtFragment: true, audio: { advance: -1, autoplay: true, defaultDuration: 0, defaultAudios: false, playerOpacity: 0.8, playerStyle: 'position: fixed; bottom: 9.5vh; left: 0%; width: 30%; height:30px; z-index: 33;' }
+
+\end{verbatim}
+\section{Background checks}
+\label{sec:org0ff44ac}
+\subsection{{\bfseries\sffamily DONE} hireright confirmation \# 02328936 said 15 days}
+\label{sec:orgb0a2f02}
+\begin{itemize}
+\item State "DONE"       from "TODO"       \textit{[2020-07-07 Tue 11:37]}
+\end{itemize}
+\subsection{Allegedly nothing at Empinfo}
+\label{sec:orgac50acf}
+\subsection{Kept getting errors with Equifax}
+\label{sec:orgc6c5f99}
+\subsection{{\bfseries\sffamily DONE} PeopleFacts}
+\label{sec:org6925137}
+\begin{itemize}
+\item State "DONE"       from "TODO"       \textit{[2020-07-07 Tue 11:54]}
+\end{itemize}
+\subsection{{\bfseries\sffamily DONE} InfoCubic}
+\label{sec:orgc7322af}
+\begin{itemize}
+\item State "DONE"       from "TODO"       \textit{[2020-07-07 Tue 12:00]}
+\end{itemize}
+
+\section{CompTIA class site}
+\label{sec:org995ed59}
+\begin{itemize}
+\item \textit{<2020-07-11 Sat> } temporarily running it under frankie.monster, having some weird issues with my pepsidotcom.com url
+\end{itemize}
+\end{document}

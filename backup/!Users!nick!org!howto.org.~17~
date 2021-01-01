@@ -1,0 +1,527 @@
+# -*- org-image-actual-width: nil; -*-
+#+OPTIONS: org-hide-emphasis-markers:t
+#+STARTUP: overview
+
+# since these are just notes, I don't want to run the code blocks here
+#+PROPERTY: header-args  :eval no
+
+
+
+* I'll leave some LATEX and HTML formatting examples here, because I always get confused about these
+** HTML
+
+*** a basic combined latex and html prefix
+#+ATTR_HTML: :width 40% :style float:right;
+#+ATTR_LATEX: :width 0.75\textwidth :placement [H] :float nil
+*** Putting in a video by lechten:
+# @@html:<video controls width="400" height="300" src="https://archive.org/download/LinusTorvaldsOnGittechTalk/LinusTorvaldsOnGittechTalk.ogv#t=460"></video>@@
+*** stretching to fill screen
+#+REVEAL_HTML: <img class="stretch" src="img/whatever.jpg">
+*** Here is the code I use for a Two Column slide with image on the right (you can change the width of each column) :
+#+REVEAL_HTML: <div class="column" style="float:left; width:45%">
+Blablablablabla
+ * blablabl
+ * more blabla
+ #+REVEAL_HTML: </div>
+
+ #+REVEAL_HTML: <div class="column" style="float:right; width:45%">
+ #+ATTR_ORG: :width 150
+ [[./images/image.jpg]]
+ #+ATTR_ORG: :width 150
+ [[./images/image.png]]
+ #+REVEAL_HTML: </div>
+*** If you want to include literal HTML in your org file, and have it exported only when you export to HTML, use an export block:
+
+#+BEGIN_EXPORT html
+<br>
+<h2>This is the footer.</h2>
+<p>You can put stuff here.</p>
+<br>
+#+END_EXPORT
+
+*** <2020-07-18 Sat> 
+- customized variable org-re-reveal-title-slide to nil
+- which removed the title slide when generating to emacs-reveal
+** LATEX
+
+*** coralling floats
+latex package ~placeins~
+#+LATEX_HEADER: \usepackage{placeins}
+\FloatBarrier
+Which is supposed to keep the floats above that line
+
+
+* Frankiesaurus project
+** emacs-reveal notes
+- After lots of flailing around, figured out how to get the images to scale right and fill the whole page on different viewports and devices.
+  - Not sure why there isn't an equivalent foreground way to to do this (and there probably is, I just didn't find it), but the current answer is to use the reveal.js data-background attribute, with "contain" (rather than "cover"!).
+  - Currently this sits in the :PROPERTIES: of each slide, here is an example:
+#+begin_example emacs-lisp
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page001.png" data-background-size="contain"
+:END:
+#+end_example
+
+
+* Template expansion 
+** is now C-c C-,
+* Yasnippets
+
+* Emacs-reveal
+** Reveal.js-toc-progress at bottom of slides
+- This was driving me nuts for a while, because I couldn't figure out how to turn it off.  Once my files got to a certain size, it was autosizing down to unreadable levels anyway.
+- Characteristics of this (font size, scrolling, background color) can be changed by customizing variable ~oer-reveal-toc-progress-dependency~
+- Well, I figured out how to get rid of it, but now I can't figure out how I did that!  This is the importance of documenting as I go along, but sometimes I get into a bit of a frenzy.
+- going back later, was able to eliminate it by customizing variable =Oer Reveal Plugins= and deleting =TOC progress=.
+- But I hate going into Customize, I wish I could figure out a way to do it programmatically and perhaps per file.
+- (also, only applied for current state, so the TOC progress will come back)
+** revealimg
+
+* Audio work
+** Remastering sound files for Frankiesaurus
+- Noise reduction with Audacity:
+  1. Get noise profile
+     - find a waveform that contains only noise - 0.05s minimum
+     - Click Effect > Noise Reduction
+     - Select an area of relative quiet
+     - Click Get Noise Profile
+     - You can preview the results of noise reduction on the sample you selected
+     - I tried 10dB
+     - *Sensitivity* controls how much of the audio will be considered noise - higher levels can remove some of the desired signal
+     - (For Frankiesaurus, honestly I kind of liked it un-cleaned up
+- My workflow:
+  - pick beginning point
+  - play until end of page
+  - press ~]~ to mark right edge of selection (turns out the left boundary is automatically where you started playing
+  - Press ~Shift-F7~ to listen to last bit of selection
+  - If it's OK, then <command> + B to label and select it
+  - Type name of page
+* Olivetti mode
+- Centred, focused text mode (olivetti-mode)
+- from Protesilaos Stavrou
+- at [[https://gitlab.com/protesilaos/dotfiles/-/blob/master/emacs/.emacs.d/emacs-init.org][his gitlab]]
+** keybindings:
+- =C-c o= activate olivetti mode
+- =C-c L= activate scroll-centre-cursor-mode
+- <f7> toggle display-line-numbers-mode
+ 
+* Setting up a new server
+** users
+- Log in as =root=
+  - then:
+    apt update
+    apt dist-upgrade
+    apt autoremove
+- then, start adding your stuff:
+  - =adduser nick=
+  - add this user to the =sudo= group:
+    - =usermod -aG sudo nick=
+** securing SSH
+- change things in =/etc/ssh/sshd_config=:
+  - change =PermitRootLogin= to =prohibit-password= (this changed in 16.04 I think)
+  - Above allows key-based root login, possibly not so secure but helps with moving things back and forth between servers.  Should probably turn this off when done setting up though!
+  - change =PasswordAuthentication= to =no=
+  - restart ssh: =sudo service sshd restart=
+  - check if configurations worked with =sudo sshd -T=
+  - copy ssh keys:
+    ssh-copy-id nick@wherever
+** Installing zsh and oh my zsh
+*** Installing zsh:
+#+begin_src bash
+sudo apt-get install zsh -y
+#+end_src
+*** Installing oh-my-zsh:
+#+begin_src bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#+end_src
+- btw =oh-my-zsh= keeps its aliases in =~/.oh-my-zsh/lib/directories.zsh=, which is where some of the aliases-not-quite-the-way-I-like-them come from
+***** plugins:
+- zsh-syntax-highlighting:
+  - clone this repository in oh-my-zsh's plugins directory: =~/.oh-my-zsh/plugins=:
+  - =git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting=
+- zsh-autosuggestions:
+  - clone this repository into oh-my-zsh's plugins directory:
+  - =git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions=
+- zsh-completions:
+  - clone this repository inside oh-my-zsh repo:
+  - =git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions=
+  - add to plugin list and add this to .zshrc: =autoload -U compinit && compinit=
+- autojump:
+  - in Ubuntu repository:
+  - =sudo apt install autojump=
+- incidentally was having some problems setting this up once, and it turned out:
+  - I had not yet made zsh my default shell, needed to run:
+    - =chsh -s /bin/zsh=
+***** powerlevel10k
+- =git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k=
+** install thefuck
+#+begin_src bash
+sudo apt update
+sudo apt install python3-dev python3-pip python3-setuptools
+sudo pip3 install thefuck
+#+end_src
+- then put this in =.zshrc=:
+  #+begin_src bash
+eval $(thefuck --alias)
+# You can use whatever you want as an alias, like for Mondays:
+eval $(thefuck --alias FUCK)
+  #+end_src
+** install tldr - their [[https://github.com/tldr-pages/tldr][github]]
+need to install =node.js= and =npm= as well
+#+begin_src bash
+sudo apt update
+sudo apt install nodejs npm
+npm install -g tldr
+#+end_src
+* org-journal
+** key bindings
+** setting up font and face
+It kind of bugged me that the subheadings in org-journal were the color they turned out to be using Prot's faces.  I just wanted everything black and white in a journal.  I'm not even sure why.
+
+So, using function =describe-text-properties= we find that the parts I want to change are ~org-level-2~ with a foreground of #5d3026.
+
+Then, to change that (and we only want to do it locally, or we could mess up all kinds of things), we use =face-remap-add-relative=:
+
+#+begin_src emacs-lisp
+(face-remap-add-relative 'org-level-2
+#+end_src
+* emacs tips
+** Change font size
+- =C-x C-+= 
+** Create new frame
+- =C-x 5 2=
+** images in org mode
+A variable to work with is =org-image-actual-width=, which in the docs says that when it is set to nil, will try to get the image size from an #+ATTR.* keyword and fall back to original width if this is not found.
+- this seems to work - putting it as a per-file variable and then putting an =#+ATTR_HTML= with a size made the picture the size I wanted.  Have to turn on and off =org-toggle=inline-images= (C-c C-x C-v) to change size in the buffer though.
+- Would be nice if it could ever incorporate =vh= and =vw= to have repsonsive sizing.
+** specifying per-file variables
+- can use =M-x add-file-local-variable-prop-line= which asks you for the variable and its value, inserting them in the proper format on the first line of the file.
+* video processing
+** joining video files with =ffmpeg concat=
+- make list.txt
+  - list each file with this format:
+    - =file './[file].mp4'=
+- ffmpeg command format:
+  - =ffmpeg -f concat -safe 0 -i list.txt -c copy output.mp4=
+** making video clips with =ffmpeg=
+- pick the begining time and how many seconds (can use =mpv_slicer= with =mpv=, press "c" at beginning and end, log is in home directory)
+- then, ffmpeg, like this:
+#+begin_src bash
+ffmpeg -ss 255 -i the.muppet.show.101-med.mp4 -t 6.8 -async 1 clip.mp4
+#+end_src
+- =-ss= is start in seconds (can also use format =00:00:00=), =-i= is input file, -t is length of clip (in =s= in this case, could also be in =00:00:00=)
+** converting from .avi to mp4
+
+* Docker / Traefik
+** Securing daemon socket
+/The issue/: Docker connects with a socket on the host device, and Traefik accesses the socket (in default mode) insecurely.  This could theoretically mean that anyone compromising your Traefik install would be able to run things as root on the host.  What you want to do is use TLS encryption between Traefik and the docker socket.  This is *not* enabled by default in almost any configuration, and is a big security hole.
+
+Docker has a section in its docs about securing the Docker socket, it is [[https://docs.docker.com/engine/security/https/][here]] and I follow this mostly throughout. Also some input from [[https://git.technerdonline.com/edwin/docker-traefik][Edwin's configuration]].
+
+There is a lot for me to learn and think about with different cryptographic keys.  ECDSA is likely to become the new standard but I just didn't feel like sitting down and rooting around through all that new info right now, and the OpenSSL docs for creating ECDSA keys adds a whole new level of complexity what with choosing curves and such.  So I will just go through the Docker docs style and use an RSA key (aes256).
+*** The words:
+- =openssl genrsa -aes256 -out ca-key.pem 4096=
+- passphrase =filene=
+- Then make a Certificate Authority:
+  - =openssl req -new -x509 -days 365 -key ca-key.pem -sha256 -out ca.pem=
+  - Rats Inc, my gmail, VA, Fairfax, frankiesaurus.com
+- Now a server key and a certificate signing request (CSR):
+  - =openssl genrsa -out server-key.pem 4096=
+  - =openssl req -subj "/CN=$HOST" -sha256 -new -key server-key.pem -out server.csr=
+- TLS connections go through IP addresses and DNS names, so need to specify the IP addresses.  I'm a little uncertain about this, so today on <2020-09-04 Fri> put down 127.0.0.1 and the ipv4 address I've designated for the Traefik container (192.168.50.254):
+  - =echo subjectAltName = DNS:$HOST,IP:192.168.50.254,IP:127.0.0.1 >> extfile.cnf=
+- Then set the Docker demon key's extended usage attributes so they can only be used for server authentication:
+  - =echo extendedKeyUsage = serverAuth >> extfile.cnf=
+- We generate the signed certificate:
+  - =openssl x509 -req -days 365 -sha256 -in server.csr -CA ca.pem -CAkey ca-key.pem -CAcreateserial -out server.pem -extfile extfile.cnf=
+- I'm a little confused about the distinction made in the Docker documentation between /host/ and /client/ machines - since for me I think they are the same machine.  Edwin (cf above) seems to run the client and host keys and CSRs on the same machine so I guess I'll do that too.  Maybe these distinctions are for Docker Swarm or something?
+  - =openssl genrsa -out client-key.pem 4096=
+  - =openssl req -subj '/CN=client' -new -key key.pem -out client.csr=
+- Then create a new extensions config file to make the key suitable for client authentication:
+  - =echo extendedKeyUsage = clientAuth > extfile-client.cnf=
+- Now the signed certificate:
+  - =openssl x509 -req -days 365 -sha256 -in client.csr -CA ca.pem -CAkey ca-key.pem -CAcreateserial -out client.pem -extfile extfile-client.cnf=
+- Then can remove the two CSRs and extensions config files:
+  - =rm -v client.csr server.csr extfile.cnf extfile-client.cnf=
+- Change permissions to make the keys only readable by me:
+  - =chmod -v 0400 ca-key.pem key.pem server-key.pem=
+- Remove write access to certificates to prevent damage:
+  - =chmod -v 0444 ca.pem server-cert.pem cert.pem=
+- The tricky stuff happens in the next step, but first we have to move all those key files and CSRs to their endpoints.  I will follow Edwin here and put them where he does, which makes things easier cuz then I can mimic his =ExecStart= settings in the next step.
+  - code:
+  #+begin_src bash
+  mkdir /root/.docker
+  mkdir /etc/docker/certs.d/
+  #+end_src
+  - and then (need to run most as root):
+#+begin_src bash
+cp ca.pem /etc/docker/certs.d/ca.crt
+cp cert.pem /etc/docker/certs.d/client.pem
+cp key.pem /etc/docker/certs.d/client.key
+chmod -R 600 /etc/docker/certs.d/
+chmod 444 /etc/docker/certs.d/ca.crt
+chmod 444 /etc/docker/certs.d/client.pem
+chmod 400 /etc/docker/certs.d/client.key
+chown -R root:docker /etc/docker/certs.d/
+chmod 400 ca-key.pem
+chmod 444 ca.pem
+chmod 400 server-key.pem
+chmod 444 server.pem
+chmod 400 client-key.pem
+chmod 444 client.pem
+
+cp ca.pem /usr/local/share/ca-certificates/localhost.crt
+update-ca-certificates
+#+end_src
+- Turns out should have done all of the cert- and key-making in root; but to mkae things work can simply:
+  - move ca.pem, server.pem, and server-key.pem to =/root/.docker=
+- OK, scraping the outer edges of my Linux knowledge and into an area in which I am very unconfident:
+  - (Using some Ubuntu man stuff but also an excellent answer [[https://askubuntu.com/questions/659267/how-do-i-override-or-configure-systemd-services][here]] in askubuntu.com)
+  - Changing a systemd unit - you should *never* change the file in =/lib/systemd/system/=
+  - What you do is, can create granular override in =/etc/systemd/system/=
+  - so, example:
+    - =sudo systemctl edit foo= creates a directory in =/etc/systemd/system= named after the unit, an =override.conf= file in that directory (=/etc/systemd/system/foo.service.d/override.conf=)
+    - you can look inside the current systemd file by doing this:
+      - =sudo systemctl cat docker | grep Exec= to see the ExecStart setting
+    - and you can override it by doing:
+      - =sudo systemctl edit docker=
+      - Then in my particular use-case adding:
+        #+begin_src bash
+        [Service]
+        ExecStart=
+        ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2376 --tlsverify --tlscacert /root/.docker/ca.pem --tlscert /root/.docker/server.pem --tlskey /root/.docker/server-key.pem -H unix:///var/run/docker.sock
+        #+end_src
+        - [What's interesting here is that the first line explicitly *clears* =ExecStart=, then the next line replaces it]
+    - =systemctl edit= automatically reloads the systemctl daemon
+- Then need to, as root:
+  #+begin_src bash
+  echo 'export DOCKER_CERT_PATH=/etc/docker/certs.d/' >> /etc/profile
+  echo 'export DOCKER_HOST=tcp://127.0.0.1:2376'>> /etc/profile 
+  echo 'export DOCKER_TLS_VERIFY=1' >> /etc/profile
+  #+end_src
+
+*** I ended up not being able to make this work
+- Mostly, ending up with a whole bunch of errors when I tried to enable it - some of the difficulty was trying to put two models together.  I may end up trying to integrate a container-based system such as [[https://github.com/Tecnativa/docker-socket-proxy][Tecnativa]] or [[https://github.com/qdm12/docker-proxy-acl-alpine][this]].
+- I think the main, and simplest way to avoid this potential vulnerability for now is to avoid making the containers with access to the socket reachable in public.  So for now will restrict the Traefik and Portainer dashboards - I don't really need them at this point anyway.
+
+* Setting up a Windows 10 VM on falkie
+(first part from [[https://help.ubuntu.com/community/KVM/Installation][here]])
+note: says "assume[s]...do not have any X server on the machine" - but I think I do?
+** Install KVM
+*** Pre-installation:
+- check that the CPU supports virtualization:
+  - =egrep -c '(vmx|svm)' /proc/cpuinfo=
+    - if result is =0= then the CPU does not support virtualization
+    - if result is =1= or more, then it does!
+    - (still need to check if it is enabled in the BIOS)
+  - could use =kvm-ok=
+  - check to make sure the kernal is 64 it:
+    - =egrep -c ' lm ' /proc/cpuinfo=
+    - =1= or higher means CPU is 64 bit
+*** Install these packages:
+- =sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-bin libvirt-clients bridge-utils virtinst virt-manager=
+*** Adding users to groups:
+- =sudo adduser `id -un` libvirt=
+- =sudo adduser `id -un` kvm=
+*** start =libvirtd= service:
+- =sudo systemctl enable libvirtd=
+- =sudo systemctl start libvirtd=
+** You can set up Windows via the command line, but there are so many options to go through!
+- I chose to use =virt-manager= over X11
+- TODO: figure out unattended install 
+
+737 165 801
+* =rclone= managing Google Drive and Photos
+** I set up access from falkie to my Google drive and photos using the instructions at [[https://rclone.org/docs/][their docs]]
+** Two links set
+- can see them by simply entering =rclone config=
+- =photos= name for Google Photos drive
+- =remote= name for Google Drive
+** There is a basic problem, though
+- this is documented in a bunch of places - the Google Photos API prevents both EXIF data and the full size of the photos to be downloaded.
+- Takeouts seems to work a little better, but still separated EXIF and photos (EXIF ends up in separate JSON files)
+- So for now, downloading albums through the web interface seems like the best choice for getting the full files with info.
+- Having done this, turns out that full EXIF data (including GPS!) is included in files.
+  - In fact, it even keeps the original date of file creation!
+
+* Netdata - setting up securely
+I set up Netdata the way it recommends, on the system.  I'd thought of setting it up in Docker to isolate it, but then it can't see all the system stuff as well.  But when set up normally, it listens on the host IP on port 19999.  I set up Traefik to be able to refer =nedata.frankiesaurus.com= to =5.9.158.56:19999= wih basic auth protection, but the port itself is still listening.  But, it turns out that you can set where Netdata listens, in its configuration.  Clue came from some [[https://community.hetzner.com/tutorials/install-secure-netdata][Hetzner documentation]], but of course I probably could have read the Netdata docs.
+** Can set listening IP / port
+- in =/etc/netdata/netdata.conf= under =[web]= setting, uncomment =[bind to]= setting and replace it with =127.0.0.1=
+- in here, can also change the port it listens on, so could presumably set up other host-dwelling things to hide behind Traefik in the same way, on other ports
+- *note* in Netdata documentation, they give an example setup using nginx as a proxy - and it turns out in =netdata.conf= you might need to set =allow connections from= to the IP of the proxy.
+** But now the problem is, 
+Traefik can't see =localhost= /or/ =127.0.0.1= because Traefik itself is running in a container so those things refer to *itself*, not the host machine on which Netdata is running.  So Netdata would still be reachable from [Host IP]:19999, but the whole point is that I don't want to leave that port open or have Netdata naked to the Internet.
+- there was a time when =host.docker.internal= worked, but now only in Mac and Windows docker, not Linux.
+- There is a possibility that =172.17.0.1= might work as the address for the host /from/ a Docker container, esp as this is the result of entering =ip addr show | grep "\binet\b.*\bdocker0\b" | awk '{print $2}' | cut -d '/' -f 1= in the Ubuntu running on falkie, and it shows as the =docker0= IP address in =ifconfig=.
+  - This is also the result from docker network inspect bridge --format='{{( index .IPAM.Config 0).Gateway}}'
+  - (I couldn't get that to work, still 502s all over)
+- Another possible solution, especially since there are other things running on the host I might want to connect through Traefik (i.e. Matrix or Jitsi), is to use the [[https://github.com/qoomon/docker-host][docker-host]] container.
+  - Traefik IP is set (by me) as 192.168.50.254
+  - proxy network subnet is 192.168.50.0/24
+  - through Docker inspect, the dockerhost container has an IP address of 192.168.50.7 and a gateway of 192.168.50.1
+  - per docker-host docs, nned to "bind your host applications to =bridge= network gateway in addition to localhost (127.0.0.1)"
+  - /Here's a setup that worked/: (i.e. =netdata.frankiesaurus.com= went to the netdata screen while =5.9.158.56:19999= got blocked (I'll write the setup, which goes overboard, and then gradually eliminate the parts that don't need to be in there by experimenting):
+    - in =/etc/netdata/netdata.conf=, the following parameters (under =[web]=):
+      - default port = 19999
+      - bind to = *
+      - allow connections from 172.17.0.1 127.0.0.1 192.168.50.7 192.168.50.0/24 192.*
+    - in ufw, allow docker-host container to communicate with host by:
+      1) using *docker network inspect bridge --format='{{( index .IPAM.Config 0).Gateway}}'* to determine the bridge network gateway IP address.  For now this is =172.17.0.1=.
+      2) using this command: =sudo ufw allow from 172.17.0.1 proto tcp to any port 19999= to allow Traefik to communicate with the host
+  - Whoops, looks like what made that work was having the url in traefik dynamic config as =url: "http://5.9.158.56:19999/"=. Well, even though it did not seem to be going through *dockerhost* at least it works the way I want for now.
+  - In fact, the real work seems to have been done by the firewall, specifically =allow from 192.168.50.254 to any port 19999 proto tcp comment 'using traefik to see netdata'=.  It wasn't the netdata config at all, I tested by completely removing the allowed connections.  All the work was from ufw, docker-host wasn't working, none of that stuff.  Instructive!  All it takes in the firewall is to allow the Traefik container's IP do the work.
+** Mounting through a unix socket?
+This is something I hadn't considered or even understood particularly well. And it looks like, at the moment, that Traefik is not built to use the unix socket to redirect a url. 
+
+* Managing data / drives
+** Setting up mergerFS
+*** github repo [[https://github.com/trapexit/mergerfs][here]]
+- since we're using Jellyfin, need to set the attribute =func.getattr=newest= so that Jellyfin does not get confused when it is looking through directories for updates
+- here is the string I used: 
+=sudo mergerfs -o defaults,allow_other,use_ino,func.getattr=newest,cache.files=partial,dropcacheonclose=true,category.create=mfs,fsname=mergerFS,minfreespace=100G /mnt/disk\* /mnt/media=
+- note the globbing and how, in the cli you need to escape out the glob - my disks are at =/mnt/driveA= and =/mnt/driveB= so can reference that as =/mnt/disk\*=.  When setting it up with fstab later, won't need the globbing.
+- I had all kinds of weird problems in the beginning - I would enter the above, and the drive would be inaccessible, showing only ?????s in =ll=. Nothing obvious in debug.  I tried testing it in different ways, but still nothing.  Tested with a simple =mergerfs= command to a test directory and it worked.  Did everything all over, testing one additional option at a time, and this time it worked.  All I can think is that it was something weird like [[https://github.com/trapexit/mergerfs/issues/736][this guy's]] issue (which was never resolved, just magically worked after a bit).
+- To add new drives or things, simply =umount [the pooled drive]= then re-run =mergerfs= with the new drives.
+*** putting in fstab
+- =/mnt/disk* /mnt/storage fuse.mergerfs use_ino,cache.files=off,dropcacheonclose=true,allow_other,category.create=mfs,func.getattr=newest,minfreespace=500M,fsname=mergerfs 0 2=
+*** run with debug to watch it go
+- add =-d= after =mergerfs=
+*** checking with mergerfs.fsck
+- =mergerfs.fsck -v -f manual /mnt/media= for example
+* Linux tips
+** changing permissions for files / directories
+- I think I screwed up, not understanding exactly how =chmod -R= really worked - thinking it over, I didn't /really/ want to change the permissions for files *and* folders to the same thing.
+- to change all directories to 755 (=drwxr-xr-x=):
+  - =find [directory top level] -type d -exec chmod 755 {} \;=
+- to change all files to 644 (=-rw-r--r--=):
+  - =find [directory top level] -type f -exec chmod 644 {} \;=
+** Repositories
+*** add a PPA repository
+- =add-apt-repository ppa:ppa_name=
+*** list added repositories
+- =ls /etc/apt/sources.list.d=
+*** remove repository
+- =add-apt-repository --remove ppa:ppa_name=
+** Network
+*** seeing what's listening to ports:
+- =sudo netstat -plnt=
+- filter to things listening to port 80:
+  - =sudo netstat -plnt | grep ':80'=
+** Cursed =snap=
+- list tracks / channels:
+  - =snap info [app]=
+- to switch channels:
+  - =snap refresh [app] --channel=insider/stable= (for example)
+* Jellyfin
+** using =Filebot=
+- =filebot -rename . --db TheTVDB  --lang en --order DVD --mode interactive=
+* Raspberry Pi
+** Initial setup
+- Format SD card / SSD - Raspberry Pi's bootloader still only boots from FAT (FAT16 or FAT32) and not exFAT.  So format with FAT32
+- Download Raspbian OS from [[https://www.raspberrypi.org/downloads/raspberry-pi-os/][raspberrypi.org]] (in most cases, lite version)
+- on mac, =diskutil list= to see drives
+- on my mac right now, an SD card attached to USB will /probably/ be =/dev/disk2=.
+- to format the SD (careful to get name right!): =sudo diskutil eraseDisk FAT32 NAME MBRFORMAT /dev/disk2=
+- Using =dd= command (from directory where Raspbian (or whatever) OS is), careful to get name of SD card or SSD correct, otherwise erasing system disk:
+  - =dd bs=4M if=2020-08-20-raspios-buster-armhf.img of=/dev/sdX conv=fsync=
+  - dd bs=4M if=[name of raspbian image file] of=[path to installation disk] conv=fsync
+  - on <2020-09-20 Sun> this was dd bs=4m if=2020-08-20-raspios-buster-armhf-lite.img of=/dev/disk2 conv=fsync
+    - if "resource busy," unmount with =diskutil unmountDisk <disk>=
+    - using pipe viewer for progress:
+    - =sudo dd if=2020-08-20-raspios-buster-armhf-lite.img bs=1m | pv -s 2G | sudo dd of=/dev/disk2 bs=1m=
+- Make device capable of =ssh=:
+  - at this point, SD card / SSD will be under =/Volumes= somewhere.
+  - so:
+    - =touch ssh=
+    - =cp ssh /Volumes/boot= (for example)
+  - initial username: =pi= initial password: =raspberry=
+** set up new user
+- =sudo adduser nick=
+- get =groups= from user =pi=
+- add nick to same groups as pi:
+  - =usermod -a -G group1,group2,group3,[etc] nick=
+  - sudo usermod -a -G pi,adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,input,netdev,gpio,i2c,spi
+- check to make sure =nick= is part of =sudo=
+- erase user =pi= and their directories etc:
+  - =# deluser --remove-home pi=
+** Config stuff
+- =sudo raspi-config=
+- change =hostname=
+- under =Localisation Options=, =Change Locale= and add =en-us.UTF-8=
+  - then select it as default locale
+- change timezone
+** Setting up Pihole
+*** initial:
+**** =sudo curl -sSL https://install.pi-hole.net | bash=
+**** change initial password: =pihole -a -p=
+*** Picking lists:
+- [[https://firebog.net/][/u/Wally3k's list]]
+- [[https://www.github.developerdan.com/hosts/][Developer Dan's]]
+** Unbound
+- installed following instructions at https://docs.pi-hole.net/guides/unbound/
+  - But overall following instructions at [[https://github.com/notasausage/pi-hole-unbound-wireguard][notasausage's github]]
+*** =sudo apt install unbound=
+*** yank this into =/etc/unbound/unbound.conf.d/pi-hole.conf=:
+#+begin_src bash
+server:
+    # If no logfile is specified, syslog is used
+    # logfile: "/var/log/unbound/unbound.log"
+    verbosity: 0
+
+    interface: 127.0.0.1
+    port: 5335
+    do-ip4: yes
+    do-udp: yes
+    do-tcp: yes
+
+    # May be set to yes if you have IPv6 connectivity
+    do-ip6: no
+
+    # You want to leave this to no unless you have *native* IPv6. With 6to4 and
+    # Terredo tunnels your web browser should favor IPv4 for the same reasons
+    prefer-ip6: no
+
+    # Use this only when you downloaded the list of primary root servers!
+    # If you use the default dns-root-data package, unbound will find it automatically
+    #root-hints: "/var/lib/unbound/root.hints"
+
+    # Trust glue only if it is within the server's authority
+    harden-glue: yes
+
+    # Require DNSSEC data for trust-anchored zones, if such data is absent, the zone becomes BOGUS
+    harden-dnssec-stripped: yes
+
+    # Don't use Capitalization randomization as it known to cause DNSSEC issues sometimes
+    # see https://discourse.pi-hole.net/t/unbound-stubby-or-dnscrypt-proxy/9378 for further details
+    use-caps-for-id: no
+
+    # Reduce EDNS reassembly buffer size.
+    # Suggested by the unbound man page to reduce fragmentation reassembly problems
+    edns-buffer-size: 1472
+
+    # Perform prefetching of close to expired message cache entries
+    # This only applies to domains that have been frequently queried
+    prefetch: yes
+
+    # One thread should be sufficient, can be increased on beefy machines. In reality for most users running on small networks or on a single machine, it should be unnecessary to seek performance enhancement by increasing num-threads above 1.
+    num-threads: 1
+
+    # Ensure kernel buffer is large enough to not lose messages in traffic spikes
+    so-rcvbuf: 1m
+
+    # Ensure privacy of local IP ranges
+    private-address: 192.168.0.0/16
+    private-address: 169.254.0.0/16
+    private-address: 172.16.0.0/12
+    private-address: 10.0.0.0/8
+    private-address: fd00::/8
+    private-address: fe80::/10
+
+#+end_src
+
+
+
+*** =sudo service unbound restart=
+*** =dig pi-hole.net @127.0.0.1 -p 5335=
+*** set up pi-hole web config appropriately per instructions

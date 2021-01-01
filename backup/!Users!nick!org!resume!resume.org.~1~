@@ -1,0 +1,79 @@
+
+
+* Education and Training
+
+** NYU School of Medicine
+*** Psychiatry residency training program
+**** Completed June 2010
+**** New York, NY
+
+** NYU School of Medicine
+*** Doctor of Medicine
+*** Completed April 2006
+*** New York, NY}
+
+** Oberlin College
+*** BA, Anthropology and Geology
+*** Completed May 1995
+*** Oberlin, OH}
+**** Highest Honors
+**** Nominated to Sigma Xi
+
+* Skills
+
+** Certifications
+*** CompTIA A+
+*** Covid-19 Contact Tracing
+**** (Johns Hopkins University / Coursera)}}}
+** Languages
+*** French (conversational)
+*** English (native)
+** Operating systems
+*** Windows 7, 8, 10  
+*** MacOS
+*** Linux (Ubuntu, Debian)
+*** iOS 
+*** Android
+** Applications / software}
+*** Microsoft Office (Excel, Word, PowerPoint, Outlook)
+*** Google Docs
+*** Google Sheets 
+*** \LaTeX
+*** Emacs
+** VMs / containerization}
+*** VirtualBox
+*** VMware
+*** Docker / Docker Compose
+** Electronic Health Records}
+*** Cerner
+*** Epic
+*** VistA / CPRS
+** Personal projects / Homelab
+*** Have set up a number of Linux-based VPSs, linked together using SSHFS and a Wireguard VPN These provide streaming media, document sharing for friends and family.  Services run in Docker containers and use Traefik for virtual routing.  
+*** Using \textbf{\href{https://www.python.org/}{Python}}, \textbf{\href{https://docs.getpelican.com/en/stable/}{Pelican}}, and \textbf{\href{https://nginx.org/}{Nginx}} to create a \textbf{\href{https://frankie.monster}{website}} with bedtime stories I recorded and other resources for my daughter while she lives with family in the United Kingdom during the Covid-19 crisis.
+
+* Relevant Experience
+\runsubsection{Titanium IT Solutions}
+\descript{| Senior Instructor}
+\location{2019-present | Tysons Corner, VA}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightitemize}
+\item Training students to study for and pass CompTIA certifications, primarily A+
+\item Designed curriculum from scratch, using Emacs, org-mode, and reveal.js to create presentations and study materials
+\item Regular and frequent contact with students to guide learning process
+\item Training in the use of virtual machines to help in the understanding of different operating systems
+\end{tightitemize}
+
+\runsubsection{NVMHI}
+\descript{| Attending Psychiatrist}
+\location{2017-2018 | Falls Church, VA}
+%\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Primary duties: Assessment and treatment of psychiatric inpatients
+\item Led clinical team of nurses, social workers, psychologists, residents, and medical students to plan and carry out collaborative patient treatment.  Ensured that all followed proper documentation and planning procedures
+\item Responsible for education and training of medical students and residents
+\item Led hospital IT committee to begin process of overhauling and replacing hospital's paper charting system
+\item Maintained careful, empathic, and HIPAA-compliant ongoing discussions with patients' family members and loved ones
+\item Coordination with community medical and mental health care providers during intake and discharge
+\item Early initiation of discharge planning in concert with local Community Service Boards
+\end{tightemize}

@@ -1,0 +1,27 @@
+# Local IspellDict: en
+#+STARTUP: showeverything
+
+# Config from emacs-reveal; this is a minimal config file that lives in the same directory as the presentation
+#+INCLUDE: "config.org"
+
+# TOC was getting too long!
+#+OPTIONS: toc:nil
+
+# This extra css is for the chalkboard plugin
+#+REVEAL_EXTRA_CSS: https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css
+
+# this is to activate ~menu~ below: (menu . "{ src: '%splugin/menu/menu.js'}")
+
+#+REVEAL_EXTERNAL_PLUGINS: ((chalkboard . "{ src: '%splugin/chalkboard/chalkboard.js'}") (menu . "{ src: '%splugin/menu/menu.js'}"))
+
+# (recordRTC . "{ src: '%splugin/audio-slideshow/RecordRTC.js', condition: function( ) { return !!document.body.classList; }"))
+
+# Set autoplay to true for audio plugin.
+#+OER_REVEAL_AUDIO_SLIDESHOW_CONFIG: audioStartAtFragment: true, audio: { advance: -1, autoplay: true, defaultDuration: 0, defaultAudios: false, playerOpacity: 0.8, playerStyle: 'position: fixed; bottom: 9.5vh; left: 0%; width: 30%; height:30px; z-index: 33;' }
+
+* This here is a test slide
+- Hmm
+- Ah.
+
+
+# #+REVEAL_EXTRA_SCRIPTS

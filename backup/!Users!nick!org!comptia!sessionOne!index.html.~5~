@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2020-07-14 Tue 15:26 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studying for the CompTIA A+ exam!</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Nick Taintor">
+<link rel="stylesheet" type="text/css" href="rethink.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Studying for the CompTIA A+ exam!
+<br>
+<span class="subtitle">Various notes, class presentations, and valuable links</span>
+</h1>
+
+<div id="outline-container-org932ad73" class="outline-2">
+<h2 id="org932ad73">Here are the class materials:</h2>
+<div class="outline-text-2" id="text-org932ad73">
+</div>
+<div id="outline-container-org4d5f5ce" class="outline-3">
+<h3 id="org4d5f5ce">For the CompTIA A+ 1001:</h3>
+<div class="outline-text-3" id="text-org4d5f5ce">
+<p>
+<a href="./outlineOne.html">A+ 1001 slides</a>
+</p>
+
+<p>
+<a href="./outlineOne.pdf">A+ 1001 notes in pdf format</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgccc6ac2" class="outline-3">
+<h3 id="orgccc6ac2">For the CompTIA A+ 1002:</h3>
+<div class="outline-text-3" id="text-orgccc6ac2">
+<p>
+<a href="./outlineTwo.html">A+ 1002 slides</a>
+</p>
+
+<p>
+<a href="./outlineTwo.pdf">A+ 1002 notes in pdf format</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div class="rdfa-license" about="/index.html" prefix="dc: http://purl.org/dc/elements/1.1/ dcterms: http://purl.org/dc/terms/ dcmitype: http://purl.org/dc/dcmitype/ cc: http://creativecommons.org/ns#" typeof="dcmitype:InteractiveResource"><p>Except where otherwise noted, the work “<span property="dcterms:title">Studying for the CompTIA A+ exam!</span>”, <span property="dc:rights">© <span property="dcterms:dateCopyrighted">2020-2022</span> <span property="cc:attributionName">Nicholas Taintor</span></span>, is published under the <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons license CC BY-SA 4.0</a>.</p><p class="date">Created: <span property="dcterms:created">2020-07-14 Tue 15:26</span></p></div>
+<div class="legalese"><p><a href="/imprint.html">Imprint</a> | <a href="/privacy.html">Privacy Policy</a></p></div>
+</div>
+</body>
+</html>

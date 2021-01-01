@@ -1,0 +1,78 @@
+#+TITLE: CompTIA A+ Syllabus
+#+AUTHOR: Nick Taintor
+#+EMAIL: nick.taintor@pm.me
+
+#+LATEX_HEADER: \usepackage{pdflscape}
+
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+OPTIONS: toc:nil
+#+OPTIONS: num:nil
+#+LANGUAGE: en
+
+* CompTIA A+ 1001 sections and times
+
+#+LATEX: \newpage
+#+LATEX: \begin{landscape}
+
+
+|     CompTIA section | Section topic                                                                                | Messer time (m) | our time (m) | session # |
+|---------------------+----------------------------------------------------------------------------------------------+-----------------+--------------+-----------|
+|    *Mobile Devices* |                                                                                              |                 |              |           |
+|                 1.0 | Introduction to CompTIA A+ and what the heck it is                                           |              14 |         25.2 |         1 |
+|                 1.1 | Given a scenario, install and configure laptop hardware and components                       |              20 |          36. |         1 |
+|                 1.2 | Given a scenario, install components within the display of a laptop.                         |               7 |         12.6 |         1 |
+|                 1.3 | Given a scenario, use appropriate laptop features                                            |               9 |         16.2 |         1 |
+|                 1.4 | Compare and contrast characteristics of various types of other mobile devices                |               5 |           9. |         1 |
+|                 1.5 | Given a scenario, connect and configure accessories and ports of other mobile devices        |              12 |         21.6 |         1 |
+|                 1.6 | Given a scenario, configure basic mobile device network connectivity and application support |              15 |          27. |         1 |
+|                 1.7 | Given a scenario, use methods to perform mobile device synchronization                       |               5 |           9. |         1 |
+|                     | *total*                                                                                      |            *73* |      *131.4* |           |
+|---------------------+----------------------------------------------------------------------------------------------+-----------------+--------------+-----------|
+|        *Networking* |                                                                                              |                 |              |           |
+|                 2.1 | Compare and contrast TCP and UDP ports, protocols, and their purposes                        |              10 |          18. |         1 |
+|                 2.2 | Compare and contrast common networking hardware devices                                      |              18 |         32.4 |         1 |
+|                 2.3 | Given a scenario, install and configure a basic wired/wireless SOHO network                  |              10 |          18. |         1 |
+|                 2.4 | Compare and contrast wireless networking protocols                                           |              16 |         28.8 |         1 |
+|                 2.5 | Summarize the properties and purposes of services provided by networked hosts                |              11 |         19.8 |         2 |
+|                 2.6 | Explain common network configuration concepts.                                               |              16 |         28.8 |         2 |
+|                 2.7 | Compare and contrast Internet connection types, network types, and their features            |              14 |         25.2 |         2 |
+|                 2.8 | Given a scenario, use appropriate networking tools.                                          |              11 |         19.8 |         2 |
+|                     | *total*                                                                                      |           *106* |      *190.8* |           |
+|---------------------+----------------------------------------------------------------------------------------------+-----------------+--------------+-----------|
+|          *Hardware* |                                                                                              |                 |              |           |
+|                 3.1 | Explain basic cable types, features, and their purposes.                                     |              48 |         86.4 |         2 |
+|                 3.2 | Identify common connector types.                                                             |               9 |         16.2 |         2 |
+|                 3.3 | Given a scenario, install RAM types.                                                         |              14 |         25.2 |         2 |
+|                 3.4 | Given a scenario, select, install and configure storage devices.                             |              17 |         30.6 |         3 |
+|                 3.5 | Given a scenario, install and configure motherboards, CPUs, and add-on cards                 |              63 |        113.4 |         3 |
+|                 3.6 | Explain the purposes and uses of various peripheral types.                                   |              13 |         23.4 |         3 |
+|                 3.7 | Summarize power supply types and features.                                                   |              12 |         21.6 |         3 |
+|                 3.8 | Configure components for a custom PC configuration                                           |               6 |         10.8 |         3 |
+|                 3.9 | Given a scenario, install and configure common devices.                                      |               6 |         10.8 |         3 |
+|                3.10 | Configure SOHO multifunction devices/printers and settings                                   |              11 |         19.8 |         3 |
+|                3.11 | Given a scenario, install and maintain various print technologies.                           |              41 |         73.8 |         4 |
+|                     | *total*                                                                                      |           *240* |        *432* |           |
+|---------------------+----------------------------------------------------------------------------------------------+-----------------+--------------+-----------|
+| *VMs and the Cloud* |                                                                                              |                 |              |           |
+|                 4.1 | Compare and contrast cloud computing concepts.                                               |              15 |          27. |         4 |
+|                 4.2 | Given a scenario, set up and configure client-side virtualization.                           |               7 |         12.6 |         4 |
+|                     | *total*                                                                                      |            *22* |       *39.6* |           |
+|---------------------+----------------------------------------------------------------------------------------------+-----------------+--------------+-----------|
+|   *Troubleshooting* |                                                                                              |                 |              |           |
+|                 5.1 | Best practice methodology to resolve problems                                                |              10 |          18. |         4 |
+|                 5.2 | Troubleshoot problems related to motherboards, RAM, CPUs, and power                          |              18 |         32.4 |         4 |
+|                 5.3 | Given a scenario, troubleshoot hard drives and RAID arrays.                                  |               7 |         12.6 |         4 |
+|                 5.4 | Given a scenario, troubleshoot video, projector, and display issues.                         |               7 |         12.6 |         4 |
+|                 5.5 | Troubleshoot common mobile devices                                                           |              21 |         37.8 |         4 |
+|                 5.6 | Given a scenario, troubleshoot printers.                                                     |              10 |          18. |         4 |
+|                 5.7 | Troubleshoot common wired and wireless network problems                                      |              10 |          18. |         4 |
+|                     | *total*                                                                                      |            *83* |        *150* |           |
+|---------------------+----------------------------------------------------------------------------------------------+-----------------+--------------+-----------|
+#+TBLFM: $4=14*1.8::@11$3=vsum(@4..@10)::@21$3=vsum(@13..@20)::@34$3=vsum(@23..@33)::@47$3=vsum(@40..@46)
+
+#+LATEX: \end{landscape}
+
+
+

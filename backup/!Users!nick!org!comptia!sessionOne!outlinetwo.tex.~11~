@@ -1,0 +1,2936 @@
+% Created 2020-06-21 Sun 16:22
+% Intended LaTeX compiler: pdflatex
+\documentclass[letterpaper]{article}
+\usepackage[hyphens]{url}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{natbib}
+\usepackage[linktocpage,pdfstartview=FitH,colorlinks,
+linkcolor=blue,anchorcolor=blue,
+citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
+\usepackage[backend=biber,style=alphabetic]{biblatex}
+\addbibresource{references.bib}
+\newenvironment{notes}{\par\footnotesize}{\par}
+\newenvironment{NOTES}{\par\footnotesize}{\par}
+\newenvironment{leftcol}{\begin{minipage}{.49\textwidth}}{\end{minipage}}
+\newenvironment{rightcol}{\begin{minipage}{.49\textwidth}}{\end{minipage}}
+\newenvironment{leftcol30}{\begin{minipage}{.29\textwidth}}{\end{minipage}}
+\newenvironment{leftcol40}{\begin{minipage}{.39\textwidth}}{\end{minipage}}
+\newenvironment{leftcol60}{\begin{minipage}{.59\textwidth}}{\end{minipage}}
+\newenvironment{leftcol70}{\begin{minipage}{.69\textwidth}}{\end{minipage}}
+\newenvironment{rightcol30}{\begin{minipage}{.29\textwidth}}{\end{minipage}}
+\newenvironment{rightcol40}{\begin{minipage}{.39\textwidth}}{\end{minipage}}
+\newenvironment{rightcol60}{\begin{minipage}{.59\textwidth}}{\end{minipage}}
+\newenvironment{rightcol70}{\begin{minipage}{.69\textwidth}}{\end{minipage}}
+\usepackage{newunicodechar}
+\newunicodechar{≈}{$\approx$}
+\newunicodechar{⋮}{\vdots}
+\newunicodechar{ }{~}
+\usepackage{xcolor}
+\definecolor{darkred}{rgb}{0.3, 0.0, 0.0}
+\definecolor{darkgreen}{rgb}{0.0, 0.3, 0.1}
+\definecolor{darkblue}{rgb}{0.0, 0.1, 0.3}
+\definecolor{darkorange}{rgb}{1.0, 0.55, 0.0}
+\definecolor{sienna}{rgb}{0.53, 0.18, 0.09}
+\hypersetup{colorlinks,linkcolor=darkblue,citecolor=darkblue,urlcolor=darkgreen}
+\usepackage{newverbs}
+\newverbcommand{\rverb}{\color{darkred}}{}
+\newverbcommand{\gverb}{\color{darkgreen}}{}
+\newverbcommand{\bverb}{\color{darkblue}}{}
+\usepackage{pdflscape}
+\usepackage{setspace}
+\usepackage{placeins}
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep}
+\author{Nicholas Taintor}
+\date{CompTIA A+}
+\title{CompTIA A+ 1002}
+\hypersetup{
+ pdfauthor={Nicholas Taintor},
+ pdftitle={CompTIA A+ 1002},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.3.7)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+
+\section*{CompTIA A+ 1002}
+\label{sec:orgeaa2a60}
+
+Just as in the 1001, the 1002 has partcular components that are covered.  Here is the breakdown:
+
+\begin{center}
+\begin{tabular}{rll}
+Domain & Substance & percent\\
+\hline
+1 & Operating Systems & 27\%\\
+2 & Security & 24\%\\
+3 & Software Troubleshooting & 26\%\\
+4 & Operational Procedures & 23\%\\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{1.1 – Compare and contrast common operating system types and their purposes.}
+\label{sec:orgf65a944}
+\subsection*{What is an OS and why do you need one?}
+\label{sec:org7dcf412}
+\begin{itemize}
+\item Interaction between components of machine
+\begin{itemize}
+\item Many 1s and 0s are passed between the CPU, RAM, keyboard, video and sound cards
+\item Someone needs to manage this at a higher level so that the user can participate
+\end{itemize}
+\item Common platform for applications to work on / together
+\item Also provides bridge between humans and computer
+\end{itemize}
+\subsection*{Standard OS features}
+\label{sec:orgc9b9b72}
+\begin{itemize}
+\item File management
+\item Application support
+\item Input / output support
+\begin{itemize}
+\item Printers, keyboards, hard drives, USB
+\item It's sort of like a higher-level BIOS, right?
+\end{itemize}
+\end{itemize}
+\subsection*{32-bit vs. 64-bit}
+\label{sec:org237c9ca}
+\begin{itemize}
+\item Pretty much all PCs being produced today are 64-bit
+\item But you will see 32-bit machines in the field
+\begin{itemize}
+\item You may see 16-bit machines, but probably only museum pieces
+\item First 32-bit CPU in 1985: Intel 386DX
+\end{itemize}
+\end{itemize}
+\subsubsection*{RAM limitations}
+\label{sec:orga33f245}
+\begin{itemize}
+\item 32-bit CPUs are limited to 4 GB of RAM
+\item 64-bit CPUs have a default maximum of 256 TB and could be extended to 4 petabytes (PB)
+\begin{itemize}
+\item (though no one would do that, yet)
+\item RAM is limited by the operating system:
+\begin{itemize}
+\item Windows 7 64-bit can go to 192 GB
+\item Windows 8.1 Pro 64-bit can handle up to 512 GB
+\item Windows 10 Pro 64-bit can handle up to 2 TB
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{Software Compatibility}
+\label{sec:org8ac3fcc}
+\begin{itemize}
+\item Most editions of Windows are still available in 32-bit and 64-bit versions
+\begin{itemize}
+\item There are 32-bit and 64-bit versions of most major Linux distributions as well
+\item The most recent macOS (Catalina) is 64-bit only, and will not run 32-bit programs
+\item Whereas 64-bit Windows can still run 32-bit programs
+\end{itemize}
+\end{itemize}
+\subsubsection*{Where Windows keeps it}
+\label{sec:org8df8efe}
+\begin{itemize}
+\item 64-bit system files and apps are in \texttt{C:\textbackslash{}Windows\textbackslash{}System32}
+\item 32-bit system files and apps are in \texttt{C:\textbackslash{}Windows\textbackslash{}SysWOW64}
+\begin{itemize}
+\item Yes, this makes very little sense
+\item Based in the development of Windows from 32-bit to 64-bit
+\end{itemize}
+\end{itemize}
+\subsubsection*{Slightly confusing code:}
+\label{sec:org525f745}
+\begin{itemize}
+\item x86 = 32-bit
+\item x64 = 64-bit (and often called AMD64)
+\end{itemize}
+
+\subsection*{Workstation operating systems}
+\label{sec:org62e6bc6}
+\begin{itemize}
+\item By ``workstation,'' CompTIA means a desktop or laptop that someone sits at and does work
+\item So we are not including further discussion of servers for the rest of this course
+\end{itemize}
+\subsubsection*{Microsoft Windows}
+\label{sec:org1abd030}
+\begin{center}
+\includegraphics[width=0.15\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-1-windows10.png}
+\end{center}
+\begin{itemize}
+\item By far the most common
+\item Different versions: 
+\begin{itemize}
+\item You will be expected to know 7, 8, 8.1, and 10
+\item There are others that you will not have to know, such as Windows Server
+\end{itemize}
+\item Advantages and disadvantages:
+\begin{itemize}
+\item Good - big presence means big support
+\begin{itemize}
+\item Lots of different kinds of software
+\end{itemize}
+\item Bad - Large target for security exploitation
+\begin{itemize}
+\item So much different hardware, so many versions still running
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{Apple Macintosh OS}
+\label{sec:orgba6c200}
+\begin{center}
+\includegraphics[width=0.2\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-1-apple-emblem.jpg}
+\end{center}
+\begin{itemize}
+\item Advantages:
+\begin{itemize}
+\item easy to use
+\item always compatible
+\item few security concerns
+\item free with Apple hardware
+\end{itemize}
+\end{itemize}
+
+\FloatBarrier
+\begin{itemize}
+\item Disadvantages:
+\begin{itemize}
+\item Requires Apple hardware
+\item Less industry support
+\item Hardware more expensive
+\end{itemize}
+\end{itemize}
+\subsubsection*{Linux}
+\label{sec:org3b47c6e}
+\begin{center}
+\includegraphics[width=0.15\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-1-Linux-Logo-Photos.jpg}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.15\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-1-linux-red-hat-vector-logo.png}
+\end{center}
+
+
+\begin{center}
+\includegraphics[width=0.15\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-1-debian-512.png}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.15\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-1-Ubuntu-logo.jpg}
+\end{center}
+
+\begin{itemize}
+\item A free Unix-compatible software system
+\begin{itemize}
+\item Unix-like, but not Unix
+\begin{itemize}
+\item (macOS is Unix-based)
+\end{itemize}
+\end{itemize}
+\item Open source
+\item Works on variety of hardware
+\begin{itemize}
+\item Backbone of the Internet is on Linux machines
+\item Limited driver support, especially on laptops
+\end{itemize}
+\end{itemize}
+\subsection*{Cell phone/tablet operating systems}
+\label{sec:org8d7e1ea}
+
+\subsubsection*{Microsoft Windows}
+\label{sec:orga2ca5ea}
+\begin{itemize}
+\item Windows 10 on mobile devices
+\begin{itemize}
+\item Surface
+\item Many others, some with touchpads, some with styluses
+\end{itemize}
+\item Windows Mobile
+\begin{itemize}
+\item not bad, but no longer developed
+\end{itemize}
+\end{itemize}
+\subsubsection*{Android}
+\label{sec:orgd22573d}
+\begin{itemize}
+\item Open source OS, based on Linux
+\item Android apps usually easy to develop and distribute, can be written on any operating system
+\end{itemize}
+\subsubsection*{iOS}
+\label{sec:orgda5bfbe}
+\begin{itemize}
+\item Apple iPhone and iPad OS
+\item Based on Unix
+\item Closed source
+\end{itemize}
+\subsubsection*{Chrome OS}
+\label{sec:org0d697ca}
+\begin{itemize}
+\item Google's operating system, based on Linux kernel
+\item Its relationship with Android can be confusing
+\item Google Chrome browser is essentially its own operating system, and Chrome OS is based on this
+\end{itemize}
+
+\subsection*{Vendor-specific limitations}
+\label{sec:org5942638}
+
+\subsubsection*{End-of-life}
+\label{sec:org707e31c}
+\begin{itemize}
+\item EOL - when a company stops supporting a package
+\item Companies set their own EOLs, they vary by software package
+\end{itemize}
+\subsubsection*{Update limitations}
+\label{sec:org4e57274}
+\begin{itemize}
+\item iOS, Android, and Windows 10 check for updates and prompt to update
+\item ChromeOS updates automatically
+\item Linux you gotta do it yourself
+\end{itemize}
+\subsection*{Compatibility concerns between operating systems}
+\label{sec:org9cb73a1}
+\begin{itemize}
+\item Applications designed for one OS generally cannot run on a different OS
+\item They must be specifically built to run on different OSs
+\item Many data files can work between operating systems: images, videos, sound files
+\end{itemize}
+
+\section*{1.2 – Compare and contrast features of Microsoft Windows versions.}
+\label{sec:org5e25160}
+
+\subsection*{Windows 7}
+\label{sec:org061682a}
+\begin{itemize}
+\item Released 2009
+\begin{itemize}
+\item Support ended Jan 14 2020
+\end{itemize}
+\item Similar to Windows Vista
+\end{itemize}
+\subsubsection*{Windows 7 versions: Starter}
+\label{sec:org854c1aa}
+\begin{itemize}
+\item Windows 7 Starter
+\begin{itemize}
+\item Built for netbooks
+\item No ``enterprise'' technologies
+\begin{itemize}
+\item No Domain connection, BitLocker, etc
+\item no DVD playback, no Windows Media Center
+\item Only 32-bit version
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{Windows 7: Home Premium}
+\label{sec:orgae7c3e5}
+\begin{itemize}
+\item Consumer edition
+\begin{itemize}
+\item DVD playback, Internet Connection Sharing
+\item Still no enterprise stuff:
+\begin{itemize}
+\item No domain connection, BitLocker, etc
+\end{itemize}
+\item x64 version supports 16 GB RAM
+\end{itemize}
+\end{itemize}
+\subsubsection*{Windows 7 Ultimate}
+\label{sec:orgf283282}
+\begin{itemize}
+\item Complete functionality
+\item Domain support, Remote Desktop
+\item x64 version supports up to 192 GB RAM
+\end{itemize}
+\subsubsection*{Windows 7 Professional}
+\label{sec:org481b7c8}
+\begin{itemize}
+\item Same features as Home Premium
+\item - missing some enterprise stuff - no BitLocker
+\end{itemize}
+\subsubsection*{Windows 7 breakdown}
+\label{sec:orgec944e7}
+\begin{center}
+\includegraphics[width=1.1\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-2-windows7.png}
+\captionof{figure}{A summary of Windows 7 features}
+\end{center}
+
+\subsection*{Windows 8}
+\label{sec:org8dc7ae6}
+\begin{itemize}
+\item Released October 2012
+\item A new interface that everyone hated:
+\begin{itemize}
+\item Booted straight into a tablet-like mode
+\item No start button
+\item People immediately started hacking it to make it look like Windows 7
+\end{itemize}
+\end{itemize}
+\subsection*{Windows 8.1}
+\label{sec:org411d5e5}
+\begin{itemize}
+\item Free upgrade in response to outcry
+\item Put start button back
+\item Mainstream support ended Jan 2018
+\item Extended support ends Jan 2023
+\end{itemize}
+\subsection*{Windows 8 versions:}
+\label{sec:org94dbb67}
+\begin{itemize}
+\item Windows 8 and 8.1 core
+\item Microsoft account integration for the first time
+\item Windows Defender - an actually OK anti-virus and anti-malware
+\item Windows Media Player - also not bad!
+\end{itemize}
+\subsection*{more Windows 8 versions:}
+\label{sec:org291d6d2}
+\begin{itemize}
+\item Windows 8/8.1 Pro
+\begin{itemize}
+\item Professional version
+\item BitLocker and EFS
+\item Can join a Windows Domain
+\item Group policy support - centralized management of Windows devices
+\end{itemize}
+\end{itemize}
+\subsection*{Another Windows version:}
+\label{sec:orgc49f641}
+\begin{itemize}
+\item Windows 8/8.1 Enterprise
+\item Large volume licenses
+\end{itemize}
+
+\subsection*{Windows 8 processor requirements}
+\label{sec:org4de58bc}
+\begin{itemize}
+\item PAE (Physical Address Extension)
+\begin{itemize}
+\item 32-bit processors can use more than 4 GB of RAM
+\end{itemize}
+\item NX (NX Processor Bit)
+\begin{itemize}
+\item can protect against malicious software
+\end{itemize}
+\item SSE2 (Streaming SIMD Extensions 2)
+\begin{itemize}
+\item a standard processor instructions set
+\item Helped people write third-party extensions and applications
+\end{itemize}
+\end{itemize}
+\subsection*{Windows 8 breakdown:}
+\label{sec:org6fdbd3c}
+\begin{center}
+\includegraphics[width=1.1\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-2-windows8.png}
+\end{center}
+
+\subsection*{Windows 10}
+\label{sec:org4b7346d}
+\begin{itemize}
+\item Released 2015
+\item Designed to be a single, unitary platform for all devices
+\item Now called a ``service''
+\begin{itemize}
+\item Periodic updates to OS instead of new versions
+\end{itemize}
+\end{itemize}
+
+\subsection*{Windows 10 versions}
+\label{sec:org72b1a38}
+\begin{itemize}
+\item Windows 10 Home
+\item Integration with Microsoft account
+\begin{itemize}
+\item OneDrive backup
+\end{itemize}
+\item Cortana - MS version of Siri or Google Assistant
+\item Windows Defender
+\end{itemize}
+\subsection*{More Windows 10 versions}
+\label{sec:orgf50ad9f}
+\begin{itemize}
+\item Windows 10 Pro
+\item Business version:
+\begin{itemize}
+\item Remote Desktop host
+\item BitLocker
+\item Can join Windows Domain
+\end{itemize}
+\end{itemize}
+\subsection*{Windows 10 processor requirements}
+\label{sec:org0b3bbf6}
+\begin{itemize}
+\item Same as Windows 8/8.1
+\item PAE, NX, SSE2
+\end{itemize}
+\subsection*{Windows 10 breakdown}
+\label{sec:orgd293de7}
+\begin{center}
+\includegraphics[width=1.2\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-2-windows10.png}
+\end{center}
+\subsection*{Corporate vs. personal needs}
+\label{sec:org64a2d25}
+\begin{itemize}
+\item Many aspects of Windows designed for ``the enterprise''
+\end{itemize}
+\subsubsection*{Domain access}
+\label{sec:org052e6d5}
+\begin{itemize}
+\item Using Active Directory Domain Services
+\begin{itemize}
+\item People in the know talk about AD as being the best piece  of software Microsoft ever produced
+\item Can keep track of accounts and users across the entire enterprise
+\item Distributed architecture
+\end{itemize}
+\end{itemize}
+\subsubsection*{Domain Access cont'd}
+\label{sec:org752db7f}
+\begin{itemize}
+\item Many different uses:
+\begin{itemize}
+\item Authentication
+\item Centralized management
+\item SSO (single sign-on), the holy grail of domain management
+\end{itemize}
+\end{itemize}
+\subsubsection*{BitLocker}
+\label{sec:org0329270}
+\begin{itemize}
+\item BitLocker is Full Disk Encryption (FDE)
+\item Every single thing is encrypted
+\end{itemize}
+\subsubsection*{EFS}
+\label{sec:org294ce69}
+\begin{itemize}
+\item Encrypting File System
+\item Encrypt files one-by-one
+\end{itemize}
+\subsubsection*{Media center}
+\label{sec:orgb5232c6}
+\begin{itemize}
+\item Video, music, and television portal
+\item Was discontinued; not available in Windows 10
+\item So people figure out how to put it back in
+\end{itemize}
+\subsubsection*{BranchCache}
+\label{sec:orgc4eabc7}
+\begin{itemize}
+\item Caching for branch offices
+\item Reduces bandwidth use over long distances
+\end{itemize}
+
+\subsection*{Desktop styles/user interface}
+\label{sec:org00ea7d3}
+\begin{itemize}
+\item Flexibility and personalization of desktop limited at work
+\item Much more flexible in home editions without the central control
+\end{itemize}
+
+\section*{1.3 – Summarize general OS installation considerations and upgrade methods.}
+\label{sec:orgd841a20}
+
+\subsection*{Boot methods}
+\label{sec:org1cc0b85}
+\begin{itemize}
+\item Operating systems can be installed from different media
+\end{itemize}
+\subsubsection*{USB}
+\label{sec:org6065830}
+\begin{itemize}
+\item USB needs to be bootable
+\item Computer needs to support booting from USB
+\end{itemize}
+\subsubsection*{CD-ROM}
+\label{sec:org57d366c}
+\begin{itemize}
+\item You don't see it quite as much any more, but used to be the standard way
+\end{itemize}
+\subsubsection*{DVD}
+\label{sec:org9d5bea9}
+\begin{itemize}
+\item See this a little more because it can hold more data
+\item But, especially in laptops, see fewer DVD drives
+\end{itemize}
+\subsubsection*{PXE}
+\label{sec:orgadf3983}
+\begin{itemize}
+\item ``pixie''
+\item Preboot eXecution Environment
+\item perform a remote network installation
+\end{itemize}
+\subsubsection*{Solid state/flash drives}
+\label{sec:orgd7daa3d}
+\begin{itemize}
+\item Another possible media
+\end{itemize}
+\subsubsection*{NetBoot}
+\label{sec:org67a1908}
+\begin{itemize}
+\item Apple technology for booting  Macs from network
+\item Similar to PXE
+\end{itemize}
+\subsubsection*{External/hot-swappable drive}
+\label{sec:org25e6fe6}
+\begin{itemize}
+\item External CD-ROM / DVD
+\end{itemize}
+\subsubsection*{Internal hard drive (partition)}
+\label{sec:orgce49625}
+\begin{itemize}
+\item Can install and boot from separate drive
+\item Can mount an .iso
+\end{itemize}
+\subsection*{Type of installations}
+\label{sec:org4bc0255}
+
+\subsubsection*{Unattended installation}
+\label{sec:orgc9bd938}
+\begin{itemize}
+\item Can set up answers to Windows questions in a file
+\item So that there are no interruptions
+\end{itemize}
+\subsubsection*{In-place upgrade}
+\label{sec:orgf841ba5}
+\begin{itemize}
+\item Maintain existing applications and data
+\end{itemize}
+\subsubsection*{Clean install}
+\label{sec:org774566c}
+\begin{itemize}
+\item Wipe eveything and reinstall
+\end{itemize}
+\subsubsection*{Repair installation}
+\label{sec:orgd28f7d2}
+\begin{itemize}
+\item Fixes problems with the Windows OS
+\begin{itemize}
+\item Doesnot touch user files
+\end{itemize}
+\end{itemize}
+\subsubsection*{Multiboot}
+\label{sec:orgbb094b8}
+\begin{itemize}
+\item Running two ormore operating systems from the same computer
+\end{itemize}
+\subsubsection*{Remote network installation}
+\label{sec:org303fa6b}
+\subsubsection*{Image deployment}
+\label{sec:org9f153a4}
+\begin{itemize}
+\item Easier way to do mass installations
+\item Deploy a clone on every computer
+\end{itemize}
+\subsubsection*{Recovery partition}
+\label{sec:org62af54c}
+\begin{itemize}
+\item A hidden partition with recovery files
+\end{itemize}
+\subsubsection*{Refresh/restore}
+\label{sec:orgf607e73}
+\begin{itemize}
+\item Windows 8/10 feature to clean things up
+\item Requires a recovery partition
+\end{itemize}
+
+\subsection*{Partitioning}
+\label{sec:org0b34833}
+\begin{itemize}
+\item An ancient concept
+\begin{itemize}
+\item Separates physical drive into logical pieces
+\item Can keep data, operating systems distinct
+\end{itemize}
+\item Formatted partitions are called volumes
+\begin{itemize}
+\item (Microsoft terminology)
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-3-partitioning.png}
+\captionof{figure}{A diagram of partitioning concepts}
+\end{center}
+\subsubsection*{MBR}
+\label{sec:org3d3da0a}
+\begin{itemize}
+\item Master Boot Record
+\begin{itemize}
+\item one of the earliest ways of doing this
+\item lots of limitations
+\end{itemize}
+\end{itemize}
+\subsubsection*{Primary}
+\label{sec:orgdd54762}
+\begin{itemize}
+\item in MBR partitions;
+\begin{itemize}
+\item a bootable partition
+\item Maximum of four primary partitions per disk
+\end{itemize}
+\end{itemize}
+\subsubsection*{Extended}
+\label{sec:orge1466e8}
+\begin{itemize}
+\item Extends the maximum number of partitions
+\end{itemize}
+\subsubsection*{GPT}
+\label{sec:org277debb}
+\begin{itemize}
+\item GUID Partition Table
+\begin{itemize}
+\item The newest partition standard
+\item Globally unique identifier
+\end{itemize}
+\item Requires UEFI BIOS
+\begin{itemize}
+\item Can have up to 128 primary partitions
+\item Does not require extended partitions or any sneaky stuff to extend it
+\end{itemize}
+\end{itemize}
+
+
+\subsection*{File system types/formatting}
+\label{sec:orgfec505c}
+\begin{itemize}
+\item Before data can be written to the partition, it must be formatted
+\item Operating systems expect a particular format
+\begin{itemize}
+\item FAT32 and NTFS currently most popular
+\begin{itemize}
+\item but ext3 and ext4 coming up behind fast
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{FAT}
+\label{sec:orgb07ccd6}
+\begin{itemize}
+\item File Allocation Table
+\item Earliest; (1980ish)
+\end{itemize}
+\subsubsection*{FAT32}
+\label{sec:org3170b1f}
+\begin{itemize}
+\item Larger (2 TB file sizes)
+\item maximum file size of 4 GB
+\end{itemize}
+\subsubsection*{ExFAT}
+\label{sec:org1dd9c84}
+\begin{itemize}
+\item Extended File Allocation Table
+\item Microsoft flash drive file system
+\item Files can be larger than 4 GB
+\end{itemize}
+\subsubsection*{NTFS}
+\label{sec:orgc445f4a}
+\begin{itemize}
+\item NTFS - NT File System
+\begin{itemize}
+\item Extensive improvements over FAT32
+\item Quotas, file compression, encryption, symbolic links
+\end{itemize}
+\end{itemize}
+\subsubsection*{CDFS}
+\label{sec:orgbb08b9e}
+\begin{itemize}
+\item Compact Disk File System
+\item All operating systems can read the CD
+\end{itemize}
+\subsubsection*{NFS}
+\label{sec:orge624a6b}
+\begin{itemize}
+\item Network File System
+\item Access files across the network as if they were local
+\end{itemize}
+\subsubsection*{ext3, ext4}
+\label{sec:orgbca9b39}
+\begin{itemize}
+\item Third extended file system
+\item Fourth extended file system
+\item Generally on Linux systems
+\end{itemize}
+\subsubsection*{HFS}
+\label{sec:org18cdcb8}
+\begin{itemize}
+\item HFS+ - Mac OS Extended
+\end{itemize}
+\subsubsection*{Swap partition}
+\label{sec:org6e9f378}
+\begin{itemize}
+\item CPU temporarily uses part of a hard drive when it runs out of RAM
+\begin{itemize}
+\item Frees RAM by moving data to disk
+\item Has to be a very fast magnetic drive or an SSD
+\end{itemize}
+\end{itemize}
+\subsubsection*{Quick format vs. full format}
+\label{sec:orgb3537ef}
+\begin{itemize}
+\item Quick:
+\begin{itemize}
+\item Creates new file table
+\item Data \textbf{appears} to be erased but it is not
+\begin{itemize}
+\item Quick format in Windows 7, 8, 10
+\begin{itemize}
+\item use \texttt{diskpart} for full format
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{Full format}
+\label{sec:org68b26bf}
+\begin{itemize}
+\item Writes zeroes to the entire disk
+\item You data is unrecoverable
+\end{itemize}
+\subsection*{Load alternate third-party drivers when necessary}
+\label{sec:org084cae6}
+\begin{itemize}
+\item Sometimes your devices will not have drivers built into the OS
+\item Then will need to get them from the manufacturer
+\end{itemize}
+\subsection*{Workgroup vs. Domain setup}
+\label{sec:orgf7cd56d}
+\begin{itemize}
+\item Workgroups vs domains:
+\begin{itemize}
+\item \textbf{Domain} a group of computers that share a common user account database.  Users can log in to access shared resources
+\item \textbf{Workgroup} a simpler concept, a group of computers that share resources such as printers and files.  But each computer keeps track of its own user accounts, no centralized management.
+\end{itemize}
+\item At home: workgroup
+\item At work: domain
+\end{itemize}
+\subsection*{Time/date/region/language settings}
+\label{sec:orgf21ed6b}
+\begin{itemize}
+\item Basic settings that we sometimes forget!
+\end{itemize}
+\subsection*{Driver installation, software, and Windows updates}
+\label{sec:orgc6ac3d0}
+\begin{itemize}
+\item Before you can say that you are finished installing an operating system:
+\begin{itemize}
+\item Load video drivers, install apps, update OS
+\end{itemize}
+\end{itemize}
+\subsection*{Factory recovery partition}
+\label{sec:orgc21e5cd}
+\begin{itemize}
+\item A hidden partition that will allow you to reset your operating system to its original state
+\item Could be useful later; but this is not as useful a feature as it used to be
+\item The problem is that it erases everything and starts over
+\end{itemize}
+\subsection*{Properly formatted boot drive with the correct partitions/format}
+\label{sec:org7a053a0}
+\begin{itemize}
+\item Make sure you know the partitions that are there
+\item Is there old data on there?
+\item Backup the data you need
+\begin{itemize}
+\item Always backup before you do anything big!
+\end{itemize}
+\end{itemize}
+\subsection*{Prerequisites/hardware compatibility}
+\label{sec:org9288a71}
+\begin{itemize}
+\item Before installation make sure you meet minimum OS requirements
+\begin{itemize}
+\item Memory, disk space, etc.
+\end{itemize}
+\item Run a hardware compatibility checker
+\begin{itemize}
+\item i.e. Windows 10 Upgrade Checker
+\end{itemize}
+\end{itemize}
+\subsection*{Application compatibility}
+\label{sec:org8b06732}
+\begin{itemize}
+\item Make sure your apps will still work after the upgrade
+\begin{itemize}
+\item Need to check with manufacturer
+\item 32-bit vs 64-bit etc (especially with macOS)
+\end{itemize}
+\end{itemize}
+\subsection*{OS compatibility/upgrade path}
+\label{sec:org7e87dcc}
+\begin{itemize}
+\item Different upgrade paths for different versions of Windows
+\end{itemize}
+\subsection*{Windows 8 upgrade path}
+\label{sec:org30ba713}
+\begin{itemize}
+\item {\color{green}\textbf{Upgrade}} = can perform in-place upgrade
+\item {\color{red}\textbf{Install}} = must do clean install
+\end{itemize}
+\begin{center}
+\includegraphics[width=1.1\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-3-windows8UpgradePath.png}
+\captionof{figure}{Windows 8 upgrade path}
+\end{center}
+
+\section*{1.4 – Given a scenario, use appropriate Microsoft command line tools.}
+\label{sec:org09bd54f}
+\subsection*{Command line}
+\label{sec:org7034ea5}
+\begin{itemize}
+\item Command line is where it is at
+\item Talking more directly to the computer
+\item When you get good at it, it can be faster and more rewarding than messing around in the GUI
+\item It is also more impressive to employers
+\item My prejudiced feeling is:
+\begin{itemize}
+\item If you are serious about IT, you need to spend most of your time on the command line
+\end{itemize}
+\end{itemize}
+\subsection*{The Windows command line}
+\label{sec:org1427417}
+\begin{itemize}
+\item Microsoft calls this ``the Command shell.''
+\begin{itemize}
+\item Windows really has two command shells: the Command shell and \href{https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7}{PowerShell}
+\item PowerShell resembles Command shell but is more for scripting and automation. 
+\begin{itemize}
+\item You will not need to know PowerShell for the A+
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsection*{Command shell - the next generation}
+\label{sec:org4794364}
+\begin{itemize}
+\item There is a new version of Command shell, called Windows Terminal.  
+\begin{itemize}
+\item It is open source and you can look at it \href{https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7}{here}
+\item People like me are happy because it has features of better  command lines and terminals in other operating systems
+\end{itemize}
+\end{itemize}
+\subsection*{Notes for this section}
+\label{sec:org2bb5a70}
+\begin{itemize}
+\item Depending on the OS, the command line is called ``the terminal'' as well.
+\begin{itemize}
+\item Things to be typed in the shell will look like this:
+\begin{itemize}
+\item \texttt{C:\textbackslash{}>run COOLCOMMAND.EXE}
+\end{itemize}
+\end{itemize}
+\item Many commands have ``switches'' that change their actions:
+\begin{itemize}
+\item e.g. \texttt{chkdsk /f} checks the disk and fixes system errors
+\end{itemize}
+\end{itemize}
+
+Look cool using \href{https://hackertyper.net/}{hackertyper}
+
+\subsection*{Privileges in the CLI}
+\label{sec:orga0f24f5}
+\begin{itemize}
+\item Different users have different privileges, different commands they may run
+\begin{itemize}
+\item In Windows, some commands can only be run by the Administrator
+\begin{itemize}
+\item ``elevated privileges''
+\item Right-click on Command Prompt, choose \emph{Run as Administrator}
+\begin{itemize}
+\item or if you want to be really cool, <windows>+R \texttt{cmd} <ctrl> <shift> <enter>
+\end{itemize}
+\item In Linux / macOS this is called ``root privilege''
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsection*{Help in the Command shell}
+\label{sec:org93c19ef}
+\begin{itemize}
+\item can type \texttt{help [command]}
+\begin{itemize}
+\item \texttt{> help chkdsk}
+\end{itemize}
+\item can also use \texttt{[command] /?}
+\item end shell session with \texttt{exit}
+\end{itemize}
+
+\subsection*{Navigation}
+\label{sec:org509b8f4}
+\begin{itemize}
+\item In a GUI, the graphical representation of the operating system, we talk about ``folders.'' 
+\begin{itemize}
+\item In the command line, they are ``directories''
+\end{itemize}
+\end{itemize}
+\subsubsection*{\texttt{dir}}
+\label{sec:org7a52f9e}
+\begin{itemize}
+\item Lists files and directories
+\end{itemize}
+\subsubsection*{\texttt{cd}}
+\label{sec:org46dc697}
+\begin{itemize}
+\item Changes directory:
+\begin{itemize}
+\item \texttt{cd documents} will enter the ``documents'' folder
+\item use \texttt{\textbackslash{}} to specify folder names, volumes
+\end{itemize}
+\end{itemize}
+\subsubsection*{\texttt{..}}
+\label{sec:orgc72a440}
+\begin{itemize}
+\item Two periods / dots
+\item Signifies the directory above the current directory
+\begin{itemize}
+\item \texttt{.} signifies the current directory
+\end{itemize}
+\end{itemize}
+
+\subsection*{Network Command line tools}
+\label{sec:org7215477}
+\begin{itemize}
+\item \texttt{ipconfig}
+\begin{itemize}
+\item the starting command for figuring out network problems
+\item tells you your [local] IP address, DNS server, DHCP server, gateway, etc
+\item \texttt{ipconfig /all} gives you the verbose information
+\end{itemize}
+\end{itemize}
+
+\subsubsection*{Network CLI tools:}
+\label{sec:org5f271ae}
+\begin{itemize}
+\item \texttt{ping}
+\begin{itemize}
+\item Tests if an IP address is reachable
+\item Tells you how long the signal takes to get there
+\item Uses ICMP (Internet Control Message Protocol
+\begin{itemize}
+\item A very old and fun tool
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{Network CLI tools:}
+\label{sec:orgefa5dc7}
+\begin{itemize}
+\item \texttt{tracert}
+\begin{itemize}
+\item Traces the path taken by a packet to a destination
+\item Uses ICMP Time To Live Exceeded message in an interesting way:
+\begin{itemize}
+\item time in TTL is in hops, not time
+\item TTL=1 is the first router
+\item TTL=2 is the 2nd router
+\item Not all routers respond to ICMP
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{More tracert}
+\label{sec:orgfa74788}
+\begin{itemize}
+\item Linux and macOS allow you to specify the protocol, if ICMP is blocked or disregarded
+\item Though in Linux and Unix it is called \texttt{traceroute}
+\item iOS sends UDP over port 33434
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.90\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-4-tracerouteDiagram.png}
+\captionof{figure}{Traceroute diagram}
+\end{center}
+\subsubsection*{Network CLI tools:}
+\label{sec:org23715be}
+\begin{itemize}
+\item \texttt{netstat} shows network statistics for your local machine
+\item Seen in multiple OSs
+\begin{itemize}
+\item \texttt{netstat -a} show all active connections
+\item \texttt{netstat -b} displays the file using the port
+\item \texttt{netstat -n} does not resolve names
+\end{itemize}
+\end{itemize}
+\subsubsection*{Network CLI tools:}
+\label{sec:org35f3d65}
+\begin{itemize}
+\item \texttt{nslookup} Looks up information from DNS servers
+\begin{itemize}
+\item Canonical names, IP addresses
+\end{itemize}
+\end{itemize}
+\subsubsection*{Network CLI tools:}
+\label{sec:org203d500}
+\begin{itemize}
+\item \texttt{net}
+\begin{itemize}
+\item Windows network commands
+\begin{itemize}
+\item See network resources:
+\begin{itemize}
+\item \texttt{net view \textbackslash{}\textbackslash{}<servername>}
+\item \texttt{net view /workgroup:<workgroupname>}
+\end{itemize}
+\item Map a network share to a drive letter:
+\begin{itemize}
+\item \texttt{net use h: \textbackslash{}\textbackslash{}<servername>\textbackslash{}<sharename>}
+\end{itemize}
+\item See user account information:
+\begin{itemize}
+\item \texttt{net user <username>}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\subsection*{\texttt{shutdown}}
+\label{sec:org06962ff}
+\begin{itemize}
+\item Shuts it down; with switches can change timing, restart it
+\begin{itemize}
+\item \texttt{shutdown /s /t nn} wait nn seconds and shut down
+\item \texttt{shutdown /r /t nn} shut down and restart after nn seconds
+\item \texttt{shutdown /a} abort the shutdown
+\item \texttt{shutdown /m \textbackslash{}\textbackslash{}<computer>} shuts down another computer
+\item \texttt{shutdown /c "<comment>"} sends a message about why the computer is shutting down
+\begin{itemize}
+\item (don't need to know that last one)
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsection*{\texttt{dism}}
+\label{sec:org60d6bf0}
+\begin{itemize}
+\item Deployment Image Servicing and Management tool
+\begin{itemize}
+\item manage and deploy Windows OS images
+\item can automate this for deployment
+\end{itemize}
+\end{itemize}
+\subsection*{\texttt{sfc}}
+\label{sec:orge3f895a}
+\begin{itemize}
+\item Scan integrity of all protected system files
+\begin{itemize}
+\item \texttt{sfc /scannow}
+\end{itemize}
+\end{itemize}
+\subsection*{\texttt{chkdsk}}
+\label{sec:org55e1cf6}
+\begin{itemize}
+\item Checks the disk
+\item \texttt{chkdsk /f} fixes logical file system errors on disk
+\item \texttt{chkdsk /r} locates bad sectors, recovers readable information
+\begin{itemize}
+\item implies \texttt{/f}
+\end{itemize}
+\end{itemize}
+\subsection*{\texttt{diskpart}}
+\label{sec:orgfcb138e}
+\begin{itemize}
+\item Tool to manage disk configurations and partitions
+\begin{itemize}
+\item \texttt{diskpart} starts the program, \texttt{?} to see commands
+\end{itemize}
+\end{itemize}
+\subsection*{\texttt{tasklist} and \texttt{taskkill}}
+\label{sec:org1ec44cf}
+\begin{itemize}
+\item Command line version of Task Manager
+\item Terminate tasks by PID (Process ID) or image name (IM)
+\begin{itemize}
+\item \texttt{taskkill /im skypeapp.exe}
+\item \texttt{taskkill /pid 7934 /t} terminates app and its children
+\end{itemize}
+\end{itemize}
+\subsection*{Managing group policy from the command line}
+\label{sec:org89868ed}
+\begin{itemize}
+\item managing Active Directory from the Command prompt
+\end{itemize}
+\subsubsection*{\texttt{gpupdate} force a group policy update}
+\label{sec:orgc32b3d9}
+\begin{itemize}
+\item \texttt{gpupdate /target:nick /force} reapplies all policy settings
+\end{itemize}
+\subsubsection*{\texttt{gpresult}}
+\label{sec:org3ada22c}
+\begin{itemize}
+\item displays the Resultant Set of Policy (RSoP) information for a target user and computer.
+\item \texttt{gpresult /r} does that
+\end{itemize}
+\subsection*{\texttt{format}}
+\label{sec:orgb7ffe90}
+\begin{itemize}
+\item formats the selected disk
+\item can choose quick or full, file system, etc with switches
+\end{itemize}
+\subsection*{\texttt{copy}}
+\label{sec:org3692429}
+\begin{itemize}
+\item Copies files from one place to another
+\begin{itemize}
+\item \texttt{copy (/a, /v, /y)}
+\item \texttt{/v} verifies that the copy occurred
+\item \texttt{/y} {\color{red}dangerous!} gets rid of the verification if you are going to overwrite an existing file
+\end{itemize}
+\end{itemize}
+\subsection*{\textasciitilde{}xcopy\textasciitilde{}verify policy settings for a user (or computer)}
+\label{sec:org664ac36}
+\begin{itemize}
+\item Copies files \emph{and} directories
+\end{itemize}
+\subsection*{\texttt{robocopy}}
+\label{sec:org9d84790}
+\begin{itemize}
+\item Designed as a better xcopy
+\begin{itemize}
+\item Not a robot, but a ``robust copy''
+\end{itemize}
+\end{itemize}
+
+\section*{1.5 – Given a scenario, use Microsoft operating system features and tools.}
+\label{sec:org86fd29e}
+
+\subsection*{Administrative}
+\label{sec:orga642171}
+
+\subsubsection*{Computer Management}
+\label{sec:org7cc70d7}
+\begin{itemize}
+\item Microsoft Management Console (mmc.exe)
+\item You can tailor it with plug-ins to be your own personal dashboard and toolset
+\item Install snap-ins from \emph{File} menu
+\end{itemize}
+\subsubsection*{Device Manager}
+\label{sec:orgc9759a0}
+\begin{itemize}
+\item This is where you manage devices and their drivers
+\item Can see and resolve many problems with peripherals here
+\item \textbf{Computer Management} or \texttt{devmgmt.msc}
+\end{itemize}
+\subsubsection*{Local Users and Groups}
+\label{sec:org5106ec5}
+\begin{itemize}
+\item Default users on a machine are Administrator and User
+\item You can add users
+\item Also ``Guest'' account
+\begin{itemize}
+\item from a security standpoint, best to disable this
+\end{itemize}
+\end{itemize}
+\subsubsection*{Local Security Policy}
+\label{sec:orgc145a37}
+\begin{itemize}
+\item In companies / large organizations usually managed through Active Directory
+\item Stand-alone computers need local policies
+\end{itemize}
+\subsubsection*{Performance Monitor}
+\label{sec:org1bc469f}
+\begin{itemize}
+\item Measurements of computer - speed, memory and CPU use
+\item Stores metrics
+\item Can be set to sound alarms if things go out of whack
+\end{itemize}
+\subsubsection*{Services}
+\label{sec:org2250f9f}
+\begin{itemize}
+\item Everything, mostly, is a service
+\item Every background process
+\item Sometimes those things running in the background cause problems
+\begin{itemize}
+\item turn things on and off with \texttt{net stop} and \texttt{net start}
+\end{itemize}
+\end{itemize}
+\subsubsection*{System Configuration}
+\label{sec:org90d1615}
+\begin{itemize}
+\item \texttt{msconfig} using Run
+\item or from Start menu in Windows 10
+\item can set system startups, look at statistics, plan a limited startup for troubleshooting
+\end{itemize}
+\subsubsection*{Task Scheduler}
+\label{sec:org40e2b56}
+\begin{itemize}
+\item Have different applications run and do things at different times
+\begin{itemize}
+\item i.e. disk defragmentation, backups, I used to have it print out my time sheet every Thursday so I didn't forget
+\end{itemize}
+\item Control Panel / Administrative Tools / Task Scheduler
+\item Equivalents in Linux or macOS: \texttt{cron} or \texttt{launchctl} (in macOS)
+\end{itemize}
+
+\subsubsection*{Component Services}
+\label{sec:orgb89143e}
+\begin{itemize}
+\item Microsoft COM+
+\begin{itemize}
+\item Component Object Model
+\item Distributed applications designed for enterprise environments
+\end{itemize}
+\end{itemize}
+\subsubsection*{Data Sources}
+\label{sec:orgc7d5d5b}
+\begin{itemize}
+\item ODBC - Open Database Connectivity
+\item An \href{https://en.wikipedia.org/wiki/Application\_programming\_interface}{API} for managing database connectivity
+\item Management of database information independent of operating system or application
+\end{itemize}
+\subsubsection*{Print Management}
+\label{sec:orga7754be}
+\begin{itemize}
+\item Control Panel / Administrative Tools / Print Management
+\item Manage printers, share them
+\begin{itemize}
+\item assign drivers
+\end{itemize}
+\end{itemize}
+\subsubsection*{Windows Memory Diagnostics}
+\label{sec:org124501c}
+\begin{itemize}
+\item Check for memory issues, a classic cause of the BSOD
+\item restarts and checks
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{/Users/nick/org/comptia/sessionOne/images2/1-5-bsod_windows_98.png}
+\captionof{figure}{BSOD Windows 98}
+\end{center}
+\subsubsection*{Windows Firewall}
+\label{sec:org519e7a3}
+\begin{itemize}
+\item Integrated into the operating system
+\item Based on applications
+\item Allows information to flow into or out of computer, or prevents it
+\item But no detailed control
+\end{itemize}
+\subsubsection*{Advanced Security}
+\label{sec:orge1d9f9d}
+\begin{itemize}
+\item ``Granular'' 
+\begin{itemize}
+\item Allows specific ingress and egress rules
+\end{itemize}
+\end{itemize}
+\subsubsection*{Event Viewer}
+\label{sec:orgf41efe6}
+\begin{itemize}
+\item Central place to view logs
+\item Reports from applications, system, security
+\end{itemize}
+\subsubsection*{User Account Management}
+\label{sec:org389a3c1}
+\begin{itemize}
+\item Managing users and their privileges
+\item Local user vs domain user in an enterprise setting
+\end{itemize}
+\subsection*{MSConfig}
+\label{sec:orgdba93e8}
+\begin{itemize}
+\item System configuration, \texttt{msconfig.exe}
+\item Everything under the hood
+\end{itemize}
+\subsubsection*{General tab}
+\label{sec:orgd8066ba}
+\begin{itemize}
+\item Startup process:
+\begin{itemize}
+\item \emph{Normal} - regular old startup
+\item \emph{Diagnositc} - like Safe Mode
+\item \emph{Selective Startup} - choose applications to start
+\item Useful for troubleshooting
+\end{itemize}
+\end{itemize}
+\subsubsection*{Boot tab}
+\label{sec:org3aa54b3}
+\begin{itemize}
+\item Control the boot location
+\item Parts of BIOS available in OS
+\end{itemize}
+\subsubsection*{Services tab}
+\label{sec:org678a401}
+\begin{itemize}
+\item Enable and disable Windows services
+\item Disable or reset services that might be causing problems
+\end{itemize}
+\subsubsection*{Startup tab}
+\label{sec:orga4ad509}
+\begin{itemize}
+\item Decide which programs start with OS boot
+\item Some turn out to be memory / CPU hogs
+\end{itemize}
+\subsubsection*{Tools tab}
+\label{sec:org6e843c2}
+\begin{itemize}
+\item UAC settings (distinction between administrator and regular user
+\item Other things - system information, computer management, etc
+\item Centralized location for these tools
+\end{itemize}
+
+\subsection*{Task Manager}
+\label{sec:org811ce00}
+\begin{itemize}
+\item Lets you see what is happening in the moment
+\item \emph{Ctrl-Alt-Del} or \emph{Ctrl-Shift-Esc}
+\end{itemize}
+\subsubsection*{Applications}
+\label{sec:org46308a8}
+\begin{itemize}
+\item See the applications running
+\begin{itemize}
+\item Distinct from \emph{processes}
+\item Applications are the things you the user interact with
+\end{itemize}
+\end{itemize}
+\subsubsection*{Processes}
+\label{sec:org4d8dc96}
+\begin{itemize}
+\item So many of them, running in the background
+\item Can view and sort
+\end{itemize}
+\subsubsection*{Performance}
+\label{sec:orgc247e59}
+\begin{itemize}
+\item Observe CPU and RAM activity
+\end{itemize}
+\subsubsection*{Networking}
+\label{sec:orgdf7088f}
+\begin{itemize}
+\item Network performance, speed, activity
+\end{itemize}
+\subsubsection*{Users}
+\label{sec:org86c5717}
+\begin{itemize}
+\item see who is and was logged in
+\item More complex in Windows 8 and 10
+\begin{itemize}
+\item Can look at processes being run by different users
+\end{itemize}
+\end{itemize}
+\subsection*{Disk Management}
+\label{sec:org0524280}
+\begin{itemize}
+\item observe and manage disk operations
+\item individual computers and file servers
+\item \texttt{diskmgmt.msc} or 
+\begin{itemize}
+\item Control Panel / System and Security / Administrative Tools / Computer Management
+\end{itemize}
+\end{itemize}
+\subsubsection*{Drive status}
+\label{sec:org9cf0a4c}
+\begin{itemize}
+\item healthy vs unhealthy
+\item initializing
+\item failed
+\item re-syncing (RAID)
+\end{itemize}
+\subsubsection*{Mounting}
+\label{sec:org4cd9159}
+\begin{itemize}
+\item Can extend storage space
+\end{itemize}
+\subsubsection*{Managing partitions}
+\label{sec:org93db5a9}
+\begin{itemize}
+\item Can expand, split, shrink
+\end{itemize}
+\subsubsection*{Assigning/changing drive letters}
+\label{sec:org84ae7e6}
+\begin{itemize}
+\item A (not used much now!) B, C, D, etc
+\end{itemize}
+\subsubsection*{Storage spaces}
+\label{sec:orgc8cb24d}
+\begin{itemize}
+\item Large scale management of storage
+\item Can have a storage pool of drives
+\begin{itemize}
+\item This starts to resemble software RAID
+\end{itemize}
+\end{itemize}
+\subsection*{System utilities}
+\label{sec:orgabfd161}
+
+\subsubsection*{\texttt{Regedit}}
+\label{sec:org8a0c51e}
+\begin{itemize}
+\item The Windows Registry
+\begin{itemize}
+\item Database of just about everything
+\item Settings, variables, used at every level of the operating system
+\item Back it up before you make any changes, you can unknowingly damage things
+\end{itemize}
+\end{itemize}
+\subsubsection*{Command}
+\label{sec:org2f2f5c2}
+\begin{itemize}
+\item The Command line
+\end{itemize}
+\subsubsection*{Services.msc}
+\label{sec:orgd5cfaa6}
+\begin{itemize}
+\item Control panel / Administrative Tools / Services
+\item Observe and control background processes
+\end{itemize}
+\subsubsection*{MMC}
+\label{sec:org9193dc2}
+\begin{itemize}
+\item We discussed this, but it is important!
+\end{itemize}
+\subsubsection*{MSTSC}
+\label{sec:org1dbf5cf}
+\begin{itemize}
+\item Microsoft Terminal Services Client
+\begin{itemize}
+\item Old name for Remote Desktop Connection
+\item Another thing Microsoft has done very well
+\end{itemize}
+\end{itemize}
+\subsubsection*{Notepad}
+\label{sec:org0e6f155}
+\begin{itemize}
+\item your most basic text editor, has been around forever
+\item \texttt{notepad.exe}
+\end{itemize}
+\subsubsection*{Explorer}
+\label{sec:orgadad385}
+\begin{itemize}
+\item Graphical file browser
+\item Also can access network shares
+\item in macOS, called Finder
+\end{itemize}
+\subsubsection*{Msinfo32}
+\label{sec:orgb2ea16b}
+\begin{itemize}
+\item Windows System information
+\item Components, interactions, software environment
+\item can see running tasks, print jobs
+\end{itemize}
+\subsubsection*{DxDiag}
+\label{sec:org82d2ab8}
+\begin{itemize}
+\item DirectX diagnostic tool
+\item Grpahics and multimedia tool
+\end{itemize}
+\subsubsection*{Disk Defragmenter}
+\label{sec:orgb1fb221}
+\begin{itemize}
+\item Not necessary for SSDs
+\item Can help with slow access to files, general slowdowns of computer
+\begin{itemize}
+\item Can access from GUI - \emph{drive properties}
+\item Or from CLI with elevated privileges
+\begin{itemize}
+\item \texttt{defrag <volume>}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{System Restore}
+\label{sec:org08cd0ff}
+\begin{itemize}
+\item Creates ``restore points'' often and automatically
+\begin{itemize}
+\item Whenever new application installed or major change happens
+\item Can go back to restore point if things get messed up
+\begin{itemize}
+\item \emph{Control Panel} --> \emph{Recovery}
+\item Doesn't always work against viruses though, they can be very sneaky with System Restore
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection*{Windows Update}
+\label{sec:orge30b5e1}
+\begin{itemize}
+\item Microsoft has taken the power of choice in this away from users in Windows 10
+\end{itemize}
+\section*{1.6 – Given a scenario, use Microsoft Windows Control Panel utilities.}
+\label{sec:org3059043}
+
+\subsection*{Internet Options}
+\label{sec:orgb4973fe}
+\begin{itemize}
+\item Used to control and fine-tune many aspects of the systems interaction with the Internet
+\end{itemize}
+\subsubsection*{Connections}
+\label{sec:orge78cc3e}
+\begin{itemize}
+\item VPN, proxy settings
+\end{itemize}
+\subsubsection*{Security}
+\label{sec:orgde590bd}
+\begin{itemize}
+\item Can set different levels of access based on location of connection
+\begin{itemize}
+\item Home vs Public
+\end{itemize}
+\end{itemize}
+\subsubsection*{General}
+\label{sec:org1828195}
+\begin{itemize}
+\item Control display
+\end{itemize}
+\subsubsection*{Privacy}
+\label{sec:org0020f6d}
+\begin{itemize}
+\item Things like cookies, popups
+\end{itemize}
+\subsubsection*{Programs}
+\label{sec:org5aeefa0}
+\begin{itemize}
+\item Default browser
+\end{itemize}
+\subsubsection*{Advanced}
+\label{sec:org42fceed}
+\begin{itemize}
+\item Detailed configuration options
+\end{itemize}
+\subsection*{Display/Display Settings}
+\label{sec:org523dd8d}
+
+\subsubsection*{Resolution}
+\label{sec:org9237c5f}
+\begin{itemize}
+\item Important for LCDs and using second monitors
+\begin{itemize}
+\item LCD monitors in particular have ``native'' resolutions
+\end{itemize}
+\end{itemize}
+\subsubsection*{Color depth}
+\label{sec:org6b4d02d}
+\begin{itemize}
+\item Governing colors
+\end{itemize}
+\subsubsection*{Refresh rate}
+\label{sec:org0508465}
+\begin{itemize}
+\item Speed of refresh, different monitors have different refresh rates
+\end{itemize}
+\subsection*{User Accounts}
+\label{sec:org6abe339}
+\begin{itemize}
+\item This is for local user accounts only
+\begin{itemize}
+\item Domain accounts are managed on other computers and servers
+\end{itemize}
+\item Account name, type, password, icons
+\end{itemize}
+\subsection*{Folder Options}
+\label{sec:orga033a5f}
+
+\subsubsection*{View hidden files}
+\label{sec:org20270c4}
+\begin{itemize}
+\item ``dotfiles'' - system files preceded by ``.''
+\item These and other system files often hidden so users don;t mess around with them
+\item But sometimes us intrepid IT people need to see them
+\end{itemize}
+\subsubsection*{Hide extensions}
+\label{sec:orgb67c9de}
+\begin{itemize}
+\item Again, more likely for less schooled users who might find extensions confusing
+\begin{itemize}
+\item \texttt{.doc} \texttt{.exe} and such
+\end{itemize}
+\end{itemize}
+\subsubsection*{General options}
+\label{sec:org6129888}
+\begin{itemize}
+\item Size of folders, tabs
+\end{itemize}
+\subsubsection*{View options}
+\label{sec:org3ab01f0}
+\begin{itemize}
+\item Lists vs icons, size of icons, data shown
+\end{itemize}
+\subsection*{System}
+\label{sec:orgc5d4513}
+\begin{itemize}
+\item basic and fundamental computer information
+\item Version and edition of operating system
+\end{itemize}
+\subsubsection*{Performance (virtual memory)}
+\label{sec:org225ff93}
+\begin{itemize}
+\item keep tabs on speed and slowdowns
+\end{itemize}
+\subsubsection*{Remote settings}
+\label{sec:orgc9dd40b}
+\begin{itemize}
+\item Allow or disallow remote access
+\end{itemize}
+
+\subsection*{Windows Firewall}
+\label{sec:orgdf6e16b}
+\begin{itemize}
+\item Now integrated into operating system
+\item Protection from attacks - scans, malicious software
+\item \emph{Control Panel} --> \emph{Windows Firewall}
+\end{itemize}
+\subsection*{Power Options}
+\label{sec:org1459ebb}
+\begin{itemize}
+\item Can customize power usage
+\end{itemize}
+\subsubsection*{Hibernate}
+\label{sec:org61fbf31}
+\begin{itemize}
+\item deeper sleep
+\begin{itemize}
+\item docs saved, applications paused
+\item common on laptops more than desktops
+\end{itemize}
+\end{itemize}
+\subsubsection*{Power plans}
+\label{sec:org4fa0199}
+\begin{itemize}
+\item Settings for when and how power is used
+\item Usually battery vs plugged in
+\end{itemize}
+\subsubsection*{Sleep/suspend}
+\label{sec:org1daf538}
+\begin{itemize}
+\item Open apps saved in memory
+\item Can move to hibernation if not used for longer periods
+\end{itemize}
+\subsubsection*{Standby}
+\label{sec:orgf348472}
+
+\subsection*{Credential Manager}
+\label{sec:org6d70240}
+\begin{itemize}
+\item Centralized management of web and Windows credentials
+\begin{itemize}
+\item Different sites have different access protocols
+\item Can create Windows certificates
+\end{itemize}
+\end{itemize}
+\subsection*{Programs and features}
+\label{sec:org79c85ef}
+\begin{itemize}
+\item Installed applications
+\begin{itemize}
+\item can uninstall, look at the size and version
+\end{itemize}
+\item Can activate and deactivate Windows features such as IIS
+\end{itemize}
+\subsection*{HomeGroup}
+\label{sec:orgd862108}
+\begin{itemize}
+\item Only Windows 7 and 8
+\item Share music, pictures, between members
+\item A network for the home
+\item Set password on each machine
+\end{itemize}
+\subsection*{Devices and Printers}
+\label{sec:org5e9933b}
+\begin{itemize}
+\item On place to put information and configuration of many kinds of devices
+\item Does the same stuff as Device Manager, but simpler
+\end{itemize}
+\subsection*{Sound}
+\label{sec:org93260c9}
+\begin{itemize}
+\item Output options - speakers, headphones
+\item Volume, microphone management
+\end{itemize}
+\subsection*{Troubleshooting}
+\label{sec:org3cf7ce7}
+\begin{itemize}
+\item The OS can target and predict some problems
+\end{itemize}
+\begin{itemize}
+\item Sometimes (\emph{sometimes}) a useful place to start investigating
+\end{itemize}
+\subsection*{Network and Sharing Center}
+\label{sec:org37a07ce}
+\begin{itemize}
+\item Overview of all network attachment points
+\begin{itemize}
+\item Wired (Ethernet), wireless (WiFi)
+\item Network adapter settings - very important!
+Look at IPv4 and IPv6 settings
+\end{itemize}
+\end{itemize}
+\subsection*{Device Manager}
+\label{sec:orgcba4c48}
+\begin{itemize}
+\item Manage devices and drivers
+\item When things aren't working will often find clues here first
+\end{itemize}
+\subsection*{BitLocker}
+\label{sec:org2f16c13}
+\begin{itemize}
+\item Whole disk encryption
+\item TPM - Trusted Platform Module is usually recommended and needed for real encryption
+\end{itemize}
+\subsection*{Sync Center}
+\label{sec:org78e9af6}
+\begin{itemize}
+\item Store files so that they are available when you are offline
+\item Only available in Pro and higher
+\end{itemize}
+\section*{1.7 – Summarize application installation and configuration concepts.}
+\label{sec:orgc398381}
+
+\subsection*{System requirements}
+\label{sec:orgac6c151}
+
+\subsubsection*{Drive space}
+\label{sec:org4668839}
+\subsubsection*{RAM}
+\label{sec:orgfcd5184}
+
+\subsection*{OS requirements}
+\label{sec:org7123424}
+
+\subsubsection*{Compatibility}
+\label{sec:orgffb275c}
+
+\subsection*{Methods of installation and deployment}
+\label{sec:orgd0f929a}
+
+\subsubsection*{Local (CD/USB)}
+\label{sec:orgbdc7366}
+\subsubsection*{Network-based}
+\label{sec:orge551ea8}
+
+\subsection*{Local user permissions}
+\label{sec:orgc8322ca}
+
+\subsubsection*{Folder/file access for installation}
+\label{sec:org6c19cce}
+
+\subsection*{Security considerations}
+\label{sec:org35aa353}
+
+\subsubsection*{Impact to device}
+\label{sec:org72ed920}
+\subsubsection*{Impact to network}
+\label{sec:org81b537f}
+
+\section*{1.8 – Given a scenario, configure Microsoft Windows networking on a client/desktop.}
+\label{sec:org27828f7}
+
+\subsection*{HomeGroup vs. Workgroup}
+\label{sec:org64a983c}
+\subsection*{Domain setup}
+\label{sec:org61642c2}
+\subsection*{Network shares/administrative shares/mapping drives}
+\label{sec:orge68e581}
+\subsection*{Printer sharing vs. network printer mapping}
+\label{sec:orgf6b2d75}
+\subsection*{Establish networking connections}
+\label{sec:orgd20791f}
+
+\subsubsection*{VPN}
+\label{sec:org58b7cc9}
+\subsubsection*{Dial-up}
+\label{sec:org6aaaa97}
+\subsubsection*{Wireless}
+\label{sec:org663d74b}
+\subsubsection*{Wired}
+\label{sec:org362ca69}
+\subsubsection*{WWAN (Cellular)}
+\label{sec:org2c0a05b}
+
+\subsection*{Proxy settings}
+\label{sec:org6141a05}
+\subsection*{Remote Desktop Connection}
+\label{sec:org48c5caf}
+\subsection*{Remote Assistance}
+\label{sec:org5442044}
+\subsection*{Home vs. Work vs. Public network settings}
+\label{sec:org1cbe83b}
+\subsection*{Firewall settings}
+\label{sec:org6cfab70}
+
+\subsubsection*{Exceptions}
+\label{sec:orge3bc3b2}
+\subsubsection*{Configuration}
+\label{sec:org31ccc15}
+\subsubsection*{Enabling/disabling Windows Firewall}
+\label{sec:orgf657eca}
+
+\subsection*{Configuring an alternative IP address in Windows}
+\label{sec:orgbe9bc7a}
+
+\subsubsection*{IP addressing}
+\label{sec:org79ca31e}
+\subsubsection*{Subnet mask}
+\label{sec:org570529f}
+\subsubsection*{DNS}
+\label{sec:org7ed79f9}
+\subsubsection*{Gateway}
+\label{sec:orgb91f4d4}
+
+\subsection*{Network card properties}
+\label{sec:org6ea8a32}
+
+\subsubsection*{Half duplex/full duplex/auto}
+\label{sec:org5646a36}
+\subsubsection*{Speed}
+\label{sec:org7b0baea}
+\subsubsection*{Wake-on-LAN}
+\label{sec:orgca8202a}
+\subsubsection*{QoS}
+\label{sec:orgf6acacd}
+\subsubsection*{BIOS (on-board NIC)}
+\label{sec:org06edf15}
+
+\section*{1.9 – Given a scenario, use features and tools of the Mac OS and Linux client/desktop operating systems.}
+\label{sec:org4bdb71a}
+
+\subsection*{Best practices}
+\label{sec:orgd3216ec}
+
+\subsubsection*{Scheduled backups}
+\label{sec:org5c274a7}
+\subsubsection*{Scheduled disk maintenance}
+\label{sec:orgf01a974}
+\subsubsection*{System updates/App Store}
+\label{sec:orgea1c135}
+\subsubsection*{Patch management}
+\label{sec:org95c7bb1}
+\subsubsection*{Driver/firmware updates}
+\label{sec:org06e81e2}
+\subsubsection*{Antivirus/Anti-malware updates}
+\label{sec:org772a5c3}
+
+\subsection*{Tools}
+\label{sec:org64bbebe}
+
+\subsubsection*{Backup/Time Machine}
+\label{sec:org8fa5d5a}
+\subsubsection*{Restore/Snapshot}
+\label{sec:org1d5c603}
+\subsubsection*{Image recovery}
+\label{sec:org684f656}
+\subsubsection*{Disk maintenance utilities}
+\label{sec:orgcb1ee28}
+\subsubsection*{Shell/Terminal}
+\label{sec:orga21e9d6}
+\subsubsection*{Screen sharing}
+\label{sec:org859a600}
+\subsubsection*{Force Quit}
+\label{sec:org53e851b}
+
+\subsection*{Features}
+\label{sec:orga957dee}
+
+\subsubsection*{Multiple desktops/Mission Control}
+\label{sec:org8b0f054}
+\subsubsection*{Key Chain}
+\label{sec:orgbf0e6e1}
+\subsubsection*{Spot Light}
+\label{sec:org8adaf07}
+\subsubsection*{iCloud}
+\label{sec:orgc515f0c}
+\subsubsection*{Gestures}
+\label{sec:org6fcc10e}
+\subsubsection*{Finder}
+\label{sec:org4f44a31}
+\subsubsection*{Remote Disc}
+\label{sec:org75b9c9f}
+\subsubsection*{Dock}
+\label{sec:org3937dcf}
+\subsubsection*{Boot Camp}
+\label{sec:org08bb612}
+
+\subsection*{Basic Linux commands}
+\label{sec:org8d6a8e5}
+
+\subsubsection*{ls}
+\label{sec:org79e252d}
+\subsubsection*{grep}
+\label{sec:orga28e2fa}
+\subsubsection*{cd}
+\label{sec:org636466a}
+\subsubsection*{shutdown}
+\label{sec:orgef26994}
+\subsubsection*{pwd vs. passwd}
+\label{sec:org1f0d145}
+\subsubsection*{mv}
+\label{sec:orge3334c4}
+\subsubsection*{cp}
+\label{sec:orgde71b35}
+\subsubsection*{rm}
+\label{sec:orgf776f48}
+\subsubsection*{chmod}
+\label{sec:org312d894}
+\subsubsection*{chown}
+\label{sec:orgf503e78}
+\subsubsection*{iwconfig/ifconfig}
+\label{sec:org2c6ce12}
+\subsubsection*{ps}
+\label{sec:org11fbbc5}
+\subsubsection*{su/sudo}
+\label{sec:org7ab959d}
+\subsubsection*{apt-get}
+\label{sec:org266183a}
+\subsubsection*{vi}
+\label{sec:org7bb065f}
+\subsubsection*{dd}
+\label{sec:org011566e}
+\subsubsection*{kill}
+\label{sec:org85cdb6d}
+
+\section*{2.1 – Summarize the importance of physical security measures.}
+\label{sec:org3b26dfd}
+
+\subsection*{Mantrap}
+\label{sec:org1cdb7db}
+\subsection*{Badge reader}
+\label{sec:org87c68f8}
+\subsection*{Smart card}
+\label{sec:org27d2abc}
+\subsection*{Security guard}
+\label{sec:orgaa1ce3e}
+\subsection*{Door lock}
+\label{sec:orgef2df88}
+\subsection*{Biometric locks}
+\label{sec:orgfc500e1}
+\subsection*{Hardware tokens}
+\label{sec:orgd66bee2}
+\subsection*{Cable locks}
+\label{sec:org73d0648}
+\subsection*{Server locks}
+\label{sec:orge232895}
+\subsection*{USB locks}
+\label{sec:org581b99b}
+\subsection*{Privacy screen}
+\label{sec:orgb89b525}
+\subsection*{Key fobs}
+\label{sec:orgeee05a9}
+\subsection*{Entry control roster}
+\label{sec:orgd7cd66c}
+
+\section*{2.2 – Explain logical security concepts.}
+\label{sec:orgb1b55d9}
+
+\subsection*{Active Directory}
+\label{sec:orgb0e061b}
+
+\subsubsection*{Login script}
+\label{sec:org5c5345f}
+\subsubsection*{Domain}
+\label{sec:org83dd826}
+\subsubsection*{Group Policy/Updates}
+\label{sec:orgbbbd00e}
+\subsubsection*{Organizational Units}
+\label{sec:org73dc2e5}
+\subsubsection*{Home Folder}
+\label{sec:org3d71204}
+\subsubsection*{Folder redirection}
+\label{sec:orgf41ea0f}
+
+\subsection*{Software tokens}
+\label{sec:org0c5dd57}
+\subsection*{MDM policies}
+\label{sec:org8023c37}
+\subsection*{Port security}
+\label{sec:org25b4491}
+\subsection*{MAC address filtering}
+\label{sec:org51554e1}
+\subsection*{Certificates}
+\label{sec:orgd9eb527}
+\subsection*{Antivirus/Anti-malware}
+\label{sec:orgfccdb36}
+\subsection*{Firewalls}
+\label{sec:org4f5e584}
+\subsection*{User authentication/strong passwords}
+\label{sec:org31f310c}
+\subsection*{Multifactor authentication}
+\label{sec:org9e3e0c0}
+\subsection*{Directory permissions}
+\label{sec:org731253a}
+\subsection*{VPN}
+\label{sec:org338244c}
+\subsection*{DLP}
+\label{sec:org0eda8ad}
+\subsection*{Access control lists}
+\label{sec:org83bafa6}
+\subsection*{Smart card}
+\label{sec:org4827b1f}
+\subsection*{Email filtering}
+\label{sec:orgd99630a}
+\subsection*{Trusted/untrusted software sources}
+\label{sec:org3ddd6d9}
+\subsection*{Principle of least privilege}
+\label{sec:org494c3c9}
+
+\section*{2.3 – Compare and contrast wireless security protocols and authentication methods.}
+\label{sec:orga698203}
+
+\subsection*{Protocols and Encryption}
+\label{sec:org48e9fff}
+
+\subsubsection*{WEP}
+\label{sec:orgf61b495}
+\subsubsection*{WPA}
+\label{sec:org5a3c640}
+\subsubsection*{WPA2}
+\label{sec:orgabf3908}
+\subsubsection*{TKIP}
+\label{sec:orgc228e66}
+\subsubsection*{AES}
+\label{sec:org426e632}
+
+\subsection*{Authentication}
+\label{sec:org0b8ea9b}
+
+\subsubsection*{Single-factor}
+\label{sec:orgbcd480d}
+\subsubsection*{Multifactor}
+\label{sec:org57c99f2}
+\subsubsection*{RADIUS}
+\label{sec:orgb049b59}
+\subsubsection*{TACACS}
+\label{sec:org0aac7c0}
+
+\section*{2.4 – Given a scenario, detect, remove, and prevent malware using appropriate tools and methods.}
+\label{sec:org2539a6e}
+
+\subsection*{Malware}
+\label{sec:org30a37a1}
+
+\subsubsection*{Ransomware}
+\label{sec:org29c365d}
+\subsubsection*{Trojan}
+\label{sec:orgbbfcf59}
+\subsubsection*{Keylogger}
+\label{sec:orgf205881}
+\subsubsection*{Rootkit}
+\label{sec:orgfee555d}
+\subsubsection*{Virus}
+\label{sec:org7dbe27b}
+\subsubsection*{Botnet}
+\label{sec:orgef01c79}
+\subsubsection*{Worm}
+\label{sec:org2d46681}
+\subsubsection*{Spyware}
+\label{sec:org6a57fe9}
+
+\subsection*{Tools and methods}
+\label{sec:org3b35795}
+
+\subsubsection*{Antivirus}
+\label{sec:org0c806e1}
+\subsubsection*{Anti-malware}
+\label{sec:orgf8f058d}
+\subsubsection*{Recovery console}
+\label{sec:orgfa8fdc4}
+\subsubsection*{Backup/restore}
+\label{sec:orgb44ba77}
+\subsubsection*{End user education}
+\label{sec:orgafd88cc}
+\subsubsection*{Software firewalls}
+\label{sec:org22f08c1}
+\subsubsection*{Secure DNS}
+\label{sec:org32c7b83}
+
+\section*{2.5 – Compare and contrast social engineering, threats, and vulnerabilities.}
+\label{sec:orgd2c825f}
+
+\subsection*{Social Engineering}
+\label{sec:org7a5b63f}
+
+\subsubsection*{Phishing}
+\label{sec:org8cda66b}
+\subsubsection*{Spear phishing}
+\label{sec:orgbde190c}
+\subsubsection*{Impersonation}
+\label{sec:orgd26de8c}
+\subsubsection*{Shoulder surfing}
+\label{sec:org136a898}
+\subsubsection*{Tailgating}
+\label{sec:org613af54}
+\subsubsection*{Dumpster diving}
+\label{sec:org564f79c}
+
+\subsection*{DDoS}
+\label{sec:org54046aa}
+\subsection*{DoS}
+\label{sec:org8794bd1}
+\subsection*{Zero-day}
+\label{sec:org4991c41}
+\subsection*{Man-in-the-middle}
+\label{sec:org5594aa2}
+\subsection*{Brute force}
+\label{sec:org628cc19}
+\subsection*{Dictionary}
+\label{sec:orgb0b89d5}
+\subsection*{Rainbow table}
+\label{sec:org11aea3d}
+\subsection*{Spoofing}
+\label{sec:orgb6c204a}
+\subsection*{Non-compliant systems}
+\label{sec:orgb04d6d6}
+\subsection*{Zombie}
+\label{sec:org992073e}
+
+\section*{2.6 – Compare and contrast the differences of basic Microsoft Windows OS security settings.}
+\label{sec:org1742621}
+
+\subsection*{User and groups}
+\label{sec:org42696c7}
+
+\subsubsection*{Administrator}
+\label{sec:org1912dbd}
+\subsubsection*{Power user}
+\label{sec:orgcba5dec}
+\subsubsection*{Guest}
+\label{sec:orgb94a393}
+\subsubsection*{Standard user}
+\label{sec:orga9413f2}
+
+\subsection*{NTFS vs. Share permissions}
+\label{sec:orgc70e449}
+
+\subsubsection*{Allow vs. deny}
+\label{sec:orgb458f30}
+\subsubsection*{Moving vs. copying folders and files}
+\label{sec:orgfec5f7e}
+\subsubsection*{File attributes}
+\label{sec:org688bb18}
+
+\subsection*{Shared files and folders}
+\label{sec:org698cbef}
+
+\subsubsection*{Administrative shares vs. local shares}
+\label{sec:org74eb9f8}
+\subsubsection*{Permission propagation}
+\label{sec:org7af58d6}
+\subsubsection*{Inheritance}
+\label{sec:org72fe5dd}
+
+\subsection*{System files and folders}
+\label{sec:org8074bda}
+\subsection*{User authentication}
+\label{sec:orge4201da}
+
+\subsubsection*{Single sign-on}
+\label{sec:org4e6627d}
+
+\subsection*{Run as administrator vs. standard user}
+\label{sec:org13765c7}
+\subsection*{BitLocker}
+\label{sec:org1ddc79b}
+\subsection*{BitLocker to Go}
+\label{sec:org18f8914}
+\subsection*{EFS}
+\label{sec:org14ad54e}
+
+\section*{2.7 – Given a scenario, implement security best practices to secure a workstation.}
+\label{sec:orgfadc9f2}
+
+\subsection*{Password best practices}
+\label{sec:orgbc06177}
+
+\subsubsection*{Setting strong passwords}
+\label{sec:org25c6f31}
+\subsubsection*{Password expiration}
+\label{sec:org05f53f4}
+\subsubsection*{Screensaver required password}
+\label{sec:org3fdce33}
+\subsubsection*{BIOS/UEFI passwords}
+\label{sec:orgf1ca51b}
+\subsubsection*{Requiring passwords}
+\label{sec:org0e2ac68}
+
+\subsection*{Account management}
+\label{sec:org7600564}
+
+\subsubsection*{Restricting user permissions}
+\label{sec:orgb8b519c}
+\subsubsection*{Logon time restrictions}
+\label{sec:org5d734a8}
+\subsubsection*{Disabling guest account}
+\label{sec:orgc467d98}
+\subsubsection*{Failed attempts lockout}
+\label{sec:orgd87e7a3}
+\subsubsection*{Timeout/screen lock}
+\label{sec:orgd807d49}
+\subsubsection*{Change default admin user account/password}
+\label{sec:org5f81ca3}
+\subsubsection*{Basic Active Directory functions}
+\label{sec:org9d14fff}
+
+\begin{itemize}
+\item Account creation
+\label{sec:org7540fec}
+\item Account deletion
+\label{sec:org4cc7dbb}
+\item Password reset/unlock account
+\label{sec:orga5074be}
+\item Disable account
+\label{sec:org00260ef}
+\end{itemize}
+
+\subsection*{Disable autorun}
+\label{sec:orgd44a34b}
+\subsection*{Data encryption}
+\label{sec:org28e304a}
+\subsection*{Patch/update management}
+\label{sec:orgeda7ec4}
+
+\section*{2.8 – Given a scenario, implement methods for securing mobile devices.}
+\label{sec:org5c67a9b}
+
+\subsection*{Screen locks}
+\label{sec:orgaa2ef55}
+
+\subsubsection*{Fingerprint lock}
+\label{sec:org88fdc72}
+\subsubsection*{Face lock}
+\label{sec:org04ad633}
+\subsubsection*{Swipe lock}
+\label{sec:org795c2dc}
+\subsubsection*{Passcode lock}
+\label{sec:org3c8e035}
+
+\subsection*{Remote wipes}
+\label{sec:org0611fd4}
+\subsection*{Locator applications}
+\label{sec:orgd43579a}
+\subsection*{Remote backup applications}
+\label{sec:org7900320}
+\subsection*{Failed login attempts restrictions}
+\label{sec:orga3bebc3}
+\subsection*{Antivirus/Anti-malware}
+\label{sec:orga6e8234}
+\subsection*{Patching/OS updates}
+\label{sec:org7758ea3}
+\subsection*{Biometric authentication}
+\label{sec:orga6f5b49}
+\subsection*{Full device encryption}
+\label{sec:orgb5722eb}
+\subsection*{Multifactor authentication}
+\label{sec:org81da44a}
+\subsection*{Authenticator applications}
+\label{sec:org2e35d29}
+\subsection*{Trusted sources vs. untrusted sources}
+\label{sec:orgf0d87a9}
+\subsection*{Firewalls}
+\label{sec:orgea17a47}
+\subsection*{Policies and procedures}
+\label{sec:org30d2c5f}
+
+\subsubsection*{BYOD vs. corporate-owned}
+\label{sec:org613a395}
+\subsubsection*{Profile security requirements}
+\label{sec:org21f1d26}
+
+\section*{2.9 – Given a scenario, implement appropriate data destruction and disposal methods.}
+\label{sec:org91d42ba}
+
+\subsection*{Physical destruction}
+\label{sec:org2c80144}
+
+\subsubsection*{Shredder}
+\label{sec:org406ac64}
+\subsubsection*{Drill/hammer}
+\label{sec:org59743b0}
+\subsubsection*{Electromagnetic (Degaussing)}
+\label{sec:org09f004f}
+\subsubsection*{Incineration}
+\label{sec:org97c960a}
+\subsubsection*{Certificate of destruction}
+\label{sec:orgf15db3a}
+
+\subsection*{Recycling or repurposing best practices}
+\label{sec:org7983643}
+
+\subsubsection*{Low-level format vs. standard format}
+\label{sec:org70cef86}
+\subsubsection*{Overwrite}
+\label{sec:org4f1445a}
+\subsubsection*{Drive wipe}
+\label{sec:orgab4b9de}
+
+\section*{2.10 – Given a scenario, configure security on SOHO wireless and wired networks.}
+\label{sec:org4c7f2d8}
+
+\subsection*{Wireless-specific}
+\label{sec:orgc58d31d}
+
+\subsubsection*{Changing default SSID}
+\label{sec:org8e518d8}
+\subsubsection*{Setting encryption}
+\label{sec:orgcc944b1}
+\subsubsection*{Disabling SSID broadcast}
+\label{sec:org1586ac4}
+\subsubsection*{Antenna and access point placement}
+\label{sec:org6d46422}
+\subsubsection*{Radio power levels}
+\label{sec:orgfb2a149}
+\subsubsection*{WPS}
+\label{sec:org6622e0b}
+
+\subsection*{Change default usernames and passwords}
+\label{sec:org7a98827}
+\subsection*{Enable MAC filtering}
+\label{sec:orgb9be0cb}
+\subsection*{Assign static IP addresses}
+\label{sec:orgce1596b}
+\subsection*{Firewall settings}
+\label{sec:org9ec3128}
+\subsection*{Port forwarding/mapping}
+\label{sec:orgdd9c0a9}
+\subsection*{Disabling ports}
+\label{sec:org34d866c}
+\subsection*{Content filtering/parental controls}
+\label{sec:org0edccb6}
+\subsection*{Update firmware}
+\label{sec:orga1a0ebd}
+\subsection*{Physical security}
+\label{sec:orgabbc5fe}
+
+Domain 3.0 – Software Troubleshooting
+
+\section*{3.1 – Given a scenario, troubleshoot Microsoft Windows OS problems.}
+\label{sec:orgd23cbc5}
+
+\subsection*{Common symptoms}
+\label{sec:org772e1db}
+
+\subsubsection*{Slow performance}
+\label{sec:org9cf5f55}
+\subsubsection*{Limited connectivity}
+\label{sec:org163b129}
+\subsubsection*{Failure to boot}
+\label{sec:orgdd0574a}
+\subsubsection*{No OS found}
+\label{sec:org0d5a775}
+\subsubsection*{Application crashes}
+\label{sec:org79edfb9}
+\subsubsection*{Blue screens}
+\label{sec:org98b1f13}
+\subsubsection*{Black screens}
+\label{sec:org17ad531}
+\subsubsection*{Printing issues}
+\label{sec:org7d9dc28}
+\subsubsection*{Services fail to start}
+\label{sec:orgc75c868}
+\subsubsection*{Slow bootup}
+\label{sec:orgb349d24}
+\subsubsection*{Slow profile load}
+\label{sec:orgaa0d236}
+
+\subsection*{Common solutions}
+\label{sec:org891b9b3}
+
+\subsubsection*{Defragment the hard drive}
+\label{sec:org3cbf2b7}
+\subsubsection*{Reboot}
+\label{sec:org1b3e9e0}
+\subsubsection*{Kill tasks}
+\label{sec:org93de474}
+\subsubsection*{Restart services}
+\label{sec:orgea9cb7e}
+\subsubsection*{Update network settings}
+\label{sec:org91c70d6}
+\subsubsection*{Reimage/reload OS}
+\label{sec:orgbac9efd}
+\subsubsection*{Roll back updates}
+\label{sec:orgdd6ce6e}
+\subsubsection*{Roll back devices drivers}
+\label{sec:org48e0544}
+\subsubsection*{Apply updates}
+\label{sec:org9071569}
+\subsubsection*{Repair application}
+\label{sec:org50f9993}
+\subsubsection*{Update boot order}
+\label{sec:org33ad1b7}
+\subsubsection*{Disable Windows services/applications}
+\label{sec:org0f55e60}
+\subsubsection*{Disable application startup}
+\label{sec:orgd3a40dd}
+\subsubsection*{Safe boot}
+\label{sec:orgd4b063c}
+\subsubsection*{Rebuild Windows profiles}
+\label{sec:org581b27a}
+
+\section*{3.2 – Given a scenario, troubleshoot and resolve PC security issues.}
+\label{sec:orgd38d7ff}
+
+\subsection*{Common symptoms}
+\label{sec:orgf47b691}
+
+\subsubsection*{Pop-ups}
+\label{sec:org4819206}
+\subsubsection*{Browser redirection}
+\label{sec:org5bdea9f}
+\subsubsection*{Security alerts}
+\label{sec:org27ec7d1}
+\subsubsection*{Slow performance}
+\label{sec:org751d518}
+\subsubsection*{Internet connectivity issues}
+\label{sec:org0d4c5dc}
+\subsubsection*{PC/OS lockup}
+\label{sec:org4431d55}
+\subsubsection*{Application crash}
+\label{sec:org21b5407}
+\subsubsection*{OS updates failures}
+\label{sec:org1f0b134}
+\subsubsection*{Rogue antivirus}
+\label{sec:org12cdb95}
+\subsubsection*{Spam}
+\label{sec:org946f10b}
+\subsubsection*{Renamed system files}
+\label{sec:org7f01c2a}
+\subsubsection*{Disappearing files}
+\label{sec:org562fa6e}
+\subsubsection*{File permission changes}
+\label{sec:orgc32a180}
+\subsubsection*{Hijacked email}
+\label{sec:orgcc4f4c1}
+
+\begin{itemize}
+\item Responses from users regarding email
+\label{sec:org4f02778}
+\item Automated replies from unknown sent email
+\label{sec:orgceb4dac}
+\end{itemize}
+
+\subsubsection*{Access denied}
+\label{sec:orge15ca4d}
+\subsubsection*{Invalid certificate (trusted root CA)}
+\label{sec:org231f99d}
+\subsubsection*{System/application log errors}
+\label{sec:orge03b7f8}
+
+\section*{3.3 – Given a scenario, use best practice procedures for malware removal.}
+\label{sec:orgee94558}
+
+\subsection*{1. Identify and research malware symptoms.}
+\label{sec:orgf7e0905}
+\subsection*{2. Quarantine the infected systems.}
+\label{sec:orgc4a5981}
+\subsection*{3. Disable System Restore (in Windows).}
+\label{sec:orgcf35dfc}
+\subsection*{4. Remediate the infected systems.}
+\label{sec:orgeefbec8}
+
+\subsubsection*{a. Update the anti-malware software.}
+\label{sec:org4b07c86}
+\subsubsection*{b. Scan and use removal techniques (safe mode, pre-installation environment).}
+\label{sec:org2e1674d}
+
+\subsection*{5. Schedule scans and run updates.}
+\label{sec:org619dfdc}
+\subsection*{6. Enable System Restore and create a restore point (in Windows).}
+\label{sec:orgd61accb}
+\subsection*{7. Educate the end user.}
+\label{sec:orga78b248}
+
+\section*{3.4 – Given a scenario, troubleshoot mobile OS and application issues.}
+\label{sec:orge51515c}
+
+\subsection*{Common symptoms}
+\label{sec:orge4ce664}
+
+\subsubsection*{Dim display}
+\label{sec:org036f5a9}
+\subsubsection*{Intermittent wireless}
+\label{sec:org1ff4143}
+\subsubsection*{No wireless connectivity}
+\label{sec:org0453213}
+\subsubsection*{No Bluetooth connectivity}
+\label{sec:orge84d3be}
+\subsubsection*{Cannot broadcast to external monitor}
+\label{sec:orgcd9604e}
+\subsubsection*{Touchscreen non-responsive}
+\label{sec:org79aec6b}
+\subsubsection*{Apps not loading}
+\label{sec:orgeef9fc7}
+\subsubsection*{Slow performance}
+\label{sec:orgfc46354}
+\subsubsection*{Unable to decrypt email}
+\label{sec:orgb7f55af}
+\subsubsection*{Extremely short battery life}
+\label{sec:orgd8f622d}
+\subsubsection*{Overheating}
+\label{sec:org974f86b}
+\subsubsection*{Frozen system}
+\label{sec:org0096bbb}
+\subsubsection*{No sound from speakers}
+\label{sec:orgd2dbd0a}
+\subsubsection*{Inaccurate touch screen response}
+\label{sec:org09b7e98}
+\subsubsection*{System lockout}
+\label{sec:orgcfa6387}
+\subsubsection*{App log errors}
+\label{sec:orgba3336e}
+
+\section*{3.5 – Given a scenario, troubleshoot mobile OS and application security issues.}
+\label{sec:orgd42695f}
+
+\subsection*{Common symptoms}
+\label{sec:orgf06159f}
+
+\subsubsection*{Signal drop/weak signal}
+\label{sec:org8552640}
+\subsubsection*{Power drain}
+\label{sec:org00acc12}
+\subsubsection*{Slow data speeds}
+\label{sec:org0113ddd}
+\subsubsection*{Unintended WiFi connection}
+\label{sec:orgfc65eca}
+\subsubsection*{Unintended Bluetooth pairing}
+\label{sec:org97554c8}
+\subsubsection*{Leaked personal files/data}
+\label{sec:org8f31e4c}
+\subsubsection*{Data transmission over limit}
+\label{sec:org67fa7fc}
+\subsubsection*{Unauthorized account access}
+\label{sec:orgda7d93a}
+\subsubsection*{Unauthorized location tracking}
+\label{sec:org8f35778}
+\subsubsection*{Unauthorized camera/microphone activation}
+\label{sec:orge3726b1}
+\subsubsection*{High resource utilization}
+\label{sec:org018f7d7}
+
+Domain 4.0 – Operational Procedures
+
+\section*{4.1 – Compare and contrast best practices associated with types of documentation.}
+\label{sec:org31e24a6}
+
+\subsection*{Network topology diagrams}
+\label{sec:orgb0a09d5}
+\subsection*{Knowledge base/articles}
+\label{sec:orgc53e8ea}
+\subsection*{Incident documentation}
+\label{sec:orgf857e02}
+\subsection*{Regulatory and compliance policy}
+\label{sec:org86378d4}
+\subsection*{Acceptable use policy}
+\label{sec:org8715cab}
+\subsection*{Password policy}
+\label{sec:org81cba04}
+\subsection*{Inventory management}
+\label{sec:org0354c3b}
+
+\subsubsection*{Asset tags}
+\label{sec:org269df2c}
+\subsubsection*{Barcodes}
+\label{sec:org7b98468}
+
+\section*{4.2 – Given a scenario, implement basic change management best practices.}
+\label{sec:orgf3ec979}
+
+\subsection*{Documented business processes}
+\label{sec:orgcc39d2b}
+\subsection*{Purpose of the change}
+\label{sec:orgfae90f6}
+\subsection*{Scope the change}
+\label{sec:orgb5955f1}
+\subsection*{Risk analysis}
+\label{sec:org896e190}
+\subsection*{Plan for change}
+\label{sec:orgd7cb71f}
+\subsection*{End-user acceptance}
+\label{sec:org1a99d01}
+\subsection*{Change board}
+\label{sec:org4c075ea}
+
+\subsubsection*{Approvals}
+\label{sec:org54e2f47}
+
+\subsection*{Backout plan}
+\label{sec:org3532416}
+\subsection*{Document changes}
+\label{sec:orga56fb50}
+
+\section*{4.3 – Given a scenario, implement basic disaster prevention and recovery methods.}
+\label{sec:orge8ce928}
+
+\subsection*{Backup and recovery}
+\label{sec:org689fea1}
+
+\subsubsection*{Image level}
+\label{sec:org1973267}
+\subsubsection*{File level}
+\label{sec:org74b2210}
+\subsubsection*{Critical applications}
+\label{sec:org194c36f}
+
+\subsection*{Backup testing}
+\label{sec:org471e35e}
+\subsection*{UPS}
+\label{sec:org72f43b0}
+\subsection*{Surge protector}
+\label{sec:org22e4302}
+\subsection*{Cloud storage vs. local storage backups}
+\label{sec:orgfbfb160}
+\subsection*{Account recovery options}
+\label{sec:orgecbd186}
+
+\section*{4.4 – Explain common safety procedures.}
+\label{sec:orgadfddd8}
+
+\subsection*{Equipment grounding}
+\label{sec:org8edf5df}
+\subsection*{Proper component handling and storage}
+\label{sec:orge52f21e}
+
+\subsubsection*{Antistatic bags}
+\label{sec:org1fc7e3f}
+\subsubsection*{ESD straps}
+\label{sec:orgb8bc6af}
+\subsubsection*{ESD mats}
+\label{sec:org9041eb3}
+\subsubsection*{Self-grounding}
+\label{sec:orgbcdb1a6}
+
+\subsection*{Toxic waste handling}
+\label{sec:org846a010}
+
+\subsubsection*{Batteries}
+\label{sec:org3dddd6c}
+\subsubsection*{Toner}
+\label{sec:orge32511e}
+\subsubsection*{CRT}
+\label{sec:org9bc3625}
+\subsubsection*{Cell phones}
+\label{sec:orgcf12dc6}
+\subsubsection*{Tablets}
+\label{sec:orgcdd2df5}
+
+\subsection*{Personal safety}
+\label{sec:org7af1c60}
+
+\subsubsection*{Disconnect power before repairing PC}
+\label{sec:orgc81a892}
+\subsubsection*{Remove jewelry}
+\label{sec:org98318aa}
+\subsubsection*{Lifting techniques}
+\label{sec:org65cf344}
+\subsubsection*{Weight limitations}
+\label{sec:org38cbdf4}
+\subsubsection*{Electrical fire safety}
+\label{sec:org6549f38}
+\subsubsection*{Cable management}
+\label{sec:org67e424d}
+\subsubsection*{Safety goggles}
+\label{sec:org33e0c1d}
+\subsubsection*{Air filter mask}
+\label{sec:orgb1688fd}
+
+\subsection*{Compliance with government regulations}
+\label{sec:orgc7a5cd5}
+
+\section*{4.5 – Explain environmental impacts and appropriate controls.}
+\label{sec:org4eab707}
+
+\subsection*{MSDS documentation for handling and disposal}
+\label{sec:org98aca8f}
+\subsection*{Temperature, humidity level awareness, and proper ventilation}
+\label{sec:org6824108}
+\subsection*{Power surges, brownouts, and blackouts}
+\label{sec:org871b670}
+
+\subsubsection*{Battery backup}
+\label{sec:orgc1b46cd}
+\subsubsection*{Surge suppressor}
+\label{sec:org7bde999}
+
+\subsection*{Protection from airborne particles}
+\label{sec:org4b815ac}
+
+\subsubsection*{Enclosures}
+\label{sec:org315d186}
+\subsubsection*{Air filters/mask}
+\label{sec:org05d4747}
+
+\subsection*{Dust and debris}
+\label{sec:org39ae24f}
+
+\subsubsection*{Compressed air}
+\label{sec:org75d20a1}
+\subsubsection*{Vacuums}
+\label{sec:org0b8b29a}
+
+\subsection*{Compliance to government regulations}
+\label{sec:org56bd943}
+
+\section*{4.6 – Explain the processes for addressing prohibited content/activity, and privacy, licensing, and policy concepts.}
+\label{sec:org23f57bd}
+
+\subsection*{Incident response}
+\label{sec:org970ba6c}
+
+\subsubsection*{First response}
+\label{sec:org0e1df8b}
+
+\begin{itemize}
+\item Identify
+\label{sec:orgb4a6d0a}
+\item Report through proper channels
+\label{sec:org526b4ed}
+\item Data/device preservation
+\label{sec:org747ab60}
+\end{itemize}
+
+\subsubsection*{Use of documentation/documentationchanges}
+\label{sec:org1d90d75}
+\subsubsection*{Chain of custody}
+\label{sec:org095b802}
+
+\begin{itemize}
+\item Tracking of evidence/ documenting process
+\label{sec:org212f6c5}
+\end{itemize}
+
+\subsection*{Licensing/DRM/EULA}
+\label{sec:orgbad40d6}
+
+\subsubsection*{Open-source vs. commercial license}
+\label{sec:org99b9e1b}
+\subsubsection*{Personal license vs. enterprise licenses}
+\label{sec:org0ac7832}
+
+\subsection*{Regulated data}
+\label{sec:org6df233d}
+
+\subsubsection*{PII}
+\label{sec:org86a124f}
+\subsubsection*{PCI}
+\label{sec:org5f15b69}
+\subsubsection*{GDPR}
+\label{sec:org9de297c}
+\subsubsection*{PHI}
+\label{sec:orgef64e63}
+
+\subsection*{Follow all policies and security best practices}
+\label{sec:org9bbf205}
+
+\section*{4.7 – Given a scenario, use proper communication techniques and professionalism.}
+\label{sec:org4f389e7}
+
+\subsection*{Use proper language and avoid jargon, acronyms, and slang, when applicable}
+\label{sec:org797d2e9}
+\subsection*{Maintain a positive attitude/ project confidence}
+\label{sec:orgad4c6cc}
+\subsection*{Actively listen (taking notes) and avoid interrupting the customer}
+\label{sec:org948fda1}
+\subsection*{Be culturally sensitive}
+\label{sec:orgbc0c81f}
+
+\subsubsection*{Use appropriate professional titles, when applicable}
+\label{sec:orgb93c3ca}
+
+\subsection*{Be on time (if late, contact the customer)}
+\label{sec:orgd9e4419}
+\subsection*{Avoid distractions}
+\label{sec:org8803412}
+
+\subsubsection*{Enclosures}
+\label{sec:org93a6768}
+\subsubsection*{Air filters/mask}
+\label{sec:orgd3cf7b0}
+
+\subsection*{Dust and debris}
+\label{sec:org58cd988}
+
+\subsubsection*{Personal calls}
+\label{sec:org818fbff}
+\subsubsection*{Texting/social media sites}
+\label{sec:org32291c0}
+\subsubsection*{Talking to coworkers while interacting with customers}
+\label{sec:org7496962}
+\subsubsection*{Personal interruptions}
+\label{sec:org97a915a}
+
+\subsection*{Dealing with difficult customers or situations}
+\label{sec:org92f2458}
+
+\subsubsection*{Do not argue with customers and/or be defensive}
+\label{sec:orgaf432e4}
+\subsubsection*{Avoid dismissing customer problems}
+\label{sec:org3a04625}
+\subsubsection*{Avoid being judgmental}
+\label{sec:org807f12f}
+\subsubsection*{Clarify customer statements (ask open-ended questions to narrow the scope of the problem, restate the issue, or question to verify understanding)}
+\label{sec:org69a36ba}
+\subsubsection*{Do not disclose experiences via social media outlets}
+\label{sec:orgd5a8835}
+
+\subsection*{Set and meet expectations/timeline and communicate status with the customer}
+\label{sec:orgb4c5674}
+
+\subsubsection*{Offer different repair/ replacement options, if applicable}
+\label{sec:org2b66bb2}
+\subsubsection*{Provide proper documentation on the services provided}
+\label{sec:orgfc08e1a}
+\subsubsection*{Follow up with customer/user at a later date to verify satisfaction}
+\label{sec:orgea4e58d}
+
+\subsection*{Deal appropriately with customers’ confidential and private materials}
+\label{sec:org2f586f2}
+
+\subsubsection*{Located on a computer, desktop, printer, etc.}
+\label{sec:org40e319d}
+
+\section*{4.8 – Identify the basics of scripting.}
+\label{sec:org02f42c0}
+
+\subsection*{Script file types}
+\label{sec:org4df0707}
+
+\subsubsection*{.bat}
+\label{sec:orgc13760c}
+\subsubsection*{.ps1}
+\label{sec:org2d47724}
+\subsubsection*{.vbs}
+\label{sec:orgfb4bd31}
+\subsubsection*{.sh}
+\label{sec:org50595b2}
+\subsubsection*{.py}
+\label{sec:orgcf1c0db}
+\subsubsection*{.js}
+\label{sec:org2204f4b}
+
+\subsection*{Environment variables}
+\label{sec:orgf31e86f}
+\subsection*{Comment syntax}
+\label{sec:org1d59d3e}
+\subsection*{Basic script constructs}
+\label{sec:orge5876b3}
+
+\subsubsection*{Basic loops}
+\label{sec:org8129fa9}
+\subsubsection*{Variables}
+\label{sec:orgb6a2c71}
+
+\subsection*{Basic data types}
+\label{sec:org7d7c244}
+
+\subsubsection*{Integers}
+\label{sec:orgc5b678f}
+\subsubsection*{Strings}
+\label{sec:org3197b1e}
+
+\section*{4.9 – Given a scenario, use remote access technologies.}
+\label{sec:org89104f2}
+
+\subsection*{RDP}
+\label{sec:org3b4b907}
+\subsection*{Telnet}
+\label{sec:org92fd7e7}
+\subsection*{SSH}
+\label{sec:org5e72f75}
+\subsection*{Third-party tools}
+\label{sec:orgecdf766}
+
+\subsubsection*{Screen share feature}
+\label{sec:org7fcc88f}
+\subsubsection*{File share}
+\label{sec:org97c3aab}
+
+\subsection*{Security considerations of each access method}
+\label{sec:org3a55a2e}
+\end{document}

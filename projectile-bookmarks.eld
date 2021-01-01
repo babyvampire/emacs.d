@@ -1,0 +1,1 @@
+("~/.emacs.d/" "~/projects/fobsite/" "~/.emacs.d/packages/snow.el/" "~/org/comptia/sessionOne/")

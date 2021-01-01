@@ -1,0 +1,33 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#	new file:   config-course.org
+#	new file:   config.org
+#	new file:   formatting.org
+#	new file:   local-reveal.css
+#	new file:   outlineOne.org
+#	new file:   outlinetwo.org
+#
+# Untracked files:
+#	elisp/
+#	images/
+#	images2/
+#	org-mode+Reveal.js Slides-1.org
+#	org-mode+Reveal.js Slides-1.pdf
+#	org-mode+Reveal.js Slides-1.tex
+#	outline2b.org
+#	outlineOne.html
+#	outlineOne.pdf
+#	outlineOne.tex
+#	outlinetwo.html
+#	public/
+#	reveal.js
+#	test.html
+#	test.org
+#

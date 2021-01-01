@@ -1,0 +1,313 @@
+#+TITLE:  Documentation of some things I learn
+#+AUTHOR: Nick Taintor
+#+EMAIL:  nick.taintor@pm.me
+
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+LANGUAGE: en
+
+#+STARTUP: indent
+
+* <2020-05-12 Tue>      :ATTACH:psoriasis:CME:
+  :PROPERTIES:
+  :CREDITS: 1
+  :DATE: 2020-05-12
+  :ID:       EB925E03-92D1-4D50-A07A-1E3D553E6D90
+  :END:
+
+OK, getting this started, will figure out how to make this work better as I go along.
+
+CME from FreeCME about psoriasis:
+
+** certificate:
+https://drive.google.com/open?id=1YPdtgZvtfw7Nivlz4D1NNJGmTyVo2toi
+** material:
+[[https://learning.freecme.com/mycme/mycme.do?method=reviewComponent&wfmode=default&component=Content&rcode=6052153-2gZDZD&sidebar=true][CME material - audio and written]]
+
+** thoughts: 
+The message in the beginning of this is the degree to which psoriasis is both underdiagnosed and undertreated.  We see this with lots of chronic diseases, especially ones that are dermatological in nature, right?  PCPs might see some incipient, beginning psoriasis and diagnose it as some kind of dermatitis, prescribe a topical medication and move on.  But psoriasis is one of the many diseases in which early diagnosis and treatment makes a real difference - in this case psoriasis can be progressive and lead to more disabling sequelae such as psoriatic arthitis.  And the impact of psoriasis on psychiatric condition and treament can be severe - interaction between potent medications, depression, anxiety, substance abuse, and suicidal ideation.  There are some other chronically re-occuring messages as well - globally, the importance of communication between providers, and then within this area of autoimmune disorders, the preferability of biologics that target specifc parts of the immune response (in this case, TYK2 inhibitors) to agents that tone down the entire immune system (such as steroids or methotrexate).
+
+And it does seem like these TYK2 inhibitors are on the forefront of psoriasis treatment - when I looked up some of the newer medications he was talking about to see what their brand names might be, they were still all in phase 3 trials and known by their research names.  
+
+This reminds me of that patient from Arlington, the poor guy with the perfect storm of physical and life comorbidities - schizoaffective disorder, psoriasis (which now that I think about it had almost certainly progressed to PsA given his joint pain), the sole caregiver for his end-of-life mother, etc.  This kind of chronic pain and unmanageability can lead to exactly what happened to him - excessive and multiple medications which are prescribed by multiple providers, reliance on things like benzos to manage anxiety and pain (prescribed by his rheumatologist with whom I was never able to communicate).  I tried to do tiny little things to help - making him carry around a full list of his medications, personally carrying notes from me to his rheumatologist who never called me back, trying to get Arlington to help out with some of the care for his elderly mother - but he needed a systems approach not the floundering of an individual.
+
+Anyway, psoriasis is ugly but, as with some of the asthma stuff I've been looking at, biologics seem to be a good way to go in terms of reducing adverse effects and improving life.
+
+
+
+
+* <2020-05-13 Wed>      :ATTACH:constipation:CME:
+  :PROPERTIES:
+  :CREDITS: 1
+  :DATE: 2020-05-13
+  :ID:       AABBA8A3-D8E4-4B8C-8F4F-71B3D9E78A26
+  :END:
+
+** material:
+[[doi:10.1016/j.mayocp.2019.01.031][link to article in Mayo Clinic Proceedings]]
+** thoughts:
+  Chronic constipation is a pretty good topic to learn about and be reminded of.  Not only is it a thing that will affect someone's mood and function but it happens a whole bunch as a result of the medications I might prescribe to people.  Constipation is one of those side effects of psychiatric medications that people really don't think about enough, and I can think of some examples from my own clinical experience in which it was important and neglecting it would have made nonadherence to medications much more likely.
+
+  The ones I can remember offhand are some peple on clozapine - clozapine can be devastating in this regard and can lead to ugly things like toxic megacolon.  MAOIs are fairly notorious as well, to say nothing of people on opiate medications either for pain or MAT.  I can remember that oncology fellow from Bellevue saying over and over again - "everyone on opiate therapy needs to be on a meticulous bowel regimen."  You don't think about it after you start opiates if constipation presents itself, you start opiates and the bowel regimen at the same time.  This is probably true of starting people on MAOIs or clozapine as well.  And constipation is worth bringing up at the beginning of treatment, and in that good reassuring way you should talk about side effects - not to mention them as just the scary thing that might happen but to present them in the same phrase as the solution: "if THAT happens then no problem, we will do THIS."  So you bring it up as something to be aware of and in the same thought present its solution.  You want to bring it up in the beginning so that it is in the room in a concrete and non-fearful way, sort of like talking about impotence or alibido with SSRIs.  Because constipation and impotence are things that patients might avoid bringing up themselves - so you have to put the issue on the table in a comfortable, non-judgemental way.
+
+  Anyway, this paper.  1 in 6 people in the regular population have complaints of chronic constipation, more often elderly and more often female.  In evaluation, starting with a careful and specific review of constipation symptoms, not just the number of bowel movements daily.  Which are the components of constipation that are most distressing to the patient, are there any alarm symptoms - blood, pain, etc.  Careful medication review, not just psychiatric meds.  Only initial tests being CBC and colon CA screenings.
+
+  A good and reassuring thing in this paper is the emphasis on how reliable and safe most OTC laxative medications are - that even the stimulant laxatives such as bisacodyl are safe for long term use.  PEG being one of the safest and most reliable of the osmotic laxatives.  
+
+  I had never heard of pelvic floor biofeedback therapy before, and the author talks about how it is not readily available and even offers tips on how to word it so that it is more likely to be covered by insurance.  Of course it is routinely and easily offered at the Mayo Clinic!
+
+  Most of the other medications were interesting to read about but are a little out of my purview, at that point a gastroenterologist would clearly be involved.  The secretagogues were intersting though.  Oh and there was absolutely a new medication I learned about which could be important for opiate-induced constipation, that being the peripheral mu-opioid antagonists such as naloxegol which is a pegylated derivative of naloxone which does not cross the blood-brain barrier.  That is very good to know about, that it exists.  Same for most of the tests that would be ordered if OTC laxatives are ineffective - I'm hardly likely to be ordering any anal manometry.  Though I am happy that "defecography" is a word.  
+
+  So overall it was a good review and I am happy to know aboout some of the things that a gastroenterologist is capable of doing next.  I think the intial review of nomenclature and classification of constipation was interesting and important as well, grouping things into normal-transit constipation, slow-transit constipation, and pelvic floor dysfunction or defecatory disorders.  Also the intersection of IBS with this is important to think about as well, with constipation-predominant IBS being something I had not been aware of before.  Important because IBS has many psychiatric comorbidities.
+
+  A thing that occurred to me was that the authors bring up a couple of medications that might lead to constipation, mentioning specifically anticholinergic medication and opiates.  And while they mention agents to specifically target OIC they don't mention the medication that I have used a bunch for clozapine- and MAOI-induced constipation which is the procholinergic medication bethanechol (a muscarinic receptor agonist).  I've seen it work pretty well before and I'm tempted to ask Dr. Bharucha about it.  My understanding is that bethanechol is a good medication for these reasons because it also only minimally crosses the blood-brain barrier, and works for urinary retention as well.
+
+
+
+
+* <2020-05-16 Sat>      :ATTACH:DBS:parkinsons:CME:
+  :PROPERTIES:
+  :ID:       89D02585-ECF8-4375-AFAA-A9ECEB029648
+  :CREDITS: 0.5
+  :DATE: 2020-05-16
+  :END:
+
+** material: 
+[[https://www.medscape.org/viewarticle/924987_2][link to Medscape video]]
+** thoughts:                                                         :ATTACH:
+   :PROPERTIES:
+   :ID:       B2080CDF-D7C0-4B51-8384-63191DC6D2D6
+   :END:
+  This was a discussion of new methods in deep brain stimulation for the treatment of PD.  It was good for me because although I understood the primitive basics of how DBS works - put in an electrode and send current through it - this added some new dimensions to my understanding of how it works, and inteodusced some new ideas.  The earliest forms of DBS were introduced in the 1980s and were "open loop" in that they delievered a stimulus and that was that.  Not modifiable, not responsive to what was happening around the electrode, one-size-fits-all.  The newer kinds of DBS use "closed loop" as opposed to the older, initial forms of DBS which used "closed loop" setups (see attachment).  With a closed loop, you can record local field potentials (LFP) at the electrode to monitor the activity in that part of the brain.  This allows you to build a system which can respond to the activity seen there, whether this is a characterological physiopathology or response to medication.  In other words you can build in the same kind of customizable and learnable response that you see in cardiac pacemakers which might only intervene when an arrhythmia is detected.
+
+  In PD, these idiopathic electrical signs are called "oscillopathies" because they are disorders of neuronal oscillation.  With excessive synchronization in alpha and beta bands, the signal is lost.  This is the kind of mechanism that can lead to hypokinesis for example.  In closed loop DBS one could detect the characteristic oscillopathy and promote current to correct it.
+
+  A bunch of other stuff I had not realized about DBS in PD was which pathological symptoms can be corrected by DBS and which not.  Motor symptoms, pain, and sleep can be ameliorated by DBS but not apathy, dementia, psychosis, dysphagia, or speech impairment.  In fact, DBS can lead to a situation in which apathy is worsened if medication is withdrawn - so the ideal situation is one in which DBS and medication work together, a scenario only possible with a closed loop system.
+
+  There is good evidence that DBS should be started as soon as possible, as mamny of the later, more advanced symptoms do not respond to this kind of treatment.  So, early intervention of medication and DBS is important.  The fact that open loop systems can detect LFPs means that you can measure the effect of treatment.
+  I began to sense some slightly troubling notions about open loop adaptive systems and how they can respond to pathological EFPs.  For example, if you were using DBS for depression, you would presumably want it to work the same way, right?  To adapt to the presence of medication, to only activate when there is some indication from the LFP that someone's depressio nwas worsening.  I'll bet that some people might interpret this as a kind of mind-control, even more than people already think that about psychiatric medication. And you could imagine its misuse beyond what medication would do - if it could adapt to the pathophysiological signatures of depression and unhappiness, you could use it shape peoples' response to events.  Particularly since you can change in output of the device from outside.  Introduces a weird element to the whole thing and kind of reminds me of that patient I had ever so briefly at Arlington with a pure delusional disorder - he believed that a secret government organization could change peoples' emotions using some kind of energy beam from satellites.  
+
+
+* <2020-05-17 Sun>      :ATTACH:bipolar:CME:
+  :PROPERTIES:
+  :ID:       4789AB2F-07FA-4E58-B354-1989E5F0461D
+  :CREDITS: 0.5
+  :DATE: 2020-05-17
+  :END:
+
+** material:
+[[https://www.cmeinstitute.com/Psychlopedia/Pages/BipolarDisorder/15target/sec1/section.aspx][link to CME Institute material]]
+** notes
+There was not a huge amount in this that was new to me, but there were some interesting things.  For one thing, it was good to see it stated up front that "olanzapine, ziprasidone, and haloperidol have been downgraded to second-line options due to safety and tolerability concerns."  Cannot tell you how many times I had to get people off olanzapine after being admitted to the hospital for an acute manic episode.  They go on to say "For example, a patient might present with agitation and psychotic features severe enough to warrant a clinician prescribing a more sedating second-line agent like olanzapine as a temporary rescue medicine for immediate symptom reduction."  So it's good that this is clearly stated.  
+
+They mention the role of anxiety in bipolar disorder and manic episodes in particular, which has always been a difficult one for me and others to manage, but just really noting the often hopeful rather than scientific statement that "Acute manic agents on the whole often impact anxiety as the acute manic symptoms improve."  But of course this whole thing was really about acute manic episodes with psychosis and agitation so really more relevant to a hospital setting, and probably bipolar I.  For such a short article it was good that they mentioned the way akathisia can be mistaken for agitation.
+
+
+* <2020-05-17 Sun>      :ATTACH:bipolar:CME:
+  :PROPERTIES:
+  :CREDITS: 0.5
+  :DATE: 2020-05-17
+  :ID:       AD7971FC-8362-4F56-AEBD-940F69974778
+  :TITLE: Strategies for Shifting From Acute to Maintenance Treatment for Bipolar I Disorder
+  :END:
+
+** material:
+[[https://www.cmeinstitute.com/Psychlopedia/Pages/BipolarDisorder/15target/sec2/section.aspx?seeall][link to CME Institute material]]
+** notes:
+The review starts with a reference to a paper I don't believe I have looked at before a meta-analysis of naturalistic studies vs randomized controlled trials in recurrence of bipolar symptoms (Vázquez et al., “Recurrence Rates in Bipolar Disorder.”) which has some unpleasant numbers in it.  Though I think this exercise misquotes or misunderstands some of the numbers.  The overall message of the Vazquez piece is that recurrence of bipolar affective symptoms, even in people maintained on active treatment with medications, is high: %/year recurrence is 14.6 with antipsychotic + mood-stabilizer, 15.8 wuth antipsychotics alone, 23.8 with lithium, 29.9 with anticonvulsants alone, and 31.9 with placebo.  I guess I'm surprised by antipsychotics alone working slightly better than lithium alone, and maybe a little bit surprised by anticonvulsants alone being 29.9 compared to placebao of 31.9.  I guess I'd want to look more closely to see which anticonvulsants were being used.  
+
+Anyway, this is about shifting to maintenance treatment for bipolar I.  They start with the important point that early and effective treatment will overall make recurrence less likely and minimize neurodegeneration.  The good point is made in the beginning about not relying entirely on algorithms like the CANMAT solely to make treatment decisions - patients can have personal histories of particular medication efficacy and tolerability that need to be taken into consideration.  
+
+The polarity of their bipolar symptoms are also an important element in this.  CANMAT suggests multiple trials of first-line options before considering second-line options.  CANMAT recommendations for maintenance therapy in bipolar disorder are not too surpising - lithium is the best, along with quetiapine for maintenance treatment of depressive and manic mood states, lamotrigine best for maintenance from depressive polarity states rather than manic ones. Divalproex also for prevention of any mood episode.  Good to see aripiprazole LAI as a first-line treatment though evidence suggests it is better for suppression of manic rather than depressive mood states, which is something I have seen personally.  Olanzapine, risperidone, carbamazapine as secon-line agents which also matches with my personal experience.  Still keep being surprised by quetiapine as an efective first-line therapy for these - I guess I discount it because of the noorious adverse effects of somnolence and weight gain.  I have also never used asenapine for anything but I believe that it is just infrequently used in the US - you see a lot more of it in Canada and Europe.  Need to figure out why.
+
+In terms of assessment for medicstion therapy, also the reminder about suicide assessment - 26% of bipolar suicides occur within 6 weeks of discharge from inpatient.  Lithium still with best evidence for suicide prevention.  Lithium still gold standard for maintenance therapy but responders generally have lower rates of comorbidity 0- if anxiety is in the mix it predicts lower rate of lithium response.  Quetiapine + lithium seems to work better for reduction of mixed episodes than lithium alone.  Rapid cycling requires a careful and in-depth medical assessment for things like thyrotoxicity, and the reminder than mood stabilizer monotherapy is less effective for rapid cycling - combination better.  And for nonresponders, along with an assessment for treatment compliance, an evaluation of cytochrome P450 to assess for possible hypermetabolism.
+
+Discussion of nonadherence focussing on treatment alliance and insight, along with family / community support.  Lots of different psychosocial interventions, and consideration of an LAI.  CANMAT recommends patient education as the first-line psychosocial intervention, but I would put peer support up there as well instead of third-line the way CANMAT does.  I guess that depends largely on availability and opportunities of / for it.  Also good brief discussion of carefully assessing past medication tolerability as an indication for future directions.
+
+BIB:
+Vázquez, Gustavo H., Jessica N. Holtzman, María Lolich, Terence A. Ketter, and Ross J. Baldessarini. “Recurrence Rates in Bipolar Disorder: Systematic Comparison of Long-Term Prospective, Naturalistic Studies versus Randomized Controlled Trials.” European Neuropsychopharmacology: The Journal of the European College of Neuropsychopharmacology 25, no. 10 (October 2015): 1501–12. https://doi.org/10.1016/j.euroneuro.2015.07.013.
+
+
+* <2020-05-18 Mon>      :CME:ATTACH:bipolar:pediatric:
+  :PROPERTIES:
+  :ID:       28A58B56-0C42-4C73-A070-B1C23A0E5E9F
+  :CREDITS: 0.5
+  :DATE: 2020-05-18
+  :TITLE: Using Screening Tools and Diagnosing Bipolar Disorder in Pediatric Patients 
+  :END:
+
+** material:
+[[https://www.cmeinstitute.com/Psychlopedia/Pages/BipolarDisorder/14ocid/sec1/section.aspx][link to CME Institute material]]
+** notes:
+Well, it turns out I did this material back in February but I didn't take any notes!  So here are the notes I took this time:
+
+Some interesting and scary numbers about pediatric bipolar: bipolar disorder which emerges before the age of 18 is more likely to involve comorbid anxiety, more than 10 lifetime mood episodes, alcohol use disorder, and suicidality. 75% of patients who had pediatric bipolar disorder reported lifetime suicidal ideation.
+
+That's disturbing stuff and does make it clear why this needs to be diagnosed correctly and early. 
+
+There are lots of clear analogues with adult-onset depression, in particular that it is often misdiagnosed as un: polar depression. And of course even more difficult to distinguish from characterological and personality issues in adolescence when everyone is a little crazy and oppositional.
+
+As with adults, the keys seem to be sleep dysregulation and excessive irritability and rage.  And more time depressed than manic.
+
+"According to a systematic review12 of studies that directly compared the phenomenology of mania in different age groups, irritability and aggression are key features of childhood-onset bipolar disorder; activity/energy and elation/euphoria are the most prominent symptoms in adolescent-onset bipolar disorder; and pressured speech and changes in cognition are most characteristic of adult-onset bipolar disorder. Elation/euphoria is also a common symptom of mania in children with bipolar disorder."
+
+And of course the goddamned mixed episodes. The article points out that mixed episodes appear to be more common in children.
+
+All this confusion means that family history well be even more important in this population. In fact, it seems to be even more suggestive here: "a study by Birmaher and colleagues found that, among children aged 6 to 18 years, rates of bipolar spectrum disorders were 14 times higher among those whose parents had been diagnosed with bipolar disorder than among those without a parental history."
+
+The symptoms with highest specificity are elated, expansive and euphoric mood; decreased need for sleep (not insomnia); hypersexuality; and mood swings/lability. But many symptoms will overlap, and of course there are comorbidities. The most common co-occurring disorder is ADHD with comorbidity rates from 60-90%.
+
+Diagnostic tools:
+
+  • "K-SADS is a comprehensive diagnostic tool but requires training and takes 2 to 3 hours to administer. Substance use is common among patients with bipolar disorder and must be identified; the K-SADS assesses substance abuse in addition to affective, psychotic, anxiety, and behavioral disorders and can be used as part of a comprehensive assessment
+  • Preschool Age Psychiatric Assessment (PAPA)
+  • Family Interview for Genetic Studies (FIGS)26 or the Family Research Diagnostic Criteria (FH-RDC)
+  • "Symptom severity scales such as the Children’s Depression Rating Scale–Revised (CDRS-R) or the Young Mania Rating Scale (YMRS) may be used."
+  • "Self-report scales can be useful for prompting a detailed evaluation by a specialist, but sometimes they may be unreliable depending on a child’s capacity for insight. Self-report scales used in both clinical and research settings for screening manic and/or depressive symptoms include the General Behavioral Inventory29 (GBI); the 7 Up 7 Down Inventory30 (7U7D), which is an abbreviated version of the GBI; the Childhood Depression Inventory (CDI);31 and the Patient Health Questionnaire (PHQ-9)."
+
+
+* <2020-05-23 Sat>      :CME:bipolar:pediatric:ATTACH:
+  :PROPERTIES:
+  :ID:       60255343-2B01-4899-8A55-82C1C850F412
+  :CREDITS: 0.5
+  :DATE: 2020-05-23
+  :TITLE: Treating Bipolar Disorder in Pediatric Patients and Educating Patients and Parents
+  :TIME: 1hr
+  :END:
+
+** material:
+[[https://www.cmeinstitute.com/Psychlopedia/Pages/BipolarDisorder/14ocid/sec2/section.aspx][link to CME Institute material]]
+** notes:
+  This is about treating pediatric bipolar depression, which is of course a particular and difficult thing.  Most research and treatment focus on bipolar mania for obvious reasons; it can be more obvious, dangerous, and theatrical.  Bipolar depression can simply be sad and low and internal and not particularly obvious.
+
+  *Nonpharmacological interventions* are important but there is really (at this point, in allopathic psychiatry) no nonpharmacological treatment used as monotherapy.  Nonpharmacological and important interventions include family and patient psychoeducation; skill-building; relapse prevention; development of insight.  The article mentions the usefulness of mood-charting, which is something I have used to figure out lots of different disorders from bipolar disorder to premenstrual dysphoric disorder.  I am sure there are different kinds of apps for this and that would be somethign interesitng to look in to.
+
+  Adolescence itself is so difficult and triggering; it's as if kids are being continually triggered, I feel, if they are going through adolescence with an underlying mood disorder. 
+ 
+  *Pharmacological treatment* Only two medications FDA approved for the treatment of pediatric bipolar depression: lurasidone and OFC (olanzapine / fluoxetine combination).  I almost every case, antidepressants, especially SSRIs are contraindicated, especially if they are unopposed by mood stabilizers or antipsychotics.  There are some studies of lamotrigine and lithium which show some benefit but no palcebo-controleld trials as yet.
+  Although quetiapine shows some efficacy in treating bipolar depression in adults, no better than placebo in adolescents in studies to date.
+
+  Lurasidone seems to currently come out as the bast, with statistically significant reductions in depression in adolescents in a 6 week study - also reductionsin anxiety, increased quality of life and fucntioning, with minimal worsening of weight or other metabolic indicators.
+
+  OFC, on the other hand, showed good and significant reductions in a placebo-controled 8-week study of adolescent bipolar depression but with significant and uncool adverse effects including all the usual suspects for olanzapine: average 5.1 kg weight gain, increased prolactin, increased cholesterol, QTc etc.  
+  Then a brief discussion of the transition from pediatric care to adult care - in lots of clinics people age out of one provider or clinic into another.
+
+  My recollection of all my bipolar patients is just how challenging the management of depression and anxiety are for these patients.  Those were the patients where I would spend hours exhaustedly combing through the literature looking for answers.  And I did find a few not mentioned in this (obviously extremely brief) review article: for example using supertherapeutic doses of levothyroxine or others, using propranolol for anxiety, etc.  So much work to be done here!
+
+
+* Current Treatment Options and Emerging Agents for Schizophrenia                                             :ATTACH:CME:schizophrenia:SGA:
+  :PROPERTIES:
+  :ID:       F289876F-1502-4306-A301-6E8046D4FFF2
+  :CREDITS: 1
+  :DATE: 2020-05-25
+  :TITLE: Current Treatment Options and Emerging Agents for Schizophrenia
+  :TIME: 1.5 hr
+  :END:
+
+** material:
+[[https://www.cmeinstitute.com/Psychlopedia/Pages/psychosis/12coast/sec3/section.aspx][link to CME Institute material]]
+** notes:
+  This is a brief but pretty current (went on line in 2020, cites papers from late 2019) review of current and emerging agents for the treatment of schizophrenia.  I liked it because, though brief, went into discussions of much of the spectrum of the treatment of schizophrenia, from treating positive vs negative symptoms, treating cognitive deficits in schizophrenia, and full discussions of the comparative adverse effects and different mechanisms of different pharmacological agents.  The discussion concerns only SGAs snd cited at least one paper I had not yet seen.
+
+  I will recreate one of their charts which I found helpful in breaking down some basics:
+
+| Treatment characteristic or AE | Superior to other SGAs    | Inferior to other SGAs                     |
+|--------------------------------+---------------------------+--------------------------------------------|
+| Psychopathology                | clozapine                 | quetiapine                                 |
+|                                | olanzapine                | ziprasidone                                |
+|--------------------------------+---------------------------+--------------------------------------------|
+| Discontinuation                | _all cause_:              | quetiapine                                 |
+|                                | clozapine                 |                                            |
+|                                | olanzapine                |                                            |
+|                                | risperidone               |                                            |
+|                                | _intolerability related_: |                                            |
+|                                | risperidone               |                                            |
+|--------------------------------+---------------------------+--------------------------------------------|
+| Weight gain                    | ziprasidone               | olanzapine < non-clozapine SGAs            |
+|                                |                           | risperidone = greater risk than other SGAs |
+|--------------------------------+---------------------------+--------------------------------------------|
+| Increased prolactin            | N/A                       | risperidone                                |
+|                                |                           | amisulpride                                |
+|--------------------------------+---------------------------+--------------------------------------------|
+| Parkinsonism                   | olanzapine > ripseridone  | N/A                                        |
+|                                | (except for akathisia)    |                                            |
+|                                | ziprasidone > quetiapine  |                                            |
+|                                | (for dyskinesia)          |                                            |
+|--------------------------------+---------------------------+--------------------------------------------|
+| Sedation / somnolence          | N/A                       | clozapine                                  |
+|                                |                           | quetiapine                                 |
+|--------------------------------+---------------------------+--------------------------------------------|
+
+
+  I have to say there were not any big surprises for me on this breakdown - I have always found, from looking through research and from personal experience that quetiapine and ziprasidone were less effective for positive symptoms, and also not surprised to see that ziprasidone weas generally superior in having fewer adverse effects.  It goes along with my notion that some of ziprasidone's benign side effect profile goes along with its general inefficacy.  Though of course it turns out to really effective as an IM formulation for acute agitation and psychosis with few side effects and far superior in both of those senses to haloperidol.  But of course this review is specifically *not* about the acute use of any of these agents.
+
+  Here are some of the studies cited and their results: 
+    - (Huhn et al., 2019) - meta-analysis of 402 randomized placebo-controlled studies.  For the treatment of positive symptoms Clozapine, amisulpride, zotepine, olanzapine, and risperidone were all /slightly/ superior to others but the difference was small.
+    - (Kishimoto et al., 2019) - meta-analysis of oral SGA effectiveness.  No single agent showed evidence of superiority.
+    - (Leucht et al., 2017) - study of 60 years of placebo-controlled studies of oral antipsychotics.  *This* is an interesting paper for lots of interesting reasons but in this context is notable for the overall disappointing overall results of oral antipsychotics.  This meta-analysis showed that overall only 51% of participants had even minimal improvement in symptoms from oral antipsychotics.  
+
+  Overall, first-episode patients are more likely to respond to antipsychotics than those who have loinger histories of medicated schizophrenia, but first-episode patients are also more likely to experience side effects.  Those two things put together are pretty suggestive!
+
+  *Novel agents for treating schizophrenia*
+   - For tx of positive sx:
+     - Lumateperone - unique pharmacology - partial D_2 agonist *pre* synaptically, full D_2 *antagonist* postsynaptically.  Also an inverse SSRI and pro-glutamatergic activity.  Still being actively studied.
+     - Trace amine associated receptor 1 (TAAR1) agonist - SEP363856 and others.  Possibly works to treat positive, negative, and cognitive sx.
+     - CBD - conficting results
+     - Also, a selective D_3 antagonist and 5-HT_1A partial agonist F17464 was superior to placebo in reducing PANSS.
+   - For tx of negative sx:
+     - PDE10A inhibitor Lu AF11167 as possible monotherapy for negative sx
+     - Roluperidone - sigma-2 and 5-HT_2A antagonist
+     - pimavanserin - 5-HT_2A inverse agonist for the tx of Parkinsons psychosis
+     - TAK-831 - D-amino acid oxidase (DAAO) inhibitor, inhibits conversion of D-serine and increases glutamatergic tone
+   - Tx of cognitive sx:
+     - roluperidone may improve cognition
+   - Treatment resistance:
+     - until recently, only clozapine was the candidate for dealing with true treatment resistance.
+     - but clozapine only effective in about 40% of treatment resistant cases
+     - adjunctive pimavanserin - some that this can help residual positive and negative sx
+     - sodium benzoate (!!) - DAAO inhibitor and some efficacy with augmentation in resistance
+   - Nonadherence
+     - some treatment resistance is nonadherence ("pseudo-resistance")
+     - use LAIs to differentiate pseudo-resistance
+     - a fast-acting aripiprazole injection obviates the need for the initial period of oral augmentation
+   - Adverse effects:
+     - weight gain: opioid antagonist samidorphan combined with olanzapine leads to less weight gain
+     - not clear if above is superior to metformin augmentation
+     - TD: deuterabenazine and valbenazine (vesicular monoamine transporter-2 inhibitors - VMAT-2 inhibitors).  Effective and FDA approved for decreasing TD
+
+I guess as I can tell from how much I wrote down, this did seem like a really good review of all the stuff.
+
+*Bib:*
+
+Huhn, M., Nikolakopoulou, A., Schneider-Thoma, J., Krause, M., Samara, M., Peter, N., Arndt, T., Bäckers, L., Rothe, P., Cipriani, A., Davis, J., Salanti, G., & Leucht, S. (2019). Comparative efficacy and tolerability of 32 oral antipsychotics for the acute treatment of adults with multi-episode schizophrenia: A systematic review and network meta-analysis. Lancet (London, England), 394(10202), 939–951. https://doi.org/10.1016/S0140-6736(19)31135-3
+
+Kishimoto, T., Hagi, K., Nitta, M., Kane, J. M., & Correll, C. U. (2019). Long-term effectiveness of oral second-generation antipsychotics in patients with schizophrenia and related disorders: A systematic review and meta-analysis of direct head-to-head comparisons. World Psychiatry: Official Journal of the World Psychiatric Association (WPA), 18(2), 208–224. https://doi.org/10.1002/wps.20632
+
+Leucht, S., Leucht, C., Huhn, M., Chaimani, A., Mavridis, D., Helfer, B., Samara, M., Rabaioli, M., Bächer, S., Cipriani, A., Geddes, J. R., Salanti, G., & Davis, J. M. (2017). Sixty Years of Placebo-Controlled Antipsychotic Drug Trials in Acute Schizophrenia: Systematic Review, Bayesian Meta-Analysis, and Meta-Regression of Efficacy Predictors. The American Journal of Psychiatry, 174(10), 927–942. https://doi.org/10.1176/appi.ajp.2017.16121358
+
+
+
+
+
+
+
+
+* ISPS Webinar: COVID-19 and Psychosis
+:PROPERTIES:
+:DATE: <2020-06-25 Thu>
+:TITLE: ISPS webinar: COVID-19 and Psychosis
+:TIME: 3 hours
+
+** This was a three hour webinar composed of mental health care workers and people who have experienced psychosis.  Framed as a "trialogue" between the groups, a little like the NAMI framework
+
+** Some things:
+- People talked about a bunch of things (obviously) but some things were notable.
+- One that came up repeatedly was how the lived experience of COVID-19 served as a "bridge" between the sick and the (well) health workers.  "Now you know what it feels like" said a patient to one of the doctors.  As if some feelings of paranoia and contagion, not trusting the government, etc that are often part of a psychotic syndrome, are now generally shared feelings.
+- Dag Soderstrom - COVID has revealed whether we had established those "safe spaces" before the pandemic.
+- For some with psychosis, if their spaces were safe, the Covid period was actually healthier for them.
+- But for most, imaginably, isolation was destructive
+- The technological gap became more obvious
+- Rai Waddington - A global pandemic seems like just another one of my psychotic narratives - I've had alien conspiracies, I've had them all!  [Maybe it's easier for her to adjust]
+- Some people with pre-existing anxiety have had less anxiety during the pandemic - things are more quiet, some better and deeper development of personal relationships
+

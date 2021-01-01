@@ -1,0 +1,2 @@
+;;; Generated package description from /Users/nick/.emacs.d/elpa/diminish-buffer-20200712.1355/diminish-buffer.el  -*- no-byte-compile: t -*-
+(define-package "diminish-buffer" "20200712.1355" "Diminish (hide) buffers from buffer-menu" '((emacs "24.4")) :commit "2ef1e03458b9528a737814546aaee66067db649e" :authors '(("Shen, Jen-Chieh" . "jcs090218@gmail.com")) :maintainer '("Shen, Jen-Chieh" . "jcs090218@gmail.com") :url "https://github.com/jcs090218/diminish-buffer")

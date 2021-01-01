@@ -1,0 +1,7 @@
+"""
+This is for trsting and playing with different things in Python 3
+"""
+
+end = 10
+for i in range(0, end+1):
+    print(i)

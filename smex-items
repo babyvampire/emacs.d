@@ -1,0 +1,44 @@
+
+;; ----- smex-history -----
+(
+ eval-buffer
+ org-toggle-link-display
+ flyspell-mode
+ ispell
+ display-line-numbers-mode
+ line-number-mode
+ toggle-frame-fullscreen
+)
+
+;; ----- smex-data -----
+(
+ (rst-adjust . 3)
+ (revert-buffer . 7)
+ (display-line-numbers-mode . 2)
+ (org-version . 1)
+ (sunrise-sunset . 5)
+ (org-attach . 7)
+ (linum-mode . 1)
+ (describe-personal-keybindings . 3)
+ (org-attach-open . 4)
+ (emacs-version . 1)
+ (customize-group . 1)
+ (ispell . 2)
+ (upcase-region . 1)
+ (org-edit-src-save . 1)
+ (package-list-packages . 2)
+ (package-delete . 1)
+ (org-publish . 1)
+ (org-html-export-to-html . 1)
+ (org-latex-export-to-pdf . 1)
+ (org-export-dispatch . 1)
+ (eval-buffer . 2)
+ (org-search-view . 1)
+ (table-insert-row . 4)
+ (org-toggle-link-display . 2)
+ (emacs-lisp-byte-compile-and-load . 2)
+ (let-it-snow . 6)
+ (toggle-frame-fullscreen . 2)
+ (line-number-mode . 2)
+ (flyspell-mode . 1)
+)

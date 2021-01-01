@@ -1,0 +1,174 @@
+# Local IspellDict: en
+#+STARTUP: showeverything
+
+#+TITLE: Frankiesaurus
+
+#+SPDX-FileCopyrightText: 2020-2022 Nicholas Taintor
+#+SPDX-License-Identifier: CC-BY-SA-4.0
+
+# Config from emacs-reveal; this is a minimal config file that lives in the same directory as the presentation
+#+INCLUDE: config.org
+#+LANGUAGE: en
+
+# TOC was getting too long!
+#+OPTIONS: toc:nil
+
+#+OPTIONS: REVEAL_TITLE_SLIDE:nil
+
+#+OPTIONS: reveal_progress:nil
+
+#+OPTIONS: reveal_toc_footer:nil
+
+# Set autoplay to true for audio plugin.
+#+OER_REVEAL_AUDIO_SLIDESHOW_CONFIG: audioStartAtFragment: false, audio: { advance: -1, autoplay: false, defaultDuration: 0, defaultAudios: false, playerOpacity: 0.8, playerStyle: 'position: fixed; bottom: 9.5vh; left: 5%; width: 30%; height:30px; z-index: 33;' }
+
+#+REVEAL_INIT_SCRIPT: autoPlayMedia: true
+#+REVEAL_PLUGINS: (fullscreen)
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page001.jpg" data-background-size="contain" data-audio-src="./audio/page001.mp3"
+:END:
+
+#+ATTR_HTML: :style position: fixed; bottom: 5vh; left: 0%; width: 20vh; border-style: none; background-color: transparent;
+[[./img/littleguy.png]]
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page002.jpg" data-background-size="contain" data-audio-src="./audio/page002.mp3"
+:END:
+
+*   
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page003.jpg" data-background-size="contain" data-audio-src="./audio/page003.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page004.jpg" data-background-size="contain" data-audio-src="./audio/page004.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page005.jpg" data-background-size="contain" data-audio-src="./audio/page005.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page006.jpg" data-background-size="contain" data-audio-src="./audio/page006.mp3"
+:END:
+
+*   
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page007.jpg" data-background-size="contain" data-audio-src="./audio/page007.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page008.jpg" data-background-size="contain" data-audio-src="./audio/page008.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page009.jpg" data-background-size="contain" data-audio-src="./audio/page009.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page010.jpg" data-background-size="contain" data-audio-src="./audio/page010.mp3"
+:END:
+
+*   
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page011.jpg" data-background-size="contain" data-audio-src="./audio/page011.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page012.jpg" data-background-size="contain" data-audio-src="./audio/page012.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page013.jpg" data-background-size="contain" data-audio-src="./audio/page013.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page014.jpg" data-background-size="contain" data-audio-src="./audio/page014.mp3"
+:END:
+
+*   
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page015.jpg" data-background-size="contain" data-audio-src="./audio/page015.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page016.jpg" data-background-size="contain" data-audio-src="./audio/page016.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page017.jpg" data-background-size="contain" data-audio-src="./audio/page017.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page018.jpg" data-background-size="contain" data-audio-src="./audio/page018.mp3"
+:END:
+
+*   
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page019.jpg" data-background-size="contain" data-audio-src="./audio/page019.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page020.jpg" data-background-size="contain" data-audio-src="./audio/page020.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page021.jpg" data-background-size="contain" data-audio-src="./audio/page021.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page022.jpg" data-background-size="contain" data-audio-src="./audio/page022.mp3"
+:END:
+
+*   
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page023.jpg" data-background-size="contain" data-audio-src="./audio/page023.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page024.jpg" data-background-size="contain" data-audio-src="./audio/page024.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page025.jpg" data-background-size="contain" data-audio-src="./audio/page025.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page026.jpg" data-background-size="contain" data-audio-src="./audio/page026.mp3"
+:END:
+
+*   
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page027.jpg" data-background-size="contain" data-audio-src="./audio/page027.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page028.jpg" data-background-size="contain" data-audio-src="./audio/page028.mp3"
+:END:
+
+* 
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page029.jpg" data-background-size="contain" data-audio-src="./audio/page029.mp3"
+:END:

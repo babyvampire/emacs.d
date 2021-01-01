@@ -1,9 +1,7 @@
-# Ignore everything
-/*
-# Except for:
-!.gitignore
-!.init.el
-!.config.org
-!early-init.el
-!README.md
-!themes/
+/public/
+/elpa/emacs-reveal/
+/emacs-reveal-submodules/
+/test/
+**/*.git
+**/*.swp
+

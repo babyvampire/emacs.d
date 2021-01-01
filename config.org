@@ -1,6 +1,6 @@
-#+OPTIONS: auto-id: t
-
-<2020-08-10 Tue> Installed new stable emacs 27.1 from [[https://emacsformacosx.com/][emacs for mac osx]]
+#+OPTIONS: auto-id:t
+#+STARTUP: overview
+<2020-09-27 Sun 22:38> Installed new stable emacs 27.1-1 from [[https://emacsformacosx.com/][emacs for mac osx]]
 
 * Configuration 
 :PROPERTIES:
@@ -12,122 +12,203 @@ This is me moving my configuration to an org file as many people have suggested,
 I started this on 2020-05-26, and at first I will just lump my whole current init.el file on here as a code block, then I will start breaking it up and organizing it.
 
 And now of course (<2020-07-20 Mon>) I'm mining heavily from Protesilaos Stavrou ([[https://gitlab.com/protesilaos/dotfiles/-/blob/master/emacs/.emacs.d/emacs-init.org][his init]]), because he has lots of the same aesthetic notions I do and his literate .emacs is pretty great.  I owe the focused editing module to him.
+* Base settings
+** load paths
+Adding the load path for the packages I install manually - having them in .emacs.d will make them more portable
+#+begin_src emacs-lisp
+(add-to-list 'load-path "~/.emacs.d/packages/")
+;; set PATH
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+#+end_src
+** system $PATH - in macos, often does not load correctly into emacs
+- this starts the package [[https://github.com/purcell/exec-path-from-shell][exec-path-from-shell]] in any GUI frame
+#+begin_src emacs-lisp
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+#+end_src
+** Disable GUI components
+I still keep the menu - sometimes there are things there that I forget.  But this takes the tool bar and scroll bar out, as well as skipping the splash screen.
+#+begin_src emacs-lisp
+(use-package emacs
+  :init
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+  :config
+  (setq use-file-dialog nil)
+  (setq use-dialog-box t)
+  (setq use-dialog-box t)
+  (setq inhibit-splash-screen t)
+  (setq ring-bell-function 'ignore)
+  :bind (("C-z" . nil)
+	 ("C-x C-z" . nil)
+	 ("C-h h" . nil)))
+		  
+#+end_src
+
+** Always rebuild init and refresh package cache
+Because =config.org= --> ~config.el~, it helps avoid some problems if the derived file is deleted so that old elements don't creep in somehow.  A good place to do this (Prot's idea, as usual) is to do this at the =kill-emacs-hook= so that the rebuilding time happens at that time instead of at startup.
+
+#+begin_src emacs-lisp
+(use-package emacs
+  :config
+  (defun prot/rebuild-emacs-init ()
+    "Produce Elisp init from my Org dotemacs.
+Add this to `kill-emacs-hook', to use the newest file in the next
+session.  The idea is to reduce startup time, though just by
+rolling it over to the end of a session rather than the beginning
+of it."
+    (let ((init-el "~/.emacs.d/config.el")
+          (init-org "~/.emacs.d/config.org"))
+          (when init-el
+        (delete-file init-el))
+      (org-babel-tangle-file init-org init-el)))
+  :hook ((kill-emacs-hook . prot/rebuild-emacs-init)
+         (kill-emacs-hook . package-quickstart-refresh)))
+#+end_src
+** Remove modeline lighters
+This enables the removal of the text that indicates active modes on the mode line.  This below simply enables the package "diminish" that allows us to use the ":diminish" keyword.
+#+begin_src emacs-lisp
+(use-package diminish
+  :ensure
+  :after use-package)
+#+end_src
 ** Funnel all CUSTOMIZE to a single file
 I am trying to use the CUSTOMIZE option less, as I lose track of things that I have changed there and then they end up in init.el and other places.  But this following will at least (hopefully) put /all/ the CUSTOMIZE changes into a single file rather than potentially being scattered around and more confusing.
 #+begin_src emacs-lisp
 (setq custom-file "~/.emacs.d/.emacs-custom.el")
 (load custom-file)
-
 #+end_src
-
-* Package management
-:PROPERTIES:
-:CUSTOM_ID: h:8F1115ED-3C8D-4DEB-974B-82AE2C0139D4
-:END:
-  Package managers were declared in the init.el file, so no need to duplicate here.
-
-** Setting up helm and putting in some keybindings
-:PROPERTIES:
-:CUSTOM_ID: h:9DF64683-FE48-4243-8285-D3514D73D1EB
-:END:
+** This puts all the #BACKUP FILES# out of the way and limits them slightly
 
 #+BEGIN_SRC emacs-lisp
-(require 'helm-config)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x r b") 'helm-filtered-bookmarks)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-h b") 'helm-descbinds)
-(global-set-key (kbd "C-a") 'move-beginning-of-line) ; was having trouble with visual-line-mode
-(helm-mode 1)
-#+end_src
-
-** Helm descbinds
-:PROPERTIES:
-:CUSTOM_ID: h:107BC0D7-215A-45CF-B4E3-EB9073A0D070
-:END:
-[[https://github.com/emacs-helm/helm-descbinds]]
-Helm Descbinds provides an interface to emacs’ describe-bindings making the currently active key bindings interactively searchable with helm.
-#+BEGIN_SRC emacs-lisp
-(use-package helm-descbinds)
-(helm-descbinds-mode)
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
+  backup-by-copying t    ; Don't delink hardlinks
+  version-control t      ; Use version numbers on backups
+  delete-old-versions t  ; Automatically delete excess backups
+  kept-new-versions 20   ; how many of the newest versions to keep
+  kept-old-versions 5    ; and how many of the old versions to keep
+  )
 #+END_SRC
-
-Adding the load path for the packages I install manually - having them in .emacs.d will make them more portable
+** default browser to open links
+Current setting is to open the default macos browser, whatever it may be (set in Macos =System Preferences=)
 #+begin_src emacs-lisp
-(add-to-list 'load-path "~/.emacs.d/packages")
-;; set PATH
-(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setq browse-url-browser-function 'browse-url-default-browser)
 #+end_src
-
-** Making it possible to use quelpa-use-package
-:PROPERTIES:
-:CUSTOM_ID: h:C588438E-BB0C-408B-BF8A-501862FBAD85
-:END:
-
-#+begin_src emacs-lisp
-(quelpa
- '(quelpa-use-package
-   :fetcher git
-   :url "https://github.com/quelpa/quelpa-use-package.git"))
-(require 'quelpa-use-package)
-#+end_src
-
 * Personal Details
 :PROPERTIES:
 :CUSTOM_ID: h:4D9016D1-13E8-493A-BCD7-7EC445B84B71
 :END:
 
 #+begin_src emacs-lisp
-(setq user-full-name "Nick Taintor"
-    user-mail-address "nick.taintor@gmail.com"
-    calendar-latitude 38.820600
-    calendar-longitude -77.318260
-    calendar-location-name "Farirfax, VA")
+  (setq user-full-name "Nick Taintor"
+	user-mail-address "nick.taintor@gmail.com"
+	calendar-latitude 38.820600
+	calendar-longitude -77.318260
+	calendar-location-name "Farirfax, VA")
 
-;; global custom key settings
-(global-set-key (kbd "M-o") 'other-window)
+  (use-package solar
+    :load-path "packages/solar"
+    :config
+    (setq calendar-latitude 38.820600
+	  calendar-longitude -77.318260))
+
+    ;; global custom key settings
+    (global-set-key (kbd "M-o") 'other-window)
 #+end_src
 
-* Exec path from shell
-:PROPERTIES:
-:CUSTOM_ID: h:A1E572BC-7800-44E0-9351-D192E19F8CEC
-:END:
+* Org mode
+Trying to put all the org stuff in one place, under a =use-package= wrapper.  Otherwise all the little bits and pieces of Org Mode float around my configuration.  And the result has not been great - some things load, some don't, and I feel like it would be better to integrate them all under one umbrella.  Maybe then I will spend less time messing around with my config ha ha ha.
 
-The problem is that in mac OS the Emacs shell instance gets launched with default minimal environment variables.  exec-path-from-shell takes the $PATH from the actual shell environemnt when Emacs starts a shell
-#+BEGIN_SRC emacs-lisp
-;; exec-path-from-shell give the shell opened by emacs the same path as the user's shell
-(when (memq window-system '(mac ns x))
-  (exec-path-from-shell-initialize))
-#+END_SRC
+#+begin_src emacs-lisp
+(use-package org
+  :config
+  (setq org-directory "~/org")
+  (setq org-default-notes-file "~/org/notes.org")   ;; TODO get rid of other notes pointer
+  (setq org-agenda-files
+	'("~/org"
+	  "~/.emacs.d"))
+  ;;refile, todo
+  (setq org-refile-targets
+	'((org-agenda-files . (:maxlevel . 2))
+	  (nil . (:maxlevel . 2))))
+  (setq org-refile-use-outline-path t)
+  (setq org-refile-allow-creating-parent-nodes 'confirm)
+  (setq org-refile-use-cache t)
+  (setq org-reverse-note-order nil)
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "|" "DONE(D)" "CANCEL(C)")
+          (sequence "MEET(m)" "|" "MET(M)")
+          (sequence "STUDY(s)" "|" "STUDIED(S)")))
+  ;; (setq org-todo-keyword-faces               ;; TODO figure out todo-keywords
+  ;;       '(("MEET" . (:inherit font-lock-type-face))
+  ;;         ("STUDY" . (:inherit font-lock-constant-face))))
+  (setq org-fontify-done-headline nil)
+  (setq org-fontify-quote-and-verse-blocks t)
+  (setq org-fontify-whole-heading-line nil)
+  (setq org-fontify-whole-block-delimiter-line t)
+  (setq org-enforce-todo-dependencies t)
+  (setq org-enforce-todo-checkbox-dependencies t)
+  (setq org-pretty-entities t)
+  ;; tags
+  (setq org-tag-alist        ; TODO figure out tags!
+	'(("psych")
+	  ("frankie")))
+  ;; code blocks                      
+  (setq org-confirm-babel-evaluate nil)
+  (setq org-src-fontify-natively t)
+  (setq org-src-preserve-indentation t)
+  ;; general
+  (setq delete-selection-mode t)
+  (setq org-adapt-indentation nil)
+  (setq org-special-ctrl-a/e nil)
+  (setq org-special-ctrl-k nil)
+  (setq org-hide-emphasis-markers t)
+  (setq org-hide-leading-stars t)
+  (setq org-startup-indented t)    ; enables =org-indent-mode=
+  (setq org-superstar-mode t)
+  (setq org-descriptive-links t)   ; this is the variable used by org-toggle-link-display
+  (setq org-structure-template-alist     ; Changed in Org 9.3, emacs 27.1, now activated by C-c C-,
+	  '(("s" . "src")
+          ("E" . "src emacs-lisp")
+          ("e" . "example")
+          ("q" . "quote")
+          ("v" . "verse")
+          ("V" . "verbatim")
+          ("c" . "center")
+          ("C" . "comment")))
+  (setq org-return-follows-link nil))    ; Gets me into trouble otherwise	
+#+end_src
+- For =org-hide-emphasis-markers= - note this [[https://www.reddit.com/r/orgmode/comments/gss1g4/update_i_made_my_own_sbrorgemphasizemode_that/][Reddit post]] that looks to change the way this works so that you can edit these things better when the point is on them.
+
 * Org customization
 :PROPERTIES:
 :CUSTOM_ID: h:21CF83D2-02A3-48A9-8539-E957F50B6508
 :END:
+** Org source code block
+Editing source code blocks via =C-c '= when in a block of code with a language assigned to it
 
-#+begin_src emacs-lisp 
-
-
-(setq org-src-fontify-natively t
-      org-confirm-babel-evaluate nil
-      org-src-preserve-indentation t
-      org-link-abbrev-alist '(("att" . org-attach-expand-link))
-      )
+#+begin_src emacs-lisp
+(use-package org-src
+  :load-path "packages/org-src"
+  :after org
+  :config
+  (setq org-src-window-setup 'current-window)
+  (setq org-src-fontify-natively t)
+  (setq org-src-preserve-indentation t)
+  (setq org-src-tab-acts-natively t)
+  (setq org-edit-src-content-indentation 0))
 #+end_src
 
 This will add nicer-looking bullets:
 note: good old =org-bullets= has been superseded by [[https://github.com/integral-dw/org-superstar-mode][org-superstar!]]
 #+begin_src emacs-lisp
 (use-package org-superstar
-  :ensure t
-  :hook org-mode)
-  
+  :ensure
+  :after org
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
+  (setq org-superstar-remove-leading-stars t))
 #+END_SRC
-
-Hide emphasis markers
-- note this [[https://www.reddit.com/r/orgmode/comments/gss1g4/update_i_made_my_own_sbrorgemphasizemode_that/][Reddit post]] that looks to change the way this works so that you can /edit/ these things better when the point is on them.
-#+begin_src emacs-lisp
-(setq org-hide-emphasis-markers t)
-#+end_src
 
 Setting things up for annotated bibliography
 <2020-08-12 Wed> Have never used this, so turning off for now
@@ -203,25 +284,118 @@ Setting TODO keywords
       '((sequence "TODO(t)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)")))
 
 #+end_src
-** org hooks and display properties
-:PROPERTIES:
-:CUSTOM_ID: h:4DFD2093-C121-406E-A684-CC3AFD8D0C3E
-:END:
 
+* Consistent Org heading IDs (and anchor tags)
+:PROPERTIES:
+:CUSTOM_ID: h:9D8BBA15-B9BC-48F2-A25C-5A893F27BE27
+:END:
+From [[https://gitlab.com/protesilaos/dotfiles/-/blob/master/emacs/.emacs.d/emacs-init.org][Stavrou]] and this [[https://writequit.org/articles/emacs-org-mode-generate-ids.html][article]] (I swear I found the article before I saw Stavrou's setup!
+
+The issue is two-fold - wanting to quickly create unique internal links that will also survive export to HTML and the multiple rewrites of files.
+
+#+begin_src emacs-lisp
+(use-package org-id
+  :load-path "packages/org-id"
+  :after org
+  :commands (contrib/org-get-id
+             contrib/org-id-headlines)
+  :config
+  (setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id))
+
+  (defun eos/org-custom-id-get (&optional pom create prefix)
+    "Get the CUSTOM_ID property of the entry at point-or-marker
+POM. If POM is nil, refer to the entry at point. If the entry
+does not have an CUSTOM_ID, the function returns nil. However,
+when CREATE is non nil, create a CUSTOM_ID if none is present
+already. PREFIX will be passed through to `org-id-new'. In any
+case, the CUSTOM_ID of the entry is returned."
+    (interactive)
+    (org-with-point-at pom
+      (let ((id (org-entry-get nil "CUSTOM_ID")))
+        (cond
+         ((and id (stringp id) (string-match "\\S-" id))
+          id)
+         (create
+          (setq id (org-id-new (concat prefix "h")))
+          (org-entry-put pom "CUSTOM_ID" id)
+          (org-id-add-location id (buffer-file-name (buffer-base-buffer)))
+          id)))))
+
+(defun eos/org-add-ids-to-headlines-in-file ()
+  "Add CUSTOM_ID properties to all headlines in the current
+   file which do not already have one. Only adds ids if the
+   `auto-id' option is set to `t' in the file somewhere. ie,
+   ,#+OPTIONS: auto-id:t"
+  (interactive)
+  (save-excursion
+    (widen)
+    (goto-char (point-min))
+    (when (re-search-forward "^#\\+OPTIONS:.*auto-id:t" (point-max) t)
+      (org-map-entries (lambda () (eos/org-custom-id-get (point) 'create))))))
 
 #+end_src
 
+* Applications and utilities
+** Calendar
+This is used by a number of different applications and for many functions.  It turns out that a bunch of the terms called by =Calendar= (such as =displayed-month=, =displayed-year= etc) are not available to other applications until it is run explicitly.  So unless =Calendar= is set up you can get error messages about ~void-variable~
+
+Below, not setting lat/long because it is defined above in [[#h:4D9016D1-13E8-493A-BCD7-7EC445B84B71][Personal Details]]
+
 #+begin_src emacs-lisp
+(use-package calendar;; not setting lat/long because it is defined above in [[#h:4D9016D1-13E8-493A-BCD7-7EC445B84B71][Personal Details]]
+  :config
+  (setq calendar-time-display-form
+	'(24-hours ":" minutes
+		   (when time-zone
+		     (concat " (" time-zone ")"))))
+  (setq calendar-week-start-day 1)       ; start week on Monday
+  (setq calendar-date-style 'iso)
 
-(with-eval-after-load 'org       
-  (setq org-startup-indented t
-	org-fontify-done-headline t
-	org-pretty-entities t
-	show-paren-mode t
-	org-hide-emphasis-markers t
-	org-superstar-mode t)
-  (add-hook 'org-mode-hook #'visual-line-mode))
+  (use-package lunar
+    :load-path "packages/lunar"
+    :config
+    (setq lunar-phase-names
+	  '("New Moon"
+	    "First Quarter Moon"
+	    "Fancypants Moon"
+	    "Last Quarter Moon")))
 
+  :hook (calendar-today-visible-hook . calendar-mark-today))
+#+end_src
+** org-journal
+from [[https://github.com/bastibe/org-journal][org-journal github]]
+#+begin_src emacs-lisp
+(use-package org-journal
+  :after org
+  :ensure t
+  :commands (org-journal-new-entry)
+  :bind (("C-c j" . org-journal-new-entry))
+  ;;:hook ((org-journal-mode . prot/olivetti-mode)
+  ;;       (org-journal-mode . org-indent-mode))
+  :defer 0.5
+  :init
+  ;; Change default prefix key; needs to be set before loading org-journal
+  (setq org-journal-prefix-key "C-c j ")
+  :config
+  (setq org-journal-dir "~/org/journal/"
+	;; try to bring the config to every journal file
+	org-journal-file-header "#+SETUPFILE: ~/.emacs.d/config.org"
+	org-journal-date-format "%A, %d %B %Y"
+	;; Carry over TODO items and items explicitly marked
+        org-journal-carryover-items "+carryover|+TODO=\"TODO\""
+	org-journal-enable-agenda-integration t
+	;; Remove empty journals after carryover
+        org-journal-carryover-delete-empty-journal 'always
+	org-journal-file-type 'monthly))
+   
+#+end_src
+** which-key
+Found at this [[https://github.com/justbur/emacs-which-key][github]], I find which-key very useful at this point.  This mode displays the key bindings that /could/ follow the binding that you start entering.
+
+#+begin_src emacs-lisp
+(use-package which-key
+    :config
+    (which-key-mode))
 #+end_src
 
 * Projectile
@@ -236,6 +410,75 @@ From [[https://projectile.mx/][Projectile home page]]
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1))
+#+end_src
+* Ivy / Counsel / Swiper
+From abo-abo, whose Github is [[https://github.com/abo-abo/swiper][here]].
+
+(since it's cool and this seems like the right place for it, here's =smex=, a better M-x which integrates =IDO=)
+*smex*:
+#+begin_src emacs-lisp
+(use-package smex
+  :ensure t)
+#+end_src
+
+*Ivy*:
+#+begin_src emacs-lisp
+(use-package ivy
+  :ensure t
+  :diminish ivy-mode
+  :demand t
+  :init
+  ;; set ivy height
+  (setq ivy-height 30)
+  ;; make sure it always stays that high
+  (setq ivy-fixed-height-minibuffer t)
+  ;; virtual buffers - combines many good things into one command
+  (setq ivy-use-virtual-buffers t)
+  ;; full file names - useful when multiple files have same names
+  (setq ivy-virtual-abbreviate 'full)
+  ;; selectable prompt
+  (setq ivy-use-selectable-prompt t)
+  ;; set completion style - in this case to ignore the order of terms (http://oremacs.com/swiper/#completion-styles)
+  (setq ivy-re-builders-alist
+	'((t . ivy--regex-ignore-order)))
+  (setq enable-recursive-minibuffers t)
+  :config
+  (ivy-mode 1)
+
+  :bind (("C-c C-r" . #'ivy-resume)
+	 ("C-x b"   . #'ivy-switch-buffer)))
+#+end_src
+*ivy-rich*, a "friendly interface for ivy," from [[https://github.com/Yevgnen/ivy-rich][here]]
+#+begin_src emacs-lisp
+(use-package ivy-rich
+  :after (ivy)
+  :init
+  (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
+  :config
+  (ivy-rich-mode 1))
+#+end_src
+
+*Counsel*:
+#+begin_src emacs-lisp
+(use-package counsel
+  :ensure t
+  :diminish counsel-mode
+  :bind (("M-x" . counsel-M-x)
+	 ("M-y" . counsel-yank-pop)
+	 ("C-x C-f" . counsel-find-file)
+	 ("C-h v" . counsel-describe-variable)
+	 ("C-h f" . counsel-describe-function)
+	 ("C-x 8" . counsel-unicode-char))
+  :config
+  (counsel-mode 1))
+#+end_src
+*Swiper*:
+#+begin_src emacs-lisp
+(use-package swiper
+  :ensure t
+  :after (ivy)
+  :config
+  (global-set-key "\C-s" 'swiper))
 #+end_src
 * Reveal.JS
 :PROPERTIES:
@@ -317,17 +560,6 @@ from [[https://github.com/jkitchin/org-ref][here]]
 #+begin_src emacs-lisp
 ;;(require 'org-re-reveal)
 #+end_src
-
-* Org-mode <== HTML
-:PROPERTIES:
-:CUSTOM_ID: h:467085FD-4EB0-4524-BF3A-3D847A86689C
-:END:
-
-#+BEGIN_SRC emacs-lisp
-;; See: https://emacs.stackexchange.com/questions/7171/paste-html-into-org-mode
-(use-package org-eww
- :quelpa (org-eww :fetcher git :url "https://github.com/Fuco1/org-mode.git"))
-#+END_SRC
 
 * org-pdftools - a custom org link type for pdf-tools
 :PROPERTIES:
@@ -554,6 +786,7 @@ The cursor becomes a blinking bar, per `prot/cursor-type-mode'."
   :bind ("<f7>" . prot/display-line-numbers-mode))
 
 (use-package frame
+  :load-path "packages/frame"
   :commands prot/cursor-type-mode
   :config
   (setq-default cursor-type 'box)
@@ -582,31 +815,6 @@ The cursor becomes a blinking bar, per `prot/cursor-type-mode'."
 
 #+end_src
 
-* org-journal
-from [[https://github.com/bastibe/org-journal][org-journal github]]
-#+begin_src emacs-lisp
-(use-package org-journal
-  :after org
-  :ensure t
-  :hook ((org-journal-mode . prot/olivetti-mode)
-         (org-journal-mode . org-indent-mode))
-    
-  :defer 0.5
-  :init
-  ;; Change default prefix key; needs to be set before loading org-journal
-  (setq org-journal-prefix-key "C-c j ")
-  :config
-  (setq org-journal-dir "~/org/journal/"
-	;; try to bring the config to every journal file
-	org-journal-file-header "#+SETUPFILE: ~/.emacs.d/config.org"
-	org-journal-date-format "%A, %d %B %Y"
-	;; Carry over TODO items and items explicitly marked
-        org-journal-carryover-items "+carryover|+TODO=\"TODO\""
-	org-journal-enable-agenda-integration t
-	;; Remove empty journals after carryover
-        org-journal-carryover-delete-empty-journal 'always
-	org-journal-file-type 'monthly))
-#+end_src
 * magit
 :PROPERTIES:
 :CUSTOM_ID: h:03DF5961-7D68-44F5-B8F6-1291856B8AF1
@@ -621,6 +829,10 @@ Using magit and forge (which works with GitLab)
 (use-package forge
   :after magit)
 #+end_src
+* Paradox - install packages from github <2020-10-13 Tue 15:51> turning off for now - re-evaluate
+#+BEGIN_SRC emacs-lisp
+;; (setq paradox-github-token 4ff7cf2de8240f479e3a3a2510227b72c6c773f8)
+#+END_SRC
 * Python IDE with elpy
 :PROPERTIES:
 :CUSTOM_ID: h:02E4F19E-952B-4A5C-B14F-D506919C3552
@@ -700,7 +912,7 @@ home page [[https://emacs-lsp.github.io/lsp-mode/][here]]
 
 (use-package lsp-mode
     :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-            (XXX-mode . lsp)
+            (python-mode . lsp)
             ;; if you want which-key integration
             (lsp-mode . lsp-enable-which-key-integration))
     :commands lsp)
@@ -717,10 +929,7 @@ home page [[https://emacs-lsp.github.io/lsp-mode/][here]]
 (use-package dap-mode)
 ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
 
-;; optional if you want which-key integration
-(use-package which-key
-    :config
-    (which-key-mode))
+
 
 
 #+end_src
@@ -750,92 +959,58 @@ from [[https://github.com/joaotavora/yasnippet][here]]
   (add-to-list 'yas-snippet-dirs "~/emacs.d/snippets"))
  #+end_src
 
-* Consistent Org heading IDs (and anchor tags)
-:PROPERTIES:
-:CUSTOM_ID: h:9D8BBA15-B9BC-48F2-A25C-5A893F27BE27
-:END:
-From [[https://gitlab.com/protesilaos/dotfiles/-/blob/master/emacs/.emacs.d/emacs-init.org][Stavrou]] and this [[https://writequit.org/articles/emacs-org-mode-generate-ids.html][article]] (I swear I found the article before I saw Stavrou's setup!
-
-The issue is two-fold - wanting to quickly create unique internal links that will also survive export to HTML and the multiple rewrites of files.
+* Settings for prose and code
+** Dictionary
+This allows offline access to Webster's Revised Unabridged Dictionary (1913).  A long journey starting with a reference to [[http://mbork.pl/2017-01-14_I'm_now_using_the_right_dictionary][this]] on Reddit, leading to the discovery of this poetic [[http://jsomers.net/blog/dictionary][paean]] to using the right dictionary.  Below should work OK, you can do =C-c d= to look up the word on point or type in another one. The dictionary itself is in Stardict format and on my mac is stored at =~/.stardict/dic=.  Using [[https://github.com/gucong/emacs-sdcv][sdcv-mode]] instead of sdcv from Melpa.
 
 #+begin_src emacs-lisp
-(use-package org-id
-  :after org
-  :commands (contrib/org-get-id
-             contrib/org-id-headlines)
-  :config
-  (setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id))
-
-  (defun eos/org-custom-id-get (&optional pom create prefix)
-    "Get the CUSTOM_ID property of the entry at point-or-marker
-POM. If POM is nil, refer to the entry at point. If the entry
-does not have an CUSTOM_ID, the function returns nil. However,
-when CREATE is non nil, create a CUSTOM_ID if none is present
-already. PREFIX will be passed through to `org-id-new'. In any
-case, the CUSTOM_ID of the entry is returned."
-    (interactive)
-    (org-with-point-at pom
-      (let ((id (org-entry-get nil "CUSTOM_ID")))
-        (cond
-         ((and id (stringp id) (string-match "\\S-" id))
-          id)
-         (create
-          (setq id (org-id-new (concat prefix "h")))
-          (org-entry-put pom "CUSTOM_ID" id)
-          (org-id-add-location id (buffer-file-name (buffer-base-buffer)))
-          id)))))
-
-(defun eos/org-add-ids-to-headlines-in-file ()
-  "Add CUSTOM_ID properties to all headlines in the current
-   file which do not already have one. Only adds ids if the
-   `auto-id' option is set to `t' in the file somewhere. ie,
-   #+OPTIONS: auto-id:t"
-  (interactive)
-  (save-excursion
-    (widen)
-    (goto-char (point-min))
-    (when (re-search-forward "^#\\+OPTIONS:.*auto-id:t" (point-max) t)
-      (org-map-entries (lambda () (eos/org-custom-id-get (point) 'create))))))
-
+(use-package sdcv
+  :ensure t
+  :bind (("C-c d" . sdcv-search-pointer))
+  :hook (sdcv-mode-hook . (lambda ()
+                            (font-lock-mode -1))))
 #+end_src
-
+** spelling
+Currently using flyspell - there are all kinds of complicated and better ways to do it, but doing this for now.
+#+begin_src emacs-lisp
+(use-package flyspell
+  :defer 1
+  :diminish)
+#+end_src
 * preferences / appearance
 :PROPERTIES:
 :CUSTOM_ID: h:9F230725-522C-4B77-891D-DEFB42A0F8A4
 :END:
-
-Don't display the help screen on startup
-
-#+BEGIN_SRC emacs-lisp
-(setq inhibit-startup-screen t)
-#+END_SRC
-
-Taking away the toolbar and scroll bar
-
+** visual line mode
+I just like this to be on by default.  If I start doing more programming in Emacs, I will probably want to make this more granular
 #+begin_src emacs-lisp
-;;(menu-bar-mode -1)
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
+(global-visual-line-mode 1)
+#+end_src
+** Parentheses
+I used to bury this in org mode stuff but it kept not being activated for various reasons and I have really come to depend on it!  So here it is, separate and sweet
+#+begin_src emacs-lisp
+(use-package paren
+  :config
+  (setq show-paren-style 'parenthesis)
+  (setq show-paren-when-point-in-periphery t)
+  (setq show-paren-when-point-inside-paren nil)
+  :hook (after-init-hook . show-paren-mode))
 #+end_src
 
-I don't want the error bell
-
-#+BEGIN_SRC emacs-lisp
-(setq ring-bell-function 'ignore)
-#+END_SRC
-
-This puts all the #BACKUP FILES# out of the way and limits them slightly
-#+BEGIN_SRC emacs-lisp
-(setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
-  backup-by-copying t    ; Don't delink hardlinks
-  version-control t      ; Use version numbers on backups
-  delete-old-versions t  ; Automatically delete excess backups
-  kept-new-versions 20   ; how many of the newest versions to keep
-  kept-old-versions 5    ; and how many of the old
-  )
-#+END_SRC
-
-Installing Prot's Modus themes
+** dim non-selected buffer
+#+begin_src emacs-lisp
+(use-package dimmer
+  :defer 1
+  :load-path "~/.emacs.d/packages/dimmer.el"
+  :config
+  (setq dimmer-exclusion-predicates '(helm--alive-p window-minibuffer-p))
+  (setq dimmer-exclusion-regexp-list
+        '("^\\*[h|H]elm.*\\*" "^\\*Minibuf-[0-9]+\\*"
+          "^.\\*which-key\\*$" "^*Messages*" "*LV*"))
+  (setq dimmer-fraction 0.50)
+  (dimmer-mode t))
+#+end_src
+** Installing Prot's Modus themes
 from: [[https://gitlab.com/protesilaos/modus-themes][here]]
 "This is a set of accessible themes for GNU Emacs.  The contrast ratio
   between foreground and background values should always be >= 7:1, which
@@ -854,18 +1029,24 @@ The Modus themes project consists of two standalone items, one where
 #+end_src
 
 Then, we can load them at a given time - the following will only work if ~calendar-latitude~ and ~calendar-latitude~ are set correctly (which they are here up in Personal Details, because /of course/ emacs has a solar clock running in the background at all times, with the ~solar.el~ library.
-#+begin_src emacs-lisp
-;; Light at sunrise
-(load-theme 'modus-operandi t t)
-(run-at-time (nth 1 (split-string (sunrise-sunset)))
-             (* 60 60 24)
-             (lambda () (enable-theme 'modus-operandi)))
 
-;; Dark at sunset
-(load-theme 'modus-vivendi t t)
-(run-at-time (nth 4 (split-string (sunrise-sunset)))
-             (* 60 60 24)
-             (lambda () (enable-theme 'modus-vivendi)))
+<2020-10-14 Wed> stopped working after that dumb crash and reconstruction!
+#+begin_src emacs-lisp
+;; ;; making sure timer.el is enabled
+;; (use-package timer
+;;   :load-path "packages/timer")
+  
+;; ;; Light at sunrise
+;; (load-theme 'modus-operandi t t)
+;; (run-at-time (nth 1 (split-string (sunrise-sunset)))
+;;              (* 60 60 24)
+;;              (lambda () (enable-theme 'modus-operandi)))
+
+;; ;; Dark at sunset
+;; (load-theme 'modus-vivendi t t)
+;; (run-at-time (nth 4 (split-string (sunrise-sunset)))
+;;              (* 60 60 24)
+;;              (lambda () (enable-theme 'modus-vivendi)))
 
 #+end_src
 

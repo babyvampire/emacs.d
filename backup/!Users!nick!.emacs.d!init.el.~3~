@@ -1,0 +1,59 @@
+;; turns on debugging at the beginning, so if something breaks during init,
+;; we get dumped into a debugger
+(setq debug-on-error t)
+(setq debug-on-quit t)
+
+;; tracking loading time
+(defconst emacs-start-time (current-time))
+
+;; Make all commands of the “package” module present.
+(require 'package)
+
+;; Internet repositories for new packages.
+(setq package-archives 
+      '(("melpa" . "http://melpa.org/packages/")
+	("gnu" . "http://elpa.gnu.org/packages/")
+        ("org" . "http://orgmode.org/elpa/")))
+(package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(require 'use-package)
+(setq use-package-always-ensure t)
+(let ((elapsed (float-time (time-subtract (current-time)
+                                          emacs-start-time))))
+  (message "Loaded packages in %.3fs" elapsed))
+(setq gc-cons-threshold 100000)
+
+;; load org package and our emacs-config.org file
+(require 'org)
+(org-babel-load-file "~/.emacs.d/config.org") 
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (dracula)))
+ '(custom-safe-themes
+   (quote
+    ("dcdd1471fde79899ae47152d090e3551b889edf4b46f00df36d653adc2bf550d" "5f1bd7f67dc1598977e69c6a0aed3c926f49581fdf395a6246f9bc1df86cb030" default)))
+ '(org-capture-templates
+   (quote
+    (("w" "capture web site" entry
+      (file "\"\"")
+      "* %a :website:\\n\\n%U %?\\n\\n%:initial"))))
+ '(org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
+ '(org-startup-truncated nil)
+ '(package-selected-packages
+   (quote
+    (helm-descbinds pyenv-mode elpy py-autopep8 flycheck org-download emacs-reveal org-ref-pdf org-ref org-bullets bug-hunter org-plus-contrib org-eww quelpa-use-package quelpa s ox-reveal flyspell-correct adaptive-wrap dracula-theme)))
+ '(winner-mode t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+

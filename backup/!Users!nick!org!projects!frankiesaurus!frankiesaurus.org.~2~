@@ -1,0 +1,39 @@
+# Local IspellDict: en
+#+STARTUP: showeverything
+
+#+TITLE: Frankiesaurus
+
+#+SPDX-FileCopyrightText: 2020-2022 Nicholas Taintor
+#+SPDX-License-Identifier: CC-BY-SA-4.0
+
+# Config from emacs-reveal; this is a minimal config file that lives in the same directory as the presentation
+#+INCLUDE: "config.org"
+
+# TOC was getting too long!
+#+OPTIONS: toc:nil
+
+#+OPTIONS: REVEAL_TITLE_SLIDE:nil
+
+#+OPTIONS: reveal_progress:nil
+
+#+REVEAL_MARGIN: 0.1
+
+#+REVEAL_HLEVEL: 999
+
+#+REVEAL_EXTRA_CSS: ./local-frankie.css
+
+#+OPTIONS: reveal_toc_footer:nil
+
+# Set autoplay to true for audio plugin.
+#+OER_REVEAL_AUDIO_SLIDESHOW_CONFIG: audioStartAtFragment: true, audio: { advance: -1, autoplay: true, defaultDuration: 0, defaultAudios: false, playerOpacity: 0.8, playerStyle: 'position: fixed; bottom: 9.5vh; left: 0%; width: 30%; height:30px; z-index: 33;' }
+
+* 
+@@html:<section data-background="img/page001.png">@
+* 
+# #+REVEAL_HTML: <img class="stretch" src="./img/page002.png">
+
+#+ATTR_HTML: :height 100%
+[[./img/page002.png]]
+
+
+# <div><img src="./img/page001.png"></div>

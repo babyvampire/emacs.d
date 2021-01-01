@@ -1,0 +1,88 @@
+% Created 2020-07-31 Fri 17:03
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[hyphens]{url}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{natbib}
+\usepackage[linktocpage,pdfstartview=FitH,colorlinks,
+linkcolor=blue,anchorcolor=blue,
+citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
+\author{Nick Taintor}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={Nick Taintor},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.0.91 (Org mode 9.3.7)}, 
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+Hey all!
+
+I apologize -- I had thought that you all were simply  asking me for a referral to a neurologist in the area, which unfortuanetely I am in no position to provide at the moment.  There was really only one around here that I saw eye-to-eye with, and she got married and moved to Portland.
+
+Also, I was thinking that it didn't really matter much who Dorna's next neurologist was - as far as I can tell there is no real mystery as to what is going on.  Dorna just needs someone who knows their left from their right and has a valid medical license.  At this point a reasonably well-trained monkey could figure out what to do next.
+
+I did not realize we were having issues and questions about the dosage and formulation of lamotrigine, and I can help with that and make it all very simple.
+
+But first of all, seizures are terrifying.  As far as I know I've never had one, but I do understand the frustration and anxiety of not knowing if a particular medication will work or not, and the desire to get a definitive answer about what's what.  Seizures are terrifying to neurologists as well, because they can be unpredictable and have scary consequences and sometimes they respond to medication and sometimes they don't.
+
+So here are some very simple things about lamotrigine:
+
+\begin{enumerate}
+\item There is no "therapeutic" serum level of lamotrigine, either for neurological or psychiatric purposes.  Psychiatrists and neurologists both get confused about this.  They are used to dosing medications such as lithium or valproic acid that do have well-defined therapeutic blood levels.
+\item All we really know is that levels >25 mg/L are toxic, though some studies put that level at 15 mg /L
+\item This means that in both neurology and psychiatry we dose to effect - there is a conventional target dose of 200mg lamotrigine daily but if that is not enough then we go up.  I have had many patients on 300mg lamotrigine daily, and I think the highest I have ever dosed is 450mg per day.
+\item There is no real difference between immediate release and extended release lamotrigine.  Since lamotrigine generally has a half life of 24-36 hours, taking one dose of immediate release lamotrigine daily will be fine.  People split the doses or take extended release only if they are having side effects which can be sometimes mitigated by changing the dosing schedule or formulation.
+\end{enumerate}
+
+Once you reach a level of 100mg lamotrigine daily, you can safely go up by 100mg per day every two weeks.  So you could go from 100 mg to 200 mg daily, wait two weeks, then increase the dose to 300 mg daily.  Two weeks later, up to 400 mg daily.  Any faster and you increase the risk of Stevens-Johnson syndrome, any slower and you are just wasting time.
+
+Not only is there no such thing as a therapeutic serum level, but people metabolize Lamictal at different rates.  Even worse, there are a bunch of different tests for lamotrigine serum levels from different companies that give different results and they are generally not trustworthy.  I can give you references for everything I've said here but that can get annoying so I'll just reference that last point: 
+
+\begin{quote}
+"No clear association between serum levels of lamotrigine and response exists. Thus, routine monitoring of serum levels is not advised." 
+\begin{itemize}
+\item (Schatzberg, A. F., \& DeBattista, C. (2015). Manual of clinical psychopharmacology (8th ed.). American Psychiatric Publishing, Inc. p368)
+\end{itemize}
+\end{quote}
+
+When I was treating people for bipolar disorder or borderline personality disorder with lamotrigine there was almost never any question of whether we had reached the correct dose - when people crossed that line, it was like night and day.  
+
+Bearing in mind that I am not allowed to give any medical advice to anyone for anything, here would be my suggestions (in a very abstract and TLDR way):
+
+\begin{itemize}
+\item If Dorna's prescription is for 300mg of lamotrigine daily, she can take that in a single dose whenever she is most likely to remember to do it.  The only reason to take it at a particular time would be if it a) makes her too sleepy - so take it at night, or b) makes her sleep more difficult - so take it in the morning
+\item It could be immediate release or extended release, it doesn't really matter.  But my suggestion would be immediate release and she should not combine the different formulations.
+\item As long as she is tolerating that dose OK, there would be no particular reason \emph{not} to increase to 400 mg daily but I would leave that up to whoever her neurologist ends up being.
+\item Only \emph{one} doctor should be prescribing her medication.
+\end{itemize}
+
+OK, that's all I've got, and I'm sorry if it was too long.  I think lamotrigine is a good and underused drug but you have to be careful with it and know what you are doing.  Even better, since I believe that people should take as few medications as possible, this one works for both neurological and psychiatric things and is a pretty wonderful twofer.
+
+Just always remember that if you miss more than two days of medication you need to go back to the beginning of the titration - that is very important.
+
+I've seen pretty much every side effect there is from lamotrigine and except for one they are all easily manageable.  I'm not about to list them here but if anyone has any questions I'd be happy to answer them.
+
+OK, hope you all have a good weekend!
+
+Lots of big love,
+
+Nick.
+\end{document}

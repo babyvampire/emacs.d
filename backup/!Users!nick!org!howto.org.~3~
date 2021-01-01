@@ -1,0 +1,120 @@
+#+OPTIONS: org-hide-emphasis-markers:t
+
+# since these are just notes, I don't want to run the code blocks here
+#+PROPERTY: header-args  :eval no
+
+
+
+* I'll leave some LATEX and HTML formatting examples here, because I always get confused about these
+** HTML
+
+*** a basic combined latex and html prefix
+#+ATTR_HTML: :width 40% :style float:right;
+#+ATTR_LATEX: :width 0.75\textwidth :placement [H] :float nil
+*** Putting in a video by lechten:
+# @@html:<video controls width="400" height="300" src="https://archive.org/download/LinusTorvaldsOnGittechTalk/LinusTorvaldsOnGittechTalk.ogv#t=460"></video>@@
+*** stretching to fill screen
+#+REVEAL_HTML: <img class="stretch" src="img/whatever.jpg">
+*** Here is the code I use for a Two Column slide with image on the right (you can change the width of each column) :
+#+REVEAL_HTML: <div class="column" style="float:left; width:45%">
+Blablablablabla
+ * blablabl
+ * more blabla
+ #+REVEAL_HTML: </div>
+
+ #+REVEAL_HTML: <div class="column" style="float:right; width:45%">
+ #+ATTR_ORG: :width 150
+ [[./images/image.jpg]]
+ #+ATTR_ORG: :width 150
+ [[./images/image.png]]
+ #+REVEAL_HTML: </div>
+*** If you want to include literal HTML in your org file, and have it exported only when you export to HTML, use an export block:
+
+#+BEGIN_EXPORT html
+<br>
+<h2>This is the footer.</h2>
+<p>You can put stuff here.</p>
+<br>
+#+END_EXPORT
+
+*** <2020-07-18 Sat> 
+- customized variable org-re-reveal-title-slide to nil
+- which removed the title slide when generating to emacs-reveal
+** LATEX
+
+*** coralling floats
+latex package ~placeins~
+#+LATEX_HEADER: \usepackage{placeins}
+\FloatBarrier
+Which is supposed to keep the floats above that line
+
+
+
+* Frankiesaurus project
+** emacs-reveal notes
+- After lots of flailing around, figured out how to get the images to scale right and fill the whole page on different viewports and devices.
+  - Not sure why there isn't an equivalent foreground way to to do this (and there probably is, I just didn't find it), but the current answer is to use the reveal.js data-background attribute, with "contain" (rather than "cover"!).
+  - Currently this sits in the :PROPERTIES: of each slide, here is an example:
+#+begin_example emacs-lisp
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-background="./img/page001.png" data-background-size="contain"
+:END:
+#+end_example
+
+
+
+* Template expansion 
+** is now C-c C-,
+
+* Yasnippets
+
+* Emacs-reveal
+** Reveal.js-toc-progress at bottom of slides
+- This was driving me nuts for a while, because I couldn't figure out how to turn it off.  Once my files got to a certain size, it was autosizing down to unreadable levels anyway.
+- Characteristics of this (font size, scrolling, background color) can be changed by customizing variable ~oer-reveal-toc-progress-dependency~
+- Well, I figured out how to get rid of it, but now I can't figure out how I did that!  This is the importance of documenting as I go along, but sometimes I get into a bit of a frenzy.
+** revealimg
+
+* Audio work
+** Remastering sound files for Frankiesaurus
+- Noise reduction with Audacity:
+  1. Get noise profile
+     - find a waveform that contains only noise - 0.05s minimum
+     - Click Effect > Noise Reduction
+     - Select an area of relative quiet
+     - Click Get Noise Profile
+     - You can preview the results of noise reduction on the sample you selected
+     - I tried 10dB
+     - *Sensitivity* controls how much of the audio will be considered noise - higher levels can remove some of the desired signal
+     - (For Frankiesaurus, honestly I kind of liked it un-cleaned up
+- My workflow:
+  - pick beginning point
+  - play until end of page
+  - press ~]~ to mark right edge of selection (turns out the left boundary is automatically where you started playing
+  - Press ~Shift-F7~ to listen to last bit of selection
+  - If it's OK, then <command> + B to label and select it
+  - Type name of page
+
+
+* Olivetti mode
+- Centred, focused text mode (olivetti-mode)
+- from Protesilaos Stavrou
+- at [[https://gitlab.com/protesilaos/dotfiles/-/blob/master/emacs/.emacs.d/emacs-init.org][his gitlab]]
+** keybindings:
+- =C-c o= activate olivetti mode
+- =C-c L= activate scroll-centre-cursor-mode
+- <f7> toggle display-line-numbers-mode
+
+* 
+* Installing zsh and oh my zsh
+** Installing zsh:
+#+begin_src bash
+sudo apt-get install zsh -y
+#+end_src
+** Installing oh-my-zsh:
+#+begin_src bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#+end_src
+* emacs tips
+** Change font size
+- =C-x C-+= 

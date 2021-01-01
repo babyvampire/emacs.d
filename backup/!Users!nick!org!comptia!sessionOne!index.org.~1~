@@ -1,0 +1,32 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="rethink.css" />
+#+OPTIONS: toc:nil num:nil html-style:nil
+
+
+#+Title: Studying for the CompTIA A+ exam?
+#+SUBTITLE: Various notes, class presentations, and valuable links
+
+* Here are the class materials:
+** For the CompTIA A+ 1001:
+[[./outlineOne.html][A+ 1001 slides]]
+
+[[./outlineOne.pdf][A+ 1001 notes in pdf format]]
+
+** For the CompTIA A+ 1002: 
+[[./outlineTwo.html][A+ 1002 slides]]
+
+[[./outlineTwo.pdf][A+ 1002 notes in pdf format]]
+
+
+
+
+* COMMENT Local Variables
+  # Local Variables:
+  # org-html-htmlize-output-type: css
+  # eval: (add-hook 'after-save-hook 'org-html-export-to-html nil t)
+  # End:
+
+#+BEGIN_EXPORT html
+<p>Made with <a href="https://www.gnu.org/software/emacs/">Gnu Emacs</a>, <a href="https://orgmode.org/">Org mode</a>, and with the <a href="https://github.com/jessekelly881/Rethink/">Rethink</a> single page theme</p>
+#+END_EXPORT
+
+

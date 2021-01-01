@@ -1,0 +1,2 @@
+# Generated file.  Will be overwritten without warning.
+#+INCLUDE: "/Users/nick/.emacs.d/elpa/emacs-reveal/oer-reveal/org/finalslide-ercis.org"

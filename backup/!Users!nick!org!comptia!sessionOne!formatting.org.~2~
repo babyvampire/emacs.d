@@ -1,0 +1,25 @@
+* I'll leave some LATEX and HTML formatting examples her, because I always get confused about these
+
+** a basic combined latex and html prefix
+#+ATTR_LATEX: :width 0.75\textwidth :placement [H] :float nil
+#+ATTR_HTML: :width 40%
+** Putting in a video by lechten:
+# @@html:<video controls width="400" height="300" src="https://archive.org/download/LinusTorvaldsOnGittechTalk/LinusTorvaldsOnGittechTalk.ogv#t=460"></video>@@
+** coralling floats
+latex package ~placeins~
+#+LATEX_HEADER: \usepackage{placeins}
+\FloatBarrier
+Which is supposed to keep the floats above that line
+** stretching to fill screen
+#+REVEAL_HTML: <img class="stretch" src="img/whatever.jpg">
+
+
+* Template expansion 
+** is now C-c C-,
+
+* Yasnippets
+
+* Emacs-reveal
+** revealimg
+
+

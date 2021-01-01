@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>CompTIA A+ 1002</title>
+<meta name="author" content="Nicholas Taintor"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/dbis.css" id="theme"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/accessibility/helper.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/toc-progress/toc-progress.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/toc-style.css"/>
+
+<link rel="stylesheet" href="./reveal.js/lib/font/source-sans-pro/source-sans-pro.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/oer-reveal.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body prefix="dc: http://purl.org/dc/elements/1.1/ dcterms: http://purl.org/dc/terms/ dcmitype: http://purl.org/dc/dcmitype/ cc: http://creativecommons.org/ns#" typeof="dcmitype:InteractiveResource">
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-state="no-toc-progress">
+<h1 class="title">CompTIA A+ 1002</h1><h2 class="author">Nicholas Taintor</h2><h2 class="date">CompTIA A+</h2><p class="date">Created: 2020-06-20 Sat 07:01</p>
+</section>
+<section id="table-of-contents-section" data-state="no-toc-progress">
+<div id="table-of-contents">
+<h2 class="no-toc-progress">Agenda</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#slide-orgf53ff2c">CompTIA A+ 2002</a></li>
+<li><a href="#slide-org0d3de18">1.1 – Compare and contrast common operating system types and their purposes.</a></li>
+<li><a href="#slide-org3693dbd">1.2 – Compare and contrast features of Microsoft Windows versions.</a></li>
+<li><a href="#slide-orgfdf5345">1.3 – Summarize general OS installation considerations and upgrade methods.</a></li>
+<li><a href="#slide-org81294d0">1.4 – Given a scenario, use appropriate Microsoft command line tools.</a></li>
+<li><a href="#slide-org9c57556">1.5 – Given a scenario, use Microsoft operating system features and tools.</a></li>
+<li><a href="#slide-org4723d53">1.6 – Given a scenario, use Microsoft Windows Control Panel utilities.</a></li>
+<li><a href="#slide-orgdce0c7e">1.7 – Summarize application installation and configuration concepts.</a></li>
+<li><a href="#slide-org0003d14">1.8 – Given a scenario, configure Microsoft Windows networking on a client/desktop.</a></li>
+<li><a href="#slide-orge739344">1.9 – Given a scenario, use features and tools of the Mac OS and Linux client/desktop operating systems.</a></li>
+</ul>
+</div>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+
+<section>
+<section id="slide-orgf53ff2c">
+<h2 id="orgf53ff2c">CompTIA A+ 2002</h2>
+<p>
+Just as in the 1001, the 1002 has partcular components that are covered.  Here is the breakdown:
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-right">
+
+<col  class="org-left">
+
+<col  class="org-right">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Domain</th>
+<th scope="col" class="org-left">Substance</th>
+<th scope="col" class="org-right">percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">Operating Systems</td>
+<td class="org-right">27%</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">Security</td>
+<td class="org-right">24%</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-left">Software Troubleshooting</td>
+<td class="org-right">26%</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-left">Operational Procedures</td>
+<td class="org-right">23%</td>
+</tr>
+</tbody>
+</table>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org0d3de18">
+<h2 id="org0d3de18">1.1 – Compare and contrast common operating system types and their purposes.</h2>
+<div class="outline-text-2" id="text-org0d3de18">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org721cd5c">
+<h3 id="org721cd5c">What is an OS and why do you need one?</h3>
+<ul>
+<li>Interaction between components of machine
+<ul>
+<li>Many 1s and 0s are passed between the CPU, RAM, keyboard, video and sound cards</li>
+<li>Someone needs to manage this at a higher level so that the user can participate</li>
+
+</ul></li>
+<li>Common platform for applications to work on / together</li>
+<li>Also provides bridge between humans and computer</li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgfb5be96">
+<h3 id="orgfb5be96">Standard OS features</h3>
+<ul>
+<li>File management</li>
+<li>Application support</li>
+<li>Input / output support
+<ul>
+<li>Printers, keyboards, hard drives, USB</li>
+<li>It&rsquo;s sort of like a higher-level BIOS, right?</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org05235f2">
+<h3 id="org05235f2">32-bit vs. 64-bit</h3>
+<ul>
+<li>Pretty much all PCs being produced today are 64-bit</li>
+<li>But you will see 32-bit machines in the field
+<ul>
+<li>You may see 16-bit machines, but probably only museum pieces</li>
+<li>First 32-bit CPU in 1985: Intel 386DX</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org9d26eef">
+<h4 id="org9d26eef">RAM limitations</h4>
+<ul>
+<li>32-bit CPUs are limited to 4 GB of RAM</li>
+<li>64-bit CPUs have a default maximum of 256 TB and could be extended to 4 petabytes (PB)
+<ul>
+<li>(though no one would do that, yet)</li>
+<li>RAM is limited by the operating system:
+<ul>
+<li>Windows 7 64-bit can go to 192 GB</li>
+<li>Windows 8.1 Pro 64-bit can handle up to 512 GB</li>
+<li>Windows 10 Pro 64-bit can handle up to 2 TB</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org8aaac8d">
+<h4 id="org8aaac8d">Software Compatibility</h4>
+<ul>
+<li>Most editions of Windows are still available in 32-bit and 64-bit versions
+<ul>
+<li>There are 32-bit and 64-bit versions of most major Linux distributions as well</li>
+<li>The most recent macOS (Catalina) is 64-bit only, and will not run 32-bit programs</li>
+<li>Whereas 64-bit Windows can still run 32-bit programs</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org8740a83">
+<h4 id="org8740a83">Where Windows keeps it</h4>
+<ul>
+<li class="fragment appear">64-bit system files and apps are in C:\Windows\System32</li>
+<li class="fragment appear">32-bit system files and apps are in C:\Windows\SysWOW64
+<ul>
+<li>Yes, this makes very little sense</li>
+<li>Based in the development of Windows from 32-bit to 64-bit</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org3ec3f41">
+<h3 id="org3ec3f41">Workstation operating systems</h3>
+<ul>
+<li>By &ldquo;workstation,&rdquo; CompTIA means a desktop or laptop that someone sits at and does work</li>
+<li>So we are not including further discussion of servers for the rest of this course</li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org4a8a561">
+<h4 id="org4a8a561">Microsoft Windows</h4>
+
+<div class="figure">
+<p><img src="file:///Users/nick/org/comptia/sessionOne/images2/1-1-windows10.png" alt="1-1-windows10.png" width="15%">
+</p>
+<p><span class="figure-number">Figure 1: </span>Windows 10 symbol</p>
+</div>
+<ul>
+<li>By far the most common</li>
+<li>Different versions: 
+<ul>
+<li>You will be expected to know 7, 8, 8.1, and 10</li>
+<li>There are others that you will not have to know, such as Windows Server</li>
+
+</ul></li>
+<li>Advantages and disadvantages:
+<ul>
+<li>Good - big presence means big support
+<ul>
+<li>Lots of different kinds of software</li>
+
+</ul></li>
+<li>Bad - Large target for security exploitation
+<ul>
+<li>So much different hardware, so many versions still running</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org804f116">
+<h4 id="org804f116">Apple Macintosh OS</h4>
+
+<div class="figure">
+<p><img src="file:///Users/nick/org/comptia/sessionOne/images2/1-1-apple-emblem.jpg" alt="1-1-apple-emblem.jpg" style="float:left; margin:20px ; width: 250px;">
+</p>
+</div>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org077ad4e">
+<h4 id="org077ad4e">Linux</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org4001e1d">
+<h3 id="org4001e1d">Cell phone/tablet operating systems</h3>
+<div class="outline-text-3" id="text-org4001e1d">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgef650bd">
+<h4 id="orgef650bd">Microsoft Windows</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgbe003cb">
+<h4 id="orgbe003cb">Android</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgddd5ea7">
+<h4 id="orgddd5ea7">iOS</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orga78c0b3">
+<h4 id="orga78c0b3">Chrome OS</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgfd59ebc">
+<h3 id="orgfd59ebc">Vendor-specific limitations</h3>
+<div class="outline-text-3" id="text-orgfd59ebc">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orge6f52b6">
+<h4 id="orge6f52b6">End-of-life</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgcae40e8">
+<h4 id="orgcae40e8">Update limitations</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org46813c8">
+<h3 id="org46813c8">Compatibility concerns between operating systems</h3>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org3693dbd">
+<h2 id="org3693dbd">1.2 – Compare and contrast features of Microsoft Windows versions.</h2>
+<div class="outline-text-2" id="text-org3693dbd">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org3785175">
+<h3 id="org3785175">Windows 7</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgdc01241">
+<h3 id="orgdc01241">Windows 8</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org838ed67">
+<h3 id="org838ed67">Windows 8.1</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org65de936">
+<h3 id="org65de936">Windows 10</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org0e42e41">
+<h3 id="org0e42e41">Corporate vs. personal needs</h3>
+<div class="outline-text-3" id="text-org0e42e41">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org483434b">
+<h4 id="org483434b">Domain access</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org288e7a5">
+<h4 id="org288e7a5">BitLocker</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgcebae9d">
+<h4 id="orgcebae9d">Media center</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgb01cd7c">
+<h4 id="orgb01cd7c">Branchcache</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org81f5398">
+<h4 id="org81f5398">EFS</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org746738e">
+<h3 id="org746738e">Desktop styles/user interface</h3>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-orgfdf5345">
+<h2 id="orgfdf5345">1.3 – Summarize general OS installation considerations and upgrade methods.</h2>
+<div class="outline-text-2" id="text-orgfdf5345">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org06f5037">
+<h3 id="org06f5037">Boot methods</h3>
+<div class="outline-text-3" id="text-org06f5037">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org86f0916">
+<h4 id="org86f0916">USB</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org7d118d8">
+<h4 id="org7d118d8">CD-ROM</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org16a8bc9">
+<h4 id="org16a8bc9">DVD</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org8c97c04">
+<h4 id="org8c97c04">PXE</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org5e39998">
+<h4 id="org5e39998">Solid state/flash drives</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org386dcb3">
+<h4 id="org386dcb3">Netboot</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org9cdb189">
+<h4 id="org9cdb189">External/hot-swappable drive</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org481791c">
+<h4 id="org481791c">Internal hard drive (partition)</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orga427b4a">
+<h3 id="orga427b4a">Type of installations</h3>
+<div class="outline-text-3" id="text-orga427b4a">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org97e0dea">
+<h4 id="org97e0dea">Unattended installation</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org3d30203">
+<h4 id="org3d30203">In-place upgrade</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org72a8911">
+<h4 id="org72a8911">Clean install</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org9f35654">
+<h4 id="org9f35654">Repair installation</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orga618b06">
+<h4 id="orga618b06">Multiboot</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org117792a">
+<h4 id="org117792a">Remote network installation</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgbdf54e0">
+<h4 id="orgbdf54e0">Image deployment</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgc0b2e90">
+<h4 id="orgc0b2e90">Recovery partition</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org30b052b">
+<h4 id="org30b052b">Refresh/restore</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgee01f5f">
+<h3 id="orgee01f5f">Partitioning</h3>
+<div class="outline-text-3" id="text-orgee01f5f">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org814eb4d">
+<h4 id="org814eb4d">Dynamic</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgf597fa1">
+<h4 id="orgf597fa1">Basic</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org9e28d1a">
+<h4 id="org9e28d1a">Primary</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgd530943">
+<h4 id="orgd530943">Extended</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgce79c9e">
+<h4 id="orgce79c9e">Logical</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org0e83e47">
+<h4 id="org0e83e47">GPT</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org3d0db3d">
+<h3 id="org3d0db3d">File system types/formatting</h3>
+<div class="outline-text-3" id="text-org3d0db3d">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org3164a36">
+<h4 id="org3164a36">ExFAT</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org583e97e">
+<h4 id="org583e97e">FAT32</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org85b2dd3">
+<h4 id="org85b2dd3">NTFS</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgc7a18c1">
+<h4 id="orgc7a18c1">CDFS</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgbfd6aec">
+<h4 id="orgbfd6aec">NFS</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org2b07694">
+<h4 id="org2b07694">ext3, ext4</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org90dc838">
+<h4 id="org90dc838">HFS</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org270fdf7">
+<h4 id="org270fdf7">Swap partition</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org4593cba">
+<h4 id="org4593cba">Quick format vs. full format</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org17dca97">
+<h3 id="org17dca97">Load alternate third-party drivers when necessary</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org60e6c21">
+<h3 id="org60e6c21">Workgroup vs. Domain setup</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org272b817">
+<h3 id="org272b817">Time/date/region/language settings</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgb14b845">
+<h3 id="orgb14b845">Driver installation, software, and Windows updates</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org15ff2db">
+<h3 id="org15ff2db">Factory recovery partition</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org0709291">
+<h3 id="org0709291">Properly formatted boot drive with the correct partitions/format</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgcfe4d99">
+<h3 id="orgcfe4d99">Prerequisites/hardware compatibility</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org242bffd">
+<h3 id="org242bffd">Application compatibility</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org170b938">
+<h3 id="org170b938">OS compatibility/upgrade path</h3>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org81294d0">
+<h2 id="org81294d0">1.4 – Given a scenario, use appropriate Microsoft command line tools.</h2>
+<div class="outline-text-2" id="text-org81294d0">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgd285567">
+<h3 id="orgd285567">Navigation</h3>
+<div class="outline-text-3" id="text-orgd285567">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org1409875">
+<h4 id="org1409875">dir</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org073c6c0">
+<h4 id="org073c6c0">cd</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org561eb5c">
+<h4 id="org561eb5c">..</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgcff3721">
+<h3 id="orgcff3721">ipconfig</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orge5f0d8f">
+<h3 id="orge5f0d8f">ping</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org358a3df">
+<h3 id="org358a3df">tracert</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org2afad83">
+<h3 id="org2afad83">netstat</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orge2b6158">
+<h3 id="orge2b6158">nslookup</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgd946485">
+<h3 id="orgd946485">shutdown</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgb61556c">
+<h3 id="orgb61556c">dism</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org953c4df">
+<h3 id="org953c4df">sfc</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgf1c2e37">
+<h3 id="orgf1c2e37">chkdsk</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgdf24081">
+<h3 id="orgdf24081">diskpart</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org8578d22">
+<h3 id="org8578d22">taskkill</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org0104234">
+<h3 id="org0104234">gpupdate</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgef14d88">
+<h3 id="orgef14d88">gpresult</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org0bbd551">
+<h3 id="org0bbd551">format</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org6470f03">
+<h3 id="org6470f03">copy</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgf98a7b6">
+<h3 id="orgf98a7b6">xcopy</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgd49f19c">
+<h3 id="orgd49f19c">robocopy</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org8b3b5f2">
+<h3 id="org8b3b5f2">net use</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org514078f">
+<h3 id="org514078f">net user</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org9ede7f0">
+<h3 id="org9ede7f0">[command name] /?</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org68c1a0a">
+<h3 id="org68c1a0a">Commands available with standard privileges vs. administrative privileges</h3>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org9c57556">
+<h2 id="org9c57556">1.5 – Given a scenario, use Microsoft operating system features and tools.</h2>
+<div class="outline-text-2" id="text-org9c57556">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgdd34047">
+<h3 id="orgdd34047">Administrative</h3>
+<div class="outline-text-3" id="text-orgdd34047">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgc25d3a7">
+<h4 id="orgc25d3a7">Computer Management</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org100f83a">
+<h4 id="org100f83a">Device Manager</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgcf7a70f">
+<h4 id="orgcf7a70f">Local Users and Groups</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgf07609b">
+<h4 id="orgf07609b">Local Security Policy</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org1b69c19">
+<h4 id="org1b69c19">Performance Monitor</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgd747552">
+<h4 id="orgd747552">Services</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgb382231">
+<h4 id="orgb382231">System Configuration</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orga3bd3e6">
+<h4 id="orga3bd3e6">Task Scheduler</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgdd39fd7">
+<h4 id="orgdd39fd7">Component Services</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org818d171">
+<h4 id="org818d171">Data Sources</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org7f115fb">
+<h4 id="org7f115fb">Print Management</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org01f5efa">
+<h4 id="org01f5efa">Windows Memory Diagnostics</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgbdf3bf7">
+<h4 id="orgbdf3bf7">Windows Firewall</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org2ce2c66">
+<h4 id="org2ce2c66">Advanced Security</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org830216b">
+<h4 id="org830216b">Event Viewer</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgda6afe4">
+<h4 id="orgda6afe4">User Account Management</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org1919a68">
+<h3 id="org1919a68">MSConfig</h3>
+<div class="outline-text-3" id="text-org1919a68">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgf3af013">
+<h4 id="orgf3af013">General</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgc55abfd">
+<h4 id="orgc55abfd">Boot</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgfc2393b">
+<h4 id="orgfc2393b">Services</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org9313319">
+<h4 id="org9313319">Startup</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgfb17e80">
+<h4 id="orgfb17e80">Tools</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org836b851">
+<h3 id="org836b851">Task Manager</h3>
+<div class="outline-text-3" id="text-org836b851">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgf8650aa">
+<h4 id="orgf8650aa">Applications</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org45e7eab">
+<h4 id="org45e7eab">Processes</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org312713a">
+<h4 id="org312713a">Performance</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgc07a236">
+<h4 id="orgc07a236">Networking</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org6a831b5">
+<h4 id="org6a831b5">Users</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org2f93e49">
+<h3 id="org2f93e49">Disk Management</h3>
+<div class="outline-text-3" id="text-org2f93e49">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org51b957e">
+<h4 id="org51b957e">Drive status</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org60e85a8">
+<h4 id="org60e85a8">Mounting</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgc1ef4d9">
+<h4 id="orgc1ef4d9">Initializing</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org37ba842">
+<h4 id="org37ba842">Extending partitions</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org1f26537">
+<h4 id="org1f26537">Splitting partitions</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgb5d5d35">
+<h4 id="orgb5d5d35">Shrink partitions</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgc97d590">
+<h4 id="orgc97d590">Assigning/changing drive letters</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgee264df">
+<h4 id="orgee264df">Adding drives</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgda7379b">
+<h4 id="orgda7379b">Adding arrays</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org0b9575f">
+<h4 id="org0b9575f">Storage spaces</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org8bdbb77">
+<h3 id="org8bdbb77">System utilities</h3>
+<div class="outline-text-3" id="text-org8bdbb77">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgab53c88">
+<h4 id="orgab53c88">Regedit</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgbeebaa1">
+<h4 id="orgbeebaa1">Command</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org07c3bf8">
+<h4 id="org07c3bf8">Services.msc</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgc1adaa3">
+<h4 id="orgc1adaa3">MMC</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org170c85a">
+<h4 id="org170c85a">MSTSC</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org83f0625">
+<h4 id="org83f0625">Notepad</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgac45fa1">
+<h4 id="orgac45fa1">Explorer</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org9e50ffb">
+<h4 id="org9e50ffb">Msinfo32</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org925d346">
+<h4 id="org925d346">DxDiag</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org5221733">
+<h4 id="org5221733">Disk Defragmenter</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org1385e2d">
+<h4 id="org1385e2d">System Restore</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org6859da0">
+<h4 id="org6859da0">Windows Update</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org4723d53">
+<h2 id="org4723d53">1.6 – Given a scenario, use Microsoft Windows Control Panel utilities.</h2>
+<div class="outline-text-2" id="text-org4723d53">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org69977d2">
+<h3 id="org69977d2">Internet Options</h3>
+<div class="outline-text-3" id="text-org69977d2">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org5417c3d">
+<h4 id="org5417c3d">Connections</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgd9b10f5">
+<h4 id="orgd9b10f5">Security</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgc5941d6">
+<h4 id="orgc5941d6">General</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org3ac57c3">
+<h4 id="org3ac57c3">Privacy</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgcaa3758">
+<h4 id="orgcaa3758">Programs</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org4eaa5d1">
+<h4 id="org4eaa5d1">Advanced</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgf824ae7">
+<h3 id="orgf824ae7">Display/Display Settings</h3>
+<div class="outline-text-3" id="text-orgf824ae7">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgdba6527">
+<h4 id="orgdba6527">Resolution</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org109263c">
+<h4 id="org109263c">Color depth</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org866067a">
+<h4 id="org866067a">Refresh rate</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orge372056">
+<h3 id="orge372056">User Accounts</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgb7ce669">
+<h3 id="orgb7ce669">Folder Options</h3>
+<div class="outline-text-3" id="text-orgb7ce669">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgae4cf18">
+<h4 id="orgae4cf18">View hidden files</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgd5433cc">
+<h4 id="orgd5433cc">Hide extensions</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orge9b5489">
+<h4 id="orge9b5489">General options</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orge9c3e82">
+<h4 id="orge9c3e82">View options</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org9e0eb38">
+<h3 id="org9e0eb38">System</h3>
+<div class="outline-text-3" id="text-org9e0eb38">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgec0d9ce">
+<h4 id="orgec0d9ce">Performance (virtual memory)</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org921634a">
+<h4 id="org921634a">Remote settings</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org0a6ef3a">
+<h4 id="org0a6ef3a">System protection</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org703d042">
+<h3 id="org703d042">Windows Firewall</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org9add75d">
+<h3 id="org9add75d">Power Options</h3>
+<div class="outline-text-3" id="text-org9add75d">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org71a6e1b">
+<h4 id="org71a6e1b">Hibernate</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org95a73e3">
+<h4 id="org95a73e3">Power plans</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org08d7947">
+<h4 id="org08d7947">Sleep/suspend</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgbca65e4">
+<h4 id="orgbca65e4">Standby</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org180f71b">
+<h3 id="org180f71b">Credential Manager</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org47e18e8">
+<h3 id="org47e18e8">Programs and features</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org6b1e3af">
+<h3 id="org6b1e3af">HomeGroup</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org4bdeaae">
+<h3 id="org4bdeaae">Devices and Printers</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgd858fa5">
+<h3 id="orgd858fa5">Sound</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org6179a35">
+<h3 id="org6179a35">Troubleshooting</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org3e96f0d">
+<h3 id="org3e96f0d">Network and Sharing Center</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgba843f1">
+<h3 id="orgba843f1">Device Manager</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org8f90622">
+<h3 id="org8f90622">BitLocker</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orga92336b">
+<h3 id="orga92336b">Sync Center</h3>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-orgdce0c7e">
+<h2 id="orgdce0c7e">1.7 – Summarize application installation and configuration concepts.</h2>
+<div class="outline-text-2" id="text-orgdce0c7e">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org26dbeec">
+<h3 id="org26dbeec">System requirements</h3>
+<div class="outline-text-3" id="text-org26dbeec">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgd22b87b">
+<h4 id="orgd22b87b">Drive space</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org55cbdd9">
+<h4 id="org55cbdd9">RAM</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgce6d370">
+<h3 id="orgce6d370">OS requirements</h3>
+<div class="outline-text-3" id="text-orgce6d370">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org3ba0015">
+<h4 id="org3ba0015">Compatibility</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgeab59e8">
+<h3 id="orgeab59e8">Methods of installation and deployment</h3>
+<div class="outline-text-3" id="text-orgeab59e8">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org3491e26">
+<h4 id="org3491e26">Local (CD/USB)</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgdc705fa">
+<h4 id="orgdc705fa">Network-based</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org91e28fc">
+<h3 id="org91e28fc">Local user permissions</h3>
+<div class="outline-text-3" id="text-org91e28fc">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org4b64a6b">
+<h4 id="org4b64a6b">Folder/file access for installation</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org427d998">
+<h3 id="org427d998">Security considerations</h3>
+<div class="outline-text-3" id="text-org427d998">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgf521834">
+<h4 id="orgf521834">Impact to device</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgbbfb386">
+<h4 id="orgbbfb386">Impact to network</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org0003d14">
+<h2 id="org0003d14">1.8 – Given a scenario, configure Microsoft Windows networking on a client/desktop.</h2>
+<div class="outline-text-2" id="text-org0003d14">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org8b92d01">
+<h3 id="org8b92d01">HomeGroup vs. Workgroup</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org8183e51">
+<h3 id="org8183e51">Domain setup</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org62cdcb0">
+<h3 id="org62cdcb0">Network shares/administrative shares/mapping drives</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org2cb1de8">
+<h3 id="org2cb1de8">Printer sharing vs. network printer mapping</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgf13600a">
+<h3 id="orgf13600a">Establish networking connections</h3>
+<div class="outline-text-3" id="text-orgf13600a">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org42b2120">
+<h4 id="org42b2120">VPN</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org85a7635">
+<h4 id="org85a7635">Dial-up</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org2f0814f">
+<h4 id="org2f0814f">Wireless</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org99247e9">
+<h4 id="org99247e9">Wired</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org7742f0d">
+<h4 id="org7742f0d">WWAN (Cellular)</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org8c0fbb5">
+<h3 id="org8c0fbb5">Proxy settings</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgf9b2be9">
+<h3 id="orgf9b2be9">Remote Desktop Connection</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org68e9234">
+<h3 id="org68e9234">Remote Assistance</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgdd43f3f">
+<h3 id="orgdd43f3f">Home vs. Work vs. Public network settings</h3>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgd06fc07">
+<h3 id="orgd06fc07">Firewall settings</h3>
+<div class="outline-text-3" id="text-orgd06fc07">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org15d46b1">
+<h4 id="org15d46b1">Exceptions</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org45c126f">
+<h4 id="org45c126f">Configuration</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orge225514">
+<h4 id="orge225514">Enabling/disabling Windows Firewall</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgdadf302">
+<h3 id="orgdadf302">Configuring an alternative IP address in Windows</h3>
+<div class="outline-text-3" id="text-orgdadf302">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org1485fe6">
+<h4 id="org1485fe6">IP addressing</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgcc3dacb">
+<h4 id="orgcc3dacb">Subnet mask</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orga1dcda0">
+<h4 id="orga1dcda0">DNS</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org41947b3">
+<h4 id="org41947b3">Gateway</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org3fde210">
+<h3 id="org3fde210">Network card properties</h3>
+<div class="outline-text-3" id="text-org3fde210">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org8afc9a4">
+<h4 id="org8afc9a4">Half duplex/full duplex/auto</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org76691e3">
+<h4 id="org76691e3">Speed</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org7f9214a">
+<h4 id="org7f9214a">Wake-on-LAN</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org95aa155">
+<h4 id="org95aa155">QoS</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org0089814">
+<h4 id="org0089814">BIOS (on-board NIC)</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-orge739344">
+<h2 id="orge739344">1.9 – Given a scenario, use features and tools of the Mac OS and Linux client/desktop operating systems.</h2>
+<div class="outline-text-2" id="text-orge739344">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orga9c55ed">
+<h3 id="orga9c55ed">Best practices</h3>
+<div class="outline-text-3" id="text-orga9c55ed">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org4df676a">
+<h4 id="org4df676a">Scheduled backups</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org9ff09d7">
+<h4 id="org9ff09d7">Scheduled disk maintenance</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org0a0385f">
+<h4 id="org0a0385f">System updates/App Store</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgf559420">
+<h4 id="orgf559420">Patch management</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org4dfb7af">
+<h4 id="org4dfb7af">Driver/firmware updates</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org51b9bc9">
+<h4 id="org51b9bc9">Antivirus/Anti-malware updates</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org4e5a664">
+<h3 id="org4e5a664">Tools</h3>
+<div class="outline-text-3" id="text-org4e5a664">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orge9f631f">
+<h4 id="orge9f631f">Backup/Time Machine</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgceb7b7b">
+<h4 id="orgceb7b7b">Restore/Snapshot</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgfe73ce6">
+<h4 id="orgfe73ce6">Image recovery</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgac0d66d">
+<h4 id="orgac0d66d">Disk maintenance utilities</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org07e5365">
+<h4 id="org07e5365">Shell/Terminal</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgfde030e">
+<h4 id="orgfde030e">Screen sharing</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org926392b">
+<h4 id="org926392b">Force Quit</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org8fe7c50">
+<h3 id="org8fe7c50">Features</h3>
+<div class="outline-text-3" id="text-org8fe7c50">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org43881b6">
+<h4 id="org43881b6">Multiple desktops/Mission Control</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgb2a53ea">
+<h4 id="orgb2a53ea">Key Chain</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org3b7bce6">
+<h4 id="org3b7bce6">Spot Light</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org84df5ee">
+<h4 id="org84df5ee">iCloud</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgde3c752">
+<h4 id="orgde3c752">Gestures</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org177c5fa">
+<h4 id="org177c5fa">Finder</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org7efa70d">
+<h4 id="org7efa70d">Remote Disc</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org8cdb430">
+<h4 id="org8cdb430">Dock</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org57d7823">
+<h4 id="org57d7823">Boot Camp</h4>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org782654f">
+<h3 id="org782654f">Basic Linux commands</h3>
+<div class="outline-text-3" id="text-org782654f">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org6703059">
+<h4 id="org6703059">ls</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgd74c67d">
+<h4 id="orgd74c67d">grep</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org470d074">
+<h4 id="org470d074">cd</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orge377680">
+<h4 id="orge377680">shutdown</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgeac223d">
+<h4 id="orgeac223d">pwd vs. passwd</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org6f5e693">
+<h4 id="org6f5e693">mv</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org9934262">
+<h4 id="org9934262">cp</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orge1a77d3">
+<h4 id="orge1a77d3">rm</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org0017b97">
+<h4 id="org0017b97">chmod</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgc090d5e">
+<h4 id="orgc090d5e">chown</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orga5caa40">
+<h4 id="orga5caa40">iwconfig/ifconfig</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org5d238ec">
+<h4 id="org5d238ec">ps</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org479ce15">
+<h4 id="org479ce15">su/sudo</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org51ef5a4">
+<h4 id="org51ef5a4">apt-get</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org09bb7ca">
+<h4 id="org09bb7ca">vi</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org08116b1">
+<h4 id="org08116b1">dd</h4>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orge8ad3b1">
+<h4 id="orge8ad3b1">kill</h4>
+<div class="slide-footer"><br></div>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/js/reveal.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c/t',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: true,
+fragmentInURL: true,
+hashOneBasedIndex: false,
+pdfSeparateFragments: false,
+
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'fade', // see README of reveal.js for options
+transitionSpeed: 'default',
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList && !Reveal.isSpeakerNotes(); } },
+{ src: './reveal.js/plugin/anything/anything.js' },
+{ src: './reveal.js/plugin/toc-progress/toc-progress.js', async: true, callback: function() { toc_progress.initialize('reduce', 'rgba(120,138,130,0.2)'); toc_progress.create(); } },
+{ src: './reveal.js/plugin/jump/jump.js', async: true },
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } },
+{ src: './reveal.js/plugin/coursemod/coursemod.js', async: true },
+{ src: './reveal.js/plugin/accessibility/helper.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }]
+
+,audioStartAtFragment: true,
+  audio: {
+    advance: -1, autoplay: false, defaultDuration: 0, defaultAudios: false, playerOpacity: 0.8, playerStyle: 'position: fixed; bottom: 9.5vh; left: 0%; width: 30%; height:30px; z-index: 33;' },
+anything: [
+        // Following initialization code for class animate from anything-demo.html.
+        // Copyright (c) 2016 Asvin Goel, under The MIT License (MIT).
+	{className: "animate",  initialize: (function(container, options){
+		Reveal.addEventListener( 'fragmentshown', function( event ) {
+			if (typeof event.fragment.beginElement === "function" ) {
+				event.fragment.beginElement();
+			}
+		});
+		Reveal.addEventListener( 'fragmenthidden', function( event ) {
+			if (event.fragment.hasAttribute('data-reverse') ) {
+				var reverse = event.fragment.parentElement.querySelector('[id=\"' + event.fragment.getAttribute('data-reverse') + '\"]');
+				if ( reverse && typeof reverse.beginElement === "function" ) {
+					reverse.beginElement();
+				}
+			}
+		});
+		if ( container.getAttribute("data-svg-src") ) {
+			var xhr = new XMLHttpRequest();
+			xhr.onload = function() {
+				if (xhr.readyState === 4) {
+					var svg = container.querySelector('svg');
+					container.removeChild( svg );
+					container.innerHTML = xhr.responseText + container.innerHTML;
+					if ( svg ) {
+						container.querySelector('svg').innerHTML = container.querySelector('svg').innerHTML + svg.innerHTML;
+					}
+				}
+				else {
+					console.warn( "Failed to get file. ReadyState: " + xhr.readyState + ", Status: " + xhr.status);
+				}
+			};
+			xhr.open( 'GET', container.getAttribute("data-svg-src"), true );
+			xhr.send();
+		}
+	}) },
+	{className: "randomPic",
+	 defaults: {imgalt: "Dummy alt text",
+		    imgcaption: "Image by {name}",
+		    choices: [ {name: "dummyname", path: "dummypath"} ]},
+	 initialize: (function(container, options){
+	     var choice = Math.trunc( Math.random()*(options.choices.length) );
+	     var img = "<img src='" + options.choices[choice].path + "' alt='" + options.choices[choice].imgalt + "' />";
+	     var caption = options.imgcaption.replace(new RegExp('\{name\}', 'gm'), options.choices[choice].name);
+	     container.innerHTML = img + caption;
+	 }) },
+	{className: "notes",
+	 initialize: (function(container, options){
+	     container.addEventListener('click', function(e) { RevealNotes.open(); });
+	 }) }
+],
+coursemod: { enabled: true, shown: false },
+});
+</script>
+</body>
+</html>

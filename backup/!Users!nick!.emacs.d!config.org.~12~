@@ -1,0 +1,505 @@
+
+* Configuration 
+
+This is me moving my configuration to an org file as many people have suggested, including Sacha Chua and then Brett Witty who I am more directly copying (https://github.com/BrettWitty/dotemacs/blob/master/bew_config.org)
+
+I started this on 2020-05-26, and at first I will just lump my whole current init.el file on here as a code block, then I will start breaking it up and organizing it.
+
+* Package management
+  Package managers were declared in the init.el file, so no need to duplicate here.
+
+** Setting up helm and putting in some keybindings
+
+#+BEGIN_SRC emacs-lisp
+(require 'helm-config)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x r b") 'helm-filtered-bookmarks)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-h b") 'helm-descbinds)
+(global-set-key (kbd "C-a") 'move-beginning-of-line) ; was having trouble with visual-line-mode
+(helm-mode 1)
+#+end_src
+
+** Helm descbinds
+[[https://github.com/emacs-helm/helm-descbinds]]
+Helm Descbinds provides an interface to emacs’ describe-bindings making the currently active key bindings interactively searchable with helm.
+#+BEGIN_SRC emacs-lisp
+(use-package helm-descbinds)
+(helm-descbinds-mode)
+#+END_SRC
+
+Adding the load path for the packages I install manually - having them in .emacs.d will make them more portable
+#+begin_src emacs-lisp
+(add-to-list 'load-path "~/.emacs.d/packages")
+;; set PATH
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+#+end_src
+
+** Making it possible to use quelpa-use-package
+
+#+begin_src emacs-lisp
+(quelpa
+ '(quelpa-use-package
+   :fetcher git
+   :url "https://github.com/quelpa/quelpa-use-package.git"))
+(require 'quelpa-use-package)
+#+end_src
+
+* Personal Details
+
+#+begin_src emacs-lisp
+(setq user-full-name "Nick Taintor"
+    user-mail-address "nick.taintor@gmail.com"
+    calendar-latitude 38.820600
+    calendar-longitude -77.318260
+    calendar-location-name "Farirfax, VA")
+
+;; global custom key settings
+(global-set-key (kbd "M-o") 'other-window)
+#+end_src
+
+* Exec path from shell
+
+The problem is that in mac OS the Emacs shell instance gets launched with default minimal environment variables.  exec-path-from-shell takes the $PATH from the actual shell environemnt when Emacs starts a shell
+#+BEGIN_SRC emacs-lisp
+;; exec-path-from-shell give the shell opened by emacs the same path as the user's shell
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+#+END_SRC
+* setting up beamer
+<2020-06-12 Fri> Not using Beamer, so I commented all this out
+# #+begin_src emacs-lisp
+# (eval-after-load "ox-latex"
+
+#   ;; update the list of LaTeX classes and associated header (encoding, etc.)
+#   ;; and structure
+#   '(add-to-list 'org-latex-classes
+#                 `("beamer"
+#                   ,(concat "\\documentclass[presentation]{beamer}\n"
+#                            "[DEFAULT-PACKAGES]"
+#                            "[PACKAGES]"
+#                            "[EXTRA]\n")
+#                   ("\\section{%s}" . "\\section*{%s}")
+#                   ("\\subsection{%s}" . "\\subsection*{%s}")
+#                   ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
+
+# (setq org-latex-listings t)
+
+# #+end_src
+
+* Org customization
+
+Some org-mode customization
+
+this should add visual-line-mode and org-indent-mode to org files
+#+begin_src emacs-lisp 
+(with-eval-after-load 'org       
+  (setq org-startup-indented t) ; Enable `org-indent-mode' by default
+  (add-hook 'org-mode-hook #'visual-line-mode))
+
+(setq org-src-fontify-natively t
+      org-confirm-babel-evaluate nil
+      org-src-preserve-indentation t
+      org-link-abbrev-alist '(("att" . org-attach-expand-link))
+      )
+#+end_src
+
+This will add nicer-looking bullets:
+#+begin_src emacs-lisp
+(use-package org-bullets
+:ensure t
+:config
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+#+END_SRC
+
+
+#+BEGIN_SRC emacs-lisp
+(setq org-latex-pdf-process
+      '("pdflatex -interaction nonstopmode -output-directory %o %f"
+	"bibtex %b"
+	"pdflatex -interaction nonstopmode -output-directory %o %f"
+	"pdflatex -interaction nonstopmode -output-directory %o %f"))
+
+(setq bibtex-autokey-year-length 4
+      bibtex-autokey-name-year-separator "-"
+      bibtex-autokey-year-title-separator "-"
+      bibtex-autokey-titleword-separator "-"
+      bibtex-autokey-titlewords 2
+      bibtex-autokey-titlewords-stretch 1
+      bibtex-autokey-titleword-length 5)
+
+(require 'dash)
+(setq org-latex-default-packages-alist
+      (-remove-item
+       '("" "hyperref" nil)
+       org-latex-default-packages-alist))
+
+;; Append new packages
+(add-to-list 'org-latex-default-packages-alist '("" "natbib" "") t)
+(add-to-list 'org-latex-default-packages-alist
+	     '("linktocpage,pdfstartview=FitH,colorlinks,
+linkcolor=blue,anchorcolor=blue,
+citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue"
+	       "hyperref" nil)
+	     t)
+
+(setq reftex-default-bibliography '("~/googleDrive/bibliography/references.bib"))
+
+;; see org-ref for use of these variables
+(setq org-ref-bibliography-notes "~/googleDrive/bibliography/notes.org"
+      org-ref-default-bibliography '("~/googleDrive/bibliography/references.bib")
+      org-ref-pdf-directory "~/googleDrive/Zotero")
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+
+
+(setq ispell-program-name "/usr/local/bin/aspell")
+#+end_src
+** Setting default notes file
+#+begin_src emacs-lisp
+(setq org-default-notes-file "~/org/notes.org")
+#+end_src
+** org-capture
+#+begin_src emacs-lisp
+(global-set-key (kbd "C-c c") 'org-capture)
+
+#+end_src
+** todo
+Setting TODO keywords
+- symbol meanings: ! = timestamp, @ = note with timestamp
+#+begin_src emacs-lisp
+
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)")))
+
+#+end_src
+* Reveal.JS
+#+begin_src emacs-lisp
+(use-package ox-reveal 
+:ensure ox-reveal)
+
+(setq org-reveal-root "file:///Users/nick/org/comptia/sessionone/reveal.js")
+(setq org-reveal-mathjax t)
+
+(use-package htmlize
+  :ensure t)
+#+end_src
+
+Org-mode exporting, ~C-c C-e~, now includes an option ~R~ for such reveal slide decks.
+
+Two dimensional slides are not always obvious so with the following there is an option in
+tiny font to view the slide-deck continuously and remind users that ~?~ provides useful
+shortcuts. Courtesy of [[https://github.com/alhassy/emacs.d/blob/master/README.org][Musa Al-hassy]] 
+
+#+begin_src emacs-lisp
+(setq org-reveal-title-slide "<h1>%t</h1> <h3>%a</h3>
+<font size=\"1\">
+<a href=\"?print-pdf&showNotes=true\">
+⟪ Flattened View ; Press <code>?</code> for Help ⟫
+</a>
+</font>")
+#+end_src
+
+One should remove the ~&showNotes=true~ if they do not want to include
+speaker notes in the flattened view.
+
+Within the flatenned view, one may wish to ~CTRL/CMD+P~ then save the
+resulting PDF locally.
+
+* Emacs-reveal
+
+#+begin_src emacs-lisp
+
+(use-package emacs-reveal
+  :load-path "~/.emacs.d/elpa/emacs-reveal")
+
+#+end_src
+
+* org-ref
+citations, cross-references, indexes, glossaries and bibtex utilities for org-mode
+from [[https://github.com/jkitchin/org-ref][here]]
+#+begin_src emacs-lisp
+(use-package org-ref)
+(use-package org-ref-pdf
+  :load-path "/Users/nick/.emacs.d/packages/org-ref-pdf.el")
+(use-package org-ref-url-utils
+  :load-path "/Users/nick/.emacs.d/packages/org-ref-url-utils.el")
+#+end_src
+* org-re-reveal
+<2020-05-30 Sat> turning off for now,focussing on getting regular reveal to work
+
+#+begin_src emacs-lisp
+;;(require 'org-re-reveal)
+#+end_src
+
+* magit
+Using magit and forge (which works with GitLab)
+#+begin_src emacs-lisp
+(use-package magit
+  :ensure t
+  :bind (("C-x g" . magit-status)
+         ("C-x C-g" . magit-status)))
+
+(use-package forge
+  :after magit)
+#+end_src
+* Org-mode <== HTML
+
+#+BEGIN_SRC emacs-lisp
+;; See: https://emacs.stackexchange.com/questions/7171/paste-html-into-org-mode
+(use-package org-eww
+ :quelpa (org-eww :fetcher git :url "https://github.com/Fuco1/org-mode.git"))
+#+END_SRC
+
+* org-pdftools - a custom org link type for pdf-tools
+
+#+BEGIN_SRC emacs-lisp
+(use-package org-pdftools
+  :hook (org-load . org-pdftools-setup-link))
+
+(use-package org-noter-pdftools
+  :after org-noter
+  :config
+  (with-eval-after-load 'pdf-annot
+    (add-hook 'pdf-annot-activate-handler-functions #'org-noter-pdftools-jump-to-note)))
+#+END_SRC
+
+* Org-Download
+
+I didn't like the way it stored things, and it kept duplicating the stuff I already had on my drive.  It just like Kitchin's take on it better!
+Drag and drop images to Emacs org-mode - [[https://github.com/abo-abo/org-download]]
+
+# #+BEGIN_SRC emacs-lisp
+# (use-package org-download
+#   :ensure t
+#   :defer t
+#   :init
+#   ;; Add handlers for drag-and-drop when Org is loaded.
+#     (with-eval-after-load 'org
+#       (org-download-enable)))
+
+# (setq-default org-download-image-dir "/Users/nick/org/comptia/sessionOne/images")
+# #+END_SRC
+
+* Drag images and files onto org-mode and insert a link to them
+from John Kitchin [[http://kitchingroup.cheme.cmu.edu/blog/2015/07/10/Drag-images-and-files-onto-org-mode-and-insert-a-link-to-them/][link]]
+
+#+BEGIN_SRC emacs-lisp
+(defun my-dnd-func (event)
+  (interactive "e")
+  (goto-char (nth 1 (event-start event)))
+  (x-focus-frame nil)
+  (let* ((payload (car (last event)))
+         (type (car payload))
+         (fname (cadr payload))
+         (img-regexp "\\(png\\|jp[e]?g\\)\\>"))
+    (cond
+     ;; insert image link
+     ((and  (eq 'drag-n-drop (car event))
+            (eq 'file type)
+            (string-match img-regexp fname))
+      (insert (format "[[%s]]" fname)))
+     ;; insert image link with caption
+     ((and  (eq 'C-drag-n-drop (car event))
+            (eq 'file type)
+            (string-match img-regexp fname))
+      (insert "#+ATTR_LATEX: :width 0.75\\textwidth :placement [h] :float nil\n")
+      (insert "#+ATTR_HTML: :width 30%\n")
+      (insert (concat  "#+CAPTION: " (read-string "Caption: ") "\n"))
+      (insert (format "[[%s]]" fname)))
+     ;; C-drag-n-drop to open a file
+     ((and  (eq 'C-drag-n-drop (car event))
+            (eq 'file type))
+      (find-file fname))
+     ((and (eq 'M-drag-n-drop (car event))
+           (eq 'file type))
+      (insert (format "[[attachfile:%s]]" fname)))
+     ;; regular drag and drop on file
+     ((eq 'file type)
+      (insert (format "[[%s]]\n" fname)))
+     (t
+      (error "I am not equipped for dnd on %s" payload)))))
+
+
+(define-key org-mode-map (kbd "<drag-n-drop>") 'my-dnd-func)
+(define-key org-mode-map (kbd "<C-drag-n-drop>") 'my-dnd-func)
+(define-key org-mode-map (kbd "<M-drag-n-drop>") 'my-dnd-func)
+#+END_SRC
+
+#+RESULTS:
+: my-dnd-func
+
+* Python IDE with elpy
+from Jorgen Schaefer's github [[https://github.com/jorgenschaefer/elpy]]
+
+#+BEGIN_SRC emacs-lisp
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
+#+END_SRC
+
+The next instructs emacs to use the standard Python interpreter
+#+BEGIN_SRC emacs-lisp
+(setq python-shell-interpreter "python"
+      python-shell-interpreter-args "-i")
+#+END_SRC
+
+Because on a mac the "python" command means python2, added this:
+#+BEGIN_SRC emacs-lisp
+(if (eq 'system-type "darwin")
+    (defvar elpy-rpc-python-command "python3")
+(defvar elpy-rpc-python-command "python"))  
+#+END_SRC
+
+Include [[https://www.flycheck.org/en/latest/][flycheck]]
+#+BEGIN_SRC emacs-lisp
+;; Enable Flycheck rather than flymake
+
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+#+END_SRC
+
+Using company-jedi: company-mode completion back-end for Python JEDI [[https://github.com/emacsorphanage/company-jedi]]
+#+BEGIN_SRC emacs-lisp
+(defun my/python-mode-hook ()
+  (add-to-list 'company-backends 'company-jedi))
+
+(add-hook 'python-mode-hook 'my/python-mode-hook)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+;; (use-package flycheck
+;;   :ensure t
+;;   :init (global-flycheck-mode))
+#+END_SRC
+
+Using autopep8
+
+#+BEGIN_SRC emacs-lisp
+(use-package py-autopep8
+  :init
+  (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save))
+#+END_SRC
+
+Use pyvenv 
+[[https://github.com/jorgenschaefer/pyvenv][Pyvenv]]
+
+#+BEGIN_SRC emacs-lisp
+(use-package pyvenv
+  :ensure t
+  :init
+  (setenv "WORKON_HOME" "~/.pyenv/versions"))
+#+END_SRC
+
+* expand region
+From [[https://github.com/magnars/expand-region.el][this]] GitHub 
+#+begin_src emacs-lisp
+(use-package expand-region
+  :ensure t
+  :bind (("C-=" . er/expand-region)))
+#+end_src
+* Yasnippet
+from [[https://github.com/joaotavora/yasnippet][here]]
+#+begin_src emacs-lisp
+(add-to-list 'load-path "~/.emacs.d/packages/yasnippet")
+
+(use-package yasnippet
+  :ensure t
+  :init
+  (yas-global-mode 1)
+  :config
+  (add-to-list 'yas-snippet-dirs "~/emacs.d/snippets"))
+ #+end_src
+
+
+* more stuff
+
+#+begin_src emacs-lisp
+
+;; (require 'org)
+;; (define-key global-map "\C-cl" 'org-store-link)
+;; (define-key global-map "\C-ca" 'org-agenda)
+;; (setq org-log-done t)
+
+;;(require 'helm-config)
+;;(global-set-key (kbd "M-x") #'helm-M-x)
+;;(global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
+;;(global-set-key (kbd "C-x C-f") #'helm-find-files)
+;;(helm-mode 1)
+
+
+
+
+
+#+END_SRC
+* preferences / appearance
+
+Don't display the help screen on startup
+
+#+BEGIN_SRC emacs-lisp
+(setq inhibit-startup-screen t)
+#+END_SRC
+
+
+I like the blinking bar cursor!
+
+#+BEGIN_SRC emacs-lisp
+(setq-default cursor-type 'bar)
+#+END_SRC
+
+Taking away the menu bar, toolbar, and scroll bar like a true emacs hacker
+
+#+begin_src emacs-lisp
+;;(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+#+end_src
+
+I don't want the error bell
+
+#+BEGIN_SRC emacs-lisp
+(setq ring-bell-function 'ignore)
+#+END_SRC
+
+This puts all the #BACKUP FILES# out of the way and limits them slightly
+#+BEGIN_SRC emacs-lisp
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
+  backup-by-copying t    ; Don't delink hardlinks
+  version-control t      ; Use version numbers on backups
+  delete-old-versions t  ; Automatically delete excess backups
+  kept-new-versions 20   ; how many of the newest versions to keep
+  kept-old-versions 5    ; and how many of the old
+  )
+#+END_SRC
+
+Installing Dracula theme
+
+#+begin_src emacs-lisp
+(add-hook 'after-init-hook (lambda () (load-theme 'dracula)))
+#+end_src
+
+#+BEGIN_SRC emacs-lisp
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (dracula)))
+ '(custom-safe-themes
+   (quote
+    ("5f1bd7f67dc1598977e69c6a0aed3c926f49581fdf395a6246f9bc1df86cb030" default)))
+ '(org-startup-truncated nil)
+ '(package-selected-packages
+   (quote
+    (org-ref flyspell-correct org adaptive-wrap dracula-theme)))
+ '(winner-mode t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+#+END_SRC

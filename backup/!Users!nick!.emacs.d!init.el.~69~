@@ -1,0 +1,89 @@
+;;; Code:
+;; turns on debugging at the beginning, so if something breaks during init,
+;; we get dumped into a debugger
+(setq debug-on-error t)
+
+;; Make all commands of the “package” module present.
+(require 'package)
+
+;; Internet repositories for new packages.
+(setq package-archives
+      '(("melpa" . "https://melpa.org/packages/")
+	("gnu" . "https://elpa.gnu.org/packages/")
+        ("org" . "https://orgmode.org/elpa/")))
+
+(package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(require 'use-package)
+
+;; load org package and our emacs-config.org file
+(require 'org)
+(org-babel-load-file "~/.emacs.d/config.org")
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes '(dracula))
+ '(custom-safe-themes
+   '("c37c9c6a58232c01776650502e2259ef0ddbb20c17e4bf3e59effe070b136906" "91ba29e7f64c5c5b92ddd540c1fbb7d2e9d442dda9d0ab070c62462040254113" "00c76aa2e529fbfaf53f94806a9245437530517bd5586ab75501eba0930ad050" "39513024780f5d53867457068976b5a06db1db3a14b1d89b7f556cc80a7ac68a" "dcdd1471fde79899ae47152d090e3551b889edf4b46f00df36d653adc2bf550d" "5f1bd7f67dc1598977e69c6a0aed3c926f49581fdf395a6246f9bc1df86cb030" default))
+ '(oer-reveal-plugin-config
+   '(("reveal.js-plugins"
+      (:oer-reveal-audio-slideshow-dependency :oer-reveal-anything-dependency :oer-reveal-chalkboard-dependency)
+      (:oer-reveal-audio-slideshow-config :oer-reveal-anything-config :oer-reveal-chalkboard-config))
+     ("Reveal.js-TOC-Progress"
+      (:oer-reveal-toc-progress-dependency)
+      nil)
+     ("reveal.js-jump-plugin"
+      (:oer-reveal-jump-dependency)
+      nil)
+     ("reveal.js-quiz"
+      (:oer-reveal-quiz-dependency)
+      nil)
+     ("reveal.js-coursemod"
+      (:oer-reveal-coursemod-dependency)
+      (:oer-reveal-coursemod-config))
+     ("reveal-a11y"
+      (:oer-reveal-a11y-dependency)
+      nil)))
+ '(oer-reveal-plugins
+   '("reveal.js-plugins" "reveal.js-jump-plugin" "reveal.js-quiz" "reveal.js-coursemod" "reveal-a11y"))
+ '(org-agenda-files '("~/org/notes.org"))
+ '(org-capture-templates
+   '(("w" "capture web site" entry
+      (file "\"\"")
+      "* %a :website:\\n\\n%U %?\\n\\n%:initial")))
+ '(org-hide-emphasis-markers t)
+ '(org-hide-leading-stars t)
+ '(org-html-postamble-format
+   '(("en" "<p>Made with <a href=\"https://www.gnu.org/software/emacs/\">Gnu Emacs</a>, <a href=\"https://orgmode.org/\">Org mode</a>, and with the <a href=\"https://github.com/jessekelly881/Rethink/\">Rethink</a> single page theme</p>")))
+ '(org-modules
+   '(ol-bbdb ol-bibtex ol-docview ol-eww ol-gnus ol-info ol-irc ol-mhe ol-rmail org-tempo ol-w3m))
+ '(org-re-reveal-init-script "autoPlayMedia: true")
+ '(org-re-reveal-title-slide nil)
+ '(org-reveal-external-plugins
+   '((chalkboard . "{ src: '%splugin/chalkboard.js' }")
+     (fullscreen . "{ src: '%splugin/fullscreen/fullscreen.js' }")))
+ '(org-startup-truncated nil)
+ '(package-selected-packages
+   '(modus-vivendi-theme modus-operandi-theme olivetti projectile org-preview-html which-key dap-mode lsp-ivy helm-lsp lsp-treemacs flycheck-vdm lsp-ui lsp-mode forge magit docker helm-org expand-region company-go company-jedi elpygen pyenv-mode-auto org orglue helm-descbinds pyenv-mode elpy py-autopep8 flycheck org-download emacs-reveal org-ref-pdf org-ref org-bullets bug-hunter org-plus-contrib org-eww quelpa-use-package quelpa s ox-reveal flyspell-correct adaptive-wrap dracula-theme))
+ '(safe-local-variable-values
+   '((eval add-hook 'after-save-hook 'org-html-export-to-html nil t)
+     (org-html-htmlize-output-type . css)
+     (org-html-postamble . "Made with   [[https://www.gnu.org/software/emacs/][GNU Emacs]], [[https://orgmode.org/][Org mode]], and with the [[https://github.com/jessekelly881/Rethink][Rethink]] single page theme")
+     (org-src-preserve-indentation . t)))
+ '(scroll-step 0)
+ '(winner-mode t))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-hide ((t nil)))
+ '(org-indent ((t (:inherit fixed-pitch)))))
