@@ -317,10 +317,10 @@ case, the CUSTOM_ID of the entry is returned."
     (message "Enabled oer-reveal-export-to-html on save for current buffer...")))
 
 (use-package org-ref)
-(use-package org-ref-pdf
-  :load-path "/Users/nick/.emacs.d/packages/org-ref-pdf.el")
-(use-package org-ref-url-utils
-  :load-path "/Users/nick/.emacs.d/packages/org-ref-url-utils.el")
+;; (use-package org-ref-pdf
+;;  :load-path "/Users/nick/.emacs.d/packages/org-ref-pdf.el")
+;; (use-package org-ref-url-utils
+;;   :load-path "/Users/nick/.emacs.d/packages/org-ref-url-utils.el")
 
 ;;(require 'org-re-reveal)
 
@@ -541,10 +541,11 @@ The cursor becomes a blinking bar, per `prot/cursor-type-mode'."
 
 (use-package elpy
   :ensure t
+  :bind ("M-<up>" . comint-previous-input)
   :init
   (elpy-enable))
 
-(setq python-shell-interpreter "python"
+(setq python-shell-interpreter "~/.pyenv/shims/python3.8"
       python-shell-interpreter-args "-i")
 
 (if (eq 'system-type "darwin")
@@ -562,6 +563,15 @@ The cursor becomes a blinking bar, per `prot/cursor-type-mode'."
 
 (add-hook 'python-mode-hook 'my/python-mode-hook)
 
+(use-package pyenv-mode
+  :init
+  (add-to-list 'exec-path "~/.pyenv/shims")
+  (setenv "WORKON_HOME" "~/.pyenv/versions/")
+  :config
+  (pyenv-mode)
+  :bind
+  ("C-x p e" . pyenv-activate-current-project))
+
 ;; (use-package flycheck
 ;;   :ensure t
 ;;   :init (global-flycheck-mode))
@@ -569,33 +579,6 @@ The cursor becomes a blinking bar, per `prot/cursor-type-mode'."
 (use-package py-autopep8
   :init
   (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save))
-
-(use-package pyvenv
-  :ensure t
-  :init
-  (setenv "WORKON_HOME" "~/.pyenv/versions"))
-
-;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-(setq lsp-keymap-prefix "s-l")
-
-(use-package lsp-mode
-    :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-            (python-mode . lsp)
-            ;; if you want which-key integration
-            (lsp-mode . lsp-enable-which-key-integration))
-    :commands lsp)
-
-;; optionally
-(use-package lsp-ui :commands lsp-ui-mode)
-;; if you are helm user
-(use-package helm-lsp :commands helm-lsp-workspace-symbol)
-;; if you are ivy user
-;; (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
-(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
-
-;; optionally if you want to use debugger
-(use-package dap-mode)
-;; (use-package dap-LANGUAGE) to load the dap adapter for your language
 
 (use-package expand-region
   :ensure t
@@ -640,28 +623,23 @@ The cursor becomes a blinking bar, per `prot/cursor-type-mode'."
   (setq dimmer-fraction 0.50)
   (dimmer-mode t))
 
-(use-package modus-operandi-theme :ensure)
+(use-package modus-themes
+  :ensure
+  :init
+  ;; Add customizations before loading themes
+  (setq modus-themes-slanted-constructs t
+	modus-themes-bold-constructs nil)
+  :config
+  ;; load the theme of your choice
+  (modus-themes-load-operandi)
+  :bind ("<f5>" . modus-themes-toggle))
 
-(use-package modus-vivendi-theme :ensure)
-
-(load-theme 'modus-operandi t)          ; Light theme
-(load-theme 'modus-vivendi t)           ; Dark theme
-
-;; ;; making sure timer.el is enabled
-;; (use-package timer
-;;   :load-path "packages/timer")
-  
-;; ;; Light at sunrise
-;; (load-theme 'modus-operandi t t)
-;; (run-at-time (nth 1 (split-string (sunrise-sunset)))
-;;              (* 60 60 24)
-;;              (lambda () (enable-theme 'modus-operandi)))
-
-;; ;; Dark at sunset
-;; (load-theme 'modus-vivendi t t)
-;; (run-at-time (nth 4 (split-string (sunrise-sunset)))
-;;              (* 60 60 24)
-;;              (lambda () (enable-theme 'modus-vivendi)))
+(use-package circadian
+  :ensure t
+  :config
+  (setq circadian-themes '((:sunrise . modus-operandi)
+			   (:sunset  . modus-vivendi)))
+  (circadian-setup))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

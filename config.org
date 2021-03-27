@@ -546,10 +546,10 @@ citations, cross-references, indexes, glossaries and bibtex utilities for org-mo
 from [[https://github.com/jkitchin/org-ref][here]]
 #+begin_src emacs-lisp
 (use-package org-ref)
-(use-package org-ref-pdf
-  :load-path "/Users/nick/.emacs.d/packages/org-ref-pdf.el")
-(use-package org-ref-url-utils
-  :load-path "/Users/nick/.emacs.d/packages/org-ref-url-utils.el")
+;; (use-package org-ref-pdf
+;;  :load-path "/Users/nick/.emacs.d/packages/org-ref-pdf.el")
+;; (use-package org-ref-url-utils
+;;   :load-path "/Users/nick/.emacs.d/packages/org-ref-url-utils.el")
 #+end_src
 * org-re-reveal
 :PROPERTIES:
@@ -842,13 +842,14 @@ from Jorgen Schaefer's github [[https://github.com/jorgenschaefer/elpy]]
 #+BEGIN_SRC emacs-lisp
 (use-package elpy
   :ensure t
+  :bind ("M-<up>" . comint-previous-input)
   :init
   (elpy-enable))
 #+END_SRC
 
 The next instructs emacs to use the standard Python interpreter
 #+BEGIN_SRC emacs-lisp
-(setq python-shell-interpreter "python"
+(setq python-shell-interpreter "~/.pyenv/shims/python3.8"
       python-shell-interpreter-args "-i")
 #+END_SRC
 
@@ -877,6 +878,18 @@ Using company-jedi: company-mode completion back-end for Python JEDI [[https://g
 (add-hook 'python-mode-hook 'my/python-mode-hook)
 #+END_SRC
 
+Using Pyenv
+=Pyenv= and =pyenv-virualenv= both installed on host, so to integrate them both with =elpy=:
+#+begin_src emacs-lisp
+(use-package pyenv-mode
+  :init
+  (add-to-list 'exec-path "~/.pyenv/shims")
+  (setenv "WORKON_HOME" "~/.pyenv/versions/")
+  :config
+  (pyenv-mode)
+  :bind
+  ("C-x p e" . pyenv-activate-current-project))
+#+end_src
 #+BEGIN_SRC emacs-lisp
 ;; (use-package flycheck
 ;;   :ensure t
@@ -891,48 +904,51 @@ Using autopep8
   (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save))
 #+END_SRC
 
-Use pyvenv 
-[[https://github.com/jorgenschaefer/pyvenv][Pyvenv]]
 
-#+BEGIN_SRC emacs-lisp
-(use-package pyvenv
-  :ensure t
-  :init
-  (setenv "WORKON_HOME" "~/.pyenv/versions"))
-#+END_SRC
+# Use pyvenv 
+# [[https://github.com/jorgenschaefer/pyvenv][Pyvenv]]
+
+# #+BEGIN_SRC emacs-lisp
+# (use-package pyvenv
+#   :ensure t
+#   :init
+#   (setenv "WORKON_HOME" "~/.pyenv/versions"))
+# #+END_SRC
 
 * LSP Mode
 :PROPERTIES:
 :CUSTOM_ID: h:55A8DBAA-432B-4E6E-A4CA-3197D1DC4097
 :END:
 home page [[https://emacs-lsp.github.io/lsp-mode/][here]]
-#+begin_src emacs-lisp
-;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-(setq lsp-keymap-prefix "s-l")
+<2021-02-28 Sun> turned this off, never really used it much but will keep it around just in case!
+Really only use Python in emacs these days, so =elpy= is just fine.
+# #+begin_src emacs-lisp
+# ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+# (setq lsp-keymap-prefix "s-l")
 
-(use-package lsp-mode
-    :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-            (python-mode . lsp)
-            ;; if you want which-key integration
-            (lsp-mode . lsp-enable-which-key-integration))
-    :commands lsp)
+# (use-package lsp-mode
+#     :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
+#             (python-mode . lsp)
+#             ;; if you want which-key integration
+#             (lsp-mode . lsp-enable-which-key-integration))
+#     :commands lsp)
 
-;; optionally
-(use-package lsp-ui :commands lsp-ui-mode)
-;; if you are helm user
-(use-package helm-lsp :commands helm-lsp-workspace-symbol)
-;; if you are ivy user
-;; (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
-(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+# ;; optionally
+# (use-package lsp-ui :commands lsp-ui-mode)
+# ;; if you are helm user
+# (use-package helm-lsp :commands helm-lsp-workspace-symbol)
+# ;; if you are ivy user
+# ;; (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+# (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
 
-;; optionally if you want to use debugger
-(use-package dap-mode)
-;; (use-package dap-LANGUAGE) to load the dap adapter for your language
-
-
+# ;; optionally if you want to use debugger
+# (use-package dap-mode)
+# ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
 
 
-#+end_src
+
+
+# #+end_src
 * expand region
 :PROPERTIES:
 :CUSTOM_ID: h:37AB6CF7-E0DB-4291-9771-241AB775032A
@@ -1019,36 +1035,33 @@ from: [[https://gitlab.com/protesilaos/modus-themes][here]]
 The Modus themes project consists of two standalone items, one where
   dark text is cast on a light backdrop (Modus Operandi) and another where
   light text is displayed against a dark background (Modus Vivendi)."
+
+  Wow, they're part of default emacs now!
 #+begin_src emacs-lisp
-(use-package modus-operandi-theme :ensure)
-
-(use-package modus-vivendi-theme :ensure)
-
-(load-theme 'modus-operandi t)          ; Light theme
-(load-theme 'modus-vivendi t)           ; Dark theme
+(use-package modus-themes
+  :ensure
+  :init
+  ;; Add customizations before loading themes
+  (setq modus-themes-slanted-constructs t
+	modus-themes-bold-constructs nil)
+  :config
+  ;; load the theme of your choice
+  (modus-themes-load-operandi)
+  :bind ("<f5>" . modus-themes-toggle))
 #+end_src
 
 Then, we can load them at a given time - the following will only work if ~calendar-latitude~ and ~calendar-latitude~ are set correctly (which they are here up in Personal Details, because /of course/ emacs has a solar clock running in the background at all times, with the ~solar.el~ library.
 
-<2020-10-14 Wed> stopped working after that dumb crash and reconstruction!
 #+begin_src emacs-lisp
-;; ;; making sure timer.el is enabled
-;; (use-package timer
-;;   :load-path "packages/timer")
+(use-package circadian
+  :ensure t
+  :config
+  (setq circadian-themes '((:sunrise . modus-operandi)
+			   (:sunset  . modus-vivendi)))
+  (circadian-setup))
   
-;; ;; Light at sunrise
-;; (load-theme 'modus-operandi t t)
-;; (run-at-time (nth 1 (split-string (sunrise-sunset)))
-;;              (* 60 60 24)
-;;              (lambda () (enable-theme 'modus-operandi)))
-
-;; ;; Dark at sunset
-;; (load-theme 'modus-vivendi t t)
-;; (run-at-time (nth 4 (split-string (sunrise-sunset)))
-;;              (* 60 60 24)
-;;              (lambda () (enable-theme 'modus-vivendi)))
-
 #+end_src
+
 
 #+BEGIN_SRC emacs-lisp
 (custom-set-variables

@@ -1,0 +1,10 @@
+#+SETUPFILE: ~/.emacs.d/config.org
+* Friday, 01 January 2021
+:PROPERTIES:
+:CREATED:  20210101
+:END:
+** 07:42 Now having problems with prot/olivetti mode - every time I try to load it, get an error associated with org-journal.
+Debugger entered--Lisp error: (error "Autoloading file /Users/nick/.emacs.d/elpa/org-jou...")
+  autoload-do-load((autoload "org-journal" nil t nil) prot/olivetti-mode)
+  command-execute(prot/olivetti-mode)
+  

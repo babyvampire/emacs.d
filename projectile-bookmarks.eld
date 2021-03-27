@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/projects/fobsite/" "~/.emacs.d/packages/snow.el/" "~/org/comptia/sessionOne/")
+("~/.emacs.d/" "~/.pyenv/" "~/projects/fobsite/" "~/.emacs.d/packages/snow.el/" "~/org/comptia/sessionOne/")

@@ -8254,10 +8254,10 @@ If COMMAND is nil, the key-chord is removed.
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/org-ref-20201126.1924/org-ref-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/org-ref-20210111.1702/org-ref-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/org-ref-20201126.1924/org-ref-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/org-ref-20210111.1702/org-ref-autoloads.el") (car load-path))))
 
 
 
@@ -8713,8 +8713,8 @@ Entry gets added after the last #+latex_header line.
 
 (autoload 'org-ref-add-acronym-entry "org-ref-glossary" "\
 Add an acronym entry with LABEL.
-ABBRV is the abbreviated form.
-FULL is the expanded acronym.
+  ABBRV is the abbreviated form.
+  FULL is the expanded acronym.
 
 \(fn LABEL ABBRV FULL)" t nil)
 
@@ -8738,7 +8738,7 @@ If you are on link, replace with newly selected label.  Use
 Use a double \\[universal-argument] \\[universal-argument] to insert a
 \[[#custom-id]] link" t nil)
 
-(autoload 'org-ref "org-ref-helm" "\
+(autoload 'org-ref-helm "org-ref-helm" "\
 Opens a helm interface to actions for `org-ref'.
 Shows bad citations, ref links and labels.
 This widens the file so that all links go to the right place." t nil)
@@ -9062,7 +9062,7 @@ Set link TYPE properties to PARAMETERS.
 
 (function-put 'org-ref-link-set-parameters 'lisp-indent-function '1)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-ref-utils" '("ords" "org-ref-")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-ref-utils" '("ords" "org-ref")))
 
 
 
@@ -9225,10 +9225,10 @@ and append it. ARG is passed to `org-link-complete-file'.
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/org-journal-20200912.1339/org-journal-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/org-journal-20210326.1207/org-journal-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/org-journal-20200912.1339/org-journal-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/org-journal-20210326.1207/org-journal-autoloads.el") (car load-path))))
 
 
 
@@ -9241,9 +9241,9 @@ Mode for writing or viewing entries written in the journal.
 
 \(fn)" t nil)
 
-(define-obsolete-function-alias 'org-journal-open-next-entry 'org-journal-next-entry)
+(define-obsolete-function-alias 'org-journal-open-next-entry 'org-journal-next-entry "2.1.0")
 
-(define-obsolete-function-alias 'org-journal-open-previous-entry 'org-journal-previous-entry)
+(define-obsolete-function-alias 'org-journal-open-previous-entry 'org-journal-previous-entry "2.1.0")
 
 (autoload 'org-journal-convert-created-property-timestamps "org-journal" "\
 Convert CREATED property timestamps to `org-journal-created-property-timestamp-format'.
@@ -9277,9 +9277,16 @@ arguments (C-u C-u) are given. In that case insert just the heading.
 \(fn PREFIX &optional EVENT)" t nil)
 
 (autoload 'org-journal-new-scheduled-entry "org-journal" "\
-Create a new entry in the future.
+Create a new entry in the future with an active timestamp.
+
+With non-nil prefix argument create a regular entry instead of a TODO entry.
 
 \(fn PREFIX &optional SCHEDULED-TIME)" t nil)
+
+(autoload 'org-journal-reschedule-scheduled-entry "org-journal" "\
+Reschedule an entry in the future.
+
+\(fn &optional TIME)" t nil)
 
 (autoload 'org-journal-open-current-journal-file "org-journal" "\
 Open the current journal file" t nil)
@@ -9423,6 +9430,65 @@ body width set with `olivetti-body-width'.
 
 
 (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name))))
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modus-vivendi-theme" '("modus-vivendi")))
+
+
+
+
+)
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/modus-themes-20210101.611/modus-themes-autoloads.el"))
+
+(add-to-list 'load-path (directory-file-name
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/modus-themes-20210101.611/modus-themes-autoloads.el") (car load-path))))
+
+
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modus-operandi-theme" '("modus-operandi")))
+
+
+
+(autoload 'modus-themes-contrast "modus-themes" "\
+Measure WCAG contrast ratio between C1 and C2.
+C1 and C2 are color values written in hexadecimal RGB.
+
+\(fn C1 C2)" nil nil)
+
+(autoload 'modus-themes-color "modus-themes" "\
+Return color value for COLOR from current palette.
+COLOR is a key in `modus-themes-operandi-colors' or
+`modus-themes-vivendi-colors'.
+
+\(fn COLOR)" nil nil)
+
+(autoload 'modus-themes-color-alts "modus-themes" "\
+Return color value from current palette.
+When Modus Operandi is enabled, return color value for color
+LIGHT-COLOR.  When Modus Vivendi is enabled, return color value
+for DARK-COLOR.  LIGHT-COLOR and DARK-COLOR are keys in
+`modus-themes-operandi-colors' or `modus-themes-vivendi-colors'.
+
+\(fn LIGHT-COLOR DARK-COLOR)" nil nil)
+
+(autoload 'modus-themes-load-operandi "modus-themes" "\
+Load `modus-operandi' and disable `modus-vivendi'.
+Also run `modus-themes-after-load-theme-hook'." nil nil)
+
+(autoload 'modus-themes-load-vivendi "modus-themes" "\
+Load `modus-vivendi' and disable `modus-operandi'.
+Also run `modus-themes-after-load-theme-hook'." nil nil)
+
+(autoload 'modus-themes-toggle "modus-themes" "\
+Toggle between `modus-operandi' and `modus-vivendi' themes.
+Also runs `modus-themes-after-load-theme-hook' at its last stage
+by virtue of calling either of `modus-themes-load-operandi' and
+`modus-themes-load-vivendi' functions." t nil)
+
+(when (and (boundp 'custom-theme-load-path) load-file-name) (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name))))
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modus-themes" '("modus-themes-")))
+
+
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modus-vivendi-theme" '("modus-vivendi")))
 
@@ -11529,28 +11595,29 @@ Whether expand-region should use subword expansions.")
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/exec-path-from-shell-20200526.324/exec-path-from-shell-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/exec-path-from-shell-20201215.33/exec-path-from-shell-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/exec-path-from-shell-20200526.324/exec-path-from-shell-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/exec-path-from-shell-20201215.33/exec-path-from-shell-autoloads.el") (car load-path))))
 
 
 
 (autoload 'exec-path-from-shell-copy-envs "exec-path-from-shell" "\
 Set the environment variables with NAMES from the user's shell.
 
-As a special case, if the variable is $PATH, then `exec-path' and
-`eshell-path-env' are also set appropriately.  The result is an alist,
-as described by `exec-path-from-shell-getenvs'.
+As a special case, if the variable is $PATH, then the variables
+`exec-path' and `eshell-path-env' are also set appropriately.
+The result is an alist, as described by
+`exec-path-from-shell-getenvs'.
 
 \(fn NAMES)" nil nil)
 
 (autoload 'exec-path-from-shell-copy-env "exec-path-from-shell" "\
 Set the environment variable $NAME from the user's shell.
 
-As a special case, if the variable is $PATH, then `exec-path' and
-`eshell-path-env' are also set appropriately.  Return the value
-of the environment variable.
+As a special case, if the variable is $PATH, then the variables
+`exec-path' and `eshell-path-env' are also set appropriately.
+Return the value of the environment variable.
 
 \(fn NAME)" t nil)
 
@@ -11559,13 +11626,9 @@ Initialize environment from the user's shell.
 
 The values of all the environment variables named in
 `exec-path-from-shell-variables' are set from the corresponding
-values used in the user's shell.
-
-\(fn)" t nil)
+values used in the user's shell." t nil)
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "exec-path-from-shell" '("exec-path-from-shell-")))
-
-
 
 
 )
@@ -13067,6 +13130,20 @@ Provide completion info according to COMMAND and ARG.
 
 
 )
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/circadian-20181024.1256/circadian-autoloads.el"))
+
+(add-to-list 'load-path (directory-file-name
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/circadian-20181024.1256/circadian-autoloads.el") (car load-path))))
+
+
+
+(autoload 'circadian-setup "circadian" "\
+Setup circadian based on `circadian-themes'." nil nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "circadian" '("circadian-")))
+
+
+)
 (let ((load-file-name "/Users/nick/.emacs.d/elpa/bug-hunter-1.3.1/bug-hunter-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
@@ -13206,14 +13283,14 @@ Wrap the buffer text with adaptive filling.
 )
 (setq package-activated-list
       (append
-       '(yasnippet yaml-mode async with-editor which-key vdm-mode bind-key use-package treepy dash s f avy ace-window pfuture lv hydra ht treemacs transient tablist ivy swiper spinner smex showtip popup pos-tip sdcv pyvenv pythonic deferred python-environment pyenv-mode pyenv-mode-auto py-autopep8 epl pkg-info projectile posframe pdf-tools parsebib paradox org ox-rst ox-reveal htmlize epic orglue git-commit magit orgit org-superstar helm-core helm biblio-core biblio bibtex-completion helm-bibtex key-chord org-ref org-preview-html org-noter org-pdftools org-noter-pdftools org-journal org-eww org-download org-bullets olivetti modus-vivendi-theme modus-operandi-theme memoize markdown-mode dash-functional lsp-mode lsp-ui lsp-treemacs lsp-ivy json-snatcher json-reformat json-mode concurrent ctable epc jedi-core ivy-rich highlight-indentation helm-org helm-lsp helm-descbinds helm-bind-key go-mode ghub emacsql emacsql-sqlite closql forge flyspell-correct flycheck flycheck-vdm expand-region exec-path-from-shell elpygen company elpy docker-tramp docker dimmer diminish-buffer diminish bui dap-mode counsel company-jedi company-go bug-hunter all-the-icons all-the-icons-ivy-rich adaptive-wrap)
+       '(yasnippet yaml-mode async with-editor which-key vdm-mode bind-key use-package treepy dash s f avy ace-window pfuture lv hydra ht treemacs transient tablist ivy swiper spinner smex showtip popup pos-tip sdcv pyvenv pythonic deferred python-environment pyenv-mode pyenv-mode-auto py-autopep8 epl pkg-info projectile posframe pdf-tools parsebib paradox org ox-rst ox-reveal htmlize epic orglue git-commit magit orgit org-superstar helm-core helm biblio-core biblio bibtex-completion helm-bibtex key-chord org-ref org-preview-html org-noter org-pdftools org-noter-pdftools org-journal org-eww org-download org-bullets olivetti modus-vivendi-theme modus-themes modus-operandi-theme memoize markdown-mode dash-functional lsp-mode lsp-ui lsp-treemacs lsp-ivy json-snatcher json-reformat json-mode concurrent ctable epc jedi-core ivy-rich highlight-indentation helm-org helm-lsp helm-descbinds helm-bind-key go-mode ghub emacsql emacsql-sqlite closql forge flyspell-correct flycheck flycheck-vdm expand-region exec-path-from-shell elpygen company elpy docker-tramp docker dimmer diminish-buffer diminish bui dap-mode counsel company-jedi company-go circadian bug-hunter all-the-icons all-the-icons-ivy-rich adaptive-wrap)
        package-activated-list))
 (progn
   (require 'info)
   (info-initialize)
   (setq Info-directory-list
 	(append
-	 '("/Users/nick/.emacs.d/elpa/forge-20201002.1420" "/Users/nick/.emacs.d/elpa/ghub-20201010.1929" "/Users/nick/.emacs.d/elpa/modus-operandi-theme-20201013.848" "/Users/nick/.emacs.d/elpa/modus-vivendi-theme-20201013.848" "/Users/nick/.emacs.d/elpa/org-eww-20160416.601" "/Users/nick/.emacs.d/elpa/magit-20201004.830" "/Users/nick/.emacs.d/elpa/org-20201012" "/Users/nick/.emacs.d/elpa/ivy-20200826.955" "/Users/nick/.emacs.d/elpa/transient-20200819.1133" "/Users/nick/.emacs.d/elpa/dash-20200803.1520" "/Users/nick/.emacs.d/elpa/use-package-20200721.2156" "/Users/nick/.emacs.d/elpa/with-editor-20200930.1912")
+	 '("/Users/nick/.emacs.d/elpa/forge-20201002.1420" "/Users/nick/.emacs.d/elpa/ghub-20201010.1929" "/Users/nick/.emacs.d/elpa/modus-operandi-theme-20201013.848" "/Users/nick/.emacs.d/elpa/modus-themes-20210101.611" "/Users/nick/.emacs.d/elpa/modus-vivendi-theme-20201013.848" "/Users/nick/.emacs.d/elpa/org-eww-20160416.601" "/Users/nick/.emacs.d/elpa/magit-20201004.830" "/Users/nick/.emacs.d/elpa/org-20201012" "/Users/nick/.emacs.d/elpa/ivy-20200826.955" "/Users/nick/.emacs.d/elpa/transient-20200819.1133" "/Users/nick/.emacs.d/elpa/dash-20200803.1520" "/Users/nick/.emacs.d/elpa/use-package-20200721.2156" "/Users/nick/.emacs.d/elpa/with-editor-20200930.1912")
 	 Info-directory-list)))
 
 ;; Local Variables:

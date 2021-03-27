@@ -1,0 +1,124 @@
+# -*- org-image-actual-width: nil; -*-
+#+STARTUP: overview
+#+OPTIONS: auto-id:t
+#+TODO: TODO(t) WAIT(w@/!) | DONE(d!) CANCELED(c@)
+#+SPDX-FileCopyrightText:blah blah
+
+* Basic steps:
+1. Set up the device you will be using to communicate with the LTE modem
+2. Set up your LTE modem
+3. Set up the device you will be using as a router for your LTE modem
+* Set up your Raspberry Pi
+
+** Raspberry Pi 3B+
+
+*** Set up SD card
+
+**** command line
+
+**** Raspberry Pi imager
+
+*** connect to Pi
+
+**** can do directly from mac:
+- connect ethernet cable from mac to Pi
+- =ping raspberrypi.local= will usually give you the IP address
+- it will likely have given itself an IP address in the 169.254.0.1 rage using APIPA because it could not find a DHCP server
+- set up Internet Sharing
+  - System Preferences --> Sharing
+  - check "Internet Sharing" box
+  - then check the box of the connection (in my case USB 10/100/1000 LAN)
+- ping =raspberrypi.local= again to find its IP address, has probably been set up in the 192.168.2.x range
+- or, can just =ssh pi@raspberrypi.local=
+
+*** set up Pi:
+**** set up new user
+- =sudo adduser nick=
+- get =groups= from user =pi=
+- add nick to same groups as pi:
+  - =usermod -a -G group1,group2,group3,[etc] nick=
+  - sudo usermod -a -G pi,adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,input,netdev,gpio,i2c,spi nick
+- check to make sure =nick= is part of =sudo=
+- erase user =pi= and their directories etc:
+  - =# deluser --remove-home pi=
+**** Config stuff
+- =sudo raspi-config=
+- change =hostname=
+- under =Localisation Options=, =Change Locale= and add =en-us.UTF-8=
+  - then select it as default locale
+- change timezone under =Localisation Options=
+- update raspi-config
+- update Pi
+**** Use Pi to work on modem
+***** this time, using Sierra Wireless MC7354 - U.FL connectors on modem
+****** get the firmware
+- link to Sierra Wireless page with MC7354 firmware: [[https://source.sierrawireless.com/resources/airprime/software/airprime-em73xx_mc73xx-fw-package-latest-release/][here]]
+- latest build for this modem is 4837 dated Mar 20, 2019
+- downloaded =Build4837-Approved-Only-7354-SPK.zip= at https://source.sierrawireless.com/-/media/support_downloads/airprime/software/minicard/em_mc73xx_fw_build4837/build4837-approved-only-7354-spk.ashx
+****** install these packages:
+- =sudo apt-get install libqmi-utils minicom libuuid-tiny-perl libipc-shareable-perl snapd bridge-utils libmbim-utils modem-manager=
+****** see USB identification
+- run =dmesg= after attaching modem enclosure / USB device, should see the new deice being registered along with name
+- run =ttyUSB=$(dmesg | grep '.3: Qualcomm USB modem converter detected' -A1 | grep -Eo 'ttyUSB[0-9]$' | tail -1)= which will assign =$ttyUSB= to modem
+  - =echo $ttyUSB= to check
+  - in this case is =ttyUSB2=
+- get =pid= and =vid= from =lsusb=
+****** copy the spk file to the Pi
+****** then run this to update firmware:
+#+begin_src bash
+sudo qmi-firmware-update \
+     --update \
+     -d 1199:68c0 \
+9999999_9902574_SWI9X15C_05.05.58.00_00_GENNA-UMTS_005.025_002-field.spk
+#+end_src
+- (GENNA-UMTS is the generic carrier firmware)
+- (also turns out that by using this version of =qmi-firmware-update= we don't have to use the whole =swi_setusbcomp.pl= thing anymore, because it is incorporated within =qmi-firmware-update= -- maybe??)
+****** communicating with the modem
+******* using minicom
+- =minicom -o -D /dev/ttyUSB2 -b 9600=
+******* AT commands
+- some AT commands are different on the MC7354, there's a good compendium of all the AT commands for this modem [[https://poohyhoh.blogspot.com/2017/06/lte-mc7354-at-command-test.html][here]].
+  #+begin_src bash
+AT should return OK
+(if AT returns nothing, try
+ATE which should echo things to console    
+AT!ENTERCND="A710"     allows entering advanced commands
+AT!SELACQ     select RAT acquisition order
+AT!SELACQ=?
+AT!SELACQ=LTE     put LTE first in acquisition order
+AT!GETRAT?      Return the current active radio access technology (RAT)
+at!reset     reset the modem
+at!gstatus?      Return operational status
+
+
+  #+end_src
+******* using =mbimcli= - modem needs to be in MBIM mode, ModemManager stopped
+******** script in /etc/mbim-network.conf:
+#+begin_src bash
+APN=fast.t-mobile.com
+PROXY=yes
+#+end_src
+******** then,
+- sudo systemctl stop ModemManager
+- sudo mbim-network /dev/cdc-wdm0 start    Starts the network connection
+- sudo mbim-network /dev/cdc-wdm0 status
+- then restart ModemManager
+* OpenWrt router
+** change IP address
+- =nano /etc/config/network=
+- change IP address on interface 'lan'
+- then =/etc/init.d/network restart=
+or
+- uci set network.lan.ipaddr='new-ip-address'
+- uci set network.lan.gateway='your-gateway-address'
+- uci set network.lan.dns='dns-address-here'
+- uci commit && service network restart
+** Enabling statistics
+- opkg update 
+- opkg install luci-app-statistics
+*** install plugins
+- =opkg list | grep collectd-mod=
+- =opkg install collectd-mod-cpu collectd-mod-interface collectd-mod-memory collectd-mod-ping collectd-mod-rrdtool collectd-mod-wireless=
+*** enable daemons
+- =/etc/init.d/luci_statistics enable=
+- =/etc/init.d/collectd enable=
