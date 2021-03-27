@@ -1,24 +1,25 @@
 .DS_Store
 config.el
 **/#*#
-/public/
-/oer-reveal-org/
-/elpa/emacs-reveal/
-/emacs-reveal-submodules/
-/test/
+public/
+oer-reveal-org/
+elpa/emacs-reveal/
+emacs-reveal-submodules/
+test/
 **/*.git
 **/*.swp
 
-/url/
+url/
 
 /history/
-/url/
-/var/
+url/
+var/
 /anaconda-mode/
 /auto-save-list/
 /backups/
 /transient/
 /elpa/
+/elpy/
 /test/
 /quelpa/
 

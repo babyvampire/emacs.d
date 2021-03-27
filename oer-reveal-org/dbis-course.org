@@ -1,2 +1,0 @@
-# Generated file.  Will be overwritten without warning.
-#+REVEAL_TITLE_SLIDE: /Users/nick/.emacs.d/elpa/emacs-reveal/oer-reveal/title-slide/dbis-course.html

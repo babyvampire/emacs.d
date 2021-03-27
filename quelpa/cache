@@ -1,1 +1,0 @@
-((org-eww :fetcher git :url "https://github.com/Fuco1/org-mode.git") (quelpa-use-package :fetcher git :url "https://github.com/quelpa/quelpa-use-package.git"))
