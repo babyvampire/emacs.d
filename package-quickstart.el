@@ -51,10 +51,10 @@ See `yas-minor-mode' for more information on Yas minor mode.
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/yaml-mode-20200725.1836/yaml-mode-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/yaml-mode-20201109.1026/yaml-mode-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/yaml-mode-20200725.1836/yaml-mode-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/yaml-mode-20201109.1026/yaml-mode-autoloads.el") (car load-path))))
 
 
 
@@ -73,170 +73,10 @@ Simple mode to edit YAML.
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/async-20200809.501/async-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/with-editor-20210319.1930/with-editor-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/async-20200809.501/async-autoloads.el") (car load-path))))
-
-
-
-(autoload 'async-start-process "async" "\
-Start the executable PROGRAM asynchronously named NAME.  See `async-start'.
-PROGRAM is passed PROGRAM-ARGS, calling FINISH-FUNC with the
-process object when done.  If FINISH-FUNC is nil, the future
-object will return the process object when the program is
-finished.  Set DEFAULT-DIRECTORY to change PROGRAM's current
-working directory.
-
-\(fn NAME PROGRAM FINISH-FUNC &rest PROGRAM-ARGS)" nil nil)
-
-(autoload 'async-start "async" "\
-Execute START-FUNC (often a lambda) in a subordinate Emacs process.
-When done, the return value is passed to FINISH-FUNC.  Example:
-
-    (async-start
-       ;; What to do in the child process
-       (lambda ()
-         (message \"This is a test\")
-         (sleep-for 3)
-         222)
-
-       ;; What to do when it finishes
-       (lambda (result)
-         (message \"Async process done, result should be 222: %s\"
-                  result)))
-
-If FINISH-FUNC is nil or missing, a future is returned that can
-be inspected using `async-get', blocking until the value is
-ready.  Example:
-
-    (let ((proc (async-start
-                   ;; What to do in the child process
-                   (lambda ()
-                     (message \"This is a test\")
-                     (sleep-for 3)
-                     222))))
-
-        (message \"I'm going to do some work here\") ;; ....
-
-        (message \"Waiting on async process, result should be 222: %s\"
-                 (async-get proc)))
-
-If you don't want to use a callback, and you don't care about any
-return value from the child process, pass the `ignore' symbol as
-the second argument (if you don't, and never call `async-get', it
-will leave *emacs* process buffers hanging around):
-
-    (async-start
-     (lambda ()
-       (delete-file \"a remote file on a slow link\" nil))
-     'ignore)
-
-Note: Even when FINISH-FUNC is present, a future is still
-returned except that it yields no value (since the value is
-passed to FINISH-FUNC).  Call `async-get' on such a future always
-returns nil.  It can still be useful, however, as an argument to
-`async-ready' or `async-wait'.
-
-\(fn START-FUNC &optional FINISH-FUNC)" nil nil)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "async" '("async-")))
-
-
-
-(autoload 'async-byte-recompile-directory "async-bytecomp" "\
-Compile all *.el files in DIRECTORY asynchronously.
-All *.elc files are systematically deleted before proceeding.
-
-\(fn DIRECTORY &optional QUIET)" nil nil)
-
-(defvar async-bytecomp-package-mode nil "\
-Non-nil if Async-Bytecomp-Package mode is enabled.
-See the `async-bytecomp-package-mode' command
-for a description of this minor mode.
-Setting this variable directly does not take effect;
-either customize it (see the info node `Easy Customization')
-or call the function `async-bytecomp-package-mode'.")
-
-(custom-autoload 'async-bytecomp-package-mode "async-bytecomp" nil)
-
-(autoload 'async-bytecomp-package-mode "async-bytecomp" "\
-Byte compile asynchronously packages installed with package.el.
-Async compilation of packages can be controlled by
-`async-bytecomp-allowed-packages'.
-
-If called interactively, enable Async-Bytecomp-Package mode if
-ARG is positive, and disable it if ARG is zero or negative.  If
-called from Lisp, also enable the mode if ARG is omitted or nil,
-and toggle it if ARG is `toggle'; disable the mode otherwise.
-
-\(fn &optional ARG)" t nil)
-
-(autoload 'async-byte-compile-file "async-bytecomp" "\
-Byte compile Lisp code FILE asynchronously.
-
-Same as `byte-compile-file' but asynchronous.
-
-\(fn FILE)" t nil)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "async-bytecomp" '("async-byte")))
-
-
-
-(defvar dired-async-mode nil "\
-Non-nil if Dired-Async mode is enabled.
-See the `dired-async-mode' command
-for a description of this minor mode.
-Setting this variable directly does not take effect;
-either customize it (see the info node `Easy Customization')
-or call the function `dired-async-mode'.")
-
-(custom-autoload 'dired-async-mode "dired-async" nil)
-
-(autoload 'dired-async-mode "dired-async" "\
-Do dired actions asynchronously.
-
-If called interactively, enable Dired-Async mode if ARG is
-positive, and disable it if ARG is zero or negative.  If called
-from Lisp, also enable the mode if ARG is omitted or nil, and
-toggle it if ARG is `toggle'; disable the mode otherwise.
-
-\(fn &optional ARG)" t nil)
-
-(autoload 'dired-async-do-copy "dired-async" "\
-Run ‘dired-do-copy’ asynchronously.
-
-\(fn &optional ARG)" t nil)
-
-(autoload 'dired-async-do-symlink "dired-async" "\
-Run ‘dired-do-symlink’ asynchronously.
-
-\(fn &optional ARG)" t nil)
-
-(autoload 'dired-async-do-hardlink "dired-async" "\
-Run ‘dired-do-hardlink’ asynchronously.
-
-\(fn &optional ARG)" t nil)
-
-(autoload 'dired-async-do-rename "dired-async" "\
-Run ‘dired-do-rename’ asynchronously.
-
-\(fn &optional ARG)" t nil)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dired-async" '("dired-async-")))
-
-
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smtpmail-async" '("async-smtpmail-")))
-
-
-
-
-)
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/with-editor-20200930.1912/with-editor-autoloads.el"))
-
-(add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/with-editor-20200930.1912/with-editor-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/with-editor-20210319.1930/with-editor-autoloads.el") (car load-path))))
 
 
 
@@ -247,7 +87,8 @@ Set and export the environment variable ENVVAR, by default
 \"EDITOR\".  The value is automatically generated to teach
 commands to use the current Emacs instance as \"the editor\".
 
-This works in `shell-mode', `term-mode' and `eshell-mode'.
+This works in `shell-mode', `term-mode', `eshell-mode' and
+`vterm'.
 
 \(fn &optional (ENVVAR \"EDITOR\"))" t nil)
 
@@ -320,10 +161,10 @@ else like the former.
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/which-key-20200908.2301/which-key-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/which-key-20210324.1821/which-key-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/which-key-20200908.2301/which-key-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/which-key-20210324.1821/which-key-autoloads.el") (car load-path))))
 
 
 
@@ -409,8 +250,7 @@ In the second case, the second string is used to provide a longer
 name for the keys under a prefix.
 
 MORE allows you to specifcy additional KEY REPLACEMENT pairs.  All
-replacements are added to
-`which-key-key-based-description-replacement-alist'.
+replacements are added to `which-key-replacement-alist'.
 
 \(fn KEY-SEQUENCE REPLACEMENT &rest MORE)" nil nil)
 
@@ -621,10 +461,10 @@ Display all the personal keybindings defined by `bind-key'." t nil)
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/use-package-20200721.2156/use-package-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/use-package-20210207.1926/use-package-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/use-package-20200721.2156/use-package-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/use-package-20210207.1926/use-package-autoloads.el") (car load-path))))
 
 
 
@@ -844,17 +684,6 @@ with the specified `:load-path' the module cannot be found." t nil)
 
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "s" '("s-")))
-
-
-)
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/f-20191110.1357/f-autoloads.el"))
-
-(add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/f-20191110.1357/f-autoloads.el") (car load-path))))
-
-
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "f" '("f-")))
 
 
 )
@@ -1323,10 +1152,189 @@ result of `defhydra'.
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/treemacs-20201004.1125/treemacs-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/posframe-20210331.324/posframe-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/treemacs-20201004.1125/treemacs-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/posframe-20210331.324/posframe-autoloads.el") (car load-path))))
+
+
+
+(autoload 'posframe-workable-p "posframe" "\
+Test posframe workable status." nil nil)
+
+(autoload 'posframe-show "posframe" "\
+Pop up a posframe and show STRING at POSITION.
+
+POSITION can be:
+1. An integer, meaning point position.
+2. A cons of two integers, meaning absolute X and Y coordinates.
+3. Other type, in which case the corresponding POSHANDLER should be
+   provided.
+
+POSHANDLER is a function of one argument returning an actual
+position.  Its argument is a plist of the following form:
+
+  (:position xxx
+   :position-info xxx
+   :poshandler xxx
+   :font-height xxx
+   :font-width xxx
+   :posframe xxx
+   :posframe-width xxx
+   :posframe-height xxx
+   :posframe-buffer xxx
+   :parent-frame xxx
+   :parent-window-left xxx
+   :parent-window-top xxx
+   :parent-frame-width xxx
+   :parent-frame-height xxx
+   :parent-window xxx
+   :parent-window-width  xxx
+   :parent-window-height xxx
+   :minibuffer-height xxx
+   :mode-line-height  xxx
+   :header-line-height xxx
+   :tab-line-height xxx
+   :x-pixel-offset xxx
+   :y-pixel-offset xxx)
+
+By default, poshandler is auto-selected based on the type of POSITION,
+but the selection can be overridden using the POSHANDLER argument.
+The builtin poshandler functions are listed below:
+
+1.  `posframe-poshandler-frame-center'
+2.  `posframe-poshandler-frame-top-center'
+3.  `posframe-poshandler-frame-top-left-corner'
+4.  `posframe-poshandler-frame-top-right-corner'
+5.  `posframe-poshandler-frame-bottom-center'
+6.  `posframe-poshandler-frame-bottom-left-corner'
+7.  `posframe-poshandler-frame-bottom-right-corner'
+8.  `posframe-poshandler-window-center'
+9.  `posframe-poshandler-window-top-center'
+10. `posframe-poshandler-window-top-left-corner'
+11. `posframe-poshandler-window-top-right-corner'
+12. `posframe-poshandler-window-bottom-center'
+13. `posframe-poshandler-window-bottom-left-corner'
+14. `posframe-poshandler-window-bottom-right-corner'
+15. `posframe-poshandler-point-top-left-corner'
+16. `posframe-poshandler-point-bottom-left-corner'
+17. `posframe-poshandler-point-bottom-left-corner-upward'
+18. `posframe-poshandler-point-window-center'
+
+by the way, poshandler can be used by other packages easily
+\(for example: mini-frame) with the help of function
+`posframe-poshandler-argbuilder'. like:
+
+   (let* ((info (posframe-poshandler-argbuilder child-frame))
+          (posn (posframe-poshandler-window-center info)))
+     `((left . ,(car posn))
+       (top . ,(cdr posn))))
+
+POSHANDLER-EXTRA-INFO is a plist, which will prepend to the
+argument of poshandler function: 'info', it will *OVERRIDE* the
+exist key in 'info'.
+
+This posframe's buffer is BUFFER-OR-NAME, which can be a buffer
+or a name of a (possibly nonexistent) buffer.
+
+If NO-PROPERTIES is non-nil, The STRING's properties will
+be removed before being shown in posframe.
+
+WIDTH, MIN-WIDTH, HEIGHT and MIN-HEIGHT, specify bounds on the
+new total size of posframe.  MIN-HEIGHT and MIN-WIDTH default to
+the values of ‘window-min-height’ and ‘window-min-width’
+respectively.  These arguments are specified in the canonical
+character width and height of posframe.
+
+If LEFT-FRINGE or RIGHT-FRINGE is a number, left fringe or
+right fringe with be shown with the specified width.
+
+By default, posframe shows no borders, but users can specify
+borders by setting BORDER-WIDTH to a positive number.  Border
+color can be specified by BORDER-COLOR.
+
+INTERNAL-BORDER-WIDTH and INTERNAL-BORDER-COLOR are same as
+BORDER-WIDTH and INTERNAL-BORDER-COLOR, but do not suggest to use
+for the reason:
+
+   Add distinct controls for child frames' borders (Bug#45620)
+   http://git.savannah.gnu.org/cgit/emacs.git/commit/?id=ff7b1a133bfa7f2614650f8551824ffaef13fadc
+
+Posframe's font as well as foreground and background colors are
+derived from the current frame by default, but can be overridden
+using the FONT, FOREGROUND-COLOR and BACKGROUND-COLOR arguments,
+respectively.
+
+By default, posframe will display no header-line, mode-line and
+tab-line.  In case a header-line, mode-line or tab-line is
+desired, users can set RESPECT-HEADER-LINE and RESPECT-MODE-LINE
+to t.
+
+INITIALIZE is a function with no argument.  It will run when
+posframe buffer is first selected with `with-current-buffer'
+in `posframe-show', and only run once (for performance reasons).
+
+If LINES-TRUNCATE is non-nil, then lines will truncate in the
+posframe instead of wrap.
+
+OVERRIDE-PARAMETERS is very powful, *all* the frame parameters
+used by posframe's frame can be overridden by it.
+
+TIMEOUT can specify the number of seconds after which the posframe
+will auto-hide.
+
+If REFRESH is a number, posframe's frame-size will be re-adjusted
+every REFRESH seconds.
+
+When ACCEPT-FOCUS is non-nil, posframe will accept focus.
+be careful, you may face some bugs when set it to non-nil.
+
+HIDEHANDLER is a function, when it return t, posframe will be
+hide when `post-command-hook' is executed, this function has a
+plist argument:
+
+  (:posframe-buffer xxx
+   :posframe-parent-buffer xxx)
+
+The builtin hidehandler functions are listed below:
+
+1. `posframe-hidehandler-when-buffer-switch'
+
+
+You can use `posframe-delete-all' to delete all posframes.
+
+\(fn BUFFER-OR-NAME &key STRING POSITION POSHANDLER POSHANDLER-EXTRA-INFO WIDTH HEIGHT MIN-WIDTH MIN-HEIGHT X-PIXEL-OFFSET Y-PIXEL-OFFSET LEFT-FRINGE RIGHT-FRINGE BORDER-WIDTH BORDER-COLOR INTERNAL-BORDER-WIDTH INTERNAL-BORDER-COLOR FONT FOREGROUND-COLOR BACKGROUND-COLOR RESPECT-HEADER-LINE RESPECT-MODE-LINE INITIALIZE NO-PROPERTIES KEEP-RATIO LINES-TRUNCATE OVERRIDE-PARAMETERS TIMEOUT REFRESH ACCEPT-FOCUS HIDEHANDLER &allow-other-keys)" nil nil)
+
+(autoload 'posframe-hide-all "posframe" "\
+Hide all posframe frames." t nil)
+
+(autoload 'posframe-delete-all "posframe" "\
+Delete all posframe frames and buffers." t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "posframe" '("posframe-")))
+
+
+)
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/cfrs-20210217.1848/cfrs-autoloads.el"))
+
+(add-to-list 'load-path (directory-file-name
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/cfrs-20210217.1848/cfrs-autoloads.el") (car load-path))))
+
+
+
+(autoload 'cfrs-read "cfrs" "\
+Read a string using a pos-frame with given PROMPT and INITIAL-INPUT.
+
+\(fn PROMPT &optional INITIAL-INPUT)" nil nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "cfrs" '("cfrs-")))
+
+
+)
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/treemacs-20210331.1948/treemacs-autoloads.el"))
+
+(add-to-list 'load-path (directory-file-name
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/treemacs-20210331.1948/treemacs-autoloads.el") (car load-path))))
 
 
 
@@ -1458,6 +1466,30 @@ treemacs node is pointing to a valid buffer position." t nil)
 
 
 
+(autoload 'treemacs-common-helpful-hydra "treemacs-hydras" "\
+Summon a helpful hydra to show you the treemacs keymap.
+
+This hydra will show the most commonly used keybinds for treemacs.  For the more
+advanced (probably rarely used keybinds) see `treemacs-advanced-helpful-hydra'.
+
+The keybinds shown in this hydra are not static, but reflect the actual
+keybindings currently in use (including evil mode).  If the hydra is unable to
+find the key a command is bound to it will show a blank instead." t nil)
+
+(autoload 'treemacs-advanced-helpful-hydra "treemacs-hydras" "\
+Summon a helpful hydra to show you the treemacs keymap.
+
+This hydra will show the more advanced (rarely used) keybinds for treemacs.  For
+the more commonly used keybinds see `treemacs-common-helpful-hydra'.
+
+The keybinds shown in this hydra are not static, but reflect the actual
+keybindings currently in use (including evil mode).  If the hydra is unable to
+find the key a command is bound to it will show a blank instead." t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "treemacs-hydras" '("treemacs-helpful-hydra")))
+
+
+
 (autoload 'treemacs-resize-icons "treemacs-icons" "\
 Resize the current theme's icons to the given SIZE.
 
@@ -1488,6 +1520,14 @@ Additionally FILE-EXTENSIONS are also not case sensitive and will be stored in a
 down-cased state.
 
 \(fn ICON &rest FILE-EXTENSIONS)" nil nil)
+
+(autoload 'treemacs-define-custom-image-icon "treemacs-icons" "\
+Same as `treemacs-define-custom-icon' but for image icons instead of strings.
+FILE is the path to an icon image (and not the actual icon string).
+FILE-EXTENSIONS are all the (not case-sensitive) file extensions the icon
+should be used for.
+
+\(fn FILE &rest FILE-EXTENSIONS)" nil nil)
 
 (autoload 'treemacs-map-icons-with-auto-mode-alist "treemacs-icons" "\
 Remaps icons for EXTENSIONS according to `auto-mode-alist'.
@@ -1521,9 +1561,53 @@ A major mode for displaying the file system in a tree layout.
 
 \(fn)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "treemacs-mode" '("treemacs-")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "treemacs-mode" '("treemacs--")))
 
 
+
+(autoload 'treemacs-leftclick-action "treemacs-mouse-interface" "\
+Move focus to the clicked line.
+Must be bound to a mouse click, or EVENT will not be supplied.
+
+\(fn EVENT)" t nil)
+
+(autoload 'treemacs-doubleclick-action "treemacs-mouse-interface" "\
+Run the appropriate double-click action for the current node.
+In the default configuration this means to do the same as `treemacs-RET-action'.
+
+This function's exact configuration is stored in
+`treemacs-doubleclick-actions-config'.
+
+Must be bound to a mouse click, or EVENT will not be supplied.
+
+\(fn EVENT)" t nil)
+
+(autoload 'treemacs-single-click-expand-action "treemacs-mouse-interface" "\
+A modified single-leftclick action that expands the clicked nodes.
+Can be bound to <mouse1> if you prefer to expand nodes with a single click
+instead of a double click.  Either way it must be bound to a mouse click, or
+EVENT will not be supplied.
+
+Clicking on icons will expand a file's tags, just like
+`treemacs-leftclick-action'.
+
+\(fn EVENT)" t nil)
+
+(autoload 'treemacs-dragleftclick-action "treemacs-mouse-interface" "\
+Drag a file/dir node to be opened in a window.
+Must be bound to a mouse click, or EVENT will not be supplied.
+
+\(fn EVENT)" t nil)
+
+(autoload 'treemacs-define-doubleclick-action "treemacs-mouse-interface" "\
+Define the behaviour of `treemacs-doubleclick-action'.
+Determines that a button with a given STATE should lead to the execution of
+ACTION.
+
+The list of possible states can be found in `treemacs-valid-button-states'.
+ACTION should be one of the `treemacs-visit-node-*' commands.
+
+\(fn STATE ACTION)" nil nil)
 
 (autoload 'treemacs-node-buffer-and-position "treemacs-mouse-interface" "\
 Return source buffer or list of buffer and position for the current node.
@@ -1532,7 +1616,12 @@ and ignore any prefix argument.
 
 \(fn &optional _)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "treemacs-mouse-interface" '("treemacs-")))
+(autoload 'treemacs-rightclick-menu "treemacs-mouse-interface" "\
+Show a contextual right click menu based on click EVENT.
+
+\(fn EVENT)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "treemacs-mouse-interface" '("treemacs--")))
 
 
 
@@ -1548,9 +1637,101 @@ and ignore any prefix argument.
 
 
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "treemacs-tag-follow-mode" '("treemacs-")))
+(defvar treemacs-tag-follow-mode nil "\
+Non-nil if Treemacs-Tag-Follow mode is enabled.
+See the `treemacs-tag-follow-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `treemacs-tag-follow-mode'.")
+
+(custom-autoload 'treemacs-tag-follow-mode "treemacs-tag-follow-mode" nil)
+
+(autoload 'treemacs-tag-follow-mode "treemacs-tag-follow-mode" "\
+Toggle `treemacs-tag-follow-mode'.
+
+If called interactively, enable Treemacs-Tag-Follow mode if ARG
+is positive, and disable it if ARG is zero or negative.  If
+called from Lisp, also enable the mode if ARG is omitted or nil,
+and toggle it if ARG is `toggle'; disable the mode otherwise.
+
+This acts as more fine-grained alternative to `treemacs-follow-mode' and will
+thus disable `treemacs-follow-mode' on activation. When enabled treemacs will
+focus not only the file of the current buffer, but also the tag at point.
+
+The follow action is attached to Emacs' idle timer and will run
+`treemacs-tag-follow-delay' seconds of idle time. The delay value is not an
+integer, meaning it accepts floating point values like 1.5.
+
+Every time a tag is followed a rescan of the imenu index is forced by
+temporarily setting `imenu-auto-rescan' to t (though a cache is applied as long
+as the buffer is unmodified). This is necessary to assure that creation or
+deletion of tags does not lead to errors and guarantees an always up-to-date tag
+view.
+
+Note that in order to move to a tag in treemacs the treemacs buffer's window
+needs to be temporarily selected, which will reset `blink-cursor-mode's timer if
+it is enabled. This will result in the cursor blinking seemingly pausing for a
+short time and giving the appereance of the tag follow action lasting much
+longer than it really does.
+
+\(fn &optional ARG)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "treemacs-tag-follow-mode" '("treemacs--")))
 
 
+
+(autoload 'treemacs--expand-file-node "treemacs-tags" "\
+Open tag items for file BTN.
+Recursively open all tags below BTN when RECURSIVE is non-nil.
+
+\(fn BTN &optional RECURSIVE)" nil nil)
+
+(autoload 'treemacs--collapse-file-node "treemacs-tags" "\
+Close node given by BTN.
+Remove all open tag entries under BTN when RECURSIVE.
+
+\(fn BTN &optional RECURSIVE)" nil nil)
+
+(autoload 'treemacs--visit-or-expand/collapse-tag-node "treemacs-tags" "\
+Visit tag section BTN if possible, expand or collapse it otherwise.
+Pass prefix ARG on to either visit or toggle action.
+
+FIND-WINDOW is a special provision depending on this function's invocation
+context and decides whether to find the window to display in (if the tag is
+visited instead of the node being expanded).
+
+On the one hand it can be called based on `treemacs-RET-actions-config' (or
+TAB).  The functions in these configs are expected to find the windows they need
+to display in themselves, so FIND-WINDOW must be t. On the other hand this
+function is also called from the top level vist-node functions like
+`treemacs-visit-node-vertical-split' which delegates to the
+`treemacs--execute-button-action' macro which includes the determination of
+the display window.
+
+\(fn BTN ARG FIND-WINDOW)" nil nil)
+
+(autoload 'treemacs--expand-tag-node "treemacs-tags" "\
+Open tags node items for BTN.
+Open all tag section under BTN when call is RECURSIVE.
+
+\(fn BTN &optional RECURSIVE)" nil nil)
+
+(autoload 'treemacs--collapse-tag-node "treemacs-tags" "\
+Close tags node at BTN.
+Remove all open tag entries under BTN when RECURSIVE.
+
+\(fn BTN &optional RECURSIVE)" nil nil)
+
+(autoload 'treemacs--goto-tag "treemacs-tags" "\
+Go to the tag at BTN.
+
+\(fn BTN)" nil nil)
+
+(autoload 'treemacs--create-imenu-index-function "treemacs-tags" "\
+The `imenu-create-index-function' for treemacs buffers." nil nil)
+
+(function-put 'treemacs--create-imenu-index-function 'side-effect-free 't)
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "treemacs-tags" '("treemacs--")))
 
@@ -1570,10 +1751,10 @@ and ignore any prefix argument.
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/transient-20200819.1133/transient-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/transient-20210315.1902/transient-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/transient-20200819.1133/transient-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/transient-20210315.1902/transient-autoloads.el") (car load-path))))
 
 
 
@@ -1817,10 +1998,10 @@ Switch to another buffer in another window." t nil)
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/swiper-20201002.1049/swiper-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/swiper-20210404.1302/swiper-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/swiper-20201002.1049/swiper-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/swiper-20210404.1302/swiper-autoloads.el") (car load-path))))
 
 
 
@@ -1955,10 +2136,10 @@ Like `smex', but limited to commands that are relevant to the active major mode.
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/popup-20200610.317/popup-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/popup-20210317.138/popup-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/popup-20200610.317/popup-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/popup-20210317.138/popup-autoloads.el") (car load-path))))
 
 
 
@@ -2018,10 +2199,10 @@ And show information use tooltip.
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/pyvenv-20191202.1039/pyvenv-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/pyvenv-20201227.1623/pyvenv-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/pyvenv-20191202.1039/pyvenv-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/pyvenv-20201227.1623/pyvenv-autoloads.el") (car load-path))))
 
 
 
@@ -2031,9 +2212,7 @@ Activate the virtual environment in DIRECTORY.
 \(fn DIRECTORY)" t nil)
 
 (autoload 'pyvenv-deactivate "pyvenv" "\
-Deactivate any current virtual environment.
-
-\(fn)" t nil)
+Deactivate any current virtual environment." t nil)
 
 (autoload 'pyvenv-workon "pyvenv" "\
 Activate a virtual environment from $WORKON_HOME.
@@ -2056,6 +2235,11 @@ or call the function `pyvenv-mode'.")
 (autoload 'pyvenv-mode "pyvenv" "\
 Global minor mode for pyvenv.
 
+If called interactively, enable Pyvenv mode if ARG is positive,
+and disable it if ARG is zero or negative.  If called from Lisp,
+also enable the mode if ARG is omitted or nil, and toggle it if
+ARG is `toggle'; disable the mode otherwise.
+
 Will show the current virtualenv in the mode line, and respect a
 `pyvenv-workon' setting in files.
 
@@ -2074,6 +2258,11 @@ or call the function `pyvenv-tracking-mode'.")
 (autoload 'pyvenv-tracking-mode "pyvenv" "\
 Global minor mode to track the current virtualenv.
 
+If called interactively, enable Pyvenv-Tracking mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
 When this mode is active, pyvenv will activate a buffer-specific
 virtualenv whenever the user switches to a buffer with a
 buffer-local `pyvenv-workon' or `pyvenv-activate' variable.
@@ -2081,18 +2270,27 @@ buffer-local `pyvenv-workon' or `pyvenv-activate' variable.
 \(fn &optional ARG)" t nil)
 
 (autoload 'pyvenv-restart-python "pyvenv" "\
-Restart Python inferior processes.
-
-\(fn)" t nil)
+Restart Python inferior processes." t nil)
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pyvenv" '("pyvenv-")))
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/pythonic-20200806.434/pythonic-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/f-20191110.1357/f-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/pythonic-20200806.434/pythonic-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/f-20191110.1357/f-autoloads.el") (car load-path))))
+
+
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "f" '("f-")))
+
+
+)
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/pythonic-20210122.1247/pythonic-autoloads.el"))
+
+(add-to-list 'load-path (directory-file-name
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/pythonic-20210122.1247/pythonic-autoloads.el") (car load-path))))
 
 
 
@@ -2338,10 +2536,10 @@ version.
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/projectile-20201011.657/projectile-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/projectile-20210309.722/projectile-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/projectile-20201011.657/projectile-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/projectile-20210309.722/projectile-autoloads.el") (car load-path))))
 
 
 
@@ -2659,7 +2857,7 @@ Switch to the project specific shell buffer if it already exists.
 
 Use a prefix argument ARG to indicate creation of a new process instead.
 
-\(fn ARG)" t nil)
+\(fn &optional ARG)" t nil)
 
 (autoload 'projectile-run-eshell "projectile" "\
 Invoke `eshell' in the project's root.
@@ -2668,7 +2866,7 @@ Switch to the project specific eshell buffer if it already exists.
 
 Use a prefix argument ARG to indicate creation of a new process instead.
 
-\(fn ARG)" t nil)
+\(fn &optional ARG)" t nil)
 
 (autoload 'projectile-run-ielm "projectile" "\
 Invoke `ielm' in the project's root.
@@ -2677,7 +2875,7 @@ Switch to the project specific ielm buffer if it already exists.
 
 Use a prefix argument ARG to indicate creation of a new process instead.
 
-\(fn ARG)" t nil)
+\(fn &optional ARG)" t nil)
 
 (autoload 'projectile-run-term "projectile" "\
 Invoke `term' in the project's root.
@@ -2686,7 +2884,7 @@ Switch to the project specific term buffer if it already exists.
 
 Use a prefix argument ARG to indicate creation of a new process instead.
 
-\(fn ARG)" t nil)
+\(fn &optional ARG)" t nil)
 
 (autoload 'projectile-run-vterm "projectile" "\
 Invoke `vterm' in the project's root.
@@ -2912,152 +3110,6 @@ Otherwise behave as if called interactively.
 (define-obsolete-function-alias 'projectile-global-mode 'projectile-mode "1.0")
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "projectile" '("??" "compilation-find-file-projectile-find-compilation-buffer" "def-projectile-commander-method" "delete-file-projectile-remove-from-cache" "projectile-")))
-
-
-)
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/posframe-20201009.946/posframe-autoloads.el"))
-
-(add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/posframe-20201009.946/posframe-autoloads.el") (car load-path))))
-
-
-
-(autoload 'posframe-workable-p "posframe" "\
-Test posframe workable status." nil nil)
-
-(autoload 'posframe-show "posframe" "\
-Pop up a posframe and show STRING at POSITION.
-
-POSITION can be:
-1. An integer, meaning point position.
-2. A cons of two integers, meaning absolute X and Y coordinates.
-3. Other type, in which case the corresponding POSHANDLER should be
-   provided.
-
-POSHANDLER is a function of one argument returning an actual
-position.  Its argument is a plist of the following form:
-
-  (:position xxx
-   :position-info xxx
-   :poshandler xxx
-   :font-height xxx
-   :font-width xxx
-   :posframe xxx
-   :posframe-width xxx
-   :posframe-height xxx
-   :posframe-buffer xxx
-   :parent-frame xxx
-   :parent-window-left xxx
-   :parent-window-top xxx
-   :parent-frame-width xxx
-   :parent-frame-height xxx
-   :parent-window xxx
-   :parent-window-width  xxx
-   :parent-window-height xxx
-   :minibuffer-height
-   :mode-line-height
-   :header-line-height
-   :tab-line-height
-   :x-pixel-offset xxx
-   :y-pixel-offset xxx)
-
-By default, poshandler is auto-selected based on the type of POSITION,
-but the selection can be overridden using the POSHANDLER argument.
-The builtin poshandler functions are listed below:
-
-1.  `posframe-poshandler-frame-center'
-2.  `posframe-poshandler-frame-top-center'
-3.  `posframe-poshandler-frame-top-left-corner'
-4.  `posframe-poshandler-frame-top-right-corner'
-5.  `posframe-poshandler-frame-bottom-center'
-6.  `posframe-poshandler-frame-bottom-left-corner'
-7.  `posframe-poshandler-frame-bottom-right-corner'
-8.  `posframe-poshandler-window-center'
-9.  `posframe-poshandler-window-top-center'
-10. `posframe-poshandler-window-top-left-corner'
-11. `posframe-poshandler-window-top-right-corner'
-12. `posframe-poshandler-window-bottom-center'
-13. `posframe-poshandler-window-bottom-left-corner'
-14. `posframe-poshandler-window-bottom-right-corner'
-15. `posframe-poshandler-point-top-left-corner'
-16. `posframe-poshandler-point-bottom-left-corner'
-17. `posframe-poshandler-point-bottom-left-corner-upward'
-
-This posframe's buffer is BUFFER-OR-NAME, which can be a buffer
-or a name of a (possibly nonexistent) buffer.
-
-If NO-PROPERTIES is non-nil, The STRING's properties will
-be removed before being shown in posframe.
-
-WIDTH, MIN-WIDTH, HEIGHT and MIN-HEIGHT, specify bounds on the
-new total size of posframe.  MIN-HEIGHT and MIN-WIDTH default to
-the values of ‘window-min-height’ and ‘window-min-width’
-respectively.  These arguments are specified in the canonical
-character width and height of posframe.
-
-If LEFT-FRINGE or RIGHT-FRINGE is a number, left fringe or
-right fringe with be shown with the specified width.
-
-By default, posframe shows no borders, but users can specify
-borders by setting INTERNAL-BORDER-WIDTH to a positive number.
-Border color can be specified by INTERNAL-BORDER-COLOR
-or via the ‘internal-border’ face.
-
-Posframe's font as well as foreground and background colors are
-derived from the current frame by default, but can be overridden
-using the FONT, FOREGROUND-COLOR and BACKGROUND-COLOR arguments,
-respectively.
-
-By default, posframe will display no header-line, mode-line and
-tab-line.  In case a header-line, mode-line or tab-line is
-desired, users can set RESPECT-HEADER-LINE, RESPECT-MODE-LINE or
-RESPECT-TAB-LINE to t.
-
-INITIALIZE is a function with no argument.  It will run when
-posframe buffer is first selected with `with-current-buffer'
-in `posframe-show', and only run once (for performance reasons).
-If INITIALIZE is nil, `posframe-default-initialize-function' will
-be used as fallback; this variable can be used to set posframe
-buffer gobally.
-
-If LINES-TRUNCATE is non-nil, then lines will truncate in the
-posframe instead of wrap.
-
-OVERRIDE-PARAMETERS is very powful, *all* the frame parameters
-used by posframe's frame can be overridden by it.
-
-TIMEOUT can specify the number of seconds after which the posframe
-will auto-hide.
-
-If REFRESH is a number, posframe's frame-size will be re-adjusted
-every REFRESH seconds.
-
-When ACCEPT-FOCUS is non-nil, posframe will accept focus.
-be careful, you may face some bugs when set it to non-nil.
-
-HIDEHANDLER is a function, when it return t, posframe will be
-hide when `post-command-hook' is executed, this function has a
-plist argument:
-
-  (:posframe-buffer xxx
-   :posframe-parent-buffer xxx)
-
-The builtin hidehandler functions are listed below:
-
-1. `posframe-hidehandler-when-buffer-switch'
-
-
-You can use `posframe-delete-all' to delete all posframes.
-
-\(fn BUFFER-OR-NAME &key STRING POSITION POSHANDLER WIDTH HEIGHT MIN-WIDTH MIN-HEIGHT X-PIXEL-OFFSET Y-PIXEL-OFFSET LEFT-FRINGE RIGHT-FRINGE INTERNAL-BORDER-WIDTH INTERNAL-BORDER-COLOR FONT FOREGROUND-COLOR BACKGROUND-COLOR RESPECT-HEADER-LINE RESPECT-MODE-LINE RESPECT-TAB-LINE INITIALIZE NO-PROPERTIES KEEP-RATIO LINES-TRUNCATE OVERRIDE-PARAMETERS TIMEOUT REFRESH ACCEPT-FOCUS HIDEHANDLER &allow-other-keys)" nil nil)
-
-(autoload 'posframe-hide-all "posframe" "\
-Hide all posframe frames." t nil)
-
-(autoload 'posframe-delete-all "posframe" "\
-Delete all posframe frames and buffers." t nil)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "posframe" '("posframe-")))
 
 
 )
@@ -3498,10 +3550,10 @@ and toggle it if ARG is `toggle'; disable the mode otherwise.
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/parsebib-20200513.2352/parsebib-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/parsebib-20210108.1525/parsebib-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/parsebib-20200513.2352/parsebib-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/parsebib-20210108.1525/parsebib-autoloads.el") (car load-path))))
 
 
 
@@ -4108,10 +4160,10 @@ Return output file name.
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/ox-reveal-20200926.429/ox-reveal-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/ox-reveal-20210215.1605/ox-reveal-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/ox-reveal-20200926.429/ox-reveal-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/ox-reveal-20210215.1605/ox-reveal-autoloads.el") (car load-path))))
 
 
 
@@ -4326,6 +4378,166 @@ No effect if current columns contain any non-number chars.
 
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "orglue-publish" '("orglue-")))
+
+
+
+
+)
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/async-20200809.501/async-autoloads.el"))
+
+(add-to-list 'load-path (directory-file-name
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/async-20200809.501/async-autoloads.el") (car load-path))))
+
+
+
+(autoload 'async-start-process "async" "\
+Start the executable PROGRAM asynchronously named NAME.  See `async-start'.
+PROGRAM is passed PROGRAM-ARGS, calling FINISH-FUNC with the
+process object when done.  If FINISH-FUNC is nil, the future
+object will return the process object when the program is
+finished.  Set DEFAULT-DIRECTORY to change PROGRAM's current
+working directory.
+
+\(fn NAME PROGRAM FINISH-FUNC &rest PROGRAM-ARGS)" nil nil)
+
+(autoload 'async-start "async" "\
+Execute START-FUNC (often a lambda) in a subordinate Emacs process.
+When done, the return value is passed to FINISH-FUNC.  Example:
+
+    (async-start
+       ;; What to do in the child process
+       (lambda ()
+         (message \"This is a test\")
+         (sleep-for 3)
+         222)
+
+       ;; What to do when it finishes
+       (lambda (result)
+         (message \"Async process done, result should be 222: %s\"
+                  result)))
+
+If FINISH-FUNC is nil or missing, a future is returned that can
+be inspected using `async-get', blocking until the value is
+ready.  Example:
+
+    (let ((proc (async-start
+                   ;; What to do in the child process
+                   (lambda ()
+                     (message \"This is a test\")
+                     (sleep-for 3)
+                     222))))
+
+        (message \"I'm going to do some work here\") ;; ....
+
+        (message \"Waiting on async process, result should be 222: %s\"
+                 (async-get proc)))
+
+If you don't want to use a callback, and you don't care about any
+return value from the child process, pass the `ignore' symbol as
+the second argument (if you don't, and never call `async-get', it
+will leave *emacs* process buffers hanging around):
+
+    (async-start
+     (lambda ()
+       (delete-file \"a remote file on a slow link\" nil))
+     'ignore)
+
+Note: Even when FINISH-FUNC is present, a future is still
+returned except that it yields no value (since the value is
+passed to FINISH-FUNC).  Call `async-get' on such a future always
+returns nil.  It can still be useful, however, as an argument to
+`async-ready' or `async-wait'.
+
+\(fn START-FUNC &optional FINISH-FUNC)" nil nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "async" '("async-")))
+
+
+
+(autoload 'async-byte-recompile-directory "async-bytecomp" "\
+Compile all *.el files in DIRECTORY asynchronously.
+All *.elc files are systematically deleted before proceeding.
+
+\(fn DIRECTORY &optional QUIET)" nil nil)
+
+(defvar async-bytecomp-package-mode nil "\
+Non-nil if Async-Bytecomp-Package mode is enabled.
+See the `async-bytecomp-package-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `async-bytecomp-package-mode'.")
+
+(custom-autoload 'async-bytecomp-package-mode "async-bytecomp" nil)
+
+(autoload 'async-bytecomp-package-mode "async-bytecomp" "\
+Byte compile asynchronously packages installed with package.el.
+Async compilation of packages can be controlled by
+`async-bytecomp-allowed-packages'.
+
+If called interactively, enable Async-Bytecomp-Package mode if
+ARG is positive, and disable it if ARG is zero or negative.  If
+called from Lisp, also enable the mode if ARG is omitted or nil,
+and toggle it if ARG is `toggle'; disable the mode otherwise.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'async-byte-compile-file "async-bytecomp" "\
+Byte compile Lisp code FILE asynchronously.
+
+Same as `byte-compile-file' but asynchronous.
+
+\(fn FILE)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "async-bytecomp" '("async-byte")))
+
+
+
+(defvar dired-async-mode nil "\
+Non-nil if Dired-Async mode is enabled.
+See the `dired-async-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `dired-async-mode'.")
+
+(custom-autoload 'dired-async-mode "dired-async" nil)
+
+(autoload 'dired-async-mode "dired-async" "\
+Do dired actions asynchronously.
+
+If called interactively, enable Dired-Async mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'dired-async-do-copy "dired-async" "\
+Run ‘dired-do-copy’ asynchronously.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'dired-async-do-symlink "dired-async" "\
+Run ‘dired-do-symlink’ asynchronously.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'dired-async-do-hardlink "dired-async" "\
+Run ‘dired-do-hardlink’ asynchronously.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'dired-async-do-rename "dired-async" "\
+Run ‘dired-do-rename’ asynchronously.
+
+\(fn &optional ARG)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dired-async" '("dired-async-")))
+
+
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smtpmail-async" '("async-smtpmail-")))
 
 
 
@@ -6649,10 +6861,10 @@ Move WORKTREE to PATH.
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/orgit-20200714.1943/orgit-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/orgit-20210309.1906/orgit-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/orgit-20200714.1943/orgit-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/orgit-20210309.1906/orgit-autoloads.el") (car load-path))))
 
 
 
@@ -6744,10 +6956,10 @@ store links to the Magit-Revision mode buffers for these commits." nil nil)
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/org-superstar-20200818.2257/org-superstar-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/org-superstar-20210216.1925/org-superstar-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/org-superstar-20200818.2257/org-superstar-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/org-superstar-20210216.1925/org-superstar-autoloads.el") (car load-path))))
 
 
 
@@ -6772,6 +6984,251 @@ toggle it if ARG is `toggle'; disable the mode otherwise.
 \(fn &optional ARG)" t nil)
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-superstar" '("org-superstar-")))
+
+
+)
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/emacsql-20200714.28/emacsql-autoloads.el"))
+
+(add-to-list 'load-path (directory-file-name
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/emacsql-20200714.28/emacsql-autoloads.el") (car load-path))))
+
+
+
+(autoload 'emacsql-show-last-sql "emacsql" "\
+Display the compiled SQL of the s-expression SQL expression before point.
+A prefix argument causes the SQL to be printed into the current buffer.
+
+\(fn &optional PREFIX)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "emacsql" '("emacsql-")))
+
+
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "emacsql-compiler" '("emacsql-")))
+
+
+
+
+)
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/emacsql-sqlite3-20200914.508/emacsql-sqlite3-autoloads.el"))
+
+(add-to-list 'load-path (directory-file-name
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/emacsql-sqlite3-20200914.508/emacsql-sqlite3-autoloads.el") (car load-path))))
+
+
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "emacsql-sqlite3" '("emacsql-sqlite3-")))
+
+
+)
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/org-roam-20210308.457/org-roam-autoloads.el"))
+
+(add-to-list 'load-path (directory-file-name
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/org-roam-20210308.457/org-roam-autoloads.el") (car load-path))))
+
+
+
+(defvar org-roam-mode nil "\
+Non-nil if Org-Roam mode is enabled.
+See the `org-roam-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `org-roam-mode'.")
+
+(custom-autoload 'org-roam-mode "org-roam" nil)
+
+(autoload 'org-roam-mode "org-roam" "\
+Minor mode for Org-roam.
+
+This mode sets up several hooks, to ensure that the cache is updated on file
+changes, renames and deletes. It is also in charge of graceful termination of
+the database connection.
+
+When called interactively, toggle `org-roam-mode'. with prefix
+ARG, enable `org-roam-mode' if ARG is positive, otherwise disable
+it.
+
+When called from Lisp, enable `org-roam-mode' if ARG is omitted,
+nil, or positive. If ARG is `toggle', toggle `org-roam-mode'.
+Otherwise, behave as if called interactively.
+
+\(fn &optional ARG)" t nil)
+
+(defalias 'org-roam 'org-roam-buffer-toggle-display)
+
+(autoload 'org-roam-diagnostics "org-roam" "\
+Collect and print info for `org-roam' issues." t nil)
+
+(autoload 'org-roam-find-file "org-roam" "\
+Find and open an Org-roam file.
+INITIAL-PROMPT is the initial title prompt.
+COMPLETIONS is a list of completions to be used instead of
+`org-roam--get-title-path-completions`.
+FILTER-FN is the name of a function to apply on the candidates
+which takes as its argument an alist of path-completions.  See
+`org-roam--get-title-path-completions' for details.
+If NO-CONFIRM, assume that the user does not want to modify the initial prompt.
+
+\(fn &optional INITIAL-PROMPT COMPLETIONS FILTER-FN NO-CONFIRM)" t nil)
+
+(autoload 'org-roam-find-directory "org-roam" "\
+Find and open `org-roam-directory'." t nil)
+
+(autoload 'org-roam-find-ref "org-roam" "\
+Find and open an Org-roam file from a ref.
+ARG is used to forward interactive calls to
+`org-roam--get-ref-path-completions'
+FILTER can either be a string or a function:
+- If it is a string, it should be the type of refs to include as
+candidates (e.g. \"cite\" ,\"website\" ,etc.)
+- If it is a function, it should be the name of a function that
+takes three arguments: the type, the ref, and the file of the
+current candidate.  It should return t if that candidate is to be
+included as a candidate.
+
+\(fn ARG &optional FILTER)" t nil)
+
+(autoload 'org-roam-random-note "org-roam" "\
+Find a random Org-roam file." t nil)
+
+(autoload 'org-roam-insert "org-roam" "\
+Find an Org-roam file, and insert a relative org link to it at point.
+Return selected file if it exists.
+If LOWERCASE is non-nil, downcase the link description.
+LINK-TYPE is the type of link to be created. It defaults to \"file\".
+COMPLETIONS is a list of completions to be used instead of
+`org-roam--get-title-path-completions`.
+FILTER-FN is the name of a function to apply on the candidates
+which takes as its argument an alist of path-completions.
+If DESCRIPTION is provided, use this as the link label.  See
+`org-roam--get-title-path-completions' for details.
+
+\(fn &optional LOWERCASE COMPLETIONS FILTER-FN DESCRIPTION LINK-TYPE)" t nil)
+
+(autoload 'org-roam-insert-immediate "org-roam" "\
+Find an Org-roam file, and insert a relative org link to it at point.
+This variant of `org-roam-insert' inserts the link immediately by
+using the template in `org-roam-capture-immediate-template'. The
+interactive ARG and ARGS are passed to `org-roam-insert'.
+See `org-roam-insert' for details.
+
+\(fn ARG &rest ARGS)" t nil)
+
+(autoload 'org-roam-find-file-immediate "org-roam" "\
+Find and open an Org-roam file.
+This variant of `org-roam-find-file' uses the template in
+`org-roam-capture-immediate-template', avoiding the capture
+process. The interactive ARG and ARGS are passed to
+`org-roam-find-file'. See `org-roam-find-file' for details.
+
+\(fn ARG &rest ARGS)" t nil)
+
+(autoload 'org-roam-jump-to-index "org-roam" "\
+Find the index file in `org-roam-directory'.
+The path to the index can be defined in `org-roam-index-file'.
+Otherwise, the function will look in your `org-roam-directory'
+for a note whose title is 'Index'.  If it does not exist, the
+command will offer you to create one." t nil)
+
+(autoload 'org-roam-alias-add "org-roam" "\
+Add an alias to Org-roam file.
+
+Return added alias." t nil)
+
+(autoload 'org-roam-alias-delete "org-roam" "\
+Delete an alias from Org-roam file." t nil)
+
+(autoload 'org-roam-switch-to-buffer "org-roam" "\
+Switch to an existing Org-roam buffer." t nil)
+
+(autoload 'org-roam-version "org-roam" "\
+Return `org-roam' version.
+Interactively, or when MESSAGE is non-nil, show in the echo area.
+
+\(fn &optional MESSAGE)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam" '("org-roam-")))
+
+
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-buffer" '("org-roam-buffer")))
+
+
+
+(autoload 'org-roam-capture "org-roam-capture" "\
+Launches an `org-capture' process for a new or existing note.
+This uses the templates defined at `org-roam-capture-templates'.
+Arguments GOTO and KEYS see `org-capture'.
+
+\(fn &optional GOTO KEYS)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-capture" '("org-roam-capture-")))
+
+
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-completion" '("org-roam-completion-")))
+
+
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-dailies" '("org-roam-dailies-")))
+
+
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-db" '("org-roam-db")))
+
+
+
+(autoload 'org-roam-dev-mode "org-roam-dev" "\
+Minor mode for setting the dev environment of Org-roam.
+
+If called interactively, enable Org-Roam-Dev mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+\(fn &optional ARG)" t nil)
+
+
+
+(autoload 'org-roam-doctor "org-roam-doctor" "\
+Perform a check on the current buffer to ensure cleanliness.
+If CHECKALL, run the check for all Org-roam files.
+
+\(fn &optional CHECKALL)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-doctor" '("org-roam-doctor-")))
+
+
+
+(autoload 'org-roam-graph "org-roam-graph" "\
+Build and possibly display a graph for FILE from NODE-QUERY.
+If FILE is nil, default to current buffer's file name.
+ARG may be any of the following values:
+  - nil       show the graph.
+  - `\\[universal-argument]'     show the graph for FILE.
+  - `\\[universal-argument]' N   show the graph for FILE limiting nodes to N steps.
+  - `\\[universal-argument] \\[universal-argument]' build the graph.
+  - `\\[universal-argument]' -   build the graph for FILE.
+  - `\\[universal-argument]' -N  build the graph for FILE limiting nodes to N steps.
+
+\(fn &optional ARG FILE NODE-QUERY)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-graph" '("org-roam-graph-")))
+
+
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-link" '("org-roam-link-")))
+
+
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-macs" '("org-roam-")))
+
+
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-protocol" '("org-roam-protocol-")))
+
+
 
 
 )
@@ -8254,10 +8711,10 @@ If COMMAND is nil, the key-chord is removed.
 
 
 )
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/org-ref-20210111.1702/org-ref-autoloads.el"))
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/org-ref-20210324.1337/org-ref-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/org-ref-20210111.1702/org-ref-autoloads.el") (car load-path))))
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/org-ref-20210324.1337/org-ref-autoloads.el") (car load-path))))
 
 
 
@@ -8694,6 +9151,17 @@ move to the beginning of the previous cite link after this one." t nil)
 
 (autoload 'org-ref-link-message "org-ref-core" "\
 Print a minibuffer message about the link that point is on." t nil)
+
+(autoload 'org-ref-insert-link "org-ref-core" "\
+Insert an org-ref link.
+If no prefix ARG insert a cite.
+If one prefix ARG insert a ref.
+If two prefix ARGs insert a label.
+
+This is a generic function. Specific completion engines might
+provide their own version.
+
+\(fn ARG)" t nil)
 
 (autoload 'org-ref-help "org-ref-core" "\
 Open the `org-ref' manual." t nil)
@@ -10339,6 +10807,45 @@ ARG is `toggle'; disable the mode otherwise.
 
 
 )
+(let ((load-file-name "/Users/nick/.emacs.d/elpa/ivy-bibtex-20201014.803/ivy-bibtex-autoloads.el"))
+
+(add-to-list 'load-path (directory-file-name
+                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/ivy-bibtex-20201014.803/ivy-bibtex-autoloads.el") (car load-path))))
+
+
+
+(autoload 'ivy-bibtex "ivy-bibtex" "\
+Search BibTeX entries using ivy.
+
+With a prefix ARG the cache is invalidated and the bibliography
+reread.
+
+If LOCAL-BIB is non-nil, display that the BibTeX entries are read
+from the local bibliography.  This is set internally by
+`ivy-bibtex-with-local-bibliography'.
+
+\(fn &optional ARG LOCAL-BIB)" t nil)
+
+(autoload 'ivy-bibtex-with-local-bibliography "ivy-bibtex" "\
+Search BibTeX entries with local bibliography.
+
+With a prefix ARG the cache is invalidated and the bibliography
+reread.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'ivy-bibtex-with-notes "ivy-bibtex" "\
+Search BibTeX entries with notes.
+
+With a prefix ARG the cache is invalidated and the bibliography
+reread.
+
+\(fn &optional ARG)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ivy-bibtex" '("ivy-bibtex-")))
+
+
+)
 (let ((load-file-name "/Users/nick/.emacs.d/elpa/highlight-indentation-20181204.839/highlight-indentation-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
@@ -10659,29 +11166,6 @@ and call `auth-source-forget+'." t nil)
 
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "gtea" '("gtea-default-host")))
-
-
-
-
-)
-(let ((load-file-name "/Users/nick/.emacs.d/elpa/emacsql-20200714.28/emacsql-autoloads.el"))
-
-(add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/Users/nick/.emacs.d/elpa/emacsql-20200714.28/emacsql-autoloads.el") (car load-path))))
-
-
-
-(autoload 'emacsql-show-last-sql "emacsql" "\
-Display the compiled SQL of the s-expression SQL expression before point.
-A prefix argument causes the SQL to be printed into the current buffer.
-
-\(fn &optional PREFIX)" t nil)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "emacsql" '("emacsql-")))
-
-
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "emacsql-compiler" '("emacsql-")))
 
 
 
@@ -13283,14 +13767,14 @@ Wrap the buffer text with adaptive filling.
 )
 (setq package-activated-list
       (append
-       '(yasnippet yaml-mode async with-editor which-key vdm-mode bind-key use-package treepy dash s f avy ace-window pfuture lv hydra ht treemacs transient tablist ivy swiper spinner smex showtip popup pos-tip sdcv pyvenv pythonic deferred python-environment pyenv-mode pyenv-mode-auto py-autopep8 epl pkg-info projectile posframe pdf-tools parsebib paradox org ox-rst ox-reveal htmlize epic orglue git-commit magit orgit org-superstar helm-core helm biblio-core biblio bibtex-completion helm-bibtex key-chord org-ref org-preview-html org-noter org-pdftools org-noter-pdftools org-journal org-eww org-download org-bullets olivetti modus-vivendi-theme modus-themes modus-operandi-theme memoize markdown-mode dash-functional lsp-mode lsp-ui lsp-treemacs lsp-ivy json-snatcher json-reformat json-mode concurrent ctable epc jedi-core ivy-rich highlight-indentation helm-org helm-lsp helm-descbinds helm-bind-key go-mode ghub emacsql emacsql-sqlite closql forge flyspell-correct flycheck flycheck-vdm expand-region exec-path-from-shell elpygen company elpy docker-tramp docker dimmer diminish-buffer diminish bui dap-mode counsel company-jedi company-go circadian bug-hunter all-the-icons all-the-icons-ivy-rich adaptive-wrap)
+       '(yasnippet yaml-mode with-editor which-key vdm-mode bind-key use-package treepy dash s avy ace-window pfuture lv hydra ht posframe cfrs treemacs transient tablist ivy swiper spinner smex showtip popup pos-tip sdcv pyvenv f pythonic deferred python-environment pyenv-mode pyenv-mode-auto py-autopep8 epl pkg-info projectile pdf-tools parsebib paradox org ox-rst ox-reveal htmlize epic orglue async git-commit magit orgit org-superstar emacsql emacsql-sqlite3 org-roam helm-core helm biblio-core biblio bibtex-completion helm-bibtex key-chord org-ref org-preview-html org-noter org-pdftools org-noter-pdftools org-journal org-eww org-download org-bullets olivetti modus-vivendi-theme modus-themes modus-operandi-theme memoize markdown-mode dash-functional lsp-mode lsp-ui lsp-treemacs lsp-ivy json-snatcher json-reformat json-mode concurrent ctable epc jedi-core ivy-rich ivy-bibtex highlight-indentation helm-org helm-lsp helm-descbinds helm-bind-key go-mode ghub emacsql-sqlite closql forge flyspell-correct flycheck flycheck-vdm expand-region exec-path-from-shell elpygen company elpy docker-tramp docker dimmer diminish-buffer diminish bui dap-mode counsel company-jedi company-go circadian bug-hunter all-the-icons all-the-icons-ivy-rich adaptive-wrap)
        package-activated-list))
 (progn
   (require 'info)
   (info-initialize)
   (setq Info-directory-list
 	(append
-	 '("/Users/nick/.emacs.d/elpa/forge-20201002.1420" "/Users/nick/.emacs.d/elpa/ghub-20201010.1929" "/Users/nick/.emacs.d/elpa/modus-operandi-theme-20201013.848" "/Users/nick/.emacs.d/elpa/modus-themes-20210101.611" "/Users/nick/.emacs.d/elpa/modus-vivendi-theme-20201013.848" "/Users/nick/.emacs.d/elpa/org-eww-20160416.601" "/Users/nick/.emacs.d/elpa/magit-20201004.830" "/Users/nick/.emacs.d/elpa/org-20201012" "/Users/nick/.emacs.d/elpa/ivy-20200826.955" "/Users/nick/.emacs.d/elpa/transient-20200819.1133" "/Users/nick/.emacs.d/elpa/dash-20200803.1520" "/Users/nick/.emacs.d/elpa/use-package-20200721.2156" "/Users/nick/.emacs.d/elpa/with-editor-20200930.1912")
+	 '("/Users/nick/.emacs.d/elpa/forge-20201002.1420" "/Users/nick/.emacs.d/elpa/ghub-20201010.1929" "/Users/nick/.emacs.d/elpa/modus-operandi-theme-20201013.848" "/Users/nick/.emacs.d/elpa/modus-themes-20210101.611" "/Users/nick/.emacs.d/elpa/modus-vivendi-theme-20201013.848" "/Users/nick/.emacs.d/elpa/org-eww-20160416.601" "/Users/nick/.emacs.d/elpa/org-roam-20210308.457" "/Users/nick/.emacs.d/elpa/magit-20201004.830" "/Users/nick/.emacs.d/elpa/org-20201012" "/Users/nick/.emacs.d/elpa/ivy-20200826.955" "/Users/nick/.emacs.d/elpa/transient-20210315.1902" "/Users/nick/.emacs.d/elpa/dash-20200803.1520" "/Users/nick/.emacs.d/elpa/use-package-20210207.1926" "/Users/nick/.emacs.d/elpa/with-editor-20210319.1930")
 	 Info-directory-list)))
 
 ;; Local Variables:

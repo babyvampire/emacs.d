@@ -13,7 +13,7 @@ I started this on 2020-05-26, and at first I will just lump my whole current ini
 
 And now of course (<2020-07-20 Mon>) I'm mining heavily from Protesilaos Stavrou ([[https://gitlab.com/protesilaos/dotfiles/-/blob/master/emacs/.emacs.d/emacs-init.org][his init]]), because he has lots of the same aesthetic notions I do and his literate .emacs is pretty great.  I owe the focused editing module to him.
 * Base settings
-** load paths
+** load paths for important things
 Adding the load path for the packages I install manually - having them in .emacs.d will make them more portable
 #+begin_src emacs-lisp
 (add-to-list 'load-path "~/.emacs.d/packages/")
@@ -27,7 +27,7 @@ Adding the load path for the packages I install manually - having them in .emacs
   (exec-path-from-shell-initialize))
 #+end_src
 ** Disable GUI components
-I still keep the menu - sometimes there are things there that I forget.  But this takes the tool bar and scroll bar out, as well as skipping the splash screen.
+I still keep the menu - sometimes there are things there that I forget.  But this takes the tool bar and scroll bar out, as well as skipping the splash screen. Also turns the error bell off.
 #+begin_src emacs-lisp
 (use-package emacs
   :init
@@ -403,7 +403,7 @@ Found at this [[https://github.com/justbur/emacs-which-key][github]], I find whi
 :CUSTOM_ID: h:4E31B98B-2A5B-4EB8-810F-AB8192B8A2E9
 :END:
 From [[https://projectile.mx/][Projectile home page]]
-#+begin_src macs-lisp
+#+begin_src emacs-lisp
 (use-package projectile
   :ensure t
   :config
@@ -448,6 +448,7 @@ From abo-abo, whose Github is [[https://github.com/abo-abo/swiper][here]].
   :bind (("C-c C-r" . #'ivy-resume)
 	 ("C-x b"   . #'ivy-switch-buffer)))
 #+end_src
+
 *ivy-rich*, a "friendly interface for ivy," from [[https://github.com/Yevgnen/ivy-rich][here]]
 #+begin_src emacs-lisp
 (use-package ivy-rich
@@ -538,6 +539,42 @@ Here, setting up so that the org file will automatically be exported to an oer-r
     (message "Enabled oer-reveal-export-to-html on save for current buffer...")))
 #+end_src
 So with the above defined function, in an org file can M-x toggle-oer-reveal-export-on-save <return>
+* org-roam, org-roam-bibtex, org-ref, ivy-bibtex
+
+Starting with org-roam [[https://www.orgroam.com/][(home page]]):
+
+#+begin_src emacs-lisp
+;; set path for sqlite3, needed by org-roam among others - just to make sure - uncomment if needed, but currently is in shell path on MacBook.
+;; (add-to-list 'exec-path "/usr/bin/sqlite3")
+
+(use-package org-roam
+      :ensure t
+      :hook
+      (after-init . org-roam-mode)
+      :custom
+      (org-roam-directory "~/org/org-roam")
+      :bind (:map org-roam-mode-map
+              (("C-c n l" . org-roam)
+               ("C-c n f" . org-roam-find-file)
+               ("C-c n g" . org-roam-graph))
+              :map org-mode-map
+              (("C-c n i" . org-roam-insert))
+              (("C-c n I" . org-roam-insert-immediate))))
+
+#+end_src
+
+Then ivy-bibtex (its [[https://github.com/tmalsburg/helm-bibtex][Github]]):
+
+#+begin_src emacs-lisp
+(use-package ivy-bibtex
+  :ensure t
+  :bind*
+  ("C-c C-r" . ivy-bibtex)
+  :config
+  (setq bibtex-completion-bibliography ~/org/ref)
+  ;; default is to open pdf - change that to insert citation
+  (setq ivy-bibtex-default-action #'ivy-bibtex-insert-citation))
+#+end_src
 * org-ref
 :PROPERTIES:
 :CUSTOM_ID: h:37FC1751-EFA0-4AE9-8A0B-A53FA50FC8CB
@@ -674,6 +711,7 @@ Fringes are disabled.  The modeline is hidden, except for
 default typeface is set to a proportionately-spaced family,
 except for programming modes (see `prot/variable-pitch-mode').
 The cursor becomes a blinking bar, per `prot/cursor-type-mode'."
+    
     :init-value nil
     :global nil
     (if prot/olivetti-mode
